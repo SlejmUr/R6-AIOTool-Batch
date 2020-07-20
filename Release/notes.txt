@@ -1,0 +1,11 @@
+Magyar változat!
+Rainbow Six Siege Régi Verziók Letöltője
+Steamen meg KELL lennie az R6:S-en!
++ Összes Season!
++ DirectX és a  VC Redist Downloader!
+Instant letölti a 7zip-et!
+
+Ezek hiányoznak:
+Nyelv választó
+4K Textúra
+Ellenőrizni az összes Manifest-et!
