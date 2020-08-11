@@ -1,5 +1,5 @@
 # OldR6S
-Old R6:S Playable files
+Old R6:S Downloader files
 
-Ide töltöm fel külön a futtatható R6:S fájlokat
-Remélhetőleg sikerül. Crack Nincs benne! 
+Ide töltöm fel a R6OLd fájlokat, STEAM-en meg kell lenni az R6-nak!
+
