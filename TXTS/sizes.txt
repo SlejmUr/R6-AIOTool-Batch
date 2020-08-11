@@ -1,4 +1,7 @@
 Not tested all season!
+If you see X GB is tested!
+// Nem teszteltem mindet!
+//Ahol X GB van az tesztelve is van!
 [Y1S0_Vanilla] 14,2 GB
 [Y1S1_Black_Ice] 16,7 GB
 [Y1S2_Dust_Line] 20,9 GB
