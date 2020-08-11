@@ -1,0 +1,19 @@
+Not tested all season!
+[Y1S0_Vanilla] 14,2 GB
+[Y1S1_Black_Ice] 16,7 GB
+[Y1S2_Dust_Line] 20,9 GB
+[Y1S3_Skull_Rain] 25.1 GB
+[Y1S4_Red_Crow] 28,5 GB
+[Y2S1_Velvet_Shell] 33,2 GB 
+[Y2S2_Health] 34 GB
+[Y2S3_Blood_Orchid] 34,3 GB
+[Y2S4_White_Noise]
+[Y3S1_Chimera] 58,8 GB
+[Y3S2_Para_Bellum]
+[Y3S3_Grim_Sky]
+[Y4S1_Burnt_Horizon]
+[Y4S2_Phantom_Sight]
+[Y4S3_Ember_Rise] 69.6 GB
+[Y4S4_Shifting_Tides] 75,2 GB
+[Y5S1_Void_Edge] 74,3 GB
+[Y5S2_Steel_Wave] 81,2 GB

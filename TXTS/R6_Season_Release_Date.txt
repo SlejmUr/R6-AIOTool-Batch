@@ -1,0 +1,55 @@
+Y1S0
+5 December 2015
+Y1S1
+February 2, 2016 (Season Pass)
+February 9, 2016 (Worldwide)
+Y1S2
+May 10, 2016 (Season Pass)
+May 11 !
+May 17, 2016 (Worldwide)
+Y1S3
+August 2, 2016 (Season Pass)
+August 9, 2016 (Worldwide)
+Y1S4
+November 17, 2016 (Season Pass)
+November 24, 2016 (Worldwide)
+Y2S1
+February 7, 2017 (Season Pass)
+February 14, 2017 (Worldwide)
+Y2S2
+June 7, 2017 (PC)
+Y2S3
+September 5, 2017 (Season Pass)
+September 12, 2017 (Worldwide)
+Y2S4
+SP: December 5, 2017
+WW: December 12, 2017
+Y3S1
+SP: March 6, 2018
+WW: March 13, 2018
+Y3S2
+SP: June 7, 2018
+WW: June 14, 2018
+Y3S3
+SP: September 4, 2018
+WW: September 11, 2018
+Y3S4
+SP: December 4, 2018
+WW: December 11, 2018
+Y4S1
+SP: March 6, 2019
+WW: March 13, 2019
+Y4S2
+SP: June 11, 2019
+WW: June 18, 2019
+Y4S3
+SP: September 11, 2019
+WW: September 11, 2019
+Y4S4
+December 3, 2019
+Y5S1
+SP: March 10, 2020
+WW: March 17, 2020
+Y5S2
+SP: June 16, 2020
+WW: June 23, 2020
