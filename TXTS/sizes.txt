@@ -10,11 +10,11 @@ If you see X GB is tested!
 [Y2S1_Velvet_Shell] 33,2 GB 
 [Y2S2_Health] 34 GB
 [Y2S3_Blood_Orchid] 34,3 GB
-[Y2S4_White_Noise]
+[Y2S4_White_Noise] 48,7 GB
 [Y3S1_Chimera] 58,8 GB
-[Y3S2_Para_Bellum]
-[Y3S3_Grim_Sky]
-[Y4S1_Burnt_Horizon]
+[Y3S2_Para_Bellum] 63.3 GB
+[Y3S3_Grim_Sky] 72.6 GB
+[Y4S1_Burnt_Horizon] 82.7 GB
 [Y4S2_Phantom_Sight] 64.9 GB
 [Y4S3_Ember_Rise] 69.6 GB
 [Y4S4_Shifting_Tides] 75,2 GB
