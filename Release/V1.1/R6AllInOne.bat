@@ -36,7 +36,7 @@ MODE 62,50
 if exist "Requirements\7z.exe" (
   goto DepotCheck
 ) else (
-  mkdir Requirements
+  md Requirements
   goto no7zip
 )
 
@@ -74,6 +74,7 @@ goto DepotCheck
 :DepotCheck
 cls
 if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
+  md Requirements\v1_1
   goto mainmenu 
 ) else (
   goto DepotDownloader
