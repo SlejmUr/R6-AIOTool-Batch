@@ -11,3 +11,4 @@ echo ---------------------------------------------------------------------------
 curl -L  "https://github.com/SlejmUr/OldR6S/raw/master/Release/V1.1/R6AllInOne.bat" --output AllInOneTools.bat
 move AllInOneTools.bat ..
 cls
+exit
