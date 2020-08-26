@@ -8,7 +8,6 @@ MODE 78,20
 echo ------------------------------------------------------------------------------
 echo                              Downloading AllInOne Tools...
 echo ------------------------------------------------------------------------------
-curl -L  "https://github.com/SlejmUr/OldR6S/raw/master/Release/V1.1/R6AllInOne.bat" --output AIO.bat
-move AIO.bat ..
-pause
+curl -L  "https://github.com/SlejmUr/OldR6S/raw/master/Release/V1.1/R6AllInOne.bat" --output AllInOneTools.bat
+move AllInOneTools.bat ..
 cls
