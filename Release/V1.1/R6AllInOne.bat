@@ -74,7 +74,6 @@ goto DepotCheck
 :DepotCheck
 cls
 if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
-  md Requirements\v1_1
   goto mainmenu 
 ) else (
   goto DepotDownloader
