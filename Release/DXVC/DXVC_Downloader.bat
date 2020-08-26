@@ -30,24 +30,6 @@ cls
 )
 ::7zip end
 
-
-
-:mainmenu
-cls
-MODE 100,20
-echo -----------------------------------------------------------
-echo DirectX + VC Redist Downloader
-echo -----------------------------------------------------------
-echo 0 = Download
-echo -----------------------------------------------------------
-set /p option="Write 0 here:"
-
-if %option%==0 (
-cls
-goto dxvcredist
-)
-goto mainmenu
-
 :DepotDownloader
 cls
 MODE 78,20
@@ -76,11 +58,11 @@ if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
 )
 
 
-:dxvcredist
+:mainmenu
 Title DirectX + VC Redist Downloader
 MODE 40,10
 echo Which one do you want to download?
-echo - 0 : Back to Menu
+echo - 0 : Exit
 echo - 1 : DirectX
 echo - 10 : VC 2010 Redist	
 echo - 12 : VC 2012 Redist	
@@ -88,8 +70,7 @@ echo - 15 : VC 2015 Redist
 echo - 17 : VC 2017 Redist
 set /p downdxvc="Enter Number:"
 if %downdxvc%==0 (
-cls
-goto mainmenu
+exit
 )
 MODE 100,40
 set /p username="Enter Steam Username:"
@@ -135,4 +116,4 @@ echo Download complete!
 echo It's VC 2017 Redist!
 goto mainmenu
 )
-goto dxvcredist
+goto mainmenu
