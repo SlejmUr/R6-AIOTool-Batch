@@ -196,16 +196,17 @@ MODE 46,30
   echo ---------------------------------------
   echo          [Y1S0_Vanilla] 14,2 GB ✔
   echo          [Y1S1_Black_Ice] 16,7 GB ✔
-  echo          [Y1S2_Dust_Line] 20,9 GB
-  echo          [Y1S3_Skull_Rain] 25.1 GB
+  echo          [Y1S2_Dust_Line] 20,9 GB ✔
+  echo          [Y1S3_Skull_Rain] 25.1 GB ✔
   echo          [Y1S4_Red_Crow] 28,5 GB
   echo          [Y2S1_Velvet_Shell] 33,2 GB 
-  echo          [Y2S2_Health] 34 GB
+  echo          [Y2S2_Health] 34 GB ✔
   echo          [Y2S3_Blood_Orchid] 34,3 GB
   echo          [Y2S4_White_Noise] 48,7 GB 
   echo          [Y3S1_Chimera] 58,8 GB
   echo          [Y3S2_Para_Bellum] 60.6 GB ✔
   echo          [Y3S3_Grim_Sky] 72.6 GB
+  echo          [Y3S4_Wind_Bastion] 76.9 GB
   echo          [Y4S1_Burnt_Horizon] 82.7 GB
   echo          [Y4S2_Phantom_Sight] 64.9 GB
   echo          [Y4S3_Ember_Rise] 69.6 GB
@@ -334,7 +335,7 @@ Title Notes
 MODE 150,50
 echo  Notes:
 echo  Not all Manifest support Liberator!
-echo  I'm not tested this manifests: White_Noise, Para_Bellum, Grim_Sky, Burnt_Horizon and ALL 4K Textures, and Language!
+echo  I'm not tested this manifests: White_Noise, Grim_Sky, Burnt_Horizon and ALL 4K Textures, and Language!
 echo  Planning to add Extra Language option!
 echo  If Cheato Update Liberator , I update this Tool!
 echo  If you have a problem this tool, DM me on Discord! SlejmUr#4007
@@ -1136,6 +1137,7 @@ goto EventMenu
 :Credit
 Title CREDIT
 MODE 45,15
+echo I would like to thank everyone who helped this project getting developed:
 echo Thanks Shey to I get some manifest!
 echo Thanks Zer0Byte the first version of MenuV!
 echo Thanks DepotDownloader creators!
@@ -1143,9 +1145,9 @@ echo Thanks SublimeText creators!
 echo Thanks SteamDB!
 echo Thanks Cheato for Liberators,and FAQ!
 echo Thanks Markster for Plaza's!
-echo And Thanks YOU for using this!
+echo And thank you for using it!
 echo First Version: 2020 June 17
-echo Updated Version: 2020 Aug 24
+echo Updated Version: 2020 Sept 6
 pause
 cls
 goto mainmenu
