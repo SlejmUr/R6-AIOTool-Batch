@@ -119,13 +119,13 @@ echo -----------------------------------------------------------
 echo  Rainbow Six Siege Old Version Downloader
 echo  You MUST have a copy of Siege on Steam to use the downloader.
 echo  ADDED ALL SEASON!
-echo  Tool Version: v1.2
+echo  Tool Version: DEV
 echo  Read FAQ!
 echo -----------------------------------------------------------
 echo  What would you like to select?
 echo  0 = Exit
-echo  1 = Season Size
-echo  2 = Entire Game
+echo  1 = Entire Game
+echo  2 = Season Size
 echo  3 = Extra Language - Getting Manifests
 echo  4 = 4K Textures
 echo  5 = FAQ and Notes
@@ -133,7 +133,7 @@ echo  6 = DirectX + VC Redist Downloader
 echo  7 = Download PLAZA's and Liberators
 echo  8 = Credits
 echo  9 = Start Game
-echo  10 = JOIN modding community!
+echo  10 = JOIN Throwback community!
 echo -----------------------------------------------------------
 set /p option="Enter Selection:"
 
@@ -143,11 +143,11 @@ exit
 )
 if %option%==1 (
 cls
-goto Seasonsize
+goto DownloadMenu
 )
 if %option%==2 (
 cls
-goto DownloadMenu
+goto Seasonsize
 )
 if %option%==3 (
 cls
@@ -194,8 +194,8 @@ goto mainmenu
 Title Rainbow Six Siege Version Size
 MODE 46,30
   echo ---------------------------------------
-  echo          [Y1S0_Vanilla] 14,2 GB
-  echo          [Y1S1_Black_Ice] 16,7 GB
+  echo          [Y1S0_Vanilla] 14,2 GB ✔
+  echo          [Y1S1_Black_Ice] 16,7 GB ✔
   echo          [Y1S2_Dust_Line] 20,9 GB
   echo          [Y1S3_Skull_Rain] 25.1 GB
   echo          [Y1S4_Red_Crow] 28,5 GB
@@ -204,13 +204,13 @@ MODE 46,30
   echo          [Y2S3_Blood_Orchid] 34,3 GB
   echo          [Y2S4_White_Noise] 48,7 GB 
   echo          [Y3S1_Chimera] 58,8 GB
-  echo          [Y3S2_Para_Bellum] 63.3 GB
+  echo          [Y3S2_Para_Bellum] 60.6 GB ✔
   echo          [Y3S3_Grim_Sky] 72.6 GB
   echo          [Y4S1_Burnt_Horizon] 82.7 GB
   echo          [Y4S2_Phantom_Sight] 64.9 GB
   echo          [Y4S3_Ember_Rise] 69.6 GB
-  echo          [Y4S4_Shifting_Tides] 75,2 GB
-  echo          [Y5S1_Void_Edge] 74,3 GB
+  echo          [Y4S4_Shifting_Tides] 75,2 GB ✔
+  echo          [Y5S1_Void_Edge] 74,3 GB ✔
   echo          [Y5S2_Steel_Wave] 81,3 GB
   echo ---------------------------------------
 pause
