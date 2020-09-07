@@ -124,16 +124,15 @@ echo  Read FAQ!
 echo -----------------------------------------------------------
 echo  What would you like to select?
 echo  0 = Exit
-echo  1 = Entire Game
-echo  2 = Season Size
-echo  3 = Extra Language - Getting Manifests
-echo  4 = 4K Textures
-echo  5 = FAQ and Notes
-echo  6 = DirectX + VC Redist Downloader
-echo  7 = Download PLAZA's and Liberators
-echo  8 = Credits
-echo  9 = Start Game
-echo  10 = JOIN Throwback community!
+echo  1 = Download or Uninstall the Game
+echo  2 = Extra Language - Getting Manifests
+echo  3 = 4K Textures
+echo  4 = FAQ and Notes
+echo  5 = DirectX + VC Redist Downloader
+echo  6 = Download PLAZA's and Liberators
+echo  7 = Credits
+echo  8 = Start Game
+echo  9 = JOIN Throwback community!
 echo -----------------------------------------------------------
 set /p option="Enter Selection:"
 
@@ -147,45 +146,37 @@ goto DownloadMenu
 )
 if %option%==2 (
 cls
-goto Seasonsize
+goto Extra
 )
 if %option%==3 (
 cls
-goto Extra
+goto TextureMenu
 )
 if %option%==4 (
 cls
-goto TextureMenu
+goto faq
 )
 if %option%==5 (
 cls
-goto faq
+goto dxvcredist
 )
 if %option%==6 (
 cls
-goto dxvcredist
+goto PlazaCheck
 )
 if %option%==7 (
 cls
-goto PlazaCheck
+goto Credit
 )
 if %option%==8 (
 cls
-goto Credit
-)
-if %option%==9 (
-cls
 goto StartGame
 )
-if %option%==10 (
+if %option%==9 (
 cls
 start http://r6modding.com/
 pause
 goto mainmenu
-)
-if %option%==11 (
-cls
-goto testing
 )
 goto mainmenu
 
@@ -196,17 +187,16 @@ MODE 46,30
   echo ---------------------------------------
   echo          [Y1S0_Vanilla] 14,2 GB ✔
   echo          [Y1S1_Black_Ice] 16,7 GB ✔
-  echo          [Y1S2_Dust_Line] 20,9 GB ✔
-  echo          [Y1S3_Skull_Rain] 25.1 GB ✔
+  echo          [Y1S2_Dust_Line] 20,9 GB
+  echo          [Y1S3_Skull_Rain] 25.1 GB
   echo          [Y1S4_Red_Crow] 28,5 GB
   echo          [Y2S1_Velvet_Shell] 33,2 GB 
-  echo          [Y2S2_Health] 34 GB ✔
+  echo          [Y2S2_Health] 34 GB
   echo          [Y2S3_Blood_Orchid] 34,3 GB
   echo          [Y2S4_White_Noise] 48,7 GB 
   echo          [Y3S1_Chimera] 58,8 GB
   echo          [Y3S2_Para_Bellum] 60.6 GB ✔
   echo          [Y3S3_Grim_Sky] 72.6 GB
-  echo          [Y3S4_Wind_Bastion] 76.9 GB
   echo          [Y4S1_Burnt_Horizon] 82.7 GB
   echo          [Y4S2_Phantom_Sight] 64.9 GB
   echo          [Y4S3_Ember_Rise] 69.6 GB
@@ -335,7 +325,7 @@ Title Notes
 MODE 150,50
 echo  Notes:
 echo  Not all Manifest support Liberator!
-echo  I'm not tested this manifests: White_Noise, Grim_Sky, Burnt_Horizon and ALL 4K Textures, and Language!
+echo  I'm not tested this manifests: White_Noise, Para_Bellum, Grim_Sky, Burnt_Horizon and ALL 4K Textures, and Language!
 echo  Planning to add Extra Language option!
 echo  If Cheato Update Liberator , I update this Tool!
 echo  If you have a problem this tool, DM me on Discord! SlejmUr#4007
@@ -350,8 +340,7 @@ MODE 50,38
 echo What would you like to select?
 echo --------------------------------------------------
 echo # 0 - Back
-echo # 1 - Season Size
-echo # 99 - Download Events
+echo # 1 - Download Events
 echo --------------------------------------------------
 echo # 2 = Vanilla 1.0 (Y1S0) [First Steam Version] 
 echo # 3 = Black Ice (Y1S1_release) 
@@ -388,10 +377,6 @@ cls
 goto mainmenu
 )
 if %version%==1 (
-cls
-goto Seasonsize
-)
-if %version%==99 (
 cls
 goto EventMenu
 )
@@ -1137,7 +1122,6 @@ goto EventMenu
 :Credit
 Title CREDIT
 MODE 45,15
-echo I would like to thank everyone who helped this project getting developed:
 echo Thanks Shey to I get some manifest!
 echo Thanks Zer0Byte the first version of MenuV!
 echo Thanks DepotDownloader creators!
@@ -1145,9 +1129,9 @@ echo Thanks SublimeText creators!
 echo Thanks SteamDB!
 echo Thanks Cheato for Liberators,and FAQ!
 echo Thanks Markster for Plaza's!
-echo And thank you for using it!
+echo And Thanks YOU for using this!
 echo First Version: 2020 June 17
-echo Updated Version: 2020 Sept 6
+echo Updated Version: 2020 Aug 24
 pause
 cls
 goto mainmenu
