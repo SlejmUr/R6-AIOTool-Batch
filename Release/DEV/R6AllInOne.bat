@@ -3,8 +3,17 @@ chcp 65001
 ::hun char ^^
 setlocal enableextensions enabledelayedexpansion
 set homepath=%cd%
+set AllInOneVersion=DEV
 
-goto verifydotnet
+if exist "log.log" (
+  del "log.log"
+  cls
+  echo You are using %AllInOneVersion% version>>log.log
+  goto verifydotnet
+  ) else (
+  echo You are using %AllInOneVersion% version>>log.log
+  goto verifydotnet
+)
 
 
 ::Dotnet start
@@ -20,6 +29,7 @@ MODE 40,10
 echo ---------------------------------------
 echo       Install .NET Runtime !!
 echo ---------------------------------------
+echo Install .NET Runtime - %TIME% >>log.log
 start www.tinyurl.com/dotnetr6
 pause
 echo      Press Space after install
@@ -47,6 +57,7 @@ echo ---------------------------------------------------------------------------
 echo                              Downloading 7-Zip...
 echo ------------------------------------------------------------------------------
 curl -L  "https://github.com/SlejmUr/OldR6S/raw/master/Requirements/7z.exe" --output 7z.exe
+echo Download 7zip - %TIME%>>log.log
 cls
 goto move7
 cls
@@ -61,12 +72,14 @@ echo ---------------------------------------------------------------------------
 echo                        Downloading DepotDownloader...
 echo ------------------------------------------------------------------------------
 curl -L  "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.3.6/depotdownloader-2.3.6.zip" --output depot.zip
+echo Download DepotDownloader - %TIME%>>log.log
 cls
 goto extractDD
 
 :extractDD
 for %%I in ("depot.zip") do (
-  echo 2
+  echo extractDD
+  echo extractDD>>log.log
   "Requirements\7z.exe" x -y -o"Requirements\DepotDownloader" "%%I" && del %%I
 cls
 goto DepotCheck
@@ -90,6 +103,7 @@ if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
   echo                              Downloading Install.bat...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/SlejmUr/OldR6S/raw/master/Installer/Install.bat" --output Install.bat
+  echo Download Install.bat - %TIME%>>log.log
   move Install.bat Requirements
   echo Please run Requirements\Install.bat 
   goto mainmenu
@@ -115,11 +129,13 @@ if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
 cls
 Title R6S Version AllInOne Downloader
 MODE 100,20
+echo mainmenu loaded>>log.log
 echo -----------------------------------------------------------
 echo  Rainbow Six Siege Old Version Downloader
 echo  You MUST have a copy of Siege on Steam to use the downloader.
 echo  ADDED ALL SEASON!
-echo  Tool Version: DEV
+echo  Tool Version: %AllInOneVersion%
+echo  Time : %TIME%
 echo  Read FAQ!
 echo -----------------------------------------------------------
 echo  What would you like to select?
@@ -137,42 +153,52 @@ echo -----------------------------------------------------------
 set /p option="Enter Selection:"
 
 if %option%==0 (
+echo Exited - %TIME%>>log.log
 cls
 exit
 )
 if %option%==1 (
+echo GameMenu Choosed>>log.log
 cls
-goto DownloadMenu
+goto GameMenu
 )
 if %option%==2 (
+echo Extra Menu Choosed>>log.log
 cls
 goto Extra
 )
 if %option%==3 (
+echo TextureMenu Choosed>>log.log
 cls
 goto TextureMenu
 )
 if %option%==4 (
+echo FAQ Choosed>>log.log
 cls
 goto faq
 )
 if %option%==5 (
+echo dxvcredist Choosed>>log.log
 cls
 goto dxvcredist
 )
 if %option%==6 (
+echo PlazaCheck Choosed>>log.log
 cls
 goto PlazaCheck
 )
 if %option%==7 (
+echo Credit Choosed>>log.log
 cls
 goto Credit
 )
 if %option%==8 (
+echo StartGame Choosed>>log.log
 cls
 goto StartGame
 )
 if %option%==9 (
+echo Modding community Discord Opened>>log.log
 cls
 start http://r6modding.com/
 pause
@@ -181,13 +207,51 @@ goto mainmenu
 goto mainmenu
 
 
+:GameMenu
+ Title Rainbow Six Siege GameMenu
+  echo GameMenu loaded>>log.log
+ MODE 46,30
+ echo # 0 - Back 
+ echo -----------------------------------------
+ echo  You want to Install Siege (1)
+ echo  OR
+ echo  You want to Uninstall Siege (2)
+ echo  OR
+ echo  You want to Start Siege (3)
+ echo -----------------------------------------
+set /p option="Enter Selection:"
+
+if %option%==0 (
+echo Back>>log.log
+cls
+goto mainmenu
+)
+if %option%==1 (
+cls
+goto DownloadMenu
+)
+if %option%==2 (
+cls
+goto UninstallMenu
+)
+if %option%==3 (
+cls
+goto StartGame
+)
+goto mainmenu
+
+
+
+
+
+
 :Seasonsize
 Title Rainbow Six Siege Version Size
 MODE 46,30
   echo ---------------------------------------
   echo          [Y1S0_Vanilla] 14,2 GB ✔
   echo          [Y1S1_Black_Ice] 16,7 GB ✔
-  echo          [Y1S2_Dust_Line] 20,9 GB (✔
+  echo          [Y1S2_Dust_Line] 20,9 GB ✔
   echo          [Y1S3_Skull_Rain] 25.1 GB (✔
   echo          [Y1S4_Red_Crow] 28,5 GB
   echo          [Y2S1_Velvet_Shell] 33,2 GB 
