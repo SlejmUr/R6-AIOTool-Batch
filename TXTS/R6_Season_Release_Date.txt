@@ -53,3 +53,5 @@ WW: March 17, 2020
 Y5S2
 SP: June 16, 2020
 WW: June 23, 2020
+Y5S3 Manifest First Release
+(2020, Sept 10)
