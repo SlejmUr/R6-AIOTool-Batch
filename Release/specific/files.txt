@@ -1,0 +1,5 @@
+RainbowSix.exe
+RainbowSix.exe.manifest
+RainbowSix_BE.exe
+RainbowSix_Vulkan.exe
+RainbowSix_Vulkan.exe.manifest
