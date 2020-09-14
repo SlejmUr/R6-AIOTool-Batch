@@ -729,7 +729,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
 pause
 cls
-echo Download complete!
+echo Download complete! Thanks Shey!
 echo It's Steel Wave -last updated- Version!
 goto mainmenu
 )
