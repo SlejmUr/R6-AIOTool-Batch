@@ -128,16 +128,16 @@ if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
 :mainmenu
 cls
 Title R6S Version AllInOne Downloader
-MODE 100,20
+MODE 62,20
 echo mainmenu loaded>>log.log
-echo -----------------------------------------------------------
+echo --------------------------------------------------------------
 echo  Rainbow Six Siege Old Version Downloader
 echo  You MUST have a copy of Siege on Steam to use the downloader.
 echo  ADDED ALL SEASON!
 echo  Tool Version: %AllInOneVersion%
 echo  Time : %TIME%
 echo  Read FAQ!
-echo -----------------------------------------------------------
+echo --------------------------------------------------------------
 echo  What would you like to select?
 echo  (1) FAQ and Notes
 echo  (2) Game Menu
@@ -148,7 +148,7 @@ echo  (6) Download PLAZA's and Liberators
 echo  (7) Credits
 echo  (8) JOIN Throwback community!
 echo  (0) Close
-echo -----------------------------------------------------------
+echo --------------------------------------------------------------
 set /p option="Enter Selection:"
 
 if %option%==0 (
@@ -336,7 +336,7 @@ goto dxvcredist
 
 :faq
 Title FAQ
-MODE 150,50
+MODE 120,45
 echo  1.
 echo  Q: Is it safe to enter my password?
 echo  A: Yes it is. You can view the source code for Depot Downloader here: https://github.com/SteamRE/DepotDownloader
@@ -383,7 +383,7 @@ goto Notes
 
 :Notes
 Title Notes
-MODE 150,50
+MODE 110,20
 echo  Notes:
 echo  Not all Manifest support Liberator!
 echo  I'm not tested this manifests: White_Noise, Grim_Sky, Burnt_Horizon and ALL 4K Textures, and Language!
@@ -397,16 +397,17 @@ goto mainmenu
 :DownloadMenu
 cls
 Title Rainbow Six Siege Version Downloader
-MODE 50,38
-echo What would you like to select?
+MODE 50,40
+echo 		Version Downloader
+echo 	What would you like to select?
 echo --------------------------------------------------
 echo # 0 - Back
 echo # 99 - Download Events
 echo --------------------------------------------------
 echo # 00 = Specific Manifest
-echo # 1 = Vanilla 1.0 (Y1S0) [First Steam Version] 
-echo # 2 = Black Ice (Y1S1_release) 
-echo # 3 = Dust Line (Y1S2_release)
+echo # 1 = Vanilla 1.0 (Y1S0) [14.2 GB]
+echo # 2 = Black Ice (Y1S1_release) [16.7 GB]
+echo # 3 = Dust Line (Y1S2_release) [20.9 GB]
 echo # 4 = Skull Rain (Y1S3_release)
 echo # 41 = Skull Rain (Shey Manifest) 
 echo # 5 = Red Crow (Y1S4_release)
@@ -418,7 +419,7 @@ echo # 81 = Blood Orchid (Shey Manifest)
 echo # 9 = White Noise (Y2S4_release)
 echo # 91=  White Noise (Shey Manifest)
 echo # 10 = Chimera [(Y3S1_release)]
-echo # 11 = Para Bellum (Y3S2_release)
+echo # 11 = Para Bellum (Y3S2_release) [60.6 GB]
 echo # 12 = Grim Sky (Y3S3_release)
 echo # 121= Grim Sky (Shey Manifest)
 echo # 13 = Wind Bastion (Y3S4_release)
@@ -427,11 +428,11 @@ echo # 141= Burnt Horizon (Shey Manifest)
 echo # 15 = Phantom Sight (Y4S2_release)
 echo # 16 = Ember Rise (Y4S3_release)
 echo # 161= Ember Rise (Shey Manifest)
-echo # 17 = Shifting Tides (Y4S4_release)
+echo # 17 = Shifting Tides (Y4S4_release) [75.2 GB]
 echo # 18 = Void Edge (Y5S1_release)
 echo # 181= Void Edge (Shey Manifest)
 echo # 19 = Steel Wave (Y5S2_release)
-echo # 191 = Steel Wave (Shey Manifest) -R
+echo # 191 = Steel Wave (Shey Manifest)
 echo # 20 = Shadow Legacy (Y5S3_release)
 echo # 21 = Placeholder
 echo --------------------------------------------------
@@ -758,8 +759,8 @@ goto DownloadMenu
  cls
  Title Rainbow Six Siege 4K Textures Downloader
  MODE 50,38
- echo 4K Textures Downloader
- echo What would you like to select?
+ echo 	    4K Textures Downloader
+ echo 	What would you like to select?
  echo --------------------------------------------------
  echo # 0 - Back
  echo # 99 - Download Events
@@ -791,7 +792,7 @@ goto DownloadMenu
  echo # 18 = Void Edge (Y5S1_release)
  echo # 181= Void Edge (Shey Manifest) -Same-
  echo # 19 = Steel Wave (Y5S2_release)
- echo # 191 = Steel Wave (Shey Manifest) -R
+ echo # 191 = Steel Wave (Shey Manifest)
  echo # 20 = Shadow Legacy (Y5S3_release)
  echo # 21 = Placeholder
  echo --------------------------------------------------
