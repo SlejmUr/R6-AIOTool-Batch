@@ -18,7 +18,7 @@ pause
 
 :dotnet
 echo you need dotnet
-start https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.400-windows-x64-installer
+start https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.402-windows-x64-installer
 pause
 
 
