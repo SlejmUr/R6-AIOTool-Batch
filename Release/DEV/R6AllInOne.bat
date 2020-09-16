@@ -1,5 +1,6 @@
 @echo off
 chcp 65001
+color
 ::hun char ^^
 setlocal enableextensions enabledelayedexpansion
 set homepath=%cd%
@@ -18,11 +19,16 @@ if exist "log.log" (
 
 ::Dotnet start
 :verifydotnet
-if exist "C:\Program Files\dotnet\dotnet.exe" (
-  goto 7zipcheck
+MODE 50,20
+reg query HKEY_LOCAL_MACHINE\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost /v Version /f  3.1.4>nul
+
+if errorlevel 1 (
+echo Oh no, you dont have dotnet OR updated dotnet "3.1.4" or above
+pause
+goto downloaddotnet
 ) else (
-  goto downloaddotnet 
-)
+  goto 7zipcheck
+  )
 
 :downloaddotnet 
 MODE 40,10
@@ -38,10 +44,6 @@ goto verifydotnet
 ::dotnet end
 
 ::7zip start
-:move7
-move 7z.exe Requirements
-goto 7zipcheck
-
 :7zipcheck
 MODE 62,50
 if exist "Requirements\7z.exe" (
@@ -62,9 +64,21 @@ cls
 goto move7
 cls
 )
+
+:move7
+move 7z.exe Requirements
+goto 7zipcheck
 ::7zip end
 
 ::DD start
+:DepotCheck
+cls
+if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
+  goto chechinstallbat 
+) else (
+  goto DepotDownloader
+)
+
 :DepotDownloader
 cls
 MODE 78,20
@@ -79,23 +93,29 @@ goto extractDD
 :extractDD
 for %%I in ("depot.zip") do (
   echo extractDD
-  echo extractDD>>log.log
+  echo extractDD - %TIME%>>log.log
   "Requirements\7z.exe" x -y -o"Requirements\DepotDownloader" "%%I" && del %%I
 cls
 goto DepotCheck
-)
-
-:DepotCheck
-cls
-if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
-  goto chechinstallbat 
-) else (
-  goto DepotDownloader
 )
 ::DD end
 
 
 ::installer start
+:chechinstallbat
+  MODE 60,20
+  cls
+  if exist "Requirements\Install.bat" (
+  echo Install.bat Founded
+  echo If you are using old version please update new version
+  pause
+  goto PlazaCheck
+  ) else (
+  echo Install.bat Not Founded
+  pause
+  goto installbat
+  )
+
 :installbat
   cls
   MODE 78,20
@@ -106,21 +126,71 @@ if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
   echo Download Install.bat - %TIME%>>log.log
   move Install.bat Requirements
   echo Please run Requirements\Install.bat 
-  goto mainmenu
-  )
-:chechinstallbat
-  cls
-  if exist "Requirements\Install.bat" (
-  echo Install.bat Founded! If you are using old version please update new version!
-  goto mainmenu
-  ) else (
-  echo Install.bat Not Founded!
-  goto installbat
+  goto chechinstallbat
   )
 ::installer end
 
 
 
+::Plaza Start
+:PlazaCheck
+cls
+if exist "Requirements\Plazas\PLAZA_BO\CODEX.ini" (
+  goto LibCheck 
+) else (
+  goto GetPlaza
+)
+
+:GetPlaza
+cls
+MODE 78,20
+echo ------------------------------------------------------------------------------
+echo                        Downloading Plazas...
+echo ------------------------------------------------------------------------------
+curl -L  "https://cdn.discordapp.com/attachments/722089860755881996/743466352475635832/Plazas.zip" --output plazas.zip
+echo Download Plazas - %TIME%>>log.log
+cls
+goto extractPlaza
+
+:extractPlaza
+for %%I in ("plazas.zip") do (
+  echo extractPlaza
+  echo extractPlaza - %TIME%>>log.log
+  "Requirements\7z.exe" x -y -o"Requirements\" "%%I" && del %%I
+cls
+goto PlazaCheck
+)
+::Plaza End
+
+::Liberator Start
+:LibCheck
+cls
+if exist "Requirements\Liberators" (
+  goto mainmenu 
+) else (
+  goto GetLib
+)
+
+:GetLib
+cls
+MODE 78,20
+echo ------------------------------------------------------------------------------
+echo                        Downloading Liberators...
+echo ------------------------------------------------------------------------------
+curl -L  "http://download1650.mediafire.com/6dy1ugxw06kg/kzhc3j1g3gaxmqx/Liberators.zip" --output lib.zip
+echo Download Liberators - %TIME%>>log.log
+cls
+goto extractLib
+
+:extractLib
+for %%I in ("lib.zip") do (
+  echo extractLib
+  echo extractLib - %TIME%>>log.log
+  "Requirements\7z.exe" x -y -o"Requirements\" "%%I" && del %%I
+cls
+goto LibCheck
+)
+::Liberator End
 
 
 
@@ -144,9 +214,8 @@ echo  (2) Game Menu
 echo  (3) Extra Language - Getting Manifests
 echo  (4) 4K Textures
 echo  (5) DirectX + VC Redist Downloader
-echo  (6) Download PLAZA's and Liberators
-echo  (7) Credits
-echo  (8) JOIN Throwback community!
+echo  (6) Credits
+echo  (7) JOIN Throwback community!
 echo  (0) Close
 echo --------------------------------------------------------------
 set /p option="Enter Selection:"
@@ -182,16 +251,11 @@ cls
 goto dxvcredist
 )
 if %option%==6 (
-echo PlazaCheck Choosed>>log.log
-cls
-goto PlazaCheck
-)
-if %option%==7 (
 echo Credit Choosed>>log.log
 cls
 goto Credit
 )
-if %option%==8 (
+if %option%==7 (
 echo Modding community Discord Opened>>log.log
 cls
 start http://r6modding.com/
@@ -206,11 +270,9 @@ goto mainmenu
  MODE 46,30
  echo # 0 - Back 
  echo -----------------------------------------
- echo  You want to Install Siege (1)
- echo  OR
- echo  You want to Uninstall Siege (2)
- echo  OR
- echo  You want to Start Siege (3)
+ echo (1) Install Siege
+ echo (2) Uninstall Siege
+ echo (3) Starting Siege
  echo -----------------------------------------
 set /p option="Enter Selection:"
 
@@ -240,7 +302,7 @@ goto mainmenu
 
 
 
-
+::just testing nothing use this:
 :Seasonsize
 Title Rainbow Six Siege Version Size
 MODE 46,30
@@ -268,7 +330,7 @@ MODE 46,30
 pause
 cls
 goto mainmenu
-
+::end
 
 
 :dxvcredist
@@ -1246,68 +1308,13 @@ echo Thanks SteamDB!
 echo Thanks Cheato for Liberators,and FAQ!
 echo Thanks Markster for Plaza's!
 echo And thank you for using it!
+echo Thanks Ancientkingg for Log idea,
+echo + Updated DotNet Checker 
 echo First Version: 2020 June 17
-echo Updated Version: 2020 Sept 7
+echo Updated Version: 2020 Sept TDB
 pause
 cls
 goto mainmenu
-
-::Plaza Start
-:GetPlaza
-cls
-MODE 78,20
-echo ------------------------------------------------------------------------------
-echo                        Downloading Plazas...
-echo ------------------------------------------------------------------------------
-curl -L  "https://cdn.discordapp.com/attachments/722089860755881996/743466352475635832/Plazas.zip" --output plazas.zip
-cls
-goto extractPlaza
-
-:extractPlaza
-for %%I in ("plazas.zip") do (
-  echo extractPlaza
-  "Requirements\7z.exe" x -y -o"Requirements\" "%%I" && del %%I
-cls
-goto PlazaCheck
-)
-
-:PlazaCheck
-cls
-if exist "Requirements\Plazas\PLAZA_BO\CODEX.ini" (
-  goto LibCheck 
-) else (
-  goto GetPlaza
-)
-::Plaza End
-
-::Liberator Start
-:GetLib
-cls
-MODE 78,20
-echo ------------------------------------------------------------------------------
-echo                        Downloading Liberators...
-echo ------------------------------------------------------------------------------
-curl -L  "http://download1650.mediafire.com/1a8rn7twsw4g/kzhc3j1g3gaxmqx/Liberators.zip" --output liberators.zip
-cls
-goto extractLib
-
-:extractLib
-for %%I in ("liberators.zip") do (
-  echo extractPlaza
-  "Requirements\7z.exe" x -y -o"Requirements\" "%%I" && del %%I
-cls
-goto PlazaCheck
-)
-
-:LibCheck
-cls
-if exist "Requirements\Liberators\R6_Liberator_0.0.0.22.exe" (
-  goto mainmenu 
-) else (
-  goto GetLib
-)
-::Liberator End
-
 
 
 :StartGame
