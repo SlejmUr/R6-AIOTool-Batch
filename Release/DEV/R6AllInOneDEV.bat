@@ -14,34 +14,46 @@ if exist "log.log" (
   ) else (
   echo You are using %AllInOneVersion% version>>log.log
   goto verifydotnet
-)
+  )
 
 
 ::Dotnet start
 :verifydotnet
-MODE 50,20
-reg query HKEY_LOCAL_MACHINE\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost /v Version /f  3.1.4>nul
+  MODE 50,20
+  reg query HKEY_LOCAL_MACHINE\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost /v Version /f  3.1.4>nul
 
-if errorlevel 1 (
-echo Oh no, you dont have dotnet OR updated dotnet "3.1.4" or above
-pause
-goto downloaddotnet
-) else (
-  goto 7zipcheck
+  if errorlevel 1 (
+  echo Oh no, registery editor not found dotnet
+  echo Oh no, registery editor not found dotnet - %TIME% >>log.log
+  goto checkertwo
+  ) else (
+  echo DotNet One checker is found the version
+  echo DotNet One reg query checker is found the version - %TIME% >>log.log
+  goto checkertwo
   )
 
-:downloaddotnet 
-MODE 40,10
-echo ---------------------------------------
-echo       Install .NET Runtime !!
-echo ---------------------------------------
-echo Install .NET Runtime - %TIME% >>log.log
-start www.tinyurl.com/dotnetr6
-pause
-echo      Press Space after install
-echo ---------------------------------------
-goto verifydotnet
+:dotnet
+  MODE 40,10
+  echo ---------------------------------------
+  echo       Install .NET Runtime !!
+  echo ---------------------------------------
+  echo Install .NET Runtime - %TIME% >>log.log
+  start https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.402-windows-x64-installer
+  pause
+  echo      Press Space after install
+  echo ---------------------------------------
+  goto verifydotnet
+
+:checkertwo
+  if exist "C:\Program Files\dotnet\dotnet.exe" (
+  echo DotNet Two checker is found the version
+  echo DotNet Two exist checker is found the version - %TIME% >>log.log
+  goto 7zipcheck
+  ) else (
+  goto dotnet
+  )
 ::dotnet end
+
 
 ::7zip start
 :7zipcheck
@@ -69,6 +81,7 @@ cls
 move 7z.exe Requirements
 goto 7zipcheck
 ::7zip end
+
 
 ::DD start
 :DepotCheck
@@ -103,16 +116,16 @@ goto DepotCheck
 
 ::installer start
 :chechinstallbat
-  MODE 60,20
+  MODE 60,10
   cls
   if exist "Requirements\Install.bat" (
-  echo Install.bat Founded
-  echo If you are using old version please update new version
+  echo                     Install.bat Founded
+  echo  If you are using old version please update new version
+  echo  Please run Requirements\Install.bat for update version
   pause
   goto PlazaCheck
   ) else (
   echo Install.bat Not Founded
-  pause
   goto installbat
   )
 
@@ -125,11 +138,9 @@ goto DepotCheck
   curl -L  "https://github.com/SlejmUr/OldR6S/raw/master/Installer/Install.bat" --output Install.bat
   echo Download Install.bat - %TIME%>>log.log
   move Install.bat Requirements
-  echo Please run Requirements\Install.bat 
   goto chechinstallbat
   )
 ::installer end
-
 
 
 ::Plaza Start
@@ -162,6 +173,7 @@ goto PlazaCheck
 )
 ::Plaza End
 
+
 ::Liberator Start
 :LibCheck
 cls
@@ -193,13 +205,12 @@ goto LibCheck
 ::Liberator End
 
 
-
-
+::MainMenu START
 :mainmenu
 cls
 Title R6S Version AllInOne Downloader
 MODE 62,20
-echo mainmenu loaded>>log.log
+echo MainMenu loaded>>log.log
 echo --------------------------------------------------------------
 echo  Rainbow Six Siege Old Version Downloader
 echo  You MUST have a copy of Siege on Steam to use the downloader.
@@ -210,12 +221,13 @@ echo  Read FAQ!
 echo --------------------------------------------------------------
 echo  What would you like to select?
 echo  (1) FAQ and Notes
-echo  (2) Game Menu
-echo  (3) Extra Language - Getting Manifests
-echo  (4) 4K Textures
-echo  (5) DirectX + VC Redist Downloader
+echo  (2) Game Menu 
+echo  (3) Extra Language - Getting Manifests 
+echo  (4) 4K Textures 
+echo  (5) DirectX + VC Redist Downloader 
 echo  (6) Credits
 echo  (7) JOIN Throwback community!
+echo  (8) BattlEye Checker
 echo  (0) Close
 echo --------------------------------------------------------------
 set /p option="Enter Selection:"
@@ -262,140 +274,17 @@ start http://r6modding.com/
 pause
 goto mainmenu
 )
-
-
-:GameMenu
- Title Rainbow Six Siege GameMenu
-  echo GameMenu loaded>>log.log
- MODE 46,30
- echo # 0 - Back 
- echo -----------------------------------------
- echo (1) Install Siege
- echo (2) Uninstall Siege
- echo (3) Starting Siege
- echo -----------------------------------------
-set /p option="Enter Selection:"
-
-if %option%==0 (
-echo Back>>log.log
+if %option%==8 (
+echo BattlEyeChecker Choosed>>log.log
 cls
-goto mainmenu
-)
-if %option%==1 (
-echo DownloadMenu Choosed>>log.log
-cls
-goto DownloadMenu
-)
-if %option%==2 (
-echo UninstallMenu Choosed>>log.log
-cls
-goto UninstallMenu
-)
-if %option%==3 (
-echo StartGame Choosed>>log.log
-cls
-goto StartGame
+goto BattlEyeChecker
 )
 goto mainmenu
+::MainMenu END
 
 
 
-
-
-::just testing nothing use this:
-:Seasonsize
-Title Rainbow Six Siege Version Size
-MODE 46,30
-  echo ---------------------------------------
-  echo          [Y1S0_Vanilla] 14,2 GB ✔
-  echo          [Y1S1_Black_Ice] 16,7 GB ✔
-  echo          [Y1S2_Dust_Line] 20,9 GB ✔
-  echo          [Y1S3_Skull_Rain] 25.1 GB (✔
-  echo          [Y1S4_Red_Crow] 28,5 GB
-  echo          [Y2S1_Velvet_Shell] 33,2 GB 
-  echo          [Y2S2_Health] 34 GB (✔
-  echo          [Y2S3_Blood_Orchid] 34,3 GB
-  echo          [Y2S4_White_Noise] 48,7 GB 
-  echo          [Y3S1_Chimera] 58,8 GB
-  echo          [Y3S2_Para_Bellum] 60.6 GB ✔
-  echo          [Y3S3_Grim_Sky] 72.6 GB
-  echo          [Y4S1_Burnt_Horizon] 82.7 GB
-  echo          [Y4S2_Phantom_Sight] 64.9 GB
-  echo          [Y4S3_Ember_Rise] 69.6 GB
-  echo          [Y3S4_Wind_Bastion] 76.9 GB
-  echo          [Y4S4_Shifting_Tides] 75,2 GB ✔
-  echo          [Y5S1_Void_Edge] 74,3 GB ✔
-  echo          [Y5S2_Steel_Wave] 81,3 GB
-  echo ---------------------------------------
-pause
-cls
-goto mainmenu
-::end
-
-
-:dxvcredist
-Title DirectX + VC Redist Downloader
-MODE 40,10
-echo  What would you like to select?
-echo - 0 : Back
-echo - 1 : DirectX
-echo - 10 : VC 2010 Redist	
-echo - 12 : VC 2012 Redist	
-echo - 15 : VC 2015 Redist	
-echo - 17 : VC 2017 Redist
-set /p downdxvc="Enter Selection:"
-if %downdxvc%==0 (
-cls
-goto mainmenu
-)
-MODE 100,40
-set /p username="Enter Steam Username:"
-
-
-if %downdxvc%==1 (
-dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228990 -manifest 1829726630299308803 -username %username% -remember-password -dir "dxvcredist\DirectX" -validate -max-servers 15 -max-downloads 10
-pause
-cls
-echo Download complete!
-echo It's DirectX!
-goto mainmenu
-)
-if %downdxvc%==10 (
-dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228983 -manifest 8124929965194586177 -username %username% -remember-password -dir "dxvcredist\VC_2010_Redist" -validate -max-servers 15 -max-downloads 10
-pause
-cls
-echo Download complete!
-echo It's VC 2010 Redist!
-goto mainmenu
-)
-if %downdxvc%==12 (
-dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228984 -manifest 2547553897526095397 -username %username% -remember-password -dir "dxvcredist\VC_2012_Redist" -validate -max-servers 15 -max-downloads 10
-pause
-cls
-echo Download complete!
-echo It's VC 2012 Redist!
-goto mainmenu
-)
-if %downdxvc%==15 (
-dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228986 -manifest 8782296191957114623 -username %username% -remember-password -dir "dxvcredist\VC_2015_Redist" -validate -max-servers 15 -max-downloads 10
-pause
-cls
-echo Download complete!
-echo It's VC 2015 Redist!
-goto mainmenu
-)
-if %downdxvc%==17 (
-dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228987 -manifest 4302102680580581867 -username %username% -remember-password -dir "dxvcredist\VC_2017_Redist" -validate -max-servers 15 -max-downloads 10
-pause
-cls
-echo Download complete!
-echo It's VC 2017 Redist!
-goto mainmenu
-)
-goto dxvcredist
-
-
-
+::FAQ and notes START
 :faq
 Title FAQ
 MODE 120,45
@@ -455,7 +344,48 @@ echo  If you have a problem this tool, DM me on Discord! SlejmUr#4007
 pause
 cls
 goto mainmenu
+::FAQ and notes END
 
+
+::GameMenu START
+:GameMenu
+ Title Rainbow Six Siege GameMenu
+  echo GameMenu loaded>>log.log
+ MODE 46,30
+ echo # 0 - Back 
+ echo -----------------------------------------
+ echo (1) Install Siege
+ echo (2) Uninstall Siege
+ echo (3) Starting Siege
+ echo -----------------------------------------
+set /p option="Enter Selection:"
+
+if %option%==0 (
+echo Back>>log.log
+cls
+goto mainmenu
+)
+if %option%==1 (
+echo DownloadMenu Choosed>>log.log
+cls
+goto DownloadMenu
+)
+if %option%==2 (
+echo UninstallMenu Choosed>>log.log
+cls
+goto UninstallMenu
+)
+if %option%==3 (
+echo StartGame Choosed>>log.log
+cls
+goto StartGame
+)
+goto mainmenu
+::GameMenu END
+
+
+
+::DownloadMenu START
 :DownloadMenu
 cls
 Title Rainbow Six Siege Version Downloader
@@ -815,8 +745,11 @@ echo It's Placeholder
 goto mainmenu
 )
 goto DownloadMenu
+::DownloadMenu END
 
 
+
+::TextureMenu START
 :TextureMenu
  cls
  Title Rainbow Six Siege 4K Textures Downloader
@@ -1099,8 +1032,10 @@ goto DownloadMenu
  goto mainmenu
  )
 goto TextureMenu
+::TextureMenu END
 
 
+::EventMenu START
 :EventMenu
  cls
  Title Rainbow Six Siege Event Downloader
@@ -1185,25 +1120,41 @@ goto TextureMenu
   goto mainmenu
   )
 goto EventMenu
+::EventMenu END
 
 
+::Extra START
 :Extra
 	cls
 	Title Rainbow Six Siege Extra Downloader
 	MODE 50,35
 	echo Extra Language Downloader
 	echo What would you like to select?
+  echo EVENT LANG NOT SUPPORTED!
 	echo --------------------------------------------------
 	echo # 0 - Back
 	echo --------------------------------------------------
-	echo # 1 - German Language
+  echo # 1 - English Language X
+  echo # 2 - French Language X
+  echo # 3 - Italian Language X
+  echo # 4 - German Language -Getting manifests
+  echo # 5 - Spanish - Spain Language X
+  echo # 6 - Portuguese - Brazil Language X
+  echo # 7 - Polish Language X
+  echo # 8 - Dutch Language X 
+  echo # 9 - Czech Language X
+  echo # 10 - Koreana Language X
+  echo # 11 - Traditional Chinese Language X
+  echo # 12 - Simplified Chinese Language X
+  echo # 13 - Japanese Language X
+  echo # 14 - Russian Language X
 	echo --------------------------------------------------	
 	set /p version="Enter Selection:"
 	if %version%==0 (
 	cls
 	goto mainmenu
 	)
-	if %version%==1 (
+	if %version%==4 (
 	cls
 	goto German
 	)
@@ -1219,20 +1170,7 @@ goto EventMenu
 	echo # 0 - Back
 	echo --------------------------------------------------
 	echo # 1 - German Lang on Vanilla
-  ::English
-  ::French
-  ::Italian
-  ::German
-  ::Spanish - Spain
-  ::Portuguese - Brazil
-  ::Polish
-  ::Dutch
-  ::Czech
-  ::Koreana
-  ::Traditional Chinese
-  ::Simplified Chinese
-  ::Japanese
-  ::Russian
+
 	echo --------------------------------------------------
 	set /p version="Enter Selection:"
 	if %version%==0 (
@@ -1279,44 +1217,11 @@ goto EventMenu
 :: 377236  Depot Russian
 
 
+::Extra END
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-::© 2020 SlejmUr
-:Credit
-Title CREDIT
-MODE 45,15
-echo I would like to thank everyone who helped this project getting developed:
-echo Thanks Shey to I get some manifest!
-echo Thanks Zer0Byte the first version of MenuV!
-echo Thanks DepotDownloader creators!
-echo Thanks SublimeText creators!
-echo Thanks SteamDB!
-echo Thanks Cheato for Liberators,and FAQ!
-echo Thanks Markster for Plaza's!
-echo And thank you for using it!
-echo Thanks Ancientkingg for Log idea,
-echo + Updated DotNet Checker 
-echo First Version: 2020 June 17
-echo Updated Version: 2020 Sept TDB
-pause
-cls
-goto mainmenu
-
-
+::StartGame START
 :StartGame
 cls
 Title Rainbow Six Siege Game Starter
@@ -1679,10 +1584,147 @@ if %startgame%==0022 (
 )
 ::End Liberator
 goto StartGame
+::StartGame END
+
+
+::dxvcredist START
+:dxvcredist
+Title DirectX + VC Redist Downloader
+MODE 40,10
+echo  What would you like to select?
+echo - 0 : Back
+echo - 1 : DirectX
+echo - 10 : VC 2010 Redist  
+echo - 12 : VC 2012 Redist  
+echo - 15 : VC 2015 Redist  
+echo - 17 : VC 2017 Redist
+set /p downdxvc="Enter Selection:"
+if %downdxvc%==0 (
+cls
+goto mainmenu
+)
+MODE 100,40
+set /p username="Enter Steam Username:"
+
+
+if %downdxvc%==1 (
+dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228990 -manifest 1829726630299308803 -username %username% -remember-password -dir "dxvcredist\DirectX" -validate -max-servers 15 -max-downloads 10
+pause
+cls
+echo Download complete!
+echo It's DirectX!
+goto mainmenu
+)
+if %downdxvc%==10 (
+dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228983 -manifest 8124929965194586177 -username %username% -remember-password -dir "dxvcredist\VC_2010_Redist" -validate -max-servers 15 -max-downloads 10
+pause
+cls
+echo Download complete!
+echo It's VC 2010 Redist!
+goto mainmenu
+)
+if %downdxvc%==12 (
+dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228984 -manifest 2547553897526095397 -username %username% -remember-password -dir "dxvcredist\VC_2012_Redist" -validate -max-servers 15 -max-downloads 10
+pause
+cls
+echo Download complete!
+echo It's VC 2012 Redist!
+goto mainmenu
+)
+if %downdxvc%==15 (
+dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228986 -manifest 8782296191957114623 -username %username% -remember-password -dir "dxvcredist\VC_2015_Redist" -validate -max-servers 15 -max-downloads 10
+pause
+cls
+echo Download complete!
+echo It's VC 2015 Redist!
+goto mainmenu
+)
+if %downdxvc%==17 (
+dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228987 -manifest 4302102680580581867 -username %username% -remember-password -dir "dxvcredist\VC_2017_Redist" -validate -max-servers 15 -max-downloads 10
+pause
+cls
+echo Download complete!
+echo It's VC 2017 Redist!
+goto mainmenu
+)
+goto dxvcredist
+::dxvcredist END
 
 
 
+::CREDIT START
+::© 2020 SlejmUr
+:Credit
+  Title CREDIT
+  MODE 75,20
+  echo I would like to thank everyone who helped this project getting developed:
+  echo Thanks Shey to I get some manifest!
+  echo Thanks Zer0Byte the first version of MenuV!
+  echo Thanks DepotDownloader creators!
+  echo Thanks SublimeText creators!
+  echo Thanks SteamDB!
+  echo Thanks Cheato for Liberators,and FAQ!
+  echo Thanks Markster for Plaza's!
+  echo And thank you for using it!
+  echo Thanks Ancientkingg for Log idea, DotNet Checker Second Version
+  echo First Version: 2020 June 17
+  echo Updated Version: 2020 Sept TDB
+  pause
+  cls
+  goto mainmenu
+::CREDIT END
 
 
+::BattlEyeChecker START
+:BattlEyeChecker
+MODE 36,8
+set EXE=RainbowSix_BE.exe
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto FOUND
+echo ------------------------------------
+echo [-] BattleEye is Not running
+echo [-] BattleEye is Not running  - %TIME% >>log.log
+echo ------------------------------------
+goto FIN
+:FOUND
+echo ------------------------------------
+echo [+] BattleEye is running
+echo [+] BattleEye is running  - %TIME% >>log.log
+echo ------------------------------------
+:FIN
+pause
+goto mainmenu
+::BattlEyeChecker END
+
+
+
+::just testing nothing use this:
+:Seasonsize
+  Title Rainbow Six Siege Version Size
+  MODE 46,30
+  echo ---------------------------------------
+  echo          [Y1S0_Vanilla] 14,2 GB ✔
+  echo          [Y1S1_Black_Ice] 16,7 GB ✔
+  echo          [Y1S2_Dust_Line] 20,9 GB ✔
+  echo          [Y1S3_Skull_Rain] 25.1 GB (✔
+  echo          [Y1S4_Red_Crow] 28,5 GB
+  echo          [Y2S1_Velvet_Shell] 33,2 GB 
+  echo          [Y2S2_Health] 34 GB (✔
+  echo          [Y2S3_Blood_Orchid] 34,3 GB
+  echo          [Y2S4_White_Noise] 48,7 GB 
+  echo          [Y3S1_Chimera] 58,8 GB
+  echo          [Y3S2_Para_Bellum] 60.6 GB ✔
+  echo          [Y3S3_Grim_Sky] 72.6 GB
+  echo          [Y4S1_Burnt_Horizon] 82.7 GB
+  echo          [Y4S2_Phantom_Sight] 64.9 GB
+  echo          [Y4S3_Ember_Rise] 69.6 GB
+  echo          [Y3S4_Wind_Bastion] 76.9 GB
+  echo          [Y4S4_Shifting_Tides] 75,2 GB ✔
+  echo          [Y5S1_Void_Edge] 74,3 GB ✔
+  echo          [Y5S2_Steel_Wave] 81,3 GB
+  echo ---------------------------------------
+  pause
+  cls
+  goto mainmenu
+::end
 
 exit
