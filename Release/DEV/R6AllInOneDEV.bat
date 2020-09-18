@@ -209,7 +209,7 @@ goto LibCheck
 :mainmenu
 cls
 Title R6S Version AllInOne Downloader
-MODE 62,20
+MODE 62,22
 echo MainMenu loaded>>log.log
 echo --------------------------------------------------------------
 echo  Rainbow Six Siege Old Version Downloader
@@ -228,6 +228,7 @@ echo  (5) DirectX + VC Redist Downloader
 echo  (6) Credits
 echo  (7) JOIN Throwback community!
 echo  (8) BattlEye Checker
+echo  (9) Open LOG!
 echo  (0) Close
 echo --------------------------------------------------------------
 set /p option="Enter Selection:"
@@ -278,6 +279,13 @@ if %option%==8 (
 echo BattlEyeChecker Choosed>>log.log
 cls
 goto BattlEyeChecker
+)
+if %option%==9 (
+echo Open LOG>>log.log
+cls
+start log.log
+pause
+goto mainmenu
 )
 goto mainmenu
 ::MainMenu END
@@ -350,7 +358,7 @@ goto mainmenu
 ::GameMenu START
 :GameMenu
  Title Rainbow Six Siege GameMenu
-  echo GameMenu loaded>>log.log
+ echo GameMenu loaded>>log.log
  MODE 46,30
  echo # 0 - Back 
  echo -----------------------------------------
@@ -380,15 +388,16 @@ echo StartGame Choosed>>log.log
 cls
 goto StartGame
 )
-goto mainmenu
+goto GameMenu
 ::GameMenu END
+
 
 
 
 ::DownloadMenu START
 :DownloadMenu
 cls
-Title Rainbow Six Siege Version Downloader
+Title Rainbow Six Siege DownloadMenu
 MODE 50,40
 echo 		Version Downloader
 echo 	What would you like to select?
@@ -400,7 +409,7 @@ echo # 00 = Specific Manifest
 echo # 1 = Vanilla 1.0 (Y1S0) [14.2 GB]
 echo # 2 = Black Ice (Y1S1_release) [16.7 GB]
 echo # 3 = Dust Line (Y1S2_release) [20.9 GB]
-echo # 4 = Skull Rain (Y1S3_release)
+echo # 4 = Skull Rain (Y1S3_release) [24.6 GB]
 echo # 41 = Skull Rain (Shey Manifest) 
 echo # 5 = Red Crow (Y1S4_release)
 echo # 6 = Velvet Shell (Y2S1_release)
@@ -414,7 +423,7 @@ echo # 10 = Chimera [(Y3S1_release)]
 echo # 11 = Para Bellum (Y3S2_release) [60.6 GB]
 echo # 12 = Grim Sky (Y3S3_release)
 echo # 121= Grim Sky (Shey Manifest)
-echo # 13 = Wind Bastion (Y3S4_release)
+echo # 13 = Wind Bastion (Y3S4_release) [76.9 GB]
 echo # 14 = Burnt Horizon (Y3S1_release)
 echo # 141= Burnt Horizon (Shey Manifest)
 echo # 15 = Phantom Sight (Y4S2_release)
@@ -462,9 +471,9 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 3893422760579204530 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
 pause
 cls
-echo Vanilla Choosed>>log.log
+echo Vanilla Choosed (v8194013)>>log.log
 echo Download complete!
-echo It's Vanilla!
+echo It's Vanilla! (v8194013)
 goto mainmenu
 )
 ::BLACK ICE Released
@@ -473,8 +482,9 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7932785808040895147 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo BLACK ICE (v11726982) Choosed>>log.log
 echo Download complete!
-echo It's BLACK ICE Released!
+echo It's BLACK ICE Released! [IDK how but (v11726982)]
 goto mainmenu
 )
 ::DUST LINE Released
@@ -483,8 +493,9 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2206497318678061176 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo DUST LINE (v9132097) Choosed>>log.log
 echo Download complete!
-echo It's DUST LINE Released!
+echo It's DUST LINE Released! (v9132097)
 goto mainmenu
 )
 ::SKULL Rain Released
@@ -493,8 +504,9 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6528040263176897081 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo SKULL Rain (v9654076) Choosed>>log.log
 echo Download complete!
-echo It's SKULL Rain Released!
+echo It's SKULL Rain Released! (v9654076)
 goto mainmenu
 )
 ::Skull Rain 4.2
@@ -503,7 +515,9 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5851804596427790505 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
 pause
 cls
-echo Download complete!
+echo Skull Rain 4.2 (v9860556) Choosed>>log.log
+echo Download complete!  Thanks Shey!
+echo ? (v9860556)
 goto mainmenu
 )
 ::RED CROW Released
@@ -512,6 +526,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8569920171217002292 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo RED CROW Choosed>>log.log
 echo Download complete!
 echo It's RED CROW Released!
 goto mainmenu
@@ -522,6 +537,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8006071763917433748 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo VELVET SHELL Choosed>>log.log
 echo Download complete!
 echo It's VELVET SHELL Released
 goto mainmenu
@@ -532,6 +548,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2332919753188284154 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo Health Choosed>>log.log
 echo Download complete!
 echo It's Health Released!
 goto mainmenu
@@ -542,6 +559,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 708773000306432190 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo Health (Shey) Choosed>>log.log
 echo Download complete! Thanks Shey!
 goto mainmenu
 )
@@ -551,6 +569,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2410147212125863824 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo BLOOD ORCHID Choosed>>log.log
 echo Download complete!
 echo It's BLOOD ORCHID Released!
 goto mainmenu
@@ -561,6 +580,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1613631671988840841 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo Blood Orchid 2.3.1.1 Choosed>>log.log
 echo Download complete! Thanks Shey!
 goto mainmenu
 )
@@ -570,6 +590,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2783803489764777627 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo WHITE NOISE Choosed>>log.log
 echo Download complete!
 echo It's WHITE NOISE  Released!
 goto mainmenu
@@ -580,6 +601,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4221297486420648079 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo WHITE NOISE (Shey) Choosed>>log.log
 echo Download complete! Thanks Shey!
 goto mainmenu
 )
@@ -589,6 +611,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo CHIMERA Choosed>>log.log
 echo Download complete!
 echo It's CHIMERA  Released
 goto mainmenu
@@ -599,6 +622,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8765715607275074515 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo PARA BELLUM Choosed>>log.log
 echo Download complete!
 echo It's PARA BELLUM Released!
 goto mainmenu
@@ -609,6 +633,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4133951394045241747 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo GRIM SKY Choosed>>log.log
 echo Download complete!
 echo It's GRIM SKY Released!
 goto mainmenu
@@ -619,6 +644,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7781202564071310413 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo GRIM SKY (Shey) Choosed>>log.log
 echo Download complete! Thanks Shey!
 goto mainmenu
 )
@@ -628,8 +654,9 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7659555540733025386 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo WIND BASTION (v12512571) Choosed>>log.log
 echo Download complete!
-echo It's WIND BASTION Released!
+echo It's WIND BASTION Released! (v12512571)
 goto mainmenu
 )
 ::BURNT HORIZON Released
@@ -638,6 +665,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4355229858723790756 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo BURNT HORIZON Choosed>>log.log
 echo Download complete!
 echo It's BURNT HORIZON Released!
 goto mainmenu
@@ -647,6 +675,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo BURNT HORIZON (Shey) Choosed>>log.log
 echo Download complete! Thanks Shey!
 goto mainmenu
 )
@@ -656,6 +685,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5408324128694463720 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo PHANTOM SIGHT Choosed>>log.log
 echo Download complete!
 echo It's PHANTOM SIGHT Released!
 goto mainmenu
@@ -666,6 +696,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5429930338066808153 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo EMBER RISE Choosed>>log.log
 echo Download complete!
 echo It's EMBER RISE Released!
 goto mainmenu
@@ -675,6 +706,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo EMBER RISE (Shey) Choosed>>log.log
 echo Download complete! Thanks Shey!
 goto mainmenu
 )
@@ -684,6 +716,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
 pause
 cls
+echo SHIFTING TIDES Choosed>>log.log
 echo Download complete!
 echo It's SHIFTING TIDES Released!
 goto mainmenu
@@ -694,6 +727,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2810676266503656332 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo VOID EDGE Choosed>>log.log
 echo Download complete!
 echo It's VOID EDGE Released!
 goto mainmenu
@@ -703,6 +737,7 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6296533808765702678 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo VOID EDGE (Shey) Choosed>>log.log
 echo Download complete! Thanks Shey!
 goto mainmenu
 )
@@ -712,8 +747,9 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8083217055977195199 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo STEEL WAVE Choosed>>log.log
 echo Download complete!
-echo It's STEEL WAVE
+echo It's STEEL WAVE Released!
 goto mainmenu
 )
 ::SteelWave
@@ -722,17 +758,19 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo STEEL WAVE (Shey) Choosed>>log.log
 echo Download complete! Thanks Shey!
-echo It's Steel Wave -last updated- Version!
 goto mainmenu
 )
+::Shadow Legacy
 if %version%==20 (
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 885453180592640750 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7750070106878890861 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo Shadow Legacy Choosed>>log.log
 echo Download complete!
-echo It's Shadow Legacy Version!
+echo It's Shadow Legacy Released!
 goto mainmenu
 )
 if %version%==21 (
@@ -740,12 +778,330 @@ dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 37723
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
 pause
 cls
+echo Placeholder Choosed>>log.log
 echo Download complete!
 echo It's Placeholder
 goto mainmenu
 )
 goto DownloadMenu
 ::DownloadMenu END
+
+
+
+::UninstallMenu START
+:UninstallMenu
+ Title Rainbow Six Siege UninstallMenu
+ echo UninstallMenu loaded>>log.log
+ MODE 50,50
+ echo                  Version Uninstaller
+ echo           What would you like to select?
+ echo --------------------------------------------------
+ echo # 0 - Back
+ echo --------------------------------------------------
+ echo # 1 = Vanilla 1.0 (Y1S0)
+ echo # 2 = Black Ice (Y1S1_release)
+ echo # 3 = Dust Line (Y1S2_release)
+ echo # 4 = Skull Rain (Y1S3_release)
+ echo # 41 = Skull Rain (Shey Manifest) 
+ echo # 5 = Red Crow (Y1S4_release)
+ echo # 6 = Velvet Shell (Y2S1_release)
+ echo # 7 = Health (Y2S2_release)
+ echo # 71 = Health (Shey Manifest)
+ echo # 8 = Blood Orchid (Y2S3_release)
+ echo # 81 = Blood Orchid (Shey Manifest)
+ echo # 9 = White Noise (Y2S4_release)
+ echo # 91 =  White Noise (Shey Manifest)
+ echo # 10 = Chimera [(Y3S1_release)]
+ echo # 11 = Para Bellum (Y3S2_release)
+ echo # 12 = Grim Sky (Y3S3_release)
+ echo # 120 = Mad House
+ echo # 121 = Grim Sky (Shey Manifest)
+ echo # 13 = Wind Bastion (Y3S4_release)
+ echo # 14 = Burnt Horizon (Y3S1_release)
+ echo # 140 = Rainbow is Magic
+ echo # 141= Burnt Horizon (Shey Manifest)
+ echo # 15 = Phantom Sight (Y4S2_release)
+ echo # 16 = Ember Rise (Y4S3_release)
+ echo # 161 = Ember Rise (Shey Manifest)
+ echo # 17 = Shifting Tides (Y4S4_release)
+ echo # 18 = Void Edge (Y5S1_release)
+ echo # 180 = The Grand Larceny / Golden Gun
+ echo # 181 = Void Edge (Shey Manifest)
+ echo # 19 = Steel Wave (Y5S2_release) 
+ echo # 190 = M.U.T.E Protocol
+ echo # 191 = Steel Wave (Shey Manifest)
+ echo # 20 = Shadow Legacy (Y5S3_release)
+ echo # 21 = Placeholder
+ echo --------------------------------------------------
+ set /p version="Enter Selection:"
+
+
+ if %version%==1 (
+ rd /s /q "Downloads\Y1S0_Vanilla"
+ timeout /t 4
+ cls
+ echo Vanilla Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==2 (
+ rd /s /q "Downloads\Y1S1_Black_Ice"
+ timeout /t 4
+ cls
+ echo Y1S1_Black_Ice Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==3 (
+ rd /s /q "Downloads\Y1S2_Dust_Line"
+ timeout /t 4
+ cls
+ echo Y1S2_Dust_Line Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==4 (
+ rd /s /q "Downloads\Y1S3_Skull_Rain"
+ timeout /t 4
+ cls
+ echo Y1S3_Skull_Rain Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==41 (
+ rd /s /q "Downloads\Y1S3_SkullRain"
+ timeout /t 4
+ cls
+ echo Y1S3_SkullRain Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==5 (
+ rd /s /q "Downloads\Y1S4_Red_Crow"
+ timeout /t 4
+ cls
+ echo Y1S4_Red_Crow Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==6 (
+ rd /s /q "Downloads\Y2S1_Velvet_Shell"
+ timeout /t 4
+ cls
+ echo Y2S1_Velvet_Shell Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==7 (
+ rd /s /q "Downloads\Y2S2_Health"
+ timeout /t 4
+ cls
+ echo Y2S2_Health Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==71 (
+ rd /s /q "Downloads\Y2S2_Health_2"
+ timeout /t 4
+ cls
+ echo Y2S2_Health_2 Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==8 (
+ rd /s /q "Downloads\Y2S3_Blood_Orchid"
+ timeout /t 4
+ cls
+ echo Y2S3_Blood_Orchid Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==81 (
+ rd /s /q "Downloads\Y2S3_BloodOrchid"
+ timeout /t 4
+ cls
+ echo Y2S3_BloodOrchid Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==9 (
+ rd /s /q "Downloads\Y2S4_White_Noise"
+ timeout /t 4
+ cls
+ echo Y2S4_White_Noise Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==91 (
+ rd /s /q "Downloads\Y2S4_WhiteNoise"
+ timeout /t 4
+ cls
+ echo Y2S4_WhiteNoise Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==10 (
+ rd /s /q "Downloads\Y3S1_Chimera"
+ timeout /t 4
+ cls
+ echo Y3S1_Chimera Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==11 (
+ rd /s /q "Downloads\Y3S2_Para_Bellum"
+ timeout /t 4
+ cls
+ echo Y3S2_Para_Bellum Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==12 (
+ rd /s /q "Downloads\Y3S3_Grim_Sky"
+ timeout /t 4
+ cls
+ echo Y3S3_Grim_Sky Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==120 (
+ rd /s /q "Downloads\Y3S3_MadHouse"
+ timeout /t 4
+ cls
+ echo Y3S3_MadHouse Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==121 (
+ rd /s /q "Downloads\Y3S3_GrimSky"
+ timeout /t 4
+ cls
+ echo Y3S3_GrimSky Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==13 (
+ rd /s /q "Downloads\Y3S4_Wind_Bastion"
+ timeout /t 4
+ cls
+ echo Y3S4_Wind_Bastion Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==14 (
+ rd /s /q "Downloads\Y4S1_Burnt_Horizon"
+ timeout /t 4
+ cls
+ echo Y4S1_Burnt_Horizon Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==140 (
+ rd /s /q "Downloads\Y4S1_RainbowIsMagic"
+ timeout /t 4
+ cls
+ echo Y4S1_RainbowIsMagic Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==141 (
+ rd /s /q "Downloads\Y4S1_BurntHorizon"
+ timeout /t 4
+ cls
+ echo Y4S1_BurntHorizon Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==15 (
+ rd /s /q "Downloads\Y4S2_Phantom_Sight"
+ timeout /t 4
+ cls
+ echo Y4S2_Phantom_Sight Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==16 (
+ rd /s /q "Downloads\Y4S3_Ember_Rise"
+ timeout /t 4
+ cls
+ echo Y4S3_Ember_Rise Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==17 (
+ rd /s /q "Downloads\Y4S4_Shifting_Tides"
+ timeout /t 4
+ cls
+ echo Y4S4_Shifting_Tides Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==18 (
+ rd /s /q "Downloads\Y5S1_Void_Edge"
+ timeout /t 4
+ cls
+ echo Y5S1_Void_Edge Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==190 (
+ rd /s /q "Downloads\Y5S1_TheGrandLarceny"
+ timeout /t 4
+ cls
+ echo Y5S1_TheGrandLarceny Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==181 (
+ rd /s /q "Downloads\Y5S1_VoidEdge"
+ timeout /t 4
+ cls
+ echo Y5S1_VoidEdge Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==19 (
+ rd /s /q "Downloads\Y5S2_Steel_Wave"
+ timeout /t 4
+ cls
+ echo Y5S2_Steel_Wave Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==191 (
+ rd /s /q "Downloads\Y5S2_MUTE"
+ timeout /t 4
+ cls
+ echo Y5S2_MUTE Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==190 (
+ rd /s /q "Downloads\Y5S2_SteelWave"
+ timeout /t 4
+ cls
+ echo Y5S2_SteelWave Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==20 (
+ rd /s /q "Downloads\Y5S3_Shadow_Legacy"
+ timeout /t 4
+ cls
+ echo Y5S3_Shadow_Legacy Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==21 (
+ rd /s /q "Downloads\Placeholder"
+ timeout /t 4
+ cls
+ echo Placeholder Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ goto GameMenu
+::UninstallMenu END
 
 
 
@@ -829,7 +1185,7 @@ goto DownloadMenu
  pause
  cls
  echo Download complete!
- echo It's Skull Rain 4K!
+ echo It's Skull Rain 4K! 
  goto mainmenu
  )
  if %version%==41 (
@@ -1020,7 +1376,7 @@ goto DownloadMenu
  pause
  cls
  echo Download complete!
- echo It's Shadow Legacy 4K
+ echo It's Shadow Legacy 4K!
  goto mainmenu
  )
  if %version%==21 (
@@ -1039,22 +1395,22 @@ goto TextureMenu
 :EventMenu
  cls
  Title Rainbow Six Siege Event Downloader
- MODE 50,35
+ MODE 52,25
  echo What would you like to select?
- echo --------------------------------------------------
+ echo ----------------------------------------------------
  echo # 0 - Back
- echo --------------------------------------------------
- echo # 11 = Chimera
+ echo ----------------------------------------------------
+ echo # 11 = Chimera (Same With normal Chimera)
  echo # 13 = Mad House
  echo # 15 = Rainbow is Magic
- echo # 18 = Road To S.I. 2020
+ echo # 18 = Road To S.I. 2020 (Same with normal Shifting)
  echo # 19 = The Grand Larceny / Golden Gun
  echo # 20 = M.U.T.E Protocol
- echo --------------------------------------------------
+ echo ----------------------------------------------------
  set /p version="Enter Selection:"
  if %version%==0 (
  cls
- goto mainmenu
+ goto DownloadMenu
  )
  MODE 100,40
  set /p username="Enter Steam Username:"
@@ -1066,7 +1422,7 @@ goto TextureMenu
   pause
   cls
   echo Download complete!
-  echo It's CHIMERA  Released
+  echo It's CHIMERA Released
   goto mainmenu
   )
   ::MadHouse EVENT
@@ -1137,7 +1493,7 @@ goto EventMenu
   echo # 1 - English Language X
   echo # 2 - French Language X
   echo # 3 - Italian Language X
-  echo # 4 - German Language -Getting manifests
+  echo # 4 - German Language -getting manifests-
   echo # 5 - Spanish - Spain Language X
   echo # 6 - Portuguese - Brazil Language X
   echo # 7 - Polish Language X
