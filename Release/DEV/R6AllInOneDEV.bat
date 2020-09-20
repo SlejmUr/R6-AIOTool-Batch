@@ -345,8 +345,9 @@ Title Notes
 MODE 110,20
 echo  Notes:
 echo  Not all Manifest support Liberator!
-echo  I'm not tested this manifests: White_Noise, Grim_Sky, Burnt_Horizon and ALL 4K Textures, and Language!
-echo  Planning to add Extra Language option!
+echo  I'm not tested this manifests: (ALL not have GB option) and ALL 4K Textures, and ALL Language!
+echo  If you want to join testing phase, DM me on Discord! SlejmUr#4007
+echo  Planning to add Extra Language option in Events!
 echo  If Cheato Update Liberator , I update this Tool!
 echo  If you have a problem this tool, DM me on Discord! SlejmUr#4007
 pause
@@ -359,13 +360,15 @@ goto mainmenu
 :GameMenu
  Title Rainbow Six Siege GameMenu
  echo GameMenu loaded>>log.log
- MODE 46,30
- echo # 0 - Back 
- echo -----------------------------------------
- echo (1) Install Siege
- echo (2) Uninstall Siege
- echo (3) Starting Siege
- echo -----------------------------------------
+ MODE 33,10
+ echo   Rainbow Six Siege Game Menu
+ echo ---------------------------------
+ echo  (0) Back 
+ echo ---------------------------------
+ echo  (1) Install Rainbow Six Siege
+ echo  (2) Uninstall Rainbow Six Siege
+ echo  (3) Starting Rainbow Six Siege
+ echo ---------------------------------
 set /p option="Enter Selection:"
 
 if %option%==0 (
@@ -1505,6 +1508,20 @@ goto EventMenu
   echo # 13 - Japanese Language X
   echo # 14 - Russian Language X
 	echo --------------------------------------------------
+:: 359552  Depot English
+:: 359553  Depot French 
+:: 359554  Depot Italian
+:: 359555  Depot German
+:: 359556  Depot Spanish 
+:: 359557  Depot Brasilian
+:: 359558  Depot Polish 
+:: 377230  Depot Dutch 
+:: 377231  Depot Czech
+:: 377232  Depot Korean  
+:: 377233  Depot TChinese  
+:: 377234  Depot SChinese 
+:: 377235  Depot Japanese
+:: 377236  Depot Russian
 	set /p version="Enter Selection:"
 	if %version%==0 (
 	cls
@@ -1515,7 +1532,11 @@ goto EventMenu
 	goto German
 	)
 	goto Extra
+::Extra END
 
+
+
+::German START
 :German
 	cls
 	Title Rainbow Six Siege German Lang Downloader
@@ -1585,7 +1606,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Dust Line
   goto mainmenu
   )
   if %version%==4 (
@@ -1593,7 +1614,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Skull Rain
   goto mainmenu
   )
   if %version%==41 (
@@ -1601,7 +1622,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Skull Rain (Shey)
   goto mainmenu
   )
   if %version%==5 (
@@ -1609,7 +1630,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Red Crow
   goto mainmenu
   )
   if %version%==6 (
@@ -1617,7 +1638,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Velvet Shell
   goto mainmenu
   )
   if %version%==7 (
@@ -1625,7 +1646,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Health
   goto mainmenu
   )
   if %version%==71 (
@@ -1633,7 +1654,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Health (Shey)
   goto mainmenu
   )
   if %version%==8 (
@@ -1641,7 +1662,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Blood Orchid
   goto mainmenu
   )
   if %version%==81 (
@@ -1649,7 +1670,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Blood Orchid (Shey)
   goto mainmenu
   )
   if %version%==9 (
@@ -1657,7 +1678,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on White Noise
   goto mainmenu
   )
   if %version%==91 (
@@ -1665,7 +1686,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on White Noise (Shey)
   goto mainmenu
   )
   if %version%==10 (
@@ -1673,7 +1694,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Chimera
   goto mainmenu
   )
   if %version%==11 (
@@ -1681,7 +1702,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Para Bellum
   goto mainmenu
   )
   if %version%==12 (
@@ -1689,7 +1710,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Grim Sky
   goto mainmenu
   )
   if %version%==121 (
@@ -1697,7 +1718,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Grim Sky (Shey)
   goto mainmenu
   )
   if %version%==13 (
@@ -1705,7 +1726,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Wind Bastion
   goto mainmenu
   )
   if %version%==14 (
@@ -1713,7 +1734,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Burnt Horizon
   goto mainmenu
   )
   if %version%==141 (
@@ -1721,7 +1742,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Burnt Horizon (Shey)
   goto mainmenu
   )
   if %version%==15 (
@@ -1729,7 +1750,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Phantom Sight 
   goto mainmenu
   )
   if %version%==16 (
@@ -1737,7 +1758,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Ember Rise 
   goto mainmenu
   )
   if %version%==161 (
@@ -1745,7 +1766,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Ember Rise (Shey)
   goto mainmenu
   )
   if %version%==17 (
@@ -1753,7 +1774,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Shifting Tides 
   goto mainmenu
   )
   if %version%==18 (
@@ -1761,7 +1782,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Void Edge 
   goto mainmenu
   )
   if %version%==181 (
@@ -1769,7 +1790,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Void Edge (Shey)
   goto mainmenu
   )
   if %version%==19 (
@@ -1777,7 +1798,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Steel Wave 
   goto mainmenu
   )
   if %version%==191 (
@@ -1785,7 +1806,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Steel Wave (Shey)
   goto mainmenu
   )
   if %version%==20 (
@@ -1793,7 +1814,7 @@ goto EventMenu
   pause
   cls
   echo Download complete!
-  echo It's German Lang on 
+  echo It's German Lang on Shadow Legacy
   goto mainmenu
   )
   if %version%==21 (
@@ -1805,34 +1826,7 @@ goto EventMenu
   goto mainmenu
   )
 	goto Extra
-
-
-
-
-
-
-
-
-
-
-
-:: 359552  Depot English
-:: 359553  Depot French 
-:: 359554  Depot Italian
-:: 359555  Depot German
-:: 359556  Depot Spanish 
-:: 359557  Depot Brasilian
-:: 359558  Depot Polish 
-:: 377230  Depot Dutch 
-:: 377231  Depot Czech
-:: 377232  Depot Korean  
-:: 377233  Depot TChinese  
-:: 377234  Depot SChinese 
-:: 377235  Depot Japanese
-:: 377236  Depot Russian
-
-
-::Extra END
+::German END
 
 
 
