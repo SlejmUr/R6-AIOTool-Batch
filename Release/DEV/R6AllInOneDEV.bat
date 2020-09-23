@@ -408,7 +408,6 @@ echo --------------------------------------------------
 echo # 0 - Back
 echo # 99 - Download Events
 echo --------------------------------------------------
-echo # 00 = Specific Manifest
 echo # 1 = Vanilla 1.0 (Y1S0) [14.2 GB]
 echo # 2 = Black Ice (Y1S1_release) [16.7 GB]
 echo # 3 = Dust Line (Y1S2_release) [20.9 GB]
@@ -454,20 +453,6 @@ MODE 100,40
 set /p username="Enter Steam Username:"
 
 
-if %version%==00 (
-echo Use Siege Depot or Manifest!
-echo If you doesn't know where the file go steamdb.info!
-set /p DepotID="Write DepotID here: "
-set /p ManifestID="Write ManifestID here: "
-
-dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot %DepotID% -manifest %ManifestID% -username %username% -remember-password -validate -max-servers 15 -max-downloads 10
-pause
-cls
-echo Specific Manifest Choosed>>log.log
-echo Download complete!
-echo It's Specific Manifest!
-goto mainmenu
-)
 ::Vanilla
 if %version%==1 (
 dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8358812283631269928 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
@@ -1493,22 +1478,20 @@ goto EventMenu
 	echo --------------------------------------------------
 	echo # 0 - Back
 	echo --------------------------------------------------
-  echo # 1 - English Language X
-  echo # 2 - French Language X
-  echo # 3 - Italian Language X
-  echo # 4 - German Language -getting manifests-
-  echo # 5 - Spanish - Spain Language X
-  echo # 6 - Portuguese - Brazil Language X
-  echo # 7 - Polish Language X
-  echo # 8 - Dutch Language X 
-  echo # 9 - Czech Language X
-  echo # 10 - Koreana Language X
-  echo # 11 - Traditional Chinese Language X
-  echo # 12 - Simplified Chinese Language X
-  echo # 13 - Japanese Language X
-  echo # 14 - Russian Language X
+  echo # 1 - French Language ~
+  echo # 2 - Italian Language ~
+  echo # 3 - German Language ✔
+  echo # 4 - Spanish - Spain Language ~
+  echo # 5 - Portuguese - Brazil Language X
+  echo # 6 - Polish Language X
+  echo # 7 - Dutch Language X 
+  echo # 8 - Czech Language X
+  echo # 9 - Koreana Language X
+  echo # 10 - Traditional Chinese Language X
+  echo # 11 - Simplified Chinese Language X
+  echo # 12 - Japanese Language X
+  echo # 13 - Russian Language X
 	echo --------------------------------------------------
-:: 359552  Depot English
 :: 359553  Depot French 
 :: 359554  Depot Italian
 :: 359555  Depot German
@@ -1527,12 +1510,16 @@ goto EventMenu
 	cls
 	goto mainmenu
 	)
-	if %version%==4 (
+	if %version%==3 (
 	cls
 	goto German
 	)
 	goto Extra
 ::Extra END
+
+
+
+
 
 
 
