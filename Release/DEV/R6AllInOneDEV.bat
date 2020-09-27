@@ -70,7 +70,7 @@ MODE 78,20
 echo ------------------------------------------------------------------------------
 echo                              Downloading 7-Zip...
 echo ------------------------------------------------------------------------------
-curl -L  "https://github.com/SlejmUr/OldR6S/raw/master/Requirements/7z.exe" --output 7z.exe
+curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/7z.exe" --output 7z.exe
 echo Download 7zip - %TIME%>>log.log
 cls
 goto move7
@@ -135,7 +135,7 @@ goto DepotCheck
   echo ------------------------------------------------------------------------------
   echo                              Downloading Install.bat...
   echo ------------------------------------------------------------------------------
-  curl -L  "https://github.com/SlejmUr/OldR6S/raw/master/Installer/Install.bat" --output Install.bat
+  curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Installer/Install.bat" --output Install.bat
   echo Download Install.bat - %TIME%>>log.log
   move Install.bat Requirements
   goto chechinstallbat
