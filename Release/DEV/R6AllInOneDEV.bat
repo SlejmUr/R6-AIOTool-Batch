@@ -1510,6 +1510,10 @@ goto EventMenu
 	cls
 	goto mainmenu
 	)
+  if %version%==1 (
+  cls
+  goto French
+  )
 	if %version%==3 (
 	cls
 	goto German
@@ -1519,7 +1523,300 @@ goto EventMenu
 
 
 
+::French START
+:French
+  cls
+  Title Rainbow Six Siege French Lang Downloader
+  MODE 50,38
+  echo           French Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - French Lang on Vanilla
+  echo # 2 - French Lang on Black Ice 
+  echo # 3 - French Lang on Dust Line 
+  echo # 4 - French Lang on Skull Rain 
+  echo # 41 - French Lang on Skull Rain (Shey) -Same-
+  echo # 5 - French Lang on Red Crow 
+  echo # 6 - French Lang on Velvet Shell 
+  echo # 7 - French Lang on Health 
+  echo # 71 - French Lang on Health (Shey) -Same-
+  echo # 8 - French Lang on Blood Orchid 
+  echo # 81 - French Lang on Blood Orchid (Shey) -Same-
+  echo # 9 - French Lang on White Noise 
+  echo # 91- French Lang on White Noise (Shey) -Same-
+  echo # 10 - French Lang on Chimera 
+  echo # 11 - French Lang on Para Bellum 
+  echo # 12 - French Lang on Grim Sky 
+  echo # 121 - French Lang on Grim Sky (Shey) -Same-
+  echo # 13 - French Lang on Wind Bastion
+  echo # 14 - French Lang on Burnt Horizon 
+  echo # 141 - French Lang on Burnt Horizon (Shey) -Same-
+  echo # 15 - French Lang on Phantom Sight 
+  echo # 16 - French Lang on Ember Rise 
+  echo # 161 - French Lang on Ember Rise (Shey) -Same-
+  echo # 17 - French Lang on Shifting Tides 
+  echo # 18 - French Lang on Void Edge 
+  echo # 181 - French Lang on Void Edge (Shey) -Same-
+  echo # 19 - French Lang on Steel Wave 
+  echo # 191 - French Lang on Steel Wave (Shey) -Same-
+  echo # 20 - French Lang on Shadow Legacy 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
 
+  ::LANG IS NOT DONE!
+
+
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 3953006809848583127 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7470955591961528063 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 781358903497748263 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1926652807113950777 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==41 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1926652807113950777 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Skull Rain (Shey)
+  goto mainmenu
+  )
+  if %version%==5 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7995072742170754868 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Red Crow
+  goto mainmenu
+  )
+  if %version%==6 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7391813408396935946 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Velvet Shell
+  goto mainmenu
+  )
+  if %version%==7 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4850286352511597480 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Health
+  goto mainmenu
+  )
+  if %version%==71 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4850286352511597480 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Health (Shey)
+  goto mainmenu
+  )
+  if %version%==8 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7173152983008794231 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Blood Orchid
+  goto mainmenu
+  )
+  if %version%==81 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7173152983008794231 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Blood Orchid (Shey)
+  goto mainmenu
+  )
+  if %version%==9 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1122657510721658234 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on White Noise
+  goto mainmenu
+  )
+  if %version%==91 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1122657510721658234 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on White Noise (Shey)
+  goto mainmenu
+  )
+  if %version%==10 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 365667853833643908 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Chimera
+  goto mainmenu
+  )
+  if %version%==11 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 436165049364805671 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Para Bellum
+  goto mainmenu
+  )
+  if %version%==12 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6254711869946987864 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Grim Sky
+  goto mainmenu
+  )
+  if %version%==121 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6254711869946987864 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Grim Sky (Shey)
+  goto mainmenu
+  )
+  if %version%==13 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6357970357791494519 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Wind Bastion
+  goto mainmenu
+  )
+  if %version%==14 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6166102473910342218 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Burnt Horizon
+  goto mainmenu
+  )
+  if %version%==141 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6166102473910342218 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Burnt Horizon (Shey)
+  goto mainmenu
+  )
+  if %version%==15 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 2945239480726569964 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Phantom Sight 
+  goto mainmenu
+  )
+  if %version%==16 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 5892684040914151033 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Ember Rise 
+  goto mainmenu
+  )
+  if %version%==161 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 5892684040914151033 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Ember Rise (Shey)
+  goto mainmenu
+  )
+  if %version%==17 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1771833119782386213 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Shifting Tides 
+  goto mainmenu
+  )
+  if %version%==18 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4220186838055347645 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Void Edge 
+  goto mainmenu
+  )
+  if %version%==181 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4220186838055347645 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Void Edge (Shey)
+  goto mainmenu
+  )
+  if %version%==19 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 9103781936104145156 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Steel Wave 
+  goto mainmenu
+  )
+  if %version%==191 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 9103781936104145156 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Steel Wave (Shey)
+  goto mainmenu
+  )
+  if %version%==20 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 615915835199657008 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Shadow Legacy
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's French Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::French END
 
 
 
@@ -1570,7 +1867,7 @@ goto EventMenu
 	goto Extra
 	)
 	MODE 100,40
-	::set /p username="Enter Steam Username:"
+	set /p username="Enter Steam Username:"
 
 	if %version%==1 (
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 3953006809848583127 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
