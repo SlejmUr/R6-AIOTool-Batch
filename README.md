@@ -1,4 +1,4 @@
-# R6-AIO
+# R6-AIOTool
 AIO tool for R6:S Throwback server
 
 (hun)
