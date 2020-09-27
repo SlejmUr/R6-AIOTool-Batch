@@ -45,7 +45,7 @@ MODE 78,20
 echo ------------------------------------------------------------------------------
 echo                              Downloading 7-Zip...
 echo ------------------------------------------------------------------------------
-curl -L  "https://github.com/SlejmUr/OldR6S/raw/master/Requirements/7z.exe" --output 7z.exe
+curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/7z.exe" --output 7z.exe
 cls
 goto move7
 cls
