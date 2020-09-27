@@ -1487,7 +1487,7 @@ goto EventMenu
   echo # 6 - Polish Language X
   echo # 7 - Dutch Language X 
   echo # 8 - Czech Language X
-  echo # 9 - Koreana Language X
+  echo # 9 - Korean Language X
   echo # 10 - Traditional Chinese Language X
   echo # 11 - Simplified Chinese Language X
   echo # 12 - Japanese Language X
@@ -1515,10 +1515,54 @@ goto EventMenu
   cls
   goto French
   )
+  if %version%==2 (
+  cls
+  goto Italian
+  )
 	if %version%==3 (
 	cls
 	goto German
 	)
+  if %version%==4 (
+  cls
+  goto Spanish
+  )
+  if %version%==5 (
+  cls
+  goto Brasilian
+  )
+  if %version%==6 (
+  cls
+  goto Polish
+  )
+  if %version%==7 (
+  cls
+  goto Dutch
+  )
+  if %version%==8 (
+  cls
+  goto Czech
+  )
+  if %version%==9 (
+  cls
+  goto Korean
+  )
+  if %version%==10 (
+  cls
+  goto TChinese
+  )
+  if %version%==11 (
+  cls
+  goto SChinese
+  )
+  if %version%==12 (
+  cls
+  goto Japanese
+  )
+  if %version%==13 (
+  cls
+  goto Russian
+  )
 	goto Extra
 ::Extra END
 
@@ -2116,6 +2160,7 @@ goto EventMenu
 :StartGame
 cls
 Title Rainbow Six Siege Game Starter
+echo StartGame Loaded>>log.log
 MODE 50,50
 echo --------------------------------------------------
 echo # 0 = Back
@@ -2149,7 +2194,9 @@ echo # 18 = Shifting Tides (Y4S4_release)
 echo # 19 = Void Edge (Y5S1_release)
 echo # 191 = Void Edge (Shey Manifest)
 echo # 20 = Steel Wave (Y5S2_release)
-echo # 201 = Latest R6 Version!
+echo # 201 = Steel Wave (Shey Manifest)
+echo # 21 = Shadow Legacy (Y5S3_release)
+echo # 22 = Placeholder
 echo --------------------------------------------------
 echo Start Event:
 echo # 1399 = Mad House
@@ -2200,7 +2247,7 @@ if %startgame%==4 (
 if %startgame%==5 (
 	if exist "Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe" (
 		echo Starting.....
-		Downloads\Y1S3_Skull_Rain\RainbowSix.exe /belaunch
+		Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe /belaunch
 		pause
 		)
 	goto DownloadMenu
@@ -2208,31 +2255,31 @@ if %startgame%==5 (
 if %startgame%==51 (
 	if exist "Downloads\Y1S3_SkullRain\RainbowSixGame.exe" (
 		echo Starting.....
-		Downloads\Y1S3_SkullRain\RainbowSix.exe /belaunch
+		Downloads\Y1S3_SkullRain\RainbowSixGame.exe /belaunch
 		pause
 		)
 	goto DownloadMenu
 )
 if %startgame%==6 (
-	if exist "Downloads\Y1S4_Red_Crow\RainbowSix.exe" (
+	if exist "Downloads\Y1S4_Red_Crow\RainbowSixGame.exe" (
 		echo Starting.....
-		Downloads\Y1S4_Red_Crow\RainbowSix.exe /belaunch
+		Downloads\Y1S4_Red_Crow\RainbowSixGame.exe /belaunch
 		pause
 		)
 	goto DownloadMenu
 )
 if %startgame%==7 (
-	if exist "Downloads\Y2S1_Velvet_Shell\RainbowSix.exe" (
+	if exist "Downloads\Y2S1_Velvet_Shell\RainbowSixGame.exe" (
 		echo Starting.....
-		Downloads\Y2S1_Velvet_Shell\RainbowSix.exe /belaunch
+		Downloads\Y2S1_Velvet_Shell\RainbowSixGame.exe /belaunch
 		pause
 		)
 	goto DownloadMenu
 )
 if %startgame%==8 (
-	if exist "Downloads\Y2S2_Health\RainbowSix.exe" (
+	if exist "Downloads\Y2S2_Health\RainbowSixGame.exe" (
 		echo Starting.....
-		Downloads\Y2S2_Health\RainbowSix.exe /belaunch
+		Downloads\Y2S2_Health\RainbowSixGame.exe /belaunch
 		pause
 		)
 	goto DownloadMenu
@@ -2389,12 +2436,28 @@ if %startgame%==20 (
 		)
 	goto DownloadMenu
 )
-if %startgame%==21 (
-  if exist "Downloads\LIVE\RainbowSix.exe" (
+if %startgame%==201 (
+  if exist "Downloads\Y5S2_SteelWave\RainbowSix.exe" (
     echo Starting.....
-    Downloads\LIVE\RainbowSix.exe /belaunch
+    Downloads\Y5S2_SteelWave\RainbowSix.exe /belaunch
     pause
     )
+  goto DownloadMenu
+)
+if %startgame%==21 (
+  if exist "Downloads\Y5S3_Shadow_Legacy\RainbowSix.exe" (
+    echo Starting.....
+    Downloads\Y5S3_Shadow_Legacy\RainbowSix.exe /belaunch
+    pause
+    )
+if %startgame%==22 (
+  if exist "Downloads\Placeholder\RainbowSix.exe" (
+    echo Starting.....
+    Downloads\Placeholder\RainbowSix.exe /belaunch
+    pause
+    )
+  goto DownloadMenu
+)
   goto DownloadMenu
 )
 ::End GameStarter
