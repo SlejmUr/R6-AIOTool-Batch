@@ -1903,7 +1903,7 @@ if %startgame%==4 (
 	goto DownloadMenu
 )
 if %startgame%==5 (
-	if exist "Downloads\Y1S3_Skull_Rain\RainbowSix.exe" (
+	if exist "Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe" (
 		echo Starting.....
 		Downloads\Y1S3_Skull_Rain\RainbowSix.exe /belaunch
 		pause
@@ -1911,7 +1911,7 @@ if %startgame%==5 (
 	goto DownloadMenu
 )
 if %startgame%==51 (
-	if exist "Downloads\Y1S3_SkullRain\RainbowSix.exe" (
+	if exist "Downloads\Y1S3_SkullRain\RainbowSixGame.exe" (
 		echo Starting.....
 		Downloads\Y1S3_SkullRain\RainbowSix.exe /belaunch
 		pause
