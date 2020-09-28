@@ -1469,11 +1469,12 @@ goto EventMenu
 ::EventMenu END
 
 
+
 ::Extra START
 :Extra
 	cls
 	Title Rainbow Six Siege Extra Downloader
-	MODE 50,35
+	MODE 50,25
 	echo               Extra Language Downloader
 	echo             What would you like to select?
   echo              EVENT LANG NOT SUPPORTED!
@@ -1483,7 +1484,7 @@ goto EventMenu
   echo # 1 - French Language 
   echo # 2 - Italian Language
   echo # 3 - German Language 
-  echo # 4 - Spanish - Spain Language ~
+  echo # 4 - Spanish - Spain Language
   echo # 5 - Portuguese - Brazil Language ~
   echo # 6 - Polish Language ~
   echo # 7 - Dutch Language ~ 
@@ -1494,8 +1495,6 @@ goto EventMenu
   echo # 12 - Japanese Language ~
   echo # 13 - Russian Language ~
 	echo --------------------------------------------------
-:: 359554  Depot Italian
-:: 359556  Depot Spanish 
 :: 359557  Depot Brasilian
 :: 359558  Depot Polish 
 :: 377230  Depot Dutch 
@@ -2155,7 +2154,6 @@ goto EventMenu
 
 
 
-
 ::German START
 :German
 	cls
@@ -2447,6 +2445,299 @@ goto EventMenu
   )
 	goto Extra
 ::German END
+
+
+::Spanish START
+:Spanish
+  cls
+  Title Rainbow Six Siege Spanish Lang Downloader
+  MODE 52,38
+  echo           Spanish Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - Spanish Lang on Vanilla
+  echo # 2 - Spanish Lang on Black Ice 
+  echo # 3 - Spanish Lang on Dust Line 
+  echo # 4 - Spanish Lang on Skull Rain 
+  echo # 41 - Spanish Lang on Skull Rain (Shey) -Same-
+  echo # 5 - Spanish Lang on Red Crow 
+  echo # 6 - Spanish Lang on Velvet Shell 
+  echo # 7 - Spanish Lang on Health 
+  echo # 71 - Spanish Lang on Health (Shey) -Same-
+  echo # 8 - Spanish Lang on Blood Orchid 
+  echo # 81 - Spanish Lang on Blood Orchid (Shey) -Same-
+  echo # 9 - Spanish Lang on White Noise 
+  echo # 91- Spanish Lang on White Noise (Shey) -Same-
+  echo # 10 - Spanish Lang on Chimera 
+  echo # 11 - Spanish Lang on Para Bellum 
+  echo # 12 - Spanish Lang on Grim Sky 
+  echo # 121 - Spanish Lang on Grim Sky (Shey) -Same-
+  echo # 13 - Spanish Lang on Wind Bastion
+  echo # 14 - Spanish Lang on Burnt Horizon 
+  echo # 141 - Spanish Lang on Burnt Horizon (Shey) -Same-
+  echo # 15 - Spanish Lang on Phantom Sight 
+  echo # 16 - Spanish Lang on Ember Rise 
+  echo # 161 - Spanish Lang on Ember Rise (Shey) -Same-
+  echo # 17 - Spanish Lang on Shifting Tides 
+  echo # 18 - Spanish Lang on Void Edge 
+  echo # 181 - Spanish Lang on Void Edge (Shey) -Same-
+  echo # 19 - Spanish Lang on Steel Wave 
+  echo # 191 - Spanish Lang on Steel Wave (Shey) -Same-
+  echo # 20 - Spanish Lang on Shadow Legacy 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 6248979332984503061 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 6534545487175120142 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8080893511664284255 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3102063947541599011 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==41 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3102063947541599011 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Skull Rain (Shey)
+  goto mainmenu
+  )
+  if %version%==5 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3745420316643316529 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Red Crow
+  goto mainmenu
+  )
+  if %version%==6 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 4034802727985013756 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Velvet Shell
+  goto mainmenu
+  )
+  if %version%==7 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7743695641492470240 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Health
+  goto mainmenu
+  )
+  if %version%==71 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7743695641492470240 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Health (Shey)
+  goto mainmenu
+  )
+  if %version%==8 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7768315116657553428 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Blood Orchid
+  goto mainmenu
+  )
+  if %version%==81 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7768315116657553428 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Blood Orchid (Shey)
+  goto mainmenu
+  )
+  if %version%==9 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7877024295509467816 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on White Noise
+  goto mainmenu
+  )
+  if %version%==91 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7877024295509467816 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on White Noise (Shey)
+  goto mainmenu
+  )
+  if %version%==10 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 723936785330189072 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Chimera
+  goto mainmenu
+  )
+  if %version%==11 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3396331896624899011 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Para Bellum
+  goto mainmenu
+  )
+  if %version%==12 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 2769168610408745300 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Grim Sky
+  goto mainmenu
+  )
+  if %version%==121 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 2769168610408745300 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Grim Sky (Shey)
+  goto mainmenu
+  )
+  if %version%==13 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 1310832078295252288 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Wind Bastion
+  goto mainmenu
+  )
+  if %version%==14 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8980928302668128431 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Burnt Horizon
+  goto mainmenu
+  )
+  if %version%==141 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8980928302668128431 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Burnt Horizon (Shey)
+  goto mainmenu
+  )
+  if %version%==15 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3119251800260595817 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Phantom Sight 
+  goto mainmenu
+  )
+  if %version%==16 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 4178602548762056641 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Ember Rise 
+  goto mainmenu
+  )
+  if %version%==161 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3299372491475509511 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Ember Rise (Shey)
+  goto mainmenu
+  )
+  if %version%==17 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 5607986007728468442 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Shifting Tides 
+  goto mainmenu
+  )
+  if %version%==18 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8280780297583800068 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Void Edge 
+  goto mainmenu
+  )
+  if %version%==181 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8280780297583800068 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Void Edge (Shey)
+  goto mainmenu
+  )
+  if %version%==19 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3323378213398656976 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Steel Wave 
+  goto mainmenu
+  )
+  if %version%==191 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3323378213398656976 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Steel Wave (Shey)
+  goto mainmenu
+  )
+  if %version%==20 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 2485600059396261361 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Shadow Legacy
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Spanish Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Spanish END
 
 
 
