@@ -1,7 +1,7 @@
 @echo off
 chcp 65001
-color 04
 ::hun char ^^
+color 04
 setlocal enableextensions enabledelayedexpansion
 set homepath=%cd%
 set AllInOneVersion=DEV
@@ -282,7 +282,7 @@ cls
 goto BattlEyeChecker
 )
 if %option%==9 (
-echo Open LOG>>log.log
+echo Open LOG - %TIME%>>log.log
 cls
 start log.log
 pause
@@ -337,6 +337,7 @@ echo  CODEX : Applied to play Old Siege Version
 echo  R6Downloader: Download R6 Old Version, it use DepotDownloader
 echo  DepotDownloader: Created by SteamRE, you can download any manifest once you have the game
 echo  R6Liberator: Created by Cheato, Applied to play Old Events
+echo  R6-AIOTool : AllInOne Tool, many function. Created by SlejmUr
 pause
 cls
 goto Notes
@@ -351,6 +352,7 @@ echo  If you want to join testing phase, DM me on Discord! SlejmUr#4007
 echo  Planning to add Extra Language option in Events!
 echo  If Cheato Update Liberator , I update this Tool!
 echo  If you have a problem this tool, DM me on Discord! SlejmUr#4007
+echo FAQ and Notes Readed!>>log.log
 pause
 cls
 goto mainmenu
@@ -1103,7 +1105,6 @@ goto DownloadMenu
  echo 	What would you like to select?
  echo --------------------------------------------------
  echo # 0 - Back
- echo # 99 - Download Events
  echo --------------------------------------------------
  echo # 1 = Vanilla 1.0 (Y1S0) [First Steam Version] 
  echo # 2 = Black Ice (Y1S1_release) 
@@ -1483,19 +1484,17 @@ goto EventMenu
   echo # 2 - Italian Language ~
   echo # 3 - German Language 
   echo # 4 - Spanish - Spain Language ~
-  echo # 5 - Portuguese - Brazil Language X
-  echo # 6 - Polish Language X
-  echo # 7 - Dutch Language X 
-  echo # 8 - Czech Language X
-  echo # 9 - Korean Language X
-  echo # 10 - Traditional Chinese Language X
-  echo # 11 - Simplified Chinese Language X
-  echo # 12 - Japanese Language X
-  echo # 13 - Russian Language X
+  echo # 5 - Portuguese - Brazil Language ~
+  echo # 6 - Polish Language ~
+  echo # 7 - Dutch Language ~ 
+  echo # 8 - Czech Language ~
+  echo # 9 - Korean Language ~
+  echo # 10 - Traditional Chinese Language ~
+  echo # 11 - Simplified Chinese Language ~
+  echo # 12 - Japanese Language ~
+  echo # 13 - Russian Language ~
 	echo --------------------------------------------------
-:: 359553  Depot French 
 :: 359554  Depot Italian
-:: 359555  Depot German
 :: 359556  Depot Spanish 
 :: 359557  Depot Brasilian
 :: 359558  Depot Polish 
