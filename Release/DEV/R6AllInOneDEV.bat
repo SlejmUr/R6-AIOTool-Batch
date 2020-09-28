@@ -1481,7 +1481,7 @@ goto EventMenu
 	echo # 0 - Back
 	echo --------------------------------------------------
   echo # 1 - French Language 
-  echo # 2 - Italian Language ~
+  echo # 2 - Italian Language
   echo # 3 - German Language 
   echo # 4 - Spanish - Spain Language ~
   echo # 5 - Portuguese - Brazil Language ~
@@ -1858,6 +1858,301 @@ goto EventMenu
   )
   goto Extra
 ::French END
+
+
+
+::Italian START
+:Italian
+  cls
+  Title Rainbow Six Siege Italian Lang Downloader
+  MODE 50,38
+  echo           Italian Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - Italian Lang on Vanilla
+  echo # 2 - Italian Lang on Black Ice 
+  echo # 3 - Italian Lang on Dust Line 
+  echo # 4 - Italian Lang on Skull Rain 
+  echo # 41 - Italian Lang on Skull Rain (Shey) -Same-
+  echo # 5 - Italian Lang on Red Crow 
+  echo # 6 - Italian Lang on Velvet Shell 
+  echo # 7 - Italian Lang on Health 
+  echo # 71 - Italian Lang on Health (Shey) -Same-
+  echo # 8 - Italian Lang on Blood Orchid 
+  echo # 81 - Italian Lang on Blood Orchid (Shey) -Same-
+  echo # 9 - Italian Lang on White Noise 
+  echo # 91- Italian Lang on White Noise (Shey) -Same-
+  echo # 10 - Italian Lang on Chimera 
+  echo # 11 - Italian Lang on Para Bellum 
+  echo # 12 - Italian Lang on Grim Sky 
+  echo # 121 - Italian Lang on Grim Sky (Shey) -Same-
+  echo # 13 - Italian Lang on Wind Bastion
+  echo # 14 - Italian Lang on Burnt Horizon 
+  echo # 141 - Italian Lang on Burnt Horizon (Shey) -Same-
+  echo # 15 - Italian Lang on Phantom Sight 
+  echo # 16 - Italian Lang on Ember Rise 
+  echo # 161 - Italian Lang on Ember Rise (Shey) -Same-
+  echo # 17 - Italian Lang on Shifting Tides 
+  echo # 18 - Italian Lang on Void Edge 
+  echo # 181 - Italian Lang on Void Edge (Shey) -Same-
+  echo # 19 - Italian Lang on Steel Wave 
+  echo # 191 - Italian Lang on Steel Wave (Shey) -Same-
+  echo # 20 - Italian Lang on Shadow Legacy 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7179158265062294015 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5760263381471720373 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 2551476087873566284 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1819965373025810009 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==41 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1819965373025810009 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Skull Rain (Shey)
+  goto mainmenu
+  )
+  if %version%==5 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8822593964618949966 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Red Crow
+  goto mainmenu
+  )
+  if %version%==6 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1442016899353884599 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Velvet Shell
+  goto mainmenu
+  )
+  if %version%==7 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 4814130789498386116 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Health
+  goto mainmenu
+  )
+  if %version%==71 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 4814130789498386116 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Health (Shey)
+  goto mainmenu
+  )
+  if %version%==8 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 3928776659583035772 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Blood Orchid
+  goto mainmenu
+  )
+  if %version%==81 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 3928776659583035772 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Blood Orchid (Shey)
+  goto mainmenu
+  )
+  if %version%==9 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 6120111820088733265 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on White Noise
+  goto mainmenu
+  )
+  if %version%==91 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 6120111820088733265 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on White Noise (Shey)
+  goto mainmenu
+  )
+  if %version%==10 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8951270584274959688 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Chimera
+  goto mainmenu
+  )
+  if %version%==11 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 3765579578277178198 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Para Bellum
+  goto mainmenu
+  )
+  if %version%==12 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8817435015508321947 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Grim Sky
+  goto mainmenu
+  )
+  if %version%==121 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8817435015508321947 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Grim Sky (Shey)
+  goto mainmenu
+  )
+  if %version%==13 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 6317337128494587862 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Wind Bastion
+  goto mainmenu
+  )
+  if %version%==14 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5912470135426316642 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Burnt Horizon
+  goto mainmenu
+  )
+  if %version%==141 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5912470135426316642 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Burnt Horizon (Shey)
+  goto mainmenu
+  )
+  if %version%==15 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5551310338808720316 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Phantom Sight 
+  goto mainmenu
+  )
+  if %version%==16 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 9032788833180559255 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Ember Rise 
+  goto mainmenu
+  )
+  if %version%==161 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 9032788833180559255 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Ember Rise (Shey)
+  goto mainmenu
+  )
+  if %version%==17 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7669952636769439421 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Shifting Tides 
+  goto mainmenu
+  )
+  if %version%==18 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 2083562978649529043 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Void Edge 
+  goto mainmenu
+  )
+  if %version%==181 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 2083562978649529043 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Void Edge (Shey)
+  goto mainmenu
+  )
+  if %version%==19 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7015749936618767871 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Steel Wave 
+  goto mainmenu
+  )
+  if %version%==191 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7015749936618767871 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Steel Wave (Shey)
+  goto mainmenu
+  )
+  if %version%==20 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8865509294556462405 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Shadow Legacy
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Italian Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Italian END
+
 
 
 
