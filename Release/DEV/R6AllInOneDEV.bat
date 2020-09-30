@@ -1485,7 +1485,7 @@ goto EventMenu
   echo # 2 - Italian Language
   echo # 3 - German Language 
   echo # 4 - Spanish - Spain Language
-  echo # 5 - Portuguese - Brazil Language ~
+  echo # 5 - Portuguese - Brazil Language
   echo # 6 - Polish Language ~
   echo # 7 - Dutch Language ~ 
   echo # 8 - Czech Language ~
@@ -1495,7 +1495,6 @@ goto EventMenu
   echo # 12 - Japanese Language ~
   echo # 13 - Russian Language ~
 	echo --------------------------------------------------
-:: 359557  Depot Brasilian
 :: 359558  Depot Polish 
 :: 377230  Depot Dutch 
 :: 377231  Depot Czech
@@ -1864,12 +1863,12 @@ goto EventMenu
 :Italian
   cls
   Title Rainbow Six Siege Italian Lang Downloader
-  MODE 50,38
+  MODE 52,38
   echo           Italian Language Downloader
   echo         What would you like to select?
-  echo --------------------------------------------------
+  echo ----------------------------------------------------
   echo # 0 - Back
-  echo --------------------------------------------------
+  echo ----------------------------------------------------
   echo # 1 - Italian Lang on Vanilla
   echo # 2 - Italian Lang on Black Ice 
   echo # 3 - Italian Lang on Dust Line 
@@ -1900,7 +1899,7 @@ goto EventMenu
   echo # 191 - Italian Lang on Steel Wave (Shey) -Same-
   echo # 20 - Italian Lang on Shadow Legacy 
   echo # 21 - Placeholder
-  echo --------------------------------------------------
+  echo ----------------------------------------------------
   set /p version="Enter Selection:"
   if %version%==0 (
   cls
@@ -2447,6 +2446,7 @@ goto EventMenu
 ::German END
 
 
+
 ::Spanish START
 :Spanish
   cls
@@ -2454,9 +2454,9 @@ goto EventMenu
   MODE 52,38
   echo           Spanish Language Downloader
   echo         What would you like to select?
-  echo --------------------------------------------------
+  echo ----------------------------------------------------
   echo # 0 - Back
-  echo --------------------------------------------------
+  echo ----------------------------------------------------
   echo # 1 - Spanish Lang on Vanilla
   echo # 2 - Spanish Lang on Black Ice 
   echo # 3 - Spanish Lang on Dust Line 
@@ -2487,7 +2487,7 @@ goto EventMenu
   echo # 191 - Spanish Lang on Steel Wave (Shey) -Same-
   echo # 20 - Spanish Lang on Shadow Legacy 
   echo # 21 - Placeholder
-  echo --------------------------------------------------
+  echo ----------------------------------------------------
   set /p version="Enter Selection:"
   if %version%==0 (
   cls
@@ -2738,6 +2738,300 @@ goto EventMenu
   )
   goto Extra
 ::Spanish END
+
+
+
+::Brasilian START
+:Brasilian
+  cls
+  Title Rainbow Six Siege Brasilian Lang Downloader
+  MODE 54,38
+  echo          Brasilian Language Downloader
+  echo         What would you like to select?
+  echo ------------------------------------------------------
+  echo # 0 - Back
+  echo ------------------------------------------------------
+  echo # 1 - Brasilian Lang on Vanilla
+  echo # 2 - Brasilian Lang on Black Ice 
+  echo # 3 - Brasilian Lang on Dust Line 
+  echo # 4 - Brasilian Lang on Skull Rain 
+  echo # 41 - Brasilian Lang on Skull Rain (Shey) -Same-
+  echo # 5 - Brasilian Lang on Red Crow 
+  echo # 6 - Brasilian Lang on Velvet Shell 
+  echo # 7 - Brasilian Lang on Health 
+  echo # 71 - Brasilian Lang on Health (Shey) -Same-
+  echo # 8 - Brasilian Lang on Blood Orchid 
+  echo # 81 - Brasilian Lang on Blood Orchid (Shey) -Same-
+  echo # 9 - Brasilian Lang on White Noise 
+  echo # 91- Brasilian Lang on White Noise (Shey) -Same-
+  echo # 10 - Brasilian Lang on Chimera 
+  echo # 11 - Brasilian Lang on Para Bellum 
+  echo # 12 - Brasilian Lang on Grim Sky 
+  echo # 121 - Brasilian Lang on Grim Sky (Shey) -Same-
+  echo # 13 - Brasilian Lang on Wind Bastion
+  echo # 14 - Brasilian Lang on Burnt Horizon 
+  echo # 141 - Brasilian Lang on Burnt Horizon (Shey) -Same-
+  echo # 15 - Brasilian Lang on Phantom Sight 
+  echo # 16 - Brasilian Lang on Ember Rise 
+  echo # 161 - Brasilian Lang on Ember Rise (Shey) -Same-
+  echo # 17 - Brasilian Lang on Shifting Tides 
+  echo # 18 - Brasilian Lang on Void Edge 
+  echo # 181 - Brasilian Lang on Void Edge (Shey) -Same-
+  echo # 19 - Brasilian Lang on Steel Wave 
+  echo # 191 - Brasilian Lang on Steel Wave (Shey) -Same-
+  echo # 20 - Brasilian Lang on Shadow Legacy 
+  echo # 21 - Placeholder
+  echo ------------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4246528818872796970 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5712713603408405370 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7093312220135270425 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1002387473375422601 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==41 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1002387473375422601 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Skull Rain (Shey)
+  goto mainmenu
+  )
+  if %version%==5 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 9177769359376990903 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Red Crow
+  goto mainmenu
+  )
+  if %version%==6 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 8373797984073491957 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Velvet Shell
+  goto mainmenu
+  )
+  if %version%==7 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 740877577181398044 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Health
+  goto mainmenu
+  )
+  if %version%==71 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 740877577181398044 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Health (Shey)
+  goto mainmenu
+  )
+  if %version%==8 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4018202152273389175 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Blood Orchid
+  goto mainmenu
+  )
+  if %version%==81 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4018202152273389175 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Blood Orchid (Shey)
+  goto mainmenu
+  )
+  if %version%==9 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7662200840621314199 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on White Noise
+  goto mainmenu
+  )
+  if %version%==91 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7662200840621314199 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on White Noise (Shey)
+  goto mainmenu
+  )
+  if %version%==10 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4967060442376701942 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Chimera
+  goto mainmenu
+  )
+  if %version%==11 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7222426493426609376 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Para Bellum
+  goto mainmenu
+  )
+  if %version%==12 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1079437953122108725 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Grim Sky
+  goto mainmenu
+  )
+  if %version%==121 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1079437953122108725 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Grim Sky (Shey)
+  goto mainmenu
+  )
+  if %version%==13 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 6212948834557799675 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Wind Bastion
+  goto mainmenu
+  )
+  if %version%==14 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5742909617569886590 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Burnt Horizon
+  goto mainmenu
+  )
+  if %version%==141 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5742909617569886590 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Burnt Horizon (Shey)
+  goto mainmenu
+  )
+  if %version%==15 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 2060894578496472402 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Phantom Sight 
+  goto mainmenu
+  )
+  if %version%==16 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 8187109316671389619 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Ember Rise 
+  goto mainmenu
+  )
+  if %version%==161 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 8187109316671389619 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Ember Rise (Shey)
+  goto mainmenu
+  )
+  if %version%==17 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 3980031497374187833 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Shifting Tides 
+  goto mainmenu
+  )
+  if %version%==18 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1408940456585952484 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Void Edge 
+  goto mainmenu
+  )
+  if %version%==181 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1408940456585952484 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Void Edge (Shey)
+  goto mainmenu
+  )
+  if %version%==19 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 3124010063296699270 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Steel Wave 
+  goto mainmenu
+  )
+  if %version%==191 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 3124010063296699270 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Steel Wave (Shey)
+  goto mainmenu
+  )
+  if %version%==20 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 6424468667015085021 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Shadow Legacy
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Brasilian Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Brasilian END
 
 
 
