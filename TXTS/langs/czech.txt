@@ -1,7 +1,76 @@
 Czech
 377231
+[CODE DONE, READÍ FOR COPY AND IMPORTING]
 
 2 August 2016 – 15:25:07 UTC	4 years ago	2274850673348857246
 11 May 2016 – 15:13:41 UTC	4 years ago	5042288075851140032
 2 February 2016 – 16:02:15 UTC	5 years ago	9083464997167398804
 5 December 2015 – 02:23:55 UTC	5 years ago	961787742874674106
+
+
+::Czech START
+:Czech
+  cls
+  Title Rainbow Six Siege Czech Lang Downloader
+  MODE 50,20
+  echo           Czech Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - Czech Lang on Vanilla
+  echo # 2 - Czech Lang on Black Ice 
+  echo # 3 - Czech Lang on Dust Line 
+  echo # 4 - Czech Lang on Skull Rain 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 961787742874674106 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 9083464997167398804 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 5042288075851140032 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 2274850673348857246 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Czech END
