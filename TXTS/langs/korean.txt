@@ -1,7 +1,76 @@
 Korean
 377232
+[CODE DONE, READÍ FOR COPY AND IMPORTING]
 
 2 August 2016 – 15:25:07 UTC	4 years ago	3010562235525323962
 11 May 2016 – 15:13:41 UTC	4 years ago	3857270863114730703
 2 February 2016 – 16:02:15 UTC	5 years ago	1679233699688952842
 5 December 2015 – 02:23:55 UTC	5 years ago	4666462401429503167
+
+
+::Korean START
+:Korean
+  cls
+  Title Rainbow Six Siege Korean Lang Downloader
+  MODE 50,20
+  echo           Korean Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - Korean Lang on Vanilla
+  echo # 2 - Korean Lang on Black Ice 
+  echo # 3 - Korean Lang on Dust Line 
+  echo # 4 - Korean Lang on Skull Rain 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 4666462401429503167 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 1679233699688952842 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 3857270863114730703 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 3010562235525323962 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Korean END
