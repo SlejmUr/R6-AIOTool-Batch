@@ -461,7 +461,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 3893422760579204530 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Vanilla Choosed (v8194013)>>log.log
   echo Download complete!
   echo It's Vanilla! (v8194013)
   goto mainmenu
@@ -472,7 +471,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7932785808040895147 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo BLACK ICE (v11726982) Choosed>>log.log
   echo Download complete!
   echo It's BLACK ICE Released! [IDK how but (v11726982)]
   goto mainmenu
@@ -483,7 +481,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2206497318678061176 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo DUST LINE (v9132097) Choosed>>log.log
   echo Download complete!
   echo It's DUST LINE Released! (v9132097)
   goto mainmenu
@@ -494,7 +491,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6528040263176897081 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo SKULL Rain (v9654076) Choosed>>log.log
   echo Download complete!
   echo It's SKULL Rain Released! (v9654076)
   goto mainmenu
@@ -505,7 +501,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5851804596427790505 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Skull Rain 4.2 (v9860556) Choosed>>log.log
   echo Download complete!  Thanks Shey!
   echo ? (v9860556)
   goto mainmenu
@@ -570,7 +565,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1613631671988840841 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Blood Orchid 2.3.1.1 Choosed>>log.log
   echo Download complete! Thanks Shey!
   goto mainmenu
   )
@@ -580,7 +574,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2783803489764777627 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo WHITE NOISE Choosed>>log.log
   echo Download complete!
   echo It's WHITE NOISE  Released!
   goto mainmenu
@@ -591,7 +584,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4221297486420648079 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo WHITE NOISE (Shey) Choosed>>log.log
   echo Download complete! Thanks Shey!
   goto mainmenu
   )
@@ -601,7 +593,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo CHIMERA Choosed>>log.log
   echo Download complete!
   echo It's CHIMERA  Released
   goto mainmenu
@@ -612,7 +603,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8765715607275074515 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo PARA BELLUM Choosed>>log.log
   echo Download complete!
   echo It's PARA BELLUM Released!
   goto mainmenu
@@ -623,7 +613,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4133951394045241747 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo GRIM SKY Choosed>>log.log
   echo Download complete!
   echo It's GRIM SKY Released!
   goto mainmenu
@@ -634,7 +623,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7781202564071310413 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo GRIM SKY (Shey) Choosed>>log.log
   echo Download complete! Thanks Shey!
   goto mainmenu
   )
@@ -644,7 +632,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7659555540733025386 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo WIND BASTION (v12512571) Choosed>>log.log
   echo Download complete!
   echo It's WIND BASTION Released! (v12512571)
   goto mainmenu
@@ -655,7 +642,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4355229858723790756 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo BURNT HORIZON Choosed>>log.log
   echo Download complete!
   echo It's BURNT HORIZON Released!
   goto mainmenu
@@ -665,7 +651,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo BURNT HORIZON (Shey) Choosed>>log.log
   echo Download complete! Thanks Shey!
   goto mainmenu
   )
@@ -675,7 +660,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5408324128694463720 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo PHANTOM SIGHT Choosed>>log.log
   echo Download complete!
   echo It's PHANTOM SIGHT Released!
   goto mainmenu
@@ -686,7 +670,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5429930338066808153 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo EMBER RISE Choosed>>log.log
   echo Download complete!
   echo It's EMBER RISE Released!
   goto mainmenu
@@ -696,7 +679,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo EMBER RISE (Shey) Choosed>>log.log
   echo Download complete! Thanks Shey!
   goto mainmenu
   )
@@ -706,7 +688,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
   pause
   cls
-  echo SHIFTING TIDES Choosed>>log.log
   echo Download complete!
   echo It's SHIFTING TIDES Released!
   goto mainmenu
@@ -717,7 +698,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2810676266503656332 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo VOID EDGE Choosed>>log.log
   echo Download complete!
   echo It's VOID EDGE Released!
   goto mainmenu
@@ -727,7 +707,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6296533808765702678 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo VOID EDGE (Shey) Choosed>>log.log
   echo Download complete! Thanks Shey!
   goto mainmenu
   )
@@ -737,7 +716,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8083217055977195199 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo STEEL WAVE Choosed>>log.log
   echo Download complete!
   echo It's STEEL WAVE Released!
   goto mainmenu
@@ -748,7 +726,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo STEEL WAVE (Shey) Choosed>>log.log
   echo Download complete! Thanks Shey!
   goto mainmenu
   )
@@ -758,7 +735,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7750070106878890861 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Shadow Legacy Choosed>>log.log
   echo Download complete!
   echo It's Shadow Legacy Released!
   goto mainmenu
@@ -768,7 +744,6 @@ set AllInOneVersion=1.2
   dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Placeholder Choosed>>log.log
   echo Download complete!
   echo It's Placeholder
   goto mainmenu
