@@ -192,9 +192,9 @@ echo ---------------------------------------------------------------------------
 curl -L  "https://cdn.discordapp.com/attachments/715528108773736519/745024795623817236/R6_Liberator_0.0.0.22.exe" --output R6_Liberator.exe
 echo Download Liberator - %TIME%>>log.log
 cls
-goto extractLib
+goto moveLib
 
-:extractLib
+:moveLib
 move R6_Liberator.exe Requirements
 cls
 goto LibCheck
@@ -212,8 +212,8 @@ echo MainMenu loaded>>log.log
 echo --------------------------------------------------------------
 echo  Rainbow Six Siege Old Version Downloader
 echo  You MUST have a copy of Siege on Steam to use the downloader.
-echo  ADDED ALL SEASON!
-echo  Tool Version: %AllInOneVersion%
+echo  ADDED ALL SEASON and ADDED ALL LANG!
+echo  AIO Tool Version: %AllInOneVersion%
 echo  Time : %TIME%
 echo  Read FAQ!
 echo --------------------------------------------------------------
@@ -1489,11 +1489,9 @@ goto EventMenu
   echo # 9 - Korean Language
   echo # 10 - Traditional Chinese Language
   echo # 11 - Simplified Chinese Language
-  echo # 12 - Japanese Language ~
-  echo # 13 - Russian Language ~
+  echo # 12 - Japanese Language
+  echo # 13 - Russian Language
   echo --------------------------------------------------
-:: 377235  Depot Japanese
-:: 377236  Depot Russian
   set /p version="Enter Selection:"
   if %version%==0 (
   cls
@@ -3440,12 +3438,518 @@ goto EventMenu
 
 
 
+::Japanese START
+:Japanese
+  cls
+  Title Rainbow Six Siege Japanese Lang Downloader
+  MODE 54,38
+  echo          Japanese Language Downloader
+  echo         What would you like to select?
+  echo ------------------------------------------------------
+  echo # 0 - Back
+  echo ------------------------------------------------------
+  echo # 1 - Japanese Lang on Vanilla
+  echo # 2 - Japanese Lang on Black Ice 
+  echo # 3 - Japanese Lang on Dust Line 
+  echo # 4 - Japanese Lang on Skull Rain 
+  echo # 41 - Japanese Lang on Skull Rain (Shey) -Same-
+  echo # 5 - Japanese Lang on Red Crow 
+  echo # 6 - Japanese Lang on Velvet Shell 
+  echo # 7 - Japanese Lang on Health 
+  echo # 71 - Japanese Lang on Health (Shey) -Same-
+  echo # 8 - Japanese Lang on Blood Orchid 
+  echo # 81 - Japanese Lang on Blood Orchid (Shey) -Same-
+  echo # 9 - Japanese Lang on White Noise 
+  echo # 91- Japanese Lang on White Noise (Shey)
+  echo # 10 - Japanese Lang on Chimera 
+  echo # 11 - Japanese Lang on Para Bellum 
+  echo # 12 - Japanese Lang on Grim Sky 
+  echo # 121 - Japanese Lang on Grim Sky (Shey) -Same-
+  echo # 13 - Japanese Lang on Wind Bastion
+  echo # 14 - Japanese Lang on Burnt Horizon 
+  echo # 141 - Japanese Lang on Burnt Horizon (Shey) -Same-
+  echo # 15 - Japanese Lang on Phantom Sight 
+  echo # 16 - Japanese Lang on Ember Rise 
+  echo # 161 - Japanese Lang on Ember Rise (Shey) -Same-
+  echo # 17 - Japanese Lang on Shifting Tides 
+  echo # 18 - Japanese Lang on Void Edge 
+  echo # 181 - Japanese Lang on Void Edge (Shey) -Same-
+  echo # 19 - Japanese Lang on Steel Wave 
+  echo # 191 - Japanese Lang on Steel Wave (Shey) -Same-
+  echo # 20 - Japanese Lang on Shadow Legacy 
+  echo # 21 - Placeholder
+  echo ------------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 3426628477659109421 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7819798899236214261 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7164006373234658729 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4940468394032132183 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==41 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4940468394032132183 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Skull Rain (Shey)
+  goto mainmenu
+  )
+  if %version%==5 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8573459241975382853 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Red Crow
+  goto mainmenu
+  )
+  if %version%==6 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4595160401957962156 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Velvet Shell
+  goto mainmenu
+  )
+  if %version%==7 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6208821339116662917 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Health
+  goto mainmenu
+  )
+  if %version%==71 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6208821339116662917 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Health (Shey)
+  goto mainmenu
+  )
+  if %version%==8 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 1573647791032056620 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Blood Orchid
+  goto mainmenu
+  )
+  if %version%==81 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 1573647791032056620 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Blood Orchid (Shey)
+  goto mainmenu
+  )
+  if %version%==9 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4323914207757706720 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on White Noise
+  goto mainmenu
+  )
+  if %version%==91 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7662200840621314199 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on White Noise (Shey)
+  goto mainmenu
+  )
+  if %version%==10 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8184994692095456862 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Chimera
+  goto mainmenu
+  )
+  if %version%==11 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5702757960843346114 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Para Bellum
+  goto mainmenu
+  )
+  if %version%==12 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 971478325336602905 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Grim Sky
+  goto mainmenu
+  )
+  if %version%==121 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 971478325336602905 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Grim Sky (Shey)
+  goto mainmenu
+  )
+  if %version%==13 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8026527283762710847 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Wind Bastion
+  goto mainmenu
+  )
+  if %version%==14 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6205462284383635854 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Burnt Horizon
+  goto mainmenu
+  )
+  if %version%==141 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6205462284383635854 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Burnt Horizon (Shey)
+  goto mainmenu
+  )
+  if %version%==15 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 735237222551525964 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Phantom Sight 
+  goto mainmenu
+  )
+  if %version%==16 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8453132699861289149 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Ember Rise 
+  goto mainmenu
+  )
+  if %version%==161 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8453132699861289149 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Ember Rise (Shey)
+  goto mainmenu
+  )
+  if %version%==17 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4121849146546499241 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Shifting Tides 
+  goto mainmenu
+  )
+  if %version%==18 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6728091120574045367 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Void Edge 
+  goto mainmenu
+  )
+  if %version%==181 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6728091120574045367 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Void Edge (Shey)
+  goto mainmenu
+  )
+  if %version%==19 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5460615762069731497 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Steel Wave 
+  goto mainmenu
+  )
+  if %version%==191 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5460615762069731497 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Steel Wave (Shey)
+  goto mainmenu
+  )
+  if %version%==20 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5904431813628700863 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Shadow Legacy
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Japanese Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Japanese START
 
 
+::Russian START
+:Russian
+  cls
+  Title Rainbow Six Siege Russian Lang Downloader
+  MODE 54,38
+  echo          Russian Language Downloader
+  echo         What would you like to select?
+  echo ------------------------------------------------------
+  echo # 0 - Back
+  echo ------------------------------------------------------
+  echo # 1 - Russian Lang on Vanilla
+  echo # 2 - Russian Lang on Black Ice 
+  echo # 3 - Russian Lang on Dust Line 
+  echo # 4 - Russian Lang on Skull Rain 
+  echo # 41 - Russian Lang on Skull Rain (Shey) -Same-
+  echo # 10 - Russian Lang on Chimera 
+  echo # 11 - Russian Lang on Para Bellum 
+  echo # 12 - Russian Lang on Grim Sky 
+  echo # 121 - Russian Lang on Grim Sky (Shey) -Same-
+  echo # 13 - Russian Lang on Wind Bastion
+  echo # 14 - Russian Lang on Burnt Horizon 
+  echo # 141 - Russian Lang on Burnt Horizon (Shey) -Same-
+  echo # 15 - Russian Lang on Phantom Sight 
+  echo # 16 - Russian Lang on Ember Rise 
+  echo # 161 - Russian Lang on Ember Rise (Shey) -Same-
+  echo # 17 - Russian Lang on Shifting Tides 
+  echo # 18 - Russian Lang on Void Edge 
+  echo # 181 - Russian Lang on Void Edge (Shey) -Same-
+  echo # 19 - Russian Lang on Steel Wave 
+  echo # 191 - Russian Lang on Steel Wave (Shey) -Same-
+  echo # 20 - Russian Lang on Shadow Legacy 
+  echo # 21 - Placeholder
+  echo ------------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
 
-
-
-
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4326401341058506434 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 7163789544030656935 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4405345682991436059 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 792795160700208918 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==41 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 792795160700208918 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Skull Rain (Shey)
+  goto mainmenu
+  )
+  if %version%==10 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5994322749665877802 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Chimera
+  goto mainmenu
+  )
+  if %version%==11 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 1607809513640548526 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Para Bellum
+  goto mainmenu
+  )
+  if %version%==12 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3013637849914826120 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Grim Sky
+  goto mainmenu
+  )
+  if %version%==121 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3013637849914826120 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Grim Sky (Shey)
+  goto mainmenu
+  )
+  if %version%==13 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 8306800552570152557 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Wind Bastion
+  goto mainmenu
+  )
+  if %version%==14 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5305534200661405563 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Burnt Horizon
+  goto mainmenu
+  )
+  if %version%==141 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5305534200661405563 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Burnt Horizon (Shey)
+  goto mainmenu
+  )
+  if %version%==15 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 8063779007427415388 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Phantom Sight 
+  goto mainmenu
+  )
+  if %version%==16 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4195459193643803058 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Ember Rise 
+  goto mainmenu
+  )
+  if %version%==161 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4195459193643803058 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Ember Rise (Shey)
+  goto mainmenu
+  )
+  if %version%==17 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 2337212093593824035 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Shifting Tides 
+  goto mainmenu
+  )
+  if %version%==18 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3817096039931934373 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Void Edge 
+  goto mainmenu
+  )
+  if %version%==181 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3817096039931934373 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Void Edge (Shey)
+  goto mainmenu
+  )
+  if %version%==19 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3790966697198053253 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Steel Wave 
+  goto mainmenu
+  )
+  if %version%==191 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3790966697198053253 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Steel Wave (Shey)
+  goto mainmenu
+  )
+  if %version%==20 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5914186776656034602 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Shadow Legacy
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Russian Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Russian START
 
 
 
