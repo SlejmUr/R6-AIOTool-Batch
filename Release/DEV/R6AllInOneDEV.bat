@@ -177,7 +177,7 @@ goto PlazaCheck
 ::Liberator Start
 :LibCheck
 cls
-if exist "Requirements\Liberators" (
+if exist "Requirements\R6_Liberator.exe" (
   goto mainmenu 
 ) else (
   goto GetLib
@@ -187,18 +187,15 @@ if exist "Requirements\Liberators" (
 cls
 MODE 78,20
 echo ------------------------------------------------------------------------------
-echo                        Downloading Liberators...
+echo                        Downloading Liberator...
 echo ------------------------------------------------------------------------------
-curl -L  "http://download1650.mediafire.com/6dy1ugxw06kg/kzhc3j1g3gaxmqx/Liberators.zip" --output lib.zip
-echo Download Liberators - %TIME%>>log.log
+curl -L  "https://cdn.discordapp.com/attachments/715528108773736519/745024795623817236/R6_Liberator_0.0.0.22.exe" --output R6_Liberator.exe
+echo Download Liberator - %TIME%>>log.log
 cls
 goto extractLib
 
 :extractLib
-for %%I in ("lib.zip") do (
-  echo extractLib
-  echo extractLib - %TIME%>>log.log
-  "Requirements\7z.exe" x -y -o"Requirements\" "%%I" && del %%I
+move R6_Liberator.exe Requirements
 cls
 goto LibCheck
 )
@@ -1472,42 +1469,36 @@ goto EventMenu
 
 ::Extra START
 :Extra
-	cls
-	Title Rainbow Six Siege Extra Downloader
-	MODE 50,25
-	echo               Extra Language Downloader
-	echo             What would you like to select?
+  cls
+  Title Rainbow Six Siege Extra Downloader
+  MODE 50,25
+  echo               Extra Language Downloader
+  echo             What would you like to select?
   echo              EVENT LANG NOT SUPPORTED!
-	echo --------------------------------------------------
-	echo # 0 - Back
-	echo --------------------------------------------------
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
   echo # 1 - French Language 
   echo # 2 - Italian Language
   echo # 3 - German Language 
   echo # 4 - Spanish - Spain Language
   echo # 5 - Portuguese - Brazil Language
-  echo # 6 - Polish Language ~
-  echo # 7 - Dutch Language ~ 
-  echo # 8 - Czech Language ~
-  echo # 9 - Korean Language ~
-  echo # 10 - Traditional Chinese Language ~
-  echo # 11 - Simplified Chinese Language ~
+  echo # 6 - Polish Language
+  echo # 7 - Dutch Language 
+  echo # 8 - Czech Language
+  echo # 9 - Korean Language
+  echo # 10 - Traditional Chinese Language
+  echo # 11 - Simplified Chinese Language
   echo # 12 - Japanese Language ~
   echo # 13 - Russian Language ~
-	echo --------------------------------------------------
-:: 359558  Depot Polish 
-:: 377230  Depot Dutch 
-:: 377231  Depot Czech
-:: 377232  Depot Korean  
-:: 377233  Depot TChinese  
-:: 377234  Depot SChinese 
+  echo --------------------------------------------------
 :: 377235  Depot Japanese
 :: 377236  Depot Russian
-	set /p version="Enter Selection:"
-	if %version%==0 (
-	cls
-	goto mainmenu
-	)
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto mainmenu
+  )
   if %version%==1 (
   cls
   goto French
@@ -1516,10 +1507,10 @@ goto EventMenu
   cls
   goto Italian
   )
-	if %version%==3 (
-	cls
-	goto German
-	)
+  if %version%==3 (
+  cls
+  goto German
+  )
   if %version%==4 (
   cls
   goto Spanish
@@ -1560,7 +1551,7 @@ goto EventMenu
   cls
   goto Russian
   )
-	goto Extra
+  goto Extra
 ::Extra END
 
 
@@ -3035,6 +3026,429 @@ goto EventMenu
 
 
 
+::Polish START
+:Polish
+  cls
+  Title Rainbow Six Siege Polish Lang Downloader
+  MODE 50,20
+  echo           Polish Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - Polish Lang on Vanilla
+  echo # 2 - Polish Lang on Black Ice 
+  echo # 3 - Polish Lang on Dust Line 
+  echo # 4 - Polish Lang on Skull Rain 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 3650448467998593870 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Polish Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 611380037218554981 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Polish Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 3858352830712224800 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Polish Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 2324023684915670753 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Polish Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Polish Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Polish END
+
+
+
+::Dutch START
+:Dutch
+  cls
+  Title Rainbow Six Siege Dutch Lang Downloader
+  MODE 50,20
+  echo           Dutch Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - Dutch Lang on Vanilla
+  echo # 2 - Dutch Lang on Black Ice 
+  echo # 3 - Dutch Lang on Dust Line 
+  echo # 4 - Dutch Lang on Skull Rain 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 434053950562761763 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Dutch Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 2252756710796870124 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Dutch Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 792523120148938529 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Dutch Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 6519643449965700176 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Dutch Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Dutch Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Dutch END
+
+
+
+::Czech START
+:Czech
+  cls
+  Title Rainbow Six Siege Czech Lang Downloader
+  MODE 50,20
+  echo           Czech Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - Czech Lang on Vanilla
+  echo # 2 - Czech Lang on Black Ice 
+  echo # 3 - Czech Lang on Dust Line 
+  echo # 4 - Czech Lang on Skull Rain 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 961787742874674106 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 9083464997167398804 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 5042288075851140032 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 2274850673348857246 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Czech Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Czech END
+
+
+
+::Korean START
+:Korean
+  cls
+  Title Rainbow Six Siege Korean Lang Downloader
+  MODE 50,20
+  echo           Korean Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - Korean Lang on Vanilla
+  echo # 2 - Korean Lang on Black Ice 
+  echo # 3 - Korean Lang on Dust Line 
+  echo # 4 - Korean Lang on Skull Rain 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 4666462401429503167 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 1679233699688952842 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 3857270863114730703 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 3010562235525323962 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's Korean Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::Korean END
+
+
+
+::TChinese START
+:TChinese
+  cls
+  Title Rainbow Six Siege TChinese Lang Downloader
+  MODE 50,20
+  echo           TChinese Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - TChinese Lang on Vanilla
+  echo # 2 - TChinese Lang on Black Ice 
+  echo # 3 - TChinese Lang on Dust Line 
+  echo # 4 - TChinese Lang on Skull Rain 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 8123484057310613369 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's TChinese Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 6415534268030477043 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's TChinese Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 1924001092871695610 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's TChinese Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 4953478873615251033 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's TChinese Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's TChinese Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::TChinese END
+
+
+
+::SChinese START
+:SChinese
+  cls
+  Title Rainbow Six Siege SChinese Lang Downloader
+  MODE 50,20
+  echo           SChinese Language Downloader
+  echo         What would you like to select?
+  echo --------------------------------------------------
+  echo # 0 - Back
+  echo --------------------------------------------------
+  echo # 1 - SChinese Lang on Vanilla
+  echo # 2 - SChinese Lang on Black Ice 
+  echo # 3 - SChinese Lang on Dust Line 
+  echo # 4 - SChinese Lang on Skull Rain 
+  echo # 21 - Placeholder
+  echo --------------------------------------------------
+  set /p version="Enter Selection:"
+  if %version%==0 (
+  cls
+  goto Extra
+  )
+  MODE 100,40
+  set /p username="Enter Steam Username:"
+  
+  if %version%==1 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 7408437752633543455 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's SChinese Lang on Vanilla
+  goto mainmenu
+  )
+  if %version%==2 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 695733873875406938 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's SChinese Lang on Black Ice 
+  goto mainmenu
+  )
+  if %version%==3 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 336078500685842996 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's SChinese Lang on Dust Line
+  goto mainmenu
+  )
+  if %version%==4 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 6056122284734366189 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's SChinese Lang on Skull Rain
+  goto mainmenu
+  )
+  if %version%==21 (
+  dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's SChinese Lang on Placeholder
+  goto mainmenu
+  )
+  goto Extra
+::SChinese END
+
+
+
+
+
+
+
+
+
+
+
+
 ::StartGame START
 :StartGame
 cls
@@ -3084,11 +3498,7 @@ echo # 1999 = The Grand Larceny
 echo # 2099 = M.U.T.E
 echo --------------------------------------------------
 echo Start Liberator:
-echo # 0017 = R6 Liberator 0.0.0.17
-echo # 0019 = R6 Liberator 0.0.0.19 TEST
-echo # 0020 = R6 Liberator 0.0.0.20b TEST
-echo # 0021 = R6 Liberator 0.0.0.21 TEST
-echo # 0022 = R6 Liberator 0.0.0.22
+echo # 9999 = Start Liberator (v22)
 set /p startgame="Start:"
 if %startgame%==0 (
 cls
@@ -3375,42 +3785,10 @@ if %startgame%==2099 (
 )
 ::End EventStarter
 ::Start Liberator
-if %startgame%==0017 (
-	if exist "Requirements\Liberators\R6_Liberator_0.0.0.17.exe" (
+if %startgame%==9999 (
+	if exist "Requirements\R6_Liberator.exe" (
 		echo Starting.....
-		Requirements\Liberators\R6_Liberator_0.0.0.17.exe
-		pause
-		)
-	goto mainmenu
-)
-if %startgame%==0019 (
-	if exist "Requirements\Liberators\R6_Liberator_0.0.0.19_Test.exe" (
-		echo Starting.....
-		Requirements\Liberators\R6_Liberator_0.0.0.19_Test.exe
-		pause
-		)
-	goto mainmenu
-)
-if %startgame%==0020 (
-	if exist "Requirements\Liberators\R6_Liberator_0.0.0.20b_Test.exe" (
-		echo Starting.....
-		Requirements\Liberators\R6_Liberator_0.0.0.20b_Test.exe
-		pause
-		)
-	goto mainmenu
-)
-if %startgame%==0021 (
-	if exist "Requirements\Liberators\R6_Liberator_0.0.0.21_Test.exe" (
-		echo Starting.....
-		Requirements\Liberators\R6_Liberator_0.0.0.21_Test.exe
-		pause
-		)
-	goto mainmenu
-)
-if %startgame%==0022 (
-	if exist "Requirements\Liberators\R6_Liberator_0.0.0.22.exe" (
-		echo Starting.....
-		Requirements\Liberators\R6_Liberator_0.0.0.22.exe
+		Requirements\R6_Liberator.exe
 		pause
 		)
 	goto mainmenu
@@ -3501,7 +3879,7 @@ goto dxvcredist
   echo And thank you for using it!
   echo Thanks Ancientkingg for Log idea, DotNet Checker Second Version
   echo First Version: 2020 June 17
-  echo Updated Version: 2020 Sept TDB
+  echo Updated Version: 2020 TDB
   pause
   cls
   goto mainmenu
