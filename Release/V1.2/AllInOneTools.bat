@@ -322,6 +322,7 @@ set AllInOneVersion=1.2
   echo  I'm not tested this manifests: (ALL not have GB option) and ALL 4K Textures, and ALL Language!
   echo  If you want to join testing phase, DM me on Discord! SlejmUr#4007
   echo  Planning to add Extra Language option in Events!
+  echo  Plaza_NEW not working on Shadow Legacy and Steel Wave too
   echo  If you have a problem this tool, DM me on Discord! SlejmUr#4007
   echo FAQ and Notes Readed!>>log.log
   pause
