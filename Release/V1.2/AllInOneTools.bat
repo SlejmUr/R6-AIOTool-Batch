@@ -150,7 +150,7 @@ set AllInOneVersion=1.2
 :PlazaCheck
   cls
   if exist "Requirements\Plazas\PLAZA_BO\CODEX.ini" (
-    goto LibCheck 
+    goto mainmenu 
   ) else (
     goto GetPlaza
   )
@@ -177,33 +177,6 @@ set AllInOneVersion=1.2
 ::Plaza End
 
 
-::Liberator Start
-:LibCheck
-  cls
-  if exist "Requirements\R6_Liberator.exe" (
-    goto mainmenu 
-  ) else (
-    goto GetLib
-  )
-
-:GetLib
-  cls
-  MODE 78,20
-  echo ------------------------------------------------------------------------------
-  echo                        Downloading Liberator...
-  echo ------------------------------------------------------------------------------
-  curl -L  "https://cdn.discordapp.com/attachments/715528108773736519/745024795623817236/R6_Liberator_0.0.0.22.exe" --output R6_Liberator.exe
-  echo Download Liberator - %TIME%>>log.log
-  cls
-  goto moveLib
-
-:moveLib
-  move R6_Liberator.exe Requirements
-  cls
-  goto LibCheck
-  )
-::Liberator End
-
 
 ::MainMenu START
 :mainmenu
@@ -227,7 +200,7 @@ set AllInOneVersion=1.2
   echo  (4) 4K Textures 
   echo  (5) DirectX and VC Redist Downloader 
   echo  (6) Credits
-  echo  (7) JOIN Throwback community!
+  echo  (7) JOIN Modding United Community!
   echo  (8) BattlEye Checker
   echo  (9) Open LOG!
   echo  (0) Close
@@ -272,7 +245,7 @@ set AllInOneVersion=1.2
   if %option%==7 (
   echo Modding community Discord Opened>>log.log
   cls
-  start http://r6modding.com/
+  start https://discord.gg/EvrGzAV
   pause
   goto mainmenu
   )
@@ -336,7 +309,6 @@ set AllInOneVersion=1.2
   echo  CODEX : Applied to play Old Siege Version
   echo  R6Downloader: Download R6 Old Version, it use DepotDownloader
   echo  DepotDownloader: Created by SteamRE, you can download any manifest once you have the game
-  echo  R6Liberator: Created by Cheato, Applied to play Old Events
   echo  R6-AIOTool : AllInOne Tool, many function. Created by SlejmUr
   pause
   cls
@@ -350,7 +322,6 @@ set AllInOneVersion=1.2
   echo  I'm not tested this manifests: (ALL not have GB option) and ALL 4K Textures, and ALL Language!
   echo  If you want to join testing phase, DM me on Discord! SlejmUr#4007
   echo  Planning to add Extra Language option in Events!
-  echo  If Cheato Update Liberator , I update this Tool!
   echo  If you have a problem this tool, DM me on Discord! SlejmUr#4007
   echo FAQ and Notes Readed!>>log.log
   pause
@@ -3978,8 +3949,6 @@ set AllInOneVersion=1.2
   echo # 1999 = The Grand Larceny
   echo # 2099 = M.U.T.E
   echo --------------------------------------------------
-  echo Start Liberator:
-  echo # 9999 = Start Liberator (v22)
   set /p startgame="Start:"
   if %startgame%==0 (
   cls
@@ -4265,16 +4234,6 @@ set AllInOneVersion=1.2
   	goto DownloadMenu
   )
   ::End EventStarter
-  ::Start Liberator
-  if %startgame%==9999 (
-  	if exist "Requirements\R6_Liberator.exe" (
-  		echo Starting.....
-  		Requirements\R6_Liberator.exe
-  		pause
-  		)
-  	goto mainmenu
-  )
-  ::End Liberator
   goto StartGame
 ::StartGame END
 
