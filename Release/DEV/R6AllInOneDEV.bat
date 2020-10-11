@@ -9,7 +9,16 @@ set AllInOneVersion=DEV
 set discord=discord.gg/EvrGzAV
 set /p username="Enter Steam Username:"
 
-
+::TIME SET
+FOR /f "tokens=1-8 delims=/.:- " %%A in ("%date% %time%") DO (
+SET Month=%%B
+SET Day=%%C
+SET Year=%%D
+SET Hours=%%E
+SET Minutes=%%F
+SET Seconds=%%G
+SET All=%%B-%%C-%%D_%%E-%%F-%%G
+)
 
 ::                        +hmNNNmh+    
 ::                       yMMMMMMMMMy  
@@ -28,11 +37,13 @@ set /p username="Enter Steam Username:"
 ::LOG start
 :log
   if exist "log.log" (
-  del "log.log"
+  ren "log.log" "%ALL%-log.log"
+  mkdir logs
+  move "%ALL%-log.log" "logs"
   cls
-  echo You are using %AllInOneVersion% version>>log.log
   goto verifydotnet
   ) else (
+  echo ------------------------------------------------>>log.log
   echo You are using %AllInOneVersion% version>>log.log
   goto verifydotnet
   )
@@ -92,7 +103,7 @@ set /p username="Enter Steam Username:"
   echo ------------------------------------------------------------------------------
   echo                              Downloading 7-Zip...
   echo ------------------------------------------------------------------------------
-  curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Resources/7z.exe" --output 7z.exe
+  curl -L  "https://github.com/DataCluster0/R6TBBatchTool/raw/master/Requirements/7z.exe" --output 7z.exe
   echo Download 7zip - %TIME%>>log.log
   cls
   goto move7
