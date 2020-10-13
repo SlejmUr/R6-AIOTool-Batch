@@ -115,7 +115,6 @@ ping github.com>nul
 	set Plaza=1
 	::Sets
 	set SteamName=1
-	set ShowVersion=1
 	set DevVersion=0
 goto dotnetSET
 ::S:INI SET / Finder END
@@ -184,18 +183,6 @@ goto dotnetSET
 	if %errorlevel%==1 (
 	echo "SteamName" set to 0
 	set SteamName=0
-	)
-	goto ShowVersionSET
-::Set Show Version
-:ShowVersionSET
-	findstr /m "ShowVersion=1" Resources\Setting.ini >Nul
-	if %errorlevel%==0 (
-	echo "ShowVersion" set to 1
-	set ShowVersion=1
-	)
-	if %errorlevel%==1 (
-	echo "ShowVersion" set to 0
-	set ShowVersion=0
 	)
 	goto DevVersionSET
 ::Set Dev Version
@@ -518,34 +505,11 @@ goto dotnetSET
 	echo Depot: %Depot%
 	echo zip: %zip%
 	echo SteamName: %SteamName%
-	echo ShowVersion: %ShowVersion%
 	echo DevVersion: %DevVersion%
 	echo Steam UserName: %username%
 	pause
 	cls
 	goto mainmenu
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
