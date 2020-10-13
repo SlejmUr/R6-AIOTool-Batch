@@ -2,24 +2,7 @@
 
 ::ignore this above its for batch to exe conversion
 
-@echo off
-setlocal enableextensions enabledelayedexpansion
-set homepath=%cd%
-set AllInOneVersion=DEV
-set discord=discord.gg/EvrGzAV
-set /p username="Enter Steam Username:"
-
-::TIME SET
-FOR /f "tokens=1-8 delims=/.:- " %%A in ("%date% %time%") DO (
-SET Month=%%B
-SET Day=%%C
-SET Year=%%D
-SET Hours=%%E
-SET Minutes=%%F
-SET Seconds=%%G
-SET All=%%B-%%C-%%D_%%E-%%F-%%G
-)
-
+::
 ::                        +hmNNNmh+    
 ::                       yMMMMMMMMMy  
 ::                       mMMMh hMMMd  
@@ -33,6 +16,31 @@ SET All=%%B-%%C-%%D_%%E-%%F-%%G
 ::                       `ohmNMNmh+   
 :: Zer0Bytes#4428 https://i.imgur.com/nBKIDOX.png
 :: Helped by SlejmUr
+::
+
+@echo off
+setlocal enableextensions enabledelayedexpansion
+set homepath=%cd%
+set AllInOneVersion=DEV
+set discord=discord.gg/EvrGzAV
+
+
+
+::TIME SET START
+:settime
+	FOR /f "tokens=1-8 delims=/.:- " %%A in ("%date% %time%") DO (
+	SET Month=%%B
+	SET Day=%%C
+	SET Year=%%D
+	SET Hours=%%E
+	SET Minutes=%%F
+	SET Seconds=%%G
+	SET All=%%B-%%C-%%D_%%E-%%F-%%G
+	)
+	goto log
+::TIME SET END
+
+
 
 ::LOG start
 :log
@@ -41,16 +49,190 @@ SET All=%%B-%%C-%%D_%%E-%%F-%%G
   mkdir logs
   move "%ALL%-log.log" "logs"
   cls
-  goto verifydotnet
+  goto github
   ) else (
   echo ------------------------------------------------>>log.log
   echo You are using %AllInOneVersion% version>>log.log
-  goto verifydotnet
+  goto github
   )
 ::LOG end
 
 
+
+::Github Connect START
+:github
+ping github.com>nul
+  if errorlevel 1 (
+  echo I cant connect github, Continue at OW RISK!
+  echo I cant connect github, Continue at OW RISK! - %TIME% >>log.log
+  pause
+  goto mainmenu
+  ) 
+  if errorlevel 0 (
+  echo I can connect github, YEY
+  echo I can connect github, YEY - %TIME% >>log.log
+  goto SiniCheck
+  )
+::Github Connect END
+
+
+
+::Settings.ini get START
+:SiniCheck
+  MODE 62,50
+  if exist "Resources\Setting.ini" (
+    goto SiniSet
+  ) else (
+    mkdir Resources
+    goto noSini
+  )
+
+:noSini
+  MODE 78,20
+  echo ------------------------------------------------------------------------------
+  echo                              Downloading Setting.ini...
+  echo ------------------------------------------------------------------------------
+  curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/Settings.ini" --output Setting.ini
+  echo Download Setting.ini - %TIME%>>log.log
+  cls
+  goto moveS
+  cls
+  )
+
+:moveS
+  move Setting.ini Resources
+  goto SiniCheck
+::Setting.ini get END
+
+
+
+::S:INI SET / Finder START
+:SiniSet
+::Checkers
+	set Dotnet=1
+	set zip=1
+	set Depot=1
+	set Plaza=1
+	::Sets
+	set SteamName=1
+	set ShowVersion=1
+	set DevVersion=0
+goto dotnetSET
+::S:INI SET / Finder END
+
+::SET Things START
+:: SET CHECKERS START
+
+::Set dotnet
+:dotnetSET
+	findstr /m "Dotnet=1" Resources\Setting.ini >Nul
+	if %errorlevel%==0 (
+	echo "Dotnet" set to 1
+	set Dotnet=1
+	)
+	if %errorlevel%==1 (
+	echo "Dotnet" set to 0
+	set Dotnet=0
+	)
+	goto 7zipSET
+::Set 7zip
+:7zipSET
+	findstr /m "zip=1" Resources\Setting.ini >Nul
+	if %errorlevel%==0 (
+	echo "zip" set to 1
+	set zip=1
+	)
+	if %errorlevel%==1 (
+	echo "zip" set to 0
+	set zip=0
+	)
+	goto DepotSET
+::Set Depot
+:DepotSET
+	findstr /m "Depot=1" Resources\Setting.ini >Nul
+	if %errorlevel%==0 (
+	echo "Depot" set to 1
+	set Depot=1
+	)
+	if %errorlevel%==1 (
+	echo "Depot" set to 0
+	set Depot=0
+	)
+	goto PlazaSET
+::Set Plaza
+:PlazaSET
+	findstr /m "Plaza=1" Resources\Setting.ini >Nul
+	if %errorlevel%==0 (
+	echo "Plaza" set to 1
+	set Plaza=1
+	)
+	if %errorlevel%==1 (
+	echo "Plaza" set to 0
+	set Plaza=0
+	)
+	goto SteamSET
+:: SET CHECKERS END
+
+:: SET SET START
+::Set Get SteamName
+:SteamSET
+	findstr /m "SteamName=1" Resources\Setting.ini >Nul
+	if %errorlevel%==0 (
+	echo "SteamName" set to 1
+	set SteamName=1
+	)
+	if %errorlevel%==1 (
+	echo "SteamName" set to 0
+	set SteamName=0
+	)
+	goto ShowVersionSET
+::Set Show Version
+:ShowVersionSET
+	findstr /m "ShowVersion=1" Resources\Setting.ini >Nul
+	if %errorlevel%==0 (
+	echo "ShowVersion" set to 1
+	set ShowVersion=1
+	)
+	if %errorlevel%==1 (
+	echo "ShowVersion" set to 0
+	set ShowVersion=0
+	)
+	goto DevVersionSET
+::Set Dev Version
+:DevVersionSET
+	findstr /m "DevVersion=1" Resources\Setting.ini >Nul
+	if %errorlevel%==0 (
+	echo "DevVersion" set to 1
+	set DevVersion=1
+	)
+	if %errorlevel%==1 (
+	echo "DevVersion=1" set to 0
+	set DevVersion=0
+	)
+	goto MateBypass
+::matec bypass
+:MateBypass
+	if exist "C:\Users\matec\" (
+	set DevVersion=1
+	echo matec was found!
+	) else (
+	set DevVersion=0
+	echo matec wasn't found!
+	)
+	goto ifdotnet
+:: SET SET END
+::SET Things END
+
+
+
 ::Dotnet start
+:ifdotnet
+	if %dotnet%==1 (
+	goto verifydotnet
+	) else (
+	goto if7zip
+	)
+
 :verifydotnet
   MODE 50,20
   reg query "HKEY_LOCAL_MACHINE\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost" /v Version 2>nul
@@ -81,7 +263,7 @@ SET All=%%B-%%C-%%D_%%E-%%F-%%G
   if exist "C:\Program Files\dotnet\dotnet.exe" (
   echo DotNet Two checker is found the version
   echo DotNet Two exist checker is found the version - %TIME% >>log.log
-  goto 7zipcheck
+  goto if7zip
   ) else (
   goto dotnet
   )
@@ -89,10 +271,17 @@ SET All=%%B-%%C-%%D_%%E-%%F-%%G
 
 
 ::7zip start
+:if7zip
+	if %zip%==1 (
+	goto 7zipcheck
+	) else (
+	goto ifDD
+	)
+
 :7zipcheck
   MODE 62,50
   if exist "Resources\7z.exe" (
-    goto DepotCheck
+    goto ifDD
   ) else (
     mkdir Resources
     goto no7zip
@@ -117,10 +306,18 @@ SET All=%%B-%%C-%%D_%%E-%%F-%%G
 
 
 ::DD start
+:ifDD
+	if %zip%==1 (
+	goto DepotCheck
+	) else (
+	goto ifPlaza
+	)
+
+
 :DepotCheck
   cls
   if exist "Resources\DepotDownloader\DepotDownloader.dll" (
-    goto PlazaCheck 
+    goto ifPlaza 
   ) else (
     goto DepotDownloader
   )
@@ -147,10 +344,17 @@ SET All=%%B-%%C-%%D_%%E-%%F-%%G
 ::DD end
 
 ::Plaza Start
+:ifPlaza
+	if %zip%==1 (
+	goto PlazaCheck
+	) else (
+	goto ifSteam
+	)
+
 :PlazaCheck
   cls
   if exist "Resources\Plazas\PLAZA_BO\CODEX.ini" (
-    goto mainmenu 
+    goto ifSteam 
   ) else (
     goto GetPlaza
   )
@@ -178,11 +382,31 @@ SET All=%%B-%%C-%%D_%%E-%%F-%%G
 
 
 
+::SetSteam START
+:ifSteam
+	if %SteamName%==1 (
+	goto SetSteam
+	) else (
+	goto mainmenu
+	)
+:SetSteam
+	MODE 78,20
+	echo Please type your Steam Legacy name!
+	set /p username="Enter Steam Username:"
+	cls
+	goto mainmenu
+::SetSteam END
+
+
+
 ::MainMenu START
 :mainmenu
   cls
   Title R6S AllInOne Downloader
   MODE 62,22
+  if %DevVersion%==1 (
+  MODE 62,40 
+  )
   echo MainMenu loaded>>log.log
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege Old Version Downloader
@@ -203,7 +427,11 @@ SET All=%%B-%%C-%%D_%%E-%%F-%%G
   echo  [33m(7)[0m [36mBattlEye Checker[0m 
   echo  [33m(8)[0m [36mOpen LOG![0m 
   echo  [33m(9)[0m [36mChange Steam Username[0m 
-  ::echo  (10) Restart
+  if %DevVersion%==1 (
+  	echo  10 Restart
+	echo  11 settings
+	echo  12 logs Delete
+	)
   echo  [33m(0)[0m [36mClose[0m 
   echo [93m--------------------------------------------------------------[0m
   set /p option="Enter Number:"
@@ -259,15 +487,65 @@ SET All=%%B-%%C-%%D_%%E-%%F-%%G
   echo Changing Steam UserName - %TIME%>>log.log
   cls
   set /p username="Enter Steam Username:"
-  pause
   goto mainmenu
   )
   if %option%==10 (
   cls
   goto mainmenu
   )
+  if %option%==11 (
+  cls
+  goto settings
+  )
+  if %option%==12 (
+  cls
+  rd /s /q  "logs\"
+  )
   goto mainmenu
 ::MainMenu END
+
+
+
+
+:settings
+	echo Time : %TIME%
+	echo all aka fulltime: %ALL%
+	echo homepath: %homepath%
+	echo AllInOneVersion: %AllInOneVersion%
+	echo discord: %discord%
+	echo Dotnet: %Dotnet%
+	echo Plaza: %Plaza%
+	echo Depot: %Depot%
+	echo zip: %zip%
+	echo SteamName: %SteamName%
+	echo ShowVersion: %ShowVersion%
+	echo DevVersion: %DevVersion%
+	echo Steam UserName: %username%
+	pause
+	cls
+	goto mainmenu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
