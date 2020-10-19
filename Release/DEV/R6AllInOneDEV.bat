@@ -1,7 +1,4 @@
 @shift /0
-
-::ignore this above its for batch to exe conversion
-
 ::
 ::                        +hmNNNmh+    
 ::                       yMMMMMMMMMy  
@@ -23,7 +20,6 @@ setlocal enableextensions enabledelayedexpansion
 set homepath=%cd%
 set AllInOneVersion=DEV
 set discord=discord.gg/EvrGzAV
-
 
 
 ::TIME SET START
@@ -101,6 +97,7 @@ ping github.com>nul
 
 :moveS
   move Setting.ini Resources
+  echo Setting.ini Moved - %TIME%>>log.log
   goto SiniCheck
 ::Setting.ini get END
 
@@ -127,10 +124,12 @@ goto dotnetSET
 	findstr /m "Dotnet=1" Resources\Setting.ini >Nul
 	if %errorlevel%==0 (
 	echo "Dotnet" set to 1
+	echo "Dotnet" set to 1 >>log.log
 	set Dotnet=1
 	)
 	if %errorlevel%==1 (
 	echo "Dotnet" set to 0
+	echo "Dotnet" set to 0 >>log.log
 	set Dotnet=0
 	)
 	goto 7zipSET
@@ -139,10 +138,12 @@ goto dotnetSET
 	findstr /m "zip=1" Resources\Setting.ini >Nul
 	if %errorlevel%==0 (
 	echo "zip" set to 1
+	echo "zip" set to 1  >>log.log
 	set zip=1
 	)
 	if %errorlevel%==1 (
 	echo "zip" set to 0
+	echo "zip" set to 0 >>log.log
 	set zip=0
 	)
 	goto DepotSET
@@ -151,10 +152,12 @@ goto dotnetSET
 	findstr /m "Depot=1" Resources\Setting.ini >Nul
 	if %errorlevel%==0 (
 	echo "Depot" set to 1
+	echo "Depot" set to 1 >>log.log
 	set Depot=1
 	)
 	if %errorlevel%==1 (
 	echo "Depot" set to 0
+	echo "Depot" set to 0 >>log.log
 	set Depot=0
 	)
 	goto PlazaSET
@@ -163,10 +166,12 @@ goto dotnetSET
 	findstr /m "Plaza=1" Resources\Setting.ini >Nul
 	if %errorlevel%==0 (
 	echo "Plaza" set to 1
+	echo "Plaza" set to 1 >>log.log
 	set Plaza=1
 	)
 	if %errorlevel%==1 (
 	echo "Plaza" set to 0
+	echo "Plaza" set to 0 >>log.log
 	set Plaza=0
 	)
 	goto SteamSET
@@ -178,10 +183,12 @@ goto dotnetSET
 	findstr /m "SteamName=1" Resources\Setting.ini >Nul
 	if %errorlevel%==0 (
 	echo "SteamName" set to 1
+	echo "SteamName" set to 1 >>log.log
 	set SteamName=1
 	)
 	if %errorlevel%==1 (
 	echo "SteamName" set to 0
+	echo "SteamName" set to 0 >>log.log
 	set SteamName=0
 	)
 	goto DevVersionSET
@@ -190,10 +197,12 @@ goto dotnetSET
 	findstr /m "DevVersion=1" Resources\Setting.ini >Nul
 	if %errorlevel%==0 (
 	echo "DevVersion" set to 1
+	echo "DevVersion" set to 1 >>log.log
 	set DevVersion=1
 	)
 	if %errorlevel%==1 (
 	echo "DevVersion=1" set to 0
+	echo "DevVersion=1" set to 0 >>log.log
 	set DevVersion=0
 	)
 	goto MateBypass
@@ -202,9 +211,11 @@ goto dotnetSET
 	if exist "C:\Users\matec\" (
 	set DevVersion=1
 	echo matec was found!
+	echo matec was found! >>log.log
 	) else (
 	set DevVersion=0
 	echo matec wasn't found!
+	echo matec wasn't found! >>log.log
 	)
 	goto ifdotnet
 :: SET SET END
@@ -394,17 +405,17 @@ goto dotnetSET
   if %DevVersion%==1 (
   MODE 62,40 
   )
-  echo MainMenu loaded>>log.log
+  echo MainMenu Loaded>>log.log
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege Old Version Downloader
   echo  [31mYou MUST have a copy of Siege on Steam to use the downloader.[0m
   echo  This Tool fork with [91mZer0Byte[0m
   echo  Our Discord Server: [94m%discord%[0m 
-  echo  AIO Tool Version: [92m%AllInOneVersion%[0m 
+  echo  AIO Tool Version: [32m%AllInOneVersion%[0m 
   echo  Steam User: [96m%username%[0m
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
-  echo  What would you like to select?
+  echo  [92mWhat would you like to select?[0m 
   echo  [33m(1)[0m [36mFAQ and Notes[0m 
   echo  [33m(2)[0m [36mGame Menu [0m 
   echo  [33m(3)[0m [36mExtra Language[0m 
@@ -416,8 +427,7 @@ goto dotnetSET
   echo  [33m(9)[0m [36mChange Steam Username[0m 
   if %DevVersion%==1 (
   	echo  10 Restart
-	echo  11 settings
-	echo  12 logs Delete
+	echo  11 logs Delete
 	)
   echo  [33m(0)[0m [36mClose[0m 
   echo [93m--------------------------------------------------------------[0m
@@ -482,34 +492,10 @@ goto dotnetSET
   )
   if %option%==11 (
   cls
-  goto settings
-  )
-  if %option%==12 (
-  cls
   rd /s /q  "logs\"
   )
   goto mainmenu
 ::MainMenu END
-
-
-
-
-:settings
-	echo Time : %TIME%
-	echo all aka fulltime: %ALL%
-	echo homepath: %homepath%
-	echo AllInOneVersion: %AllInOneVersion%
-	echo discord: %discord%
-	echo Dotnet: %Dotnet%
-	echo Plaza: %Plaza%
-	echo Depot: %Depot%
-	echo zip: %zip%
-	echo SteamName: %SteamName%
-	echo DevVersion: %DevVersion%
-	echo Steam UserName: %username%
-	pause
-	cls
-	goto mainmenu
 
 
 
@@ -558,6 +544,7 @@ goto dotnetSET
   echo  DepotDownloader: Created by SteamRE, you can download any manifest once you have the game
   echo  R6-AIOTool : AllInOne Tool, many function. Created by SlejmUr
   echo  R6 Manifest : Created by Zer0Bytes
+  echo  FAQ readed>>log.log
   pause
   cls
   goto Notes
@@ -572,7 +559,7 @@ goto dotnetSET
   echo  Planning to add Extra Language option in Events!
   echo  Plaza_NEW not working on Shadow Legacy and Steel Wave too
   echo  If you have a problem this tool, DM me on Discord! SlejmUr#4007
-  echo FAQ and Notes Readed!>>log.log
+  echo Notes Readed!>>log.log
   pause
   cls
   goto mainmenu
@@ -582,7 +569,7 @@ goto dotnetSET
 ::GameMenu START
 :GameMenu
  Title Rainbow Six Siege GameMenu
- echo GameMenu loaded>>log.log
+ echo GameMenu Loaded>>log.log
  MODE 33,10
  echo   Rainbow Six Siege Game Menu
  echo ---------------------------------
@@ -624,6 +611,7 @@ goto dotnetSET
   cls
   Title Rainbow Six Siege DownloadMenu
   MODE 50,40
+  echo DownloadMenu Loaded>>log.log
   echo 		Version Downloader
   echo 	What would you like to select?
   echo --------------------------------------------------
@@ -989,7 +977,7 @@ goto dotnetSET
 ::UninstallMenu START
 :UninstallMenu
  Title Rainbow Six Siege UninstallMenu
- echo UninstallMenu loaded>>log.log
+ echo UninstallMenu Loaded>>log.log
  MODE 50,50
  echo                  Version Uninstaller
  echo           What would you like to select?
@@ -1308,6 +1296,7 @@ goto dotnetSET
  cls
  Title Rainbow Six Siege 4K Textures Downloader
  MODE 50,38
+ echo TextureMenu Loaded >>log.log
  echo 	    4K Textures Downloader
  echo 	What would you like to select?
  echo --------------------------------------------------
@@ -1588,11 +1577,13 @@ goto dotnetSET
 ::TextureMenu END
 
 
+
 ::EventMenu START
 :EventMenu
  cls
  Title Rainbow Six Siege Event Downloader
  MODE 52,25
+ echo EventMenu Loaded>>log.log
  echo What would you like to select?
  echo ----------------------------------------------------
  echo # 0 - Back
@@ -1693,6 +1684,7 @@ goto dotnetSET
   cls
   Title Rainbow Six Siege Extra Downloader
   MODE 50,25
+  echo Extra Loaded>>log.log
   echo               Extra Language Downloader
   echo             What would you like to select?
   echo              EVENT LANG NOT SUPPORTED!
