@@ -30,7 +30,7 @@ MODE 62,50
 if exist "Requirements\7z.exe" (
   goto DepotCheck
 ) else (
-  mkdir Requirements
+  mkdir Resources
   goto no7zip
 )
 
@@ -39,14 +39,14 @@ MODE 78,20
 echo ------------------------------------------------------------------------------
 echo                              Downloading 7-Zip...
 echo ------------------------------------------------------------------------------
-curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/7z.exe" --output 7z.exe
+curl -L  "https://github.com/DataCluster0/R6TBBatchTool/raw/master/Requirements/7z.exe" --output 7z.exe
 cls
 goto move7
 cls
 )
 
 :move7
-move 7z.exe Requirements
+move 7z.exe Resources
 goto 7zipcheck
 ::7zip end
 
@@ -54,7 +54,7 @@ goto 7zipcheck
 ::DD start
 :DepotCheck
 cls
-if exist "Requirements\DepotDownloader\DepotDownloader.dll" (
+if exist "Resources\DepotDownloader\DepotDownloader.dll" (
   goto DepotDone 
 ) else (
   goto DepotDownloader
@@ -73,7 +73,7 @@ goto extractDD
 :extractDD
 for %%I in ("depot.zip") do (
   echo extractDD
-  "Requirements\7z.exe" x -y -o"Requirements\DepotDownloader" "%%I" && del %%I
+  "Resources\7z.exe" x -y -o"Resources\DepotDownloader" "%%I" && del %%I
 cls
 goto DepotCheck
 )
@@ -91,9 +91,10 @@ goto mainmenu
 MODE 100,40
 echo What DepotDownloader you have?
 echo 0 - Back
-echo 1 - I use Shey Tool
-echo 2 - I use AIO-Tool
-echo 3 - Downloaded with this tool
+echo 1 - I use Zer0/Shey Tool
+echo 2 - I use AIO-Tool 1.3 or above
+echo 3 - I use AIO-Tool 1.2 or before
+echo 4 - Downloaded with this tool
 set /p version="Enter Selection:"
 
 if %version%==0 (
@@ -102,13 +103,17 @@ goto mainmenu
 )
 if %version%==1 (
 cls
-goto Shey-Tool
+goto Zer0-Shey-Tool
 )
 if %version%==2 (
 cls
 goto AIO-Tool
 )
 if %version%==3 (
+cls
+goto AIO-OLD
+)
+if %version%==4 (
 cls
 goto DDWithThis
 )
@@ -119,18 +124,18 @@ echo Use valid DepotID;manifestID and name!
 set /p depotID="DepotID:"
 set /p manifestID="manifestID:"
 set /p username="Enter Steam Username:"
-dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot %depotID% -manifest %manifestID% -username %username% -remember-password -dir "Downloads\TEST" -validate -max-servers 15 -max-downloads 10
+dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot %depotID% -manifest %manifestID% -username %username% -remember-password -validate -max-servers 15 -max-downloads 10
 pause
 cls
 echo Custom Manifest!
 goto mainmenu
 
-:Shey-Tool
+:Zer0-Shey-Tool
 echo Use valid DepotID;manifestID and name!
 set /p depotID="DepotID:"
 set /p manifestID="manifestID:"
 set /p username="Enter Steam Username:"
-dotnet Resources\DepotDownloader.dll -app 359550 -depot %depotID% -manifest %manifestID% -username %username% -remember-password -dir "Downloads\TEST" -validate -max-servers 15 -max-downloads 10
+dotnet Resources\DepotDownloader.dll -app 359550 -depot %depotID% -manifest %manifestID% -username %username% -remember-password -validate -max-servers 15 -max-downloads 10
 pause
 cls
 echo Custom Manifest!
@@ -141,7 +146,18 @@ echo Use valid DepotID;manifestID and name!
 set /p depotID="DepotID:"
 set /p manifestID="manifestID:"
 set /p username="Enter Steam Username:"
-dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot %depotID% -manifest %manifestID% -username %username% -remember-password -dir "Downloads\TEST" -validate -max-servers 15 -max-downloads 10
+dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot %depotID% -manifest %manifestID% -username %username% -remember-password -validate -max-servers 15 -max-downloads 10
+pause
+cls
+echo Custom Manifest!
+goto mainmenu
+
+AIO-OLD
+echo Use valid DepotID;manifestID and name!
+set /p depotID="DepotID:"
+set /p manifestID="manifestID:"
+set /p username="Enter Steam Username:"
+dotnet Requirements\DepotDownloader\DepotDownloader.dll -app 359550 -depot %depotID% -manifest %manifestID% -username %username% -remember-password -validate -max-servers 15 -max-downloads 10
 pause
 cls
 echo Custom Manifest!
