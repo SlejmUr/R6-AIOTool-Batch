@@ -113,6 +113,7 @@ ping github.com>nul
 	::Sets
 	set SteamName=1
 	set DevVersion=0
+	set cmdmenusel=1
 goto dotnetSET
 ::S:INI SET / Finder END
 
@@ -210,12 +211,12 @@ goto dotnetSET
 :MateBypass
 	if exist "C:\Users\matec\" (
 	set DevVersion=1
-	echo matec was found!
-	echo matec was found! >>log.log
+	echo matec was found
+	echo matec was found >>log.log
 	) else (
 	set DevVersion=0
-	echo matec wasn't found!
-	echo matec wasn't found! >>log.log
+	echo matec wasn't found
+	echo matec wasn't found >>log.log
 	)
 	goto ifdotnet
 :: SET SET END
@@ -346,13 +347,13 @@ goto dotnetSET
 	if %zip%==1 (
 	goto PlazaCheck
 	) else (
-	goto ifSteam
+	goto ifcmd
 	)
 
 :PlazaCheck
   cls
   if exist "Resources\Plazas\PLAZA_BO\CODEX.ini" (
-    goto ifSteam 
+    goto ifcmd 
   ) else (
     goto GetPlaza
   )
@@ -377,6 +378,39 @@ goto dotnetSET
   goto PlazaCheck
   )
 ::Plaza End
+
+
+
+::cmdmenusel START
+:ifcmd
+	if %cmdmenusel%==1 (
+	goto cmdCheck
+	) else (
+	goto ifSteam
+	)
+
+:cmdCheck
+  cls
+  if exist "Resources\cmdmenusel.exe" (
+    goto ifSteam 
+  ) else (
+    goto GetCmd
+  )
+:GetCmd
+  cls
+  MODE 78,20
+  echo ------------------------------------------------------------------------------
+  echo                        Downloading cmdmenusel...
+  echo ------------------------------------------------------------------------------
+  curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/cmdmenusel.exe" --output cmdmenusel.exe
+  echo Download cmdmenusel - %TIME%>>log.log
+  cls
+  goto movecmd
+
+:movecmd
+  move cmdmenusel.exe Resources
+  goto cmdCheck
+::cmdmenusel END
 
 
 
@@ -409,7 +443,7 @@ goto dotnetSET
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege Old Version Downloader
   echo  [31mYou MUST have a copy of Siege on Steam to use the downloader.[0m
-  echo  This Tool fork with [91mZer0Byte[0m
+  echo  This tools is forked from [91mZer0Bytes[0m manifest tool
   echo  Our Discord Server: [94m%discord%[0m 
   echo  AIO Tool Version: [32m%AllInOneVersion%[0m 
   echo  Steam User: [96m%username%[0m
@@ -428,6 +462,7 @@ goto dotnetSET
   if %DevVersion%==1 (
   	echo  10 Restart
 	echo  11 logs Delete
+	echo  12 cmdtest
 	)
   echo  [33m(0)[0m [36mClose[0m 
   echo [93m--------------------------------------------------------------[0m
@@ -494,8 +529,48 @@ goto dotnetSET
   cls
   rd /s /q  "logs\"
   )
+  if %option%==12 (
+  cls
+  goto cmdtest
+  )
   goto mainmenu
 ::MainMenu END
+
+
+
+:cmdtest
+	cls
+	Title cmdmenusel TEST 
+	MODE 62,40 
+  echo [93m----------------------------NOTES-----------------------------[0m
+  echo  Rainbow Six Siege Old Version Downloader
+  echo  [31mYou MUST have a copy of Siege on Steam to use the downloader.[0m
+  echo  This tools is forked from [91mZer0Bytes[0m manifest tool
+  echo  Our Discord Server: [94m%discord%[0m 
+  echo  AIO Tool Version: [32m%AllInOneVersion%[0m 
+  echo  Steam User: [96m%username%[0m
+  echo  Read FAQ!
+  echo [93m----------------------------SELECT----------------------------[0m
+	Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Close"
+	if %ERRORLEVEL% == 1 goto faq
+	if %ERRORLEVEL% == 2 goto GameMenu
+	if %ERRORLEVEL% == 3 (
+	echo TextureMenu Choosed>>log.log
+  	cls
+  	goto TextureMenu
+  	)
+  	if %ERRORLEVEL% == 4 goto mainmenu
+	goto MainMenu
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1017,6 +1092,7 @@ goto dotnetSET
  echo # 190 = M.U.T.E Protocol
  echo # 191 = Steel Wave (Zer0 Manifest) [Omega/Mute]
  echo # 20 = Shadow Legacy (Y5S3_release)
+ echo # 21 = Sugar Fright / Telly
  ::echo # 21 = Placeholder
  echo --------------------------------------------------
  set /p version="Enter Selection:"
@@ -1279,6 +1355,14 @@ goto dotnetSET
  goto mainmenu
  )
  if %version%==21 (
+ rd /s /q "Downloads\Y5S3_Sugar_Fright"
+ timeout /t 4
+ cls
+ echo Sugar Fright / Telly Choosed [U]>>log.log
+ echo Delete complete!
+ goto mainmenu
+ )
+ if %version%==22 (
  rd /s /q "Downloads\Placeholder"
  timeout /t 4
  cls
@@ -1331,7 +1415,8 @@ goto dotnetSET
  echo # 19 = Steel Wave (Y5S2_release)
  echo # 191 = M.U.T.E Protocol (Support Omega)
  echo # 20 = Shadow Legacy (Y5S3_release)
- echo # 21 = Placeholder
+ echo # 21 = Sugar Fright/ Telly
+ ::echo # 22 = Placeholder
  echo --------------------------------------------------
  set /p version="Enter Selection:"
  if %version%==0 (
@@ -1566,6 +1651,14 @@ goto dotnetSET
  goto mainmenu
  )
  if %version%==21 (
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3569318872166878802 -username %username% -remember-password -dir "Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
+ pause
+ cls
+ echo Download complete!
+ echo It's Sugar Fright / Telly 4K
+ goto mainmenu
+ )
+ if %version%==22 (
  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
  pause
  cls
@@ -1594,7 +1687,8 @@ goto dotnetSET
  echo # 18 = Road To S.I. 2020 (Same with normal Shifting)
  echo # 19 = The Grand Larceny / Golden Gun
  echo # 20 = M.U.T.E Protocol (Support Omega)
- echo # 21 = M.U.T.E Protocol (Not supported Omega)
+ echo # 201 = M.U.T.E Protocol (Not supported Omega)
+ echo # 21 = Sugar Fright / Telly
  echo ----------------------------------------------------
  set /p version="Enter Selection:"
  if %version%==0 (
@@ -1664,14 +1758,24 @@ goto dotnetSET
   echo It's M.U.T.E Protocol (Support Omega)
   goto mainmenu
   )
-  ::MUTE EVENT
-  if %version%==21 (
+  ::MUTE EVENT W/o Omega
+  if %version%==201 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave_Morphues" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave_Morphues" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's M.U.T.E Protocol (Not supported Omega)
+  goto mainmenu
+  )
+  ::Sugar Fright / Telly
+  if %version%==21 (
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3265954110064157115 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5436378897406471956 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete [v14902238]
+  echo It's Sugar Fright / Telly
   goto mainmenu
   )
  goto EventMenu
