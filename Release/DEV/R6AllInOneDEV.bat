@@ -538,7 +538,7 @@ goto dotnetSET
 
 
 
-:cmdtest
+:MainCMD
 	cls
 	Title cmdmenusel TEST 
 	MODE 62,40 
@@ -551,15 +551,51 @@ goto dotnetSET
   echo  Steam User: [96m%username%[0m
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
-	Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Close"
-	if %ERRORLEVEL% == 1 goto faq
-	if %ERRORLEVEL% == 2 goto GameMenu
-	if %ERRORLEVEL% == 3 (
-	echo TextureMenu Choosed>>log.log
-  	cls
-  	goto TextureMenu
-  	)
-  	if %ERRORLEVEL% == 4 goto mainmenu
+	Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Exit"
+  if %ERRORLEVEL% == 1 (
+  echo FAQ Choosed>>log.log
+  cls
+  goto faq
+  )
+  if %ERRORLEVEL% == 2 (
+  echo GameMenu Choosed>>log.log
+  cls
+  goto GameMenu
+  )
+  if %ERRORLEVEL% == 3 (
+  echo Extra Menu Choosed>>log.log
+  cls
+  goto Extra
+  )
+  if %ERRORLEVEL% == 4 (
+  echo TextureMenu Choosed>>log.log
+  cls
+  goto TextureMenu
+  )
+  if %ERRORLEVEL% == 5 (
+  echo dxvcredist Choosed>>log.log
+  cls
+  goto dxvcredist
+  )
+  if %ERRORLEVEL% == 6 (
+  echo Credit Choosed>>log.log
+  cls
+  goto Credit
+  )
+  if %ERRORLEVEL% == 7 (
+  echo BattlEyeChecker Choosed>>log.log
+  cls
+  goto BattlEyeChecker
+  )
+  if %ERRORLEVEL% == 8 (
+  echo Changing Steam UserName - %TIME%>>log.log
+  cls
+  set /p username="Enter Steam Username:"
+  goto mainmenu
+  )
+	if %ERRORLEVEL% == 9 (
+  goto MainMenu
+  )
 	goto MainMenu
 
 
@@ -643,38 +679,34 @@ goto dotnetSET
 
 ::GameMenu START
 :GameMenu
- Title Rainbow Six Siege GameMenu
+ Title R6:S GameMenu
  echo GameMenu Loaded>>log.log
  MODE 33,10
  echo   Rainbow Six Siege Game Menu
  echo ---------------------------------
- echo  (0) Back 
- echo ---------------------------------
- echo  (1) Install Rainbow Six Siege
- echo  (2) Uninstall Rainbow Six Siege
- echo  (3) Starting Rainbow Six Siege
- echo ---------------------------------
- set /p option="Enter Selection:"
+ echo   [92mWhat would you like to select?[0m 
+ Resources\cmdmenusel f8f0 "    Install Rainbow Six Siege" "   Uninstall Rainbow Six Siege" "   Starting Rainbow Six Siege" "              Back"
+ ::set /p option="Enter Selection:"
  
- if %option%==0 (
- echo Back>>log.log
- cls
- goto mainmenu
- )
- if %option%==1 (
+ if %ERRORLEVEL% == 1 (
  echo DownloadMenu Choosed>>log.log
  cls
  goto DownloadMenu
  )
- if %option%==2 (
+ if %ERRORLEVEL% == 2 (
  echo UninstallMenu Choosed>>log.log
  cls
  goto UninstallMenu
  )
- if %option%==3 (
+ if %ERRORLEVEL% == 3 (
  echo StartGame Choosed>>log.log
  cls
  goto StartGame
+ )
+ if %ERRORLEVEL% == 4 (
+ echo Back>>log.log
+ cls
+ goto MainCMD
  )
  goto GameMenu
 ::GameMenu END
@@ -746,7 +778,8 @@ goto dotnetSET
   pause
   cls
   echo Download complete!
-  echo It's Vanilla! (v8194013)
+  echo It's Vanilla [v8194013]
+  echo Vanilla Choosed>>log.log
   goto mainmenu
   )
   ::BLACK ICE Released
@@ -756,7 +789,8 @@ goto dotnetSET
   pause
   cls
   echo Download complete!
-  echo It's BLACK ICE Released! [IDK how but (v11726982)]
+  echo It's BLACK ICE Released [IDK how but v11726982]
+  echo BLACK ICE Choosed>>log.log
   goto mainmenu
   )
   ::DUST LINE Released
@@ -766,17 +800,19 @@ goto dotnetSET
   pause
   cls
   echo Download complete!
-  echo It's DUST LINE Released! (v9132097)
+  echo It's DUST LINE Released [v9132097]
+  echo DUST LINE Choosed>>log.log
   goto mainmenu
   )
-  ::SKULL Rain Released
+  ::SKULL RAIN Released
   if %version%==4 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3552784069501585540 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6528040263176897081 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
-  echo It's SKULL Rain Released! (v9654076)
+  echo It's SKULL RAIN Released [v9654076]
+  echo SKULL RAIN Choosed>>log.log
   goto mainmenu
   )
   ::Skull Rain 4.2
@@ -785,8 +821,9 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5851804596427790505 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!  Thanks Zer0!
-  echo ? (v9860556)
+  echo Download complete  Thanks Zer0!
+  echo Skull Rain 4.2 [v9860556]
+  echo Skull Rain 4.2 Choosed>>log.log
   goto mainmenu
   )
   ::RED CROW Released
@@ -795,9 +832,9 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8569920171217002292 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo RED CROW Choosed>>log.log
   echo Download complete!
   echo It's RED CROW Released!
+  echo RED CROW Choosed>>log.log
   goto mainmenu
   )
   ::VELVET SHELL Released
@@ -806,9 +843,9 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8006071763917433748 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo VELVET SHELL Choosed>>log.log
   echo Download complete!
   echo It's VELVET SHELL Released
+  echo VELVET SHELL Choosed>>log.log
   goto mainmenu
   )
   ::Health Released
@@ -817,9 +854,9 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2332919753188284154 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Health Choosed>>log.log
   echo Download complete!
   echo It's Health Released!
+  echo Health Choosed>>log.log
   goto mainmenu
   )
   if %version%==71 (
@@ -828,8 +865,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 708773000306432190 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Health (Zer0) Choosed>>log.log
   echo Download complete! Thanks Zer0!
+  echo Health [Zer0] Choosed>>log.log
   goto mainmenu
   )
   ::BLOOD ORCHID Released
@@ -838,9 +875,9 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2410147212125863824 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo BLOOD ORCHID Choosed>>log.log
   echo Download complete!
   echo It's BLOOD ORCHID Released!
+  echo BLOOD ORCHID Choosed>>log.log
   goto mainmenu
   )
   ::Blood Orchid 2.3.1.1
@@ -849,7 +886,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1613631671988840841 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete! Thanks Zer0!
+  echo Download complete Thanks Zer0!
+  echo Blood Orchid 2.3.1.1 [Zer0] Choosed>>log.log
   goto mainmenu
   )
   ::WHITE NOISE Released
@@ -860,6 +898,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's WHITE NOISE  Released!
+  echo WHITE NOISE Choosed>>log.log
   goto mainmenu
   )
   ::WHITE NOISE Manifest
@@ -868,7 +907,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4221297486420648079 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete! Thanks Zer0!
+  echo Download complete Thanks Zer0!
+  echo WHITE NOISE [Zer0] Choosed>>log.log
   goto mainmenu
   )
   ::CHIMERA Released
@@ -879,6 +919,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's CHIMERA  Released
+  echo CHIMERA Choosed>>log.log
   goto mainmenu
   )
   ::PARA BELLUM Released
@@ -889,6 +930,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's PARA BELLUM Released!
+  echo PARA BELLUM Choosed>>log.log
   goto mainmenu
   )
   ::GRIM SKY Released
@@ -899,6 +941,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's GRIM SKY Released!
+  echo  GRIM SKY Choosed>>log.log
   goto mainmenu
   )
   ::GRIM SKY Manifest
@@ -907,7 +950,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7781202564071310413 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete! Thanks Zer0!
+  echo Download complete Thanks Zer0!
+  echo GRIM SKY [Zer0] Choosed>>log.log
   goto mainmenu
   )
   ::WIND BASTION Released
@@ -917,7 +961,8 @@ goto dotnetSET
   pause
   cls
   echo Download complete!
-  echo It's WIND BASTION Released! (v12512571)
+  echo It's WIND BASTION Released (v12512571)
+  echo WIND BASTION [v12512571] Choosed>>log.log
   goto mainmenu
   )
   ::BURNT HORIZON Released
@@ -928,14 +973,17 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's BURNT HORIZON Released!
+  echo BURNT HORIZON Choosed>>log.log
   goto mainmenu
   )
+  ::BURNT HORIZON manifest
   if %version%==141 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8356277316976403078 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete! Thanks Zer0!
+  echo BURNT HORIZON [Zer0] Choosed>>log.log
   goto mainmenu
   )
   ::PHANTOM SIGHT Released
@@ -946,6 +994,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's PHANTOM SIGHT Released!
+  echo PHANTOM SIGHT Choosed>>log.log
   goto mainmenu
   )
   ::EMBER RISE Released
@@ -956,14 +1005,17 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's EMBER RISE Released!
+  echo EMBER RISE Choosed>>log.log
   goto mainmenu
   )
+  ::EMBER RISE manifest
   if %version%==161 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete! Thanks Zer0!
+  echo Download complete Thanks Zer0!
+  echo EMBER RISE [Zer0] Choosed>>log.log
   goto mainmenu
   )
   ::SHIFTING TIDES Released
@@ -974,6 +1026,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's SHIFTING TIDES Released!
+  echo SHIFTING TIDES Choosed>>log.log
   goto mainmenu
   )
   ::VOID EDGE Released
@@ -984,6 +1037,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's VOID EDGE Released!
+  echo VOID EDGE Choosed>>log.log
   goto mainmenu
   )
   ::Void Edge manifest
@@ -992,7 +1046,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1739364586766771991 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete! Thanks Zer0!
+  echo Download complete Thanks Zer0!
+  echo Void Edge [Zer0] Choosed>>log.log
   goto mainmenu
   )
   ::STEEL WAVE
@@ -1003,6 +1058,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's STEEL WAVE Released!
+  echo STEEL WAVE Choosed>>log.log
   goto mainmenu
   )
   ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
@@ -1012,7 +1068,8 @@ goto dotnetSET
   pause
   cls
   echo v14603060
-  echo Download complete! Thanks Zer0!
+  echo Download complete Thanks Zer0!
+  echo v14603060 steel wave [Mute Protocol] Choosed>>log.log
   goto mainmenu
   )
   ::SteelWave (omega/Mute Protocol)
@@ -1022,7 +1079,8 @@ goto dotnetSET
   pause
   cls
   echo v14664131
-  echo Download complete! Thanks Zer0!
+  echo Download complete Thanks Zer0!
+  echo v14664131 SteelWave [omega/Mute Protocol] Choosed>>log.log
   goto mainmenu
   )
   ::Shadow Legacy
@@ -1033,6 +1091,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's Shadow Legacy Released!
+  echo Shadow Legacy Choosed>>log.log
   goto mainmenu
   )
   if %version%==21 (
@@ -1042,6 +1101,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's Placeholder
+  echo Placeholder Choosed>>log.log
   goto mainmenu
   )
   goto DownloadMenu
@@ -4699,6 +4759,8 @@ goto dotnetSET
  MODE 36,8
  set EXE=RainbowSix_BE.exe
  FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto FOUND
+ goto NOTFOUND
+ :NOTFOUND
  echo ------------------------------------
  echo [-] BattleEye is Not running
  echo [-] BattleEye is Not running  - %TIME% >>log.log
