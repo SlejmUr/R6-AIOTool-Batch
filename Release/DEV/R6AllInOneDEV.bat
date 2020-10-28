@@ -12,7 +12,7 @@
 ::                       hMMy.NMMMMy  discord.gg/EvrGzAV
 ::                       `ohmNMNmh+   
 :: Zer0Bytes#4428 https://i.imgur.com/nBKIDOX.png
-:: Helped by SlejmUr
+:: Updated by SlejmUr#4007
 ::
 
 @echo off
@@ -62,7 +62,7 @@ ping github.com>nul
   echo I cant connect github, Continue at OW RISK!
   echo I cant connect github, Continue at OW RISK! - %TIME% >>log.log
   pause
-  goto mainmenu
+  goto MainCMD
   ) 
   if errorlevel 0 (
   echo I can connect github, YEY
@@ -419,26 +419,24 @@ goto dotnetSET
 	if %SteamName%==1 (
 	goto SetSteam
 	) else (
-	goto mainmenu
+  set username=matecraft1111
+	goto MainMenu
 	)
 :SetSteam
 	MODE 78,20
 	echo Please type your Steam Legacy name!
 	set /p username="Enter Steam Username:"
 	cls
-	goto mainmenu
+	goto MainMenu
 ::SetSteam END
 
 
 
 ::MainMenu START
-:mainmenu
+:MainMenu
   cls
   Title R6S AllInOne Downloader
-  MODE 62,22
-  if %DevVersion%==1 (
-  MODE 62,40 
-  )
+  MODE 62,42
   echo MainMenu Loaded>>log.log
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege Old Version Downloader
@@ -459,11 +457,6 @@ goto dotnetSET
   echo  [33m(7)[0m [36mBattlEye Checker[0m 
   echo  [33m(8)[0m [36mOpen LOG![0m 
   echo  [33m(9)[0m [36mChange Steam Username[0m 
-  if %DevVersion%==1 (
-  	echo  10 Restart
-	echo  11 logs Delete
-	echo  12 cmdtest
-	)
   echo  [33m(0)[0m [36mClose[0m 
   echo [93m--------------------------------------------------------------[0m
   set /p option="Enter Number:"
@@ -513,17 +506,17 @@ goto dotnetSET
   cls
   start log.log
   pause
-  goto mainmenu
+  goto MainMenu
   )
   if %option%==9 (
   echo Changing Steam UserName - %TIME%>>log.log
   cls
   set /p username="Enter Steam Username:"
-  goto mainmenu
+  goto MainMenu
   )
   if %option%==10 (
   cls
-  goto mainmenu
+  goto MainMenu
   )
   if %option%==11 (
   cls
@@ -531,14 +524,15 @@ goto dotnetSET
   )
   if %option%==12 (
   cls
-  goto cmdtest
+  goto MainCMD
   )
-  goto mainmenu
+  goto MainMenu
 ::MainMenu END
 
 
 
 :MainCMD
+  echo MainCMD loaded>>log.log
 	cls
 	Title cmdmenusel TEST 
 	MODE 62,40 
@@ -591,7 +585,7 @@ goto dotnetSET
   echo Changing Steam UserName - %TIME%>>log.log
   cls
   set /p username="Enter Steam Username:"
-  goto mainmenu
+  goto MainMenu
   )
 	if %ERRORLEVEL% == 9 (
   goto MainMenu
@@ -673,7 +667,7 @@ goto dotnetSET
   echo Notes Readed!>>log.log
   pause
   cls
-  goto mainmenu
+  goto MainMenu
 ::FAQ and notes END
 
 
@@ -760,7 +754,7 @@ goto dotnetSET
   set /p version="Enter Selection:"
   if %version%==0 (
   cls
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==99 (
   echo EventMenu choosed >>log.log
@@ -773,336 +767,336 @@ goto dotnetSET
 
   ::Vanilla
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8358812283631269928 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 3893422760579204530 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8358812283631269928 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 3893422760579204530 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Vanilla [v8194013]
   echo Vanilla Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::BLACK ICE Released
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5188997148801516344 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7932785808040895147 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5188997148801516344 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7932785808040895147 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's BLACK ICE Released [IDK how but v11726982]
   echo BLACK ICE Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::DUST LINE Released
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2303064029242396590 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2206497318678061176 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2303064029242396590 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2206497318678061176 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's DUST LINE Released [v9132097]
   echo DUST LINE Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::SKULL RAIN Released
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3552784069501585540 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6528040263176897081 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3552784069501585540 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6528040263176897081 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's SKULL RAIN Released [v9654076]
   echo SKULL RAIN Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::Skull Rain 4.2
   if %version%==41 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5819137024728546741 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5851804596427790505 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5819137024728546741 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5851804596427790505 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete  Thanks Zer0!
   echo Skull Rain 4.2 [v9860556]
   echo Skull Rain 4.2 Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::RED CROW Released
   if %version%==5 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3576607363557872807 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8569920171217002292 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3576607363557872807 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8569920171217002292 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's RED CROW Released!
   echo RED CROW Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::VELVET SHELL Released
   if %version%==6 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2248734317261478192 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8006071763917433748 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2248734317261478192 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8006071763917433748 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's VELVET SHELL Released
   echo VELVET SHELL Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::Health Released
   if %version%==7 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2786501509753402970 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2332919753188284154 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2786501509753402970 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2332919753188284154 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Health Released!
   echo Health Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==71 (
   ::Health Manifest
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5875987479498297665 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 708773000306432190 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5875987479498297665 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 708773000306432190 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete! Thanks Zer0!
   echo Health [Zer0] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::BLOOD ORCHID Released
   if %version%==8 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8948840210977117778 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2410147212125863824 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8948840210977117778 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2410147212125863824 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's BLOOD ORCHID Released!
   echo BLOOD ORCHID Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::Blood Orchid 2.3.1.1
   if %version%==81 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 6708129824495912434 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1613631671988840841 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 6708129824495912434 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1613631671988840841 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
   echo Blood Orchid 2.3.1.1 [Zer0] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::WHITE NOISE Released
   if %version%==9 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2066250193950057921 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2783803489764777627 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2066250193950057921 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2783803489764777627 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's WHITE NOISE  Released!
   echo WHITE NOISE Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::WHITE NOISE Manifest
   if %version%==91 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8748734086032257441 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4221297486420648079 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8748734086032257441 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4221297486420648079 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
   echo WHITE NOISE [Zer0] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::CHIMERA Released
   if %version%==10 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5071357104726974256 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5071357104726974256 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's CHIMERA  Released
   echo CHIMERA Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::PARA BELLUM Released
   if %version%==11 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8312108283310615233 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8765715607275074515 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8312108283310615233 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8765715607275074515 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's PARA BELLUM Released!
   echo PARA BELLUM Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::GRIM SKY Released
   if %version%==12 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7286067994760020542 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4133951394045241747 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7286067994760020542 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4133951394045241747 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's GRIM SKY Released!
   echo  GRIM SKY Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::GRIM SKY Manifest
   if %version%==121 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5562094852451837435 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7781202564071310413 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5562094852451837435 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7781202564071310413 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
   echo GRIM SKY [Zer0] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::WIND BASTION Released
   if %version%==13 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 6502258854032233436 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7659555540733025386 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 6502258854032233436 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7659555540733025386 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's WIND BASTION Released (v12512571)
   echo WIND BASTION [v12512571] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::BURNT HORIZON Released
   if %version%==14 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8985694971177711792 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4355229858723790756 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8985694971177711792 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4355229858723790756 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's BURNT HORIZON Released!
   echo BURNT HORIZON Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::BURNT HORIZON manifest
   if %version%==141 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8356277316976403078 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8356277316976403078 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete! Thanks Zer0!
   echo BURNT HORIZON [Zer0] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::PHANTOM SIGHT Released
   if %version%==15 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 693082837425613508 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5408324128694463720 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 693082837425613508 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5408324128694463720 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's PHANTOM SIGHT Released!
   echo PHANTOM SIGHT Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::EMBER RISE Released
   if %version%==16 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7309481042294838052 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5429930338066808153 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7309481042294838052 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5429930338066808153 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's EMBER RISE Released!
   echo EMBER RISE Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::EMBER RISE manifest
   if %version%==161 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
   echo EMBER RISE [Zer0] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::SHIFTING TIDES Released
   if %version%==17 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
   pause
   cls
   echo Download complete!
   echo It's SHIFTING TIDES Released!
   echo SHIFTING TIDES Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::VOID EDGE Released
   if %version%==18 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8007091753837589034 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2810676266503656332 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8007091753837589034 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2810676266503656332 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's VOID EDGE Released!
   echo VOID EDGE Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::Void Edge manifest
   if %version%==181 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 1378283477131353042 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1739364586766771991 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 1378283477131353042 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1739364586766771991 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
   echo Void Edge [Zer0] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::STEEL WAVE
   if %version%==19 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7032500641931923367 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8083217055977195199 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7032500641931923367 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8083217055977195199 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's STEEL WAVE Released!
   echo STEEL WAVE Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
   if %version%==191 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo v14603060
   echo Download complete Thanks Zer0!
   echo v14603060 steel wave [Mute Protocol] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::SteelWave (omega/Mute Protocol)
   if %version%==192 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo v14664131
   echo Download complete Thanks Zer0!
   echo v14664131 SteelWave [omega/Mute Protocol] Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   ::Shadow Legacy
   if %version%==20 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 885453180592640750 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7750070106878890861 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 885453180592640750 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7750070106878890861 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Shadow Legacy Released!
   echo Shadow Legacy Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Placeholder
   echo Placeholder Choosed>>log.log
-  goto mainmenu
+  goto MainMenu
   )
   goto DownloadMenu
 ::DownloadMenu END
@@ -1159,276 +1153,276 @@ goto dotnetSET
 
 
  if %version%==1 (
- rd /s /q "Downloads\Y1S0_Vanilla"
+ rd /s /q "R6Downloads\Y1S0_Vanilla"
  timeout /t 4
  cls
  echo Vanilla Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==2 (
- rd /s /q "Downloads\Y1S1_Black_Ice"
+ rd /s /q "R6Downloads\Y1S1_Black_Ice"
  timeout /t 4
  cls
  echo Y1S1_Black_Ice Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==3 (
- rd /s /q "Downloads\Y1S2_Dust_Line"
+ rd /s /q "R6Downloads\Y1S2_Dust_Line"
  timeout /t 4
  cls
  echo Y1S2_Dust_Line Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==4 (
- rd /s /q "Downloads\Y1S3_Skull_Rain"
+ rd /s /q "R6Downloads\Y1S3_Skull_Rain"
  timeout /t 4
  cls
  echo Y1S3_Skull_Rain Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==41 (
- rd /s /q "Downloads\Y1S3_SkullRain"
+ rd /s /q "R6Downloads\Y1S3_SkullRain"
  timeout /t 4
  cls
  echo Y1S3_SkullRain Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==5 (
- rd /s /q "Downloads\Y1S4_Red_Crow"
+ rd /s /q "R6Downloads\Y1S4_Red_Crow"
  timeout /t 4
  cls
  echo Y1S4_Red_Crow Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==6 (
- rd /s /q "Downloads\Y2S1_Velvet_Shell"
+ rd /s /q "R6Downloads\Y2S1_Velvet_Shell"
  timeout /t 4
  cls
  echo Y2S1_Velvet_Shell Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==7 (
- rd /s /q "Downloads\Y2S2_Health"
+ rd /s /q "R6Downloads\Y2S2_Health"
  timeout /t 4
  cls
  echo Y2S2_Health Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==71 (
- rd /s /q "Downloads\Y2S2_Health_2"
+ rd /s /q "R6Downloads\Y2S2_Health_2"
  timeout /t 4
  cls
  echo Y2S2_Health_2 Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==8 (
- rd /s /q "Downloads\Y2S3_Blood_Orchid"
+ rd /s /q "R6Downloads\Y2S3_Blood_Orchid"
  timeout /t 4
  cls
  echo Y2S3_Blood_Orchid Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==81 (
- rd /s /q "Downloads\Y2S3_BloodOrchid"
+ rd /s /q "R6Downloads\Y2S3_BloodOrchid"
  timeout /t 4
  cls
  echo Y2S3_BloodOrchid Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==9 (
- rd /s /q "Downloads\Y2S4_White_Noise"
+ rd /s /q "R6Downloads\Y2S4_White_Noise"
  timeout /t 4
  cls
  echo Y2S4_White_Noise Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==91 (
- rd /s /q "Downloads\Y2S4_WhiteNoise"
+ rd /s /q "R6Downloads\Y2S4_WhiteNoise"
  timeout /t 4
  cls
  echo Y2S4_WhiteNoise Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==10 (
- rd /s /q "Downloads\Y3S1_Chimera"
+ rd /s /q "R6Downloads\Y3S1_Chimera"
  timeout /t 4
  cls
  echo Y3S1_Chimera Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==11 (
- rd /s /q "Downloads\Y3S2_Para_Bellum"
+ rd /s /q "R6Downloads\Y3S2_Para_Bellum"
  timeout /t 4
  cls
  echo Y3S2_Para_Bellum Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==12 (
- rd /s /q "Downloads\Y3S3_Grim_Sky"
+ rd /s /q "R6Downloads\Y3S3_Grim_Sky"
  timeout /t 4
  cls
  echo Y3S3_Grim_Sky Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==120 (
- rd /s /q "Downloads\Y3S3_MadHouse"
+ rd /s /q "R6Downloads\Y3S3_MadHouse"
  timeout /t 4
  cls
  echo Y3S3_MadHouse Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==121 (
- rd /s /q "Downloads\Y3S3_GrimSky"
+ rd /s /q "R6Downloads\Y3S3_GrimSky"
  timeout /t 4
  cls
  echo Y3S3_GrimSky Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==13 (
- rd /s /q "Downloads\Y3S4_Wind_Bastion"
+ rd /s /q "R6Downloads\Y3S4_Wind_Bastion"
  timeout /t 4
  cls
  echo Y3S4_Wind_Bastion Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==14 (
- rd /s /q "Downloads\Y4S1_Burnt_Horizon"
+ rd /s /q "R6Downloads\Y4S1_Burnt_Horizon"
  timeout /t 4
  cls
  echo Y4S1_Burnt_Horizon Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==140 (
- rd /s /q "Downloads\Y4S1_RainbowIsMagic"
+ rd /s /q "R6Downloads\Y4S1_RainbowIsMagic"
  timeout /t 4
  cls
  echo Y4S1_RainbowIsMagic Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==141 (
- rd /s /q "Downloads\Y4S1_BurntHorizon"
+ rd /s /q "R6Downloads\Y4S1_BurntHorizon"
  timeout /t 4
  cls
  echo Y4S1_BurntHorizon Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==15 (
- rd /s /q "Downloads\Y4S2_Phantom_Sight"
+ rd /s /q "R6Downloads\Y4S2_Phantom_Sight"
  timeout /t 4
  cls
  echo Y4S2_Phantom_Sight Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==16 (
- rd /s /q "Downloads\Y4S3_Ember_Rise"
+ rd /s /q "R6Downloads\Y4S3_Ember_Rise"
  timeout /t 4
  cls
  echo Y4S3_Ember_Rise Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==17 (
- rd /s /q "Downloads\Y4S4_Shifting_Tides"
+ rd /s /q "R6Downloads\Y4S4_Shifting_Tides"
  timeout /t 4
  cls
  echo Y4S4_Shifting_Tides Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==18 (
- rd /s /q "Downloads\Y5S1_Void_Edge"
+ rd /s /q "R6Downloads\Y5S1_Void_Edge"
  timeout /t 4
  cls
  echo Y5S1_Void_Edge Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==190 (
- rd /s /q "Downloads\Y5S1_TheGrandLarceny"
+ rd /s /q "R6Downloads\Y5S1_TheGrandLarceny"
  timeout /t 4
  cls
  echo Y5S1_TheGrandLarceny Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==181 (
- rd /s /q "Downloads\Y5S1_VoidEdge"
+ rd /s /q "R6Downloads\Y5S1_VoidEdge"
  timeout /t 4
  cls
  echo Y5S1_VoidEdge Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==19 (
- rd /s /q "Downloads\Y5S2_Steel_Wave"
+ rd /s /q "R6Downloads\Y5S2_Steel_Wave"
  timeout /t 4
  cls
  echo Y5S2_Steel_Wave Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==190 (
- rd /s /q "Downloads\Y5S2_MUTE"
+ rd /s /q "R6Downloads\Y5S2_MUTE"
  timeout /t 4
  cls
  echo Y5S2_SteelWave Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==191 (
- rd /s /q "Downloads\Y5S2_SteelWave"
+ rd /s /q "R6Downloads\Y5S2_SteelWave"
  timeout /t 4
  cls
  echo Y5S2_SteelWave_Morphues_V2311 Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==20 (
- rd /s /q "Downloads\Y5S3_Shadow_Legacy"
+ rd /s /q "R6Downloads\Y5S3_Shadow_Legacy"
  timeout /t 4
  cls
  echo Y5S3_Shadow_Legacy Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==21 (
- rd /s /q "Downloads\Y5S3_Sugar_Fright"
+ rd /s /q "R6Downloads\Y5S3_Sugar_Fright"
  timeout /t 4
  cls
  echo Sugar Fright / Telly Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==22 (
- rd /s /q "Downloads\Placeholder"
+ rd /s /q "R6Downloads\Placeholder"
  timeout /t 4
  cls
  echo Placeholder Choosed [U]>>log.log
  echo Delete complete!
- goto mainmenu
+ goto MainMenu
  )
  goto GameMenu
 ::UninstallMenu END
@@ -1481,250 +1475,250 @@ goto dotnetSET
  set /p version="Enter Selection:"
  if %version%==0 (
  cls
- goto mainmenu
+ goto MainMenu
  )
 
  MODE 100,40
  
  ::Vanilla4k
  if %version%==1 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Vanilla 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==2 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3756048967966286899 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3756048967966286899 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Black Ice 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==3 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1338949402410764888 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1338949402410764888 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Dust Line 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==4 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 5184390432533910806 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 5184390432533910806 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Skull Rain 4K! 
- goto mainmenu
+ goto MainMenu
  )
  if %version%==41 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3267970968757091405 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3267970968757091405 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete! Thanks Zer0!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==5 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1825939060444887403 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1825939060444887403 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Red Crow 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==6 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3196596628759979362 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3196596628759979362 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Velvet Shell 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==7 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7497579858536910279 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7497579858536910279 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Health 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==71 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7497579858536910279 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7497579858536910279 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete! Thanks Zer0!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==8 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3065193946575458487 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3065193946575458487 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Blood Orchid 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==81 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6420469519659049757 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6420469519659049757 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete! Thanks Zer0!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==9 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1118649577165385479 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1118649577165385479 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's White Noise 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==91 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1118649577165385479 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1118649577165385479 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete! Thanks Zer0!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==10 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1668513364192382097 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1668513364192382097 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Chimera 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==11 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 204186978012641075 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 204186978012641075 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Para Bellum 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==12 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3378966402050009606 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3378966402050009606 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Grim Sky 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==121 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete! Thanks Zer0!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==13 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2243348760021617592 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2243348760021617592 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Wind Bastion 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==14 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 888629411354320742 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 888629411354320742 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Burnt Horizon 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==141 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete! Thanks Zer0!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==15 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4107080515154236795 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4107080515154236795 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Phantom Sight 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==16 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8340682081776225833 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8340682081776225833 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Ember Rise 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==161 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4319184561394137009 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4319184561394137009 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete! Thanks Zer0!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==17 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6048763664997452513 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6048763664997452513 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Shifting Tides 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==18 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Void Edge 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==181 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete! Thanks Zer0!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==19 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3257522596542046976 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3257522596542046976 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Steel Wave 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==191 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1430519549301269175 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave_Morphues" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1430519549301269175 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave_Morphues" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete! Thanks Zer0!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==20 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 5051396185388503167 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 5051396185388503167 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Shadow Legacy 4K!
- goto mainmenu
+ goto MainMenu
  )
  if %version%==21 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3569318872166878802 -username %username% -remember-password -dir "Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3569318872166878802 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Sugar Fright / Telly 4K
- goto mainmenu
+ goto MainMenu
  )
  if %version%==22 (
- dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+ dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
  pause
  cls
  echo Download complete!
  echo It's Placeholder 4K
- goto mainmenu
+ goto MainMenu
  )
  goto TextureMenu
 ::TextureMenu END
@@ -1760,63 +1754,63 @@ goto dotnetSET
 
   ::CHIMERA Released
   if %version%==11 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5071357104726974256 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5071357104726974256 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's CHIMERA Released
-  goto mainmenu
+  goto MainMenu
   )
   ::MadHouse EVENT
   if %version%==13 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1556527176552332195 -username %username% -remember-password -dir "Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1556527176552332195 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Mad House!
-  goto mainmenu
+  goto MainMenu
   )
   ::Rainbow is Magic EVENT
   if %version%==15 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8356277316976403078 -username %username% -remember-password -dir "Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8356277316976403078 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Rainbow is Magic!
-  goto mainmenu
+  goto MainMenu
   )
   ::SHIFTING TIDES Released
   if %version%==18 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
   pause
   cls
   echo Download complete!
   echo It's SHIFTING TIDES Released!
-  goto mainmenu
+  goto MainMenu
   )
   ::The Grand Larceny
   if %version%==19 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4736360397583523381 -username %username% -remember-password -dir "Downloads\Y5S1_TheGrandLarceny" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6296533808765702678 -username %username% -remember-password -dir "Downloads\Y5S1_TheGrandLarceny" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4736360397583523381 -username %username% -remember-password -dir "R6Downloads\Y5S1_TheGrandLarceny" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6296533808765702678 -username %username% -remember-password -dir "R6Downloads\Y5S1_TheGrandLarceny" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's The Grand Larceny!
-  goto mainmenu
+  goto MainMenu
   )
   ::MUTE EVENT
   if %version%==20 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's M.U.T.E Protocol (Support Omega)
-  goto mainmenu
+  echo Download complete
+  echo It's M.U.T.E Protocol [Support Omega]
+  goto MainMenu
   )
   ::MUTE EVENT W/o Omega
   if %version%==201 (
@@ -1824,9 +1818,9 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave_Morphues" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's M.U.T.E Protocol (Not supported Omega)
-  goto mainmenu
+  echo Download complete
+  echo It's M.U.T.E Protocol [Not supported Omega]
+  goto MainMenu
   )
   ::Sugar Fright / Telly
   if %version%==21 (
@@ -1834,11 +1828,11 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5436378897406471956 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete [v14902238]
-  echo It's Sugar Fright / Telly
-  goto mainmenu
+  echo Download complete 
+  echo It's Sugar Fright
+  goto MainMenu
   )
- goto EventMenu
+  goto EventMenu
 ::EventMenu END
 
 
@@ -1872,7 +1866,7 @@ goto dotnetSET
   set /p version="Enter Selection:"
   if %version%==0 (
   cls
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==1 (
   cls
@@ -1981,244 +1975,244 @@ goto dotnetSET
   
 
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 940838089858119714 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 940838089858119714 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 3933270230638281254 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 3933270230638281254 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 8417670786870682154 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 8417670786870682154 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5132022816747475711 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5132022816747475711 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==41 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5132022816747475711 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5132022816747475711 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Skull Rain (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==5 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 6096643115970852289 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 6096643115970852289 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Red Crow
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==6 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5858637819174796390 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5858637819174796390 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Velvet Shell
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==7 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5499656844751782586 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5499656844751782586 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Health
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==71 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5499656844751782586 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5499656844751782586 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Health (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==8 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 790907662127860380 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 790907662127860380 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Blood Orchid
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==81 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 790907662127860380 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 790907662127860380 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Blood Orchid (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==9 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2934184792636281942 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2934184792636281942 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on White Noise
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==91 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2934184792636281942 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2934184792636281942 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on White Noise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==10 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 6830763708591031513 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 6830763708591031513 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Chimera
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==11 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2228609364372112585 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2228609364372112585 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Para Bellum
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==12 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 3063945558350557421 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 3063945558350557421 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Grim Sky
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==121 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 3063945558350557421 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 3063945558350557421 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Grim Sky (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==13 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 700171152841929114 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 700171152841929114 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Wind Bastion
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==14 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2489165098014835664 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2489165098014835664 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Burnt Horizon
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==141 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2489165098014835664 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 2489165098014835664 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Burnt Horizon (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==15 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 8209966773310799535 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 8209966773310799535 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Phantom Sight 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==16 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 9167311800727871226 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 9167311800727871226 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Ember Rise 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==161 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 9167311800727871226 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 9167311800727871226 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Ember Rise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==17 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 982226827055842157 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 982226827055842157 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Shifting Tides 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==18 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 6351511531186309516 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 6351511531186309516 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Void Edge 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==181 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 6351511531186309516 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 6351511531186309516 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Void Edge (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==19 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 379201990182673961 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 379201990182673961 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Steel Wave 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==191 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 379201990182673961 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 379201990182673961 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Steel Wave (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==20 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 490063692268635993 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 490063692268635993 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Shadow Legacy
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's French Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::French END
@@ -2275,244 +2269,244 @@ goto dotnetSET
   
   
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7179158265062294015 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7179158265062294015 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5760263381471720373 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5760263381471720373 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 2551476087873566284 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 2551476087873566284 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1819965373025810009 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1819965373025810009 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==41 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1819965373025810009 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1819965373025810009 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Skull Rain (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==5 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8822593964618949966 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8822593964618949966 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Red Crow
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==6 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1442016899353884599 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1442016899353884599 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Velvet Shell
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==7 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 4814130789498386116 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 4814130789498386116 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Health
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==71 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 4814130789498386116 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 4814130789498386116 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Health (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==8 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 3928776659583035772 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 3928776659583035772 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Blood Orchid
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==81 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 3928776659583035772 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 3928776659583035772 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Blood Orchid (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==9 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 6120111820088733265 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 6120111820088733265 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on White Noise
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==91 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 6120111820088733265 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 6120111820088733265 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on White Noise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==10 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8951270584274959688 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8951270584274959688 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Chimera
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==11 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 3765579578277178198 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 3765579578277178198 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Para Bellum
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==12 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8817435015508321947 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8817435015508321947 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Grim Sky
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==121 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8817435015508321947 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8817435015508321947 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Grim Sky (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==13 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 6317337128494587862 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 6317337128494587862 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Wind Bastion
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==14 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5912470135426316642 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5912470135426316642 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Burnt Horizon
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==141 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5912470135426316642 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5912470135426316642 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Burnt Horizon (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==15 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5551310338808720316 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5551310338808720316 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Phantom Sight 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==16 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 9032788833180559255 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 9032788833180559255 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Ember Rise 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==161 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 9032788833180559255 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 9032788833180559255 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Ember Rise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==17 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7669952636769439421 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7669952636769439421 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Shifting Tides 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==18 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 2083562978649529043 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 2083562978649529043 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Void Edge 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==181 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 2083562978649529043 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 2083562978649529043 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Void Edge (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==19 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7015749936618767871 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7015749936618767871 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Steel Wave 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==191 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7015749936618767871 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 7015749936618767871 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Steel Wave (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==20 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8865509294556462405 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8865509294556462405 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Shadow Legacy
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Italian Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::Italian END
@@ -2569,244 +2563,244 @@ goto dotnetSET
 	
 
 	if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 3953006809848583127 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 3953006809848583127 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
 	pause
 	cls
 	echo Download complete!
 	echo It's German Lang on Vanilla
-	goto mainmenu
+	goto MainMenu
 	)
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7470955591961528063 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7470955591961528063 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 781358903497748263 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 781358903497748263 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1926652807113950777 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1926652807113950777 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==41 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1926652807113950777 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1926652807113950777 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Skull Rain (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==5 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7995072742170754868 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7995072742170754868 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Red Crow
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==6 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7391813408396935946 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7391813408396935946 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Velvet Shell
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==7 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4850286352511597480 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4850286352511597480 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Health
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==71 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4850286352511597480 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4850286352511597480 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Health (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==8 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7173152983008794231 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7173152983008794231 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Blood Orchid
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==81 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7173152983008794231 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7173152983008794231 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Blood Orchid (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==9 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1122657510721658234 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1122657510721658234 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on White Noise
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==91 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1122657510721658234 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1122657510721658234 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on White Noise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==10 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 365667853833643908 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 365667853833643908 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Chimera
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==11 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 436165049364805671 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 436165049364805671 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Para Bellum
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==12 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6254711869946987864 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6254711869946987864 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Grim Sky
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==121 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6254711869946987864 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6254711869946987864 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Grim Sky (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==13 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6357970357791494519 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6357970357791494519 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Wind Bastion
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==14 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6166102473910342218 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6166102473910342218 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Burnt Horizon
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==141 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6166102473910342218 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 6166102473910342218 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Burnt Horizon (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==15 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 2945239480726569964 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 2945239480726569964 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Phantom Sight 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==16 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 5892684040914151033 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 5892684040914151033 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Ember Rise 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==161 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 5892684040914151033 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 5892684040914151033 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Ember Rise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==17 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1771833119782386213 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1771833119782386213 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Shifting Tides 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==18 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4220186838055347645 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4220186838055347645 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Void Edge 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==181 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4220186838055347645 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 4220186838055347645 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Void Edge (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==19 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 9103781936104145156 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 9103781936104145156 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Steel Wave 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==191 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 9103781936104145156 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 9103781936104145156 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Steel Wave (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==20 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 615915835199657008 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 615915835199657008 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Shadow Legacy
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's German Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
 	goto Extra
 ::German END
@@ -2863,244 +2857,244 @@ goto dotnetSET
   
   
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 6248979332984503061 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 6248979332984503061 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 6534545487175120142 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 6534545487175120142 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8080893511664284255 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8080893511664284255 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3102063947541599011 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3102063947541599011 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==41 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3102063947541599011 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3102063947541599011 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Skull Rain (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==5 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3745420316643316529 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3745420316643316529 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Red Crow
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==6 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 4034802727985013756 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 4034802727985013756 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Velvet Shell
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==7 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7743695641492470240 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7743695641492470240 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Health
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==71 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7743695641492470240 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7743695641492470240 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Health (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==8 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7768315116657553428 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7768315116657553428 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Blood Orchid
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==81 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7768315116657553428 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7768315116657553428 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Blood Orchid (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==9 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7877024295509467816 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7877024295509467816 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on White Noise
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==91 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7877024295509467816 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 7877024295509467816 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on White Noise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==10 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 723936785330189072 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 723936785330189072 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Chimera
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==11 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3396331896624899011 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3396331896624899011 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Para Bellum
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==12 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 2769168610408745300 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 2769168610408745300 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Grim Sky
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==121 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 2769168610408745300 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 2769168610408745300 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Grim Sky (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==13 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 1310832078295252288 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 1310832078295252288 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Wind Bastion
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==14 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8980928302668128431 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8980928302668128431 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Burnt Horizon
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==141 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8980928302668128431 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8980928302668128431 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Burnt Horizon (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==15 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3119251800260595817 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3119251800260595817 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Phantom Sight 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==16 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 4178602548762056641 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 4178602548762056641 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Ember Rise 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==161 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3299372491475509511 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3299372491475509511 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Ember Rise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==17 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 5607986007728468442 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 5607986007728468442 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Shifting Tides 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==18 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8280780297583800068 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8280780297583800068 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Void Edge 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==181 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8280780297583800068 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 8280780297583800068 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Void Edge (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==19 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3323378213398656976 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3323378213398656976 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Steel Wave 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==191 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3323378213398656976 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3323378213398656976 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Steel Wave (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==20 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 2485600059396261361 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 2485600059396261361 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Shadow Legacy
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Spanish Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::Spanish END
@@ -3157,244 +3151,244 @@ goto dotnetSET
   
 
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4246528818872796970 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4246528818872796970 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5712713603408405370 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5712713603408405370 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7093312220135270425 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7093312220135270425 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1002387473375422601 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1002387473375422601 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==41 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1002387473375422601 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1002387473375422601 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Skull Rain (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==5 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 9177769359376990903 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 9177769359376990903 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Red Crow
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==6 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 8373797984073491957 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 8373797984073491957 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Velvet Shell
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==7 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 740877577181398044 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 740877577181398044 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Health
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==71 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 740877577181398044 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 740877577181398044 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Health (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==8 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4018202152273389175 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4018202152273389175 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Blood Orchid
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==81 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4018202152273389175 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4018202152273389175 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Blood Orchid (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==9 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7662200840621314199 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7662200840621314199 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on White Noise
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==91 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7662200840621314199 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7662200840621314199 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on White Noise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==10 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4967060442376701942 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 4967060442376701942 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Chimera
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==11 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7222426493426609376 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 7222426493426609376 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Para Bellum
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==12 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1079437953122108725 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1079437953122108725 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Grim Sky
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==121 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1079437953122108725 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1079437953122108725 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Grim Sky (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==13 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 6212948834557799675 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 6212948834557799675 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Wind Bastion
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==14 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5742909617569886590 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5742909617569886590 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Burnt Horizon
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==141 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5742909617569886590 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5742909617569886590 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Burnt Horizon (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==15 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 2060894578496472402 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 2060894578496472402 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Phantom Sight 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==16 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 8187109316671389619 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 8187109316671389619 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Ember Rise 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==161 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 8187109316671389619 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 8187109316671389619 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Ember Rise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==17 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 3980031497374187833 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 3980031497374187833 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Shifting Tides 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==18 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1408940456585952484 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1408940456585952484 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Void Edge 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==181 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1408940456585952484 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1408940456585952484 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Void Edge (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==19 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 3124010063296699270 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 3124010063296699270 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Steel Wave 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==191 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 3124010063296699270 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 3124010063296699270 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Steel Wave (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==20 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 6424468667015085021 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 6424468667015085021 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Shadow Legacy
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Brasilian Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::Brasilian END
@@ -3426,44 +3420,44 @@ goto dotnetSET
   
   
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 3650448467998593870 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 3650448467998593870 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Polish Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 611380037218554981 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 611380037218554981 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Polish Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 3858352830712224800 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 3858352830712224800 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Polish Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 2324023684915670753 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 2324023684915670753 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Polish Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Polish Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::Polish END
@@ -3495,44 +3489,44 @@ goto dotnetSET
   
   
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 434053950562761763 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 434053950562761763 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Dutch Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 2252756710796870124 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 2252756710796870124 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Dutch Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 792523120148938529 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 792523120148938529 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Dutch Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 6519643449965700176 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 6519643449965700176 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Dutch Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Dutch Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::Dutch END
@@ -3564,44 +3558,44 @@ goto dotnetSET
   
   
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 961787742874674106 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 961787742874674106 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Czech Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 9083464997167398804 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 9083464997167398804 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Czech Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 5042288075851140032 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 5042288075851140032 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Czech Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 2274850673348857246 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 2274850673348857246 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Czech Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Czech Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::Czech END
@@ -3633,44 +3627,44 @@ goto dotnetSET
   
   
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 4666462401429503167 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 4666462401429503167 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Korean Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 1679233699688952842 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 1679233699688952842 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Korean Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 3857270863114730703 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 3857270863114730703 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Korean Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 3010562235525323962 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 3010562235525323962 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Korean Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Korean Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::Korean END
@@ -3702,44 +3696,44 @@ goto dotnetSET
   
   
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 8123484057310613369 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 8123484057310613369 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's TChinese Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 6415534268030477043 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 6415534268030477043 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's TChinese Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 1924001092871695610 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 1924001092871695610 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's TChinese Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 4953478873615251033 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 4953478873615251033 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's TChinese Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's TChinese Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::TChinese END
@@ -3771,44 +3765,44 @@ goto dotnetSET
   
   
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 7408437752633543455 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 7408437752633543455 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's SChinese Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 695733873875406938 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 695733873875406938 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's SChinese Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 336078500685842996 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 336078500685842996 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's SChinese Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 6056122284734366189 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 6056122284734366189 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's SChinese Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's SChinese Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::SChinese END
@@ -3865,244 +3859,244 @@ goto dotnetSET
   
   
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 3426628477659109421 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 3426628477659109421 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7819798899236214261 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7819798899236214261 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7164006373234658729 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7164006373234658729 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4940468394032132183 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4940468394032132183 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==41 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4940468394032132183 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4940468394032132183 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Skull Rain (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==5 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8573459241975382853 -username %username% -remember-password -dir "Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8573459241975382853 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Red Crow
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==6 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4595160401957962156 -username %username% -remember-password -dir "Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4595160401957962156 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Velvet Shell
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==7 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6208821339116662917 -username %username% -remember-password -dir "Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6208821339116662917 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Health
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==71 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6208821339116662917 -username %username% -remember-password -dir "Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6208821339116662917 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Health (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==8 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 1573647791032056620 -username %username% -remember-password -dir "Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 1573647791032056620 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Blood Orchid
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==81 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 1573647791032056620 -username %username% -remember-password -dir "Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 1573647791032056620 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Blood Orchid (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==9 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4323914207757706720 -username %username% -remember-password -dir "Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4323914207757706720 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noises" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on White Noise
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==91 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7662200840621314199 -username %username% -remember-password -dir "Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7662200840621314199 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on White Noise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==10 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8184994692095456862 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8184994692095456862 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Chimera
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==11 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5702757960843346114 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5702757960843346114 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Para Bellum
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==12 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 971478325336602905 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 971478325336602905 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Grim Sky
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==121 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 971478325336602905 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 971478325336602905 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Grim Sky (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==13 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8026527283762710847 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8026527283762710847 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Wind Bastion
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==14 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6205462284383635854 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6205462284383635854 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Burnt Horizon
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==141 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6205462284383635854 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6205462284383635854 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Burnt Horizon (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==15 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 735237222551525964 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 735237222551525964 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Phantom Sight 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==16 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8453132699861289149 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8453132699861289149 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Ember Rise 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==161 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8453132699861289149 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8453132699861289149 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Ember Rise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==17 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4121849146546499241 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4121849146546499241 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Shifting Tides 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==18 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6728091120574045367 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6728091120574045367 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Void Edge 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==181 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6728091120574045367 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 6728091120574045367 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Void Edge (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==19 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5460615762069731497 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5460615762069731497 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Steel Wave 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==191 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5460615762069731497 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5460615762069731497 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Steel Wave (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==20 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5904431813628700863 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 5904431813628700863 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Shadow Legacy
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Japanese Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::Japanese START
@@ -4150,180 +4144,180 @@ goto dotnetSET
   
 
   if %version%==1 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4326401341058506434 -username %username% -remember-password -dir "Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4326401341058506434 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Vanilla
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==2 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 7163789544030656935 -username %username% -remember-password -dir "Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 7163789544030656935 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Black Ice 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4405345682991436059 -username %username% -remember-password -dir "Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4405345682991436059 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Dust Line
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 792795160700208918 -username %username% -remember-password -dir "Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 792795160700208918 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Skull Rain
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==41 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 792795160700208918 -username %username% -remember-password -dir "Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 792795160700208918 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Skull Rain (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==10 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5994322749665877802 -username %username% -remember-password -dir "Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5994322749665877802 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Chimera
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==11 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 1607809513640548526 -username %username% -remember-password -dir "Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 1607809513640548526 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Para Bellum
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==12 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3013637849914826120 -username %username% -remember-password -dir "Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3013637849914826120 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Grim Sky
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==121 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3013637849914826120 -username %username% -remember-password -dir "Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3013637849914826120 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Grim Sky (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==13 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 8306800552570152557 -username %username% -remember-password -dir "Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 8306800552570152557 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Wind Bastion
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==14 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5305534200661405563 -username %username% -remember-password -dir "Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5305534200661405563 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Burnt Horizon
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==141 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5305534200661405563 -username %username% -remember-password -dir "Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5305534200661405563 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Burnt Horizon (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==15 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 8063779007427415388 -username %username% -remember-password -dir "Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 8063779007427415388 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Phantom Sight 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==16 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4195459193643803058 -username %username% -remember-password -dir "Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4195459193643803058 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Ember Rise 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==161 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4195459193643803058 -username %username% -remember-password -dir "Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 4195459193643803058 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Ember Rise (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==17 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 2337212093593824035 -username %username% -remember-password -dir "Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 2337212093593824035 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Shifting Tides 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==18 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3817096039931934373 -username %username% -remember-password -dir "Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3817096039931934373 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Void Edge 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==181 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3817096039931934373 -username %username% -remember-password -dir "Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3817096039931934373 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Void Edge (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==19 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3790966697198053253 -username %username% -remember-password -dir "Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3790966697198053253 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Steel Wave 
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==191 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3790966697198053253 -username %username% -remember-password -dir "Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 3790966697198053253 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Steel Wave (Zer0)
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==20 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5914186776656034602 -username %username% -remember-password -dir "Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 5914186776656034602 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Shadow Legacy
-  goto mainmenu
+  goto MainMenu
   )
   if %version%==21 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest %manifest% -username %username% -remember-password -dir "Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest %manifest% -username %username% -remember-password -dir "R6Downloads\Placeholder" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's Russian Lang on Placeholder
-  goto mainmenu
+  goto MainMenu
   )
   goto Extra
 ::Russian START
@@ -4381,7 +4375,7 @@ goto dotnetSET
   set /p startgame="Start:"
   if %startgame%==0 (
   cls
-  goto mainmenu
+  goto MainMenu
   )
   ::Start GameStarter
   if %startgame%==1 (
@@ -4389,239 +4383,239 @@ goto dotnetSET
   goto FAQ
   )
   if %startgame%==2 (
-  	if exist "Downloads\Y1S0_Vanilla\RainbowSix.exe" (
+  	if exist "R6Downloads\Y1S0_Vanilla\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y1S0_Vanilla\RainbowSix.exe /belaunch
+  		R6Downloads\Y1S0_Vanilla\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==3 (
-  	if exist "Downloads\Y1S1_Black_Ice\RainbowSix.exe" (
+  	if exist "R6Downloads\Y1S1_Black_Ice\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y1S1_Black_Ice\RainbowSix.exe /belaunch
+  		R6Downloads\Y1S1_Black_Ice\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==4 (
-  	if exist "Downloads\Y1S2_Dust_Line\RainbowSix.exe" (
+  	if exist "R6Downloads\Y1S2_Dust_Line\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y1S2_Dust_Line\RainbowSix.exe /belaunch
+  		R6Downloads\Y1S2_Dust_Line\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==5 (
-  	if exist "Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe" (
+  	if exist "R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe" (
   		echo Starting.....
-  		Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe /belaunch
+  		R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==51 (
-  	if exist "Downloads\Y1S3_SkullRain\RainbowSixGame.exe" (
+  	if exist "R6Downloads\Y1S3_SkullRain\RainbowSixGame.exe" (
   		echo Starting.....
-  		Downloads\Y1S3_SkullRain\RainbowSixGame.exe /belaunch
+  		R6Downloads\Y1S3_SkullRain\RainbowSixGame.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==6 (
-  	if exist "Downloads\Y1S4_Red_Crow\RainbowSixGame.exe" (
+  	if exist "R6Downloads\Y1S4_Red_Crow\RainbowSixGame.exe" (
   		echo Starting.....
-  		Downloads\Y1S4_Red_Crow\RainbowSixGame.exe /belaunch
+  		R6Downloads\Y1S4_Red_Crow\RainbowSixGame.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==7 (
-  	if exist "Downloads\Y2S1_Velvet_Shell\RainbowSixGame.exe" (
+  	if exist "R6Downloads\Y2S1_Velvet_Shell\RainbowSixGame.exe" (
   		echo Starting.....
-  		Downloads\Y2S1_Velvet_Shell\RainbowSixGame.exe /belaunch
+  		R6Downloads\Y2S1_Velvet_Shell\RainbowSixGame.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==8 (
-  	if exist "Downloads\Y2S2_Health\RainbowSixGame.exe" (
+  	if exist "R6Downloads\Y2S2_Health\RainbowSixGame.exe" (
   		echo Starting.....
-  		Downloads\Y2S2_Health\RainbowSixGame.exe /belaunch
+  		R6Downloads\Y2S2_Health\RainbowSixGame.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==81 (
-    if exist "Downloads\Y2S2_Health_2\RainbowSix.exe" (
+    if exist "R6Downloads\Y2S2_Health_2\RainbowSix.exe" (
       echo Starting.....
-      Downloads\Y2S2_Health_2\RainbowSix.exe /belaunch
+      R6Downloads\Y2S2_Health_2\RainbowSix.exe /belaunch
       pause
       )
     goto DownloadMenu
   )
   if %startgame%==9 (
-  	if exist "Downloads\Y2S3_Blood_Orchid\RainbowSix.exe" (
+  	if exist "R6Downloads\Y2S3_Blood_Orchid\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y2S3_Blood_Orchid\RainbowSix.exe /belaunch
+  		R6Downloads\Y2S3_Blood_Orchid\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==91 (
-  	if exist "Downloads\Y2S3_BloodOrchid\RainbowSix.exe" (
+  	if exist "R6Downloads\Y2S3_BloodOrchid\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y2S3_BloodOrchid\RainbowSix.exe /belaunch
+  		R6Downloads\Y2S3_BloodOrchid\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==10 (
-  	if exist "Downloads\Y2S4_White_Noise\RainbowSix.exe" (
+  	if exist "R6Downloads\Y2S4_White_Noise\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y2S4_White_Noise\RainbowSix.exe /belaunch
+  		R6Downloads\Y2S4_White_Noise\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==101 (
-    if exist "Downloads\Y2S4_WhiteNoise\RainbowSix.exe" (
+    if exist "R6Downloads\Y2S4_WhiteNoise\RainbowSix.exe" (
       echo Starting.....
-      Downloads\Y2S4_WhiteNoise\RainbowSix.exe /belaunch
+      R6Downloads\Y2S4_WhiteNoise\RainbowSix.exe /belaunch
       pause
       )
     goto DownloadMenu
   )
   if %startgame%==11 (
-  	if exist "Downloads\Y3S1_Chimera\RainbowSix.exe" (
+  	if exist "R6Downloads\Y3S1_Chimera\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y3S1_Chimera\RainbowSix.exe /belaunch
+  		R6Downloads\Y3S1_Chimera\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==12 (
-  	if exist "Downloads\Y3S2_Para_Bellum\RainbowSix.exe" (
+  	if exist "R6Downloads\Y3S2_Para_Bellum\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y3S2_Para_Bellum\RainbowSix.exe /belaunch
+  		R6Downloads\Y3S2_Para_Bellum\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==13 (
-  	if exist "Downloads\Y3S3_Grim_Sky\RainbowSix.exe" (
+  	if exist "R6Downloads\Y3S3_Grim_Sky\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y3S3_Grim_Sky\RainbowSix.exe /belaunch
+  		R6Downloads\Y3S3_Grim_Sky\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==131 (
-    if exist "Downloads\Y3S3_GrimSky\RainbowSix.exe" (
+    if exist "R6Downloads\Y3S3_GrimSky\RainbowSix.exe" (
       echo Starting.....
-      Downloads\Y3S3_GrimSky\RainbowSix.exe /belaunch
+      R6Downloads\Y3S3_GrimSky\RainbowSix.exe /belaunch
       pause
       )
     goto DownloadMenu
   )
   if %startgame%==14 (
-  	if exist "Downloads\Y3S4_Wind_Bastion\RainbowSix.exe" (
+  	if exist "R6Downloads\Y3S4_Wind_Bastion\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y3S4_Wind_Bastion\RainbowSix.exe /belaunch
+  		R6Downloads\Y3S4_Wind_Bastion\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==15 (
-  	if exist "Downloads\Y4S1_Burnt_Horizon\RainbowSix.exe" (
+  	if exist "R6Downloads\Y4S1_Burnt_Horizon\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y4S1_Burnt_Horizon\RainbowSix.exe /belaunch
+  		R6Downloads\Y4S1_Burnt_Horizon\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==151 (
-    if exist "Downloads\Y4S1_BurntHorizon\RainbowSix.exe" (
+    if exist "R6Downloads\Y4S1_BurntHorizon\RainbowSix.exe" (
       echo Starting.....
-      Downloads\Y4S1_BurntHorizon\RainbowSix.exe /belaunch
+      R6Downloads\Y4S1_BurntHorizon\RainbowSix.exe /belaunch
       pause
       )
     goto DownloadMenu
   )
   if %startgame%==16 (
-  	if exist "Downloads\Y4S2_Phantom_Sight\RainbowSix.exe" (
+  	if exist "R6Downloads\Y4S2_Phantom_Sight\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y4S2_Phantom_Sight\RainbowSix.exe /belaunch
+  		R6Downloads\Y4S2_Phantom_Sight\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==17 (
-  	if exist "Downloads\Y4S3_Ember_Rise\RainbowSix.exe" (
+  	if exist "R6Downloads\Y4S3_Ember_Rise\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y4S3_Ember_Rise\RainbowSix.exe /belaunch
+  		R6Downloads\Y4S3_Ember_Rise\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==171 (
-    if exist "Downloads\Y4S3_EmberRise\RainbowSix.exe" (
+    if exist "R6Downloads\Y4S3_EmberRise\RainbowSix.exe" (
       echo Starting.....
-      Downloads\Y4S3_EmberRise\RainbowSix.exe /belaunch
+      R6Downloads\Y4S3_EmberRise\RainbowSix.exe /belaunch
       pause
       )
     goto DownloadMenu
   )
   if %startgame%==18 (
-  	if exist "Downloads\Y4S4_Shifting_Tides\RainbowSix.exe" (
+  	if exist "R6Downloads\Y4S4_Shifting_Tides\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y4S4_Shifting_Tides\RainbowSix.exe /belaunch
+  		R6Downloads\Y4S4_Shifting_Tides\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==19 (
-  	if exist "Downloads\Y5S1_Void_Edge\RainbowSix.exe" (
+  	if exist "R6Downloads\Y5S1_Void_Edge\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y5S1_Void_Edge\RainbowSix.exe /belaunch
+  		R6Downloads\Y5S1_Void_Edge\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==191 (
-    if exist "Downloads\Y5S1_VoidEdge\RainbowSix.exe" (
+    if exist "R6Downloads\Y5S1_VoidEdge\RainbowSix.exe" (
       echo Starting.....
-      Downloads\Y5S1_VoidEdge\RainbowSix.exe /belaunch
+      R6Downloads\Y5S1_VoidEdge\RainbowSix.exe /belaunch
       pause
       )
     goto DownloadMenu
   )
   if %startgame%==20 (
-  	if exist "Downloads\Y5S2_Steel_Wave\RainbowSix.exe" (
+  	if exist "R6Downloads\Y5S2_Steel_Wave\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y5S2_Steel_Wave\RainbowSix.exe /belaunch
+  		R6Downloads\Y5S2_Steel_Wave\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==201 (
-    if exist "Downloads\Y5S2_SteelWave\RainbowSix.exe" (
+    if exist "R6Downloads\Y5S2_SteelWave\RainbowSix.exe" (
       echo Starting.....
-      Downloads\Y5S2_SteelWave\RainbowSix.exe /belaunch
+      R6Downloads\Y5S2_SteelWave\RainbowSix.exe /belaunch
       pause
       )
     goto DownloadMenu
   )
   if %startgame%==21 (
-    if exist "Downloads\Y5S3_Shadow_Legacy\RainbowSix.exe" (
+    if exist "R6Downloads\Y5S3_Shadow_Legacy\RainbowSix.exe" (
       echo Starting.....
-      Downloads\Y5S3_Shadow_Legacy\RainbowSix.exe /belaunch
+      R6Downloads\Y5S3_Shadow_Legacy\RainbowSix.exe /belaunch
       pause
       )
   if %startgame%==22 (
-    if exist "Downloads\Placeholder\RainbowSix.exe" (
+    if exist "R6Downloads\Placeholder\RainbowSix.exe" (
       echo Starting.....
-      Downloads\Placeholder\RainbowSix.exe /belaunch
+      R6Downloads\Placeholder\RainbowSix.exe /belaunch
       pause
       )
     goto DownloadMenu
@@ -4631,33 +4625,33 @@ goto dotnetSET
   ::End GameStarter
   ::Start EvenStrarter
   if %startgame%==1399 (
-  	if exist "Downloads\Y3S3_MadHouse\RainbowSix.exe" (
+  	if exist "R6Downloads\Y3S3_MadHouse\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y3S3_MadHouse\RainbowSix.exe /belaunch
+  		R6Downloads\Y3S3_MadHouse\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==1599 (
-  	if exist "Downloads\Y4S1_RainbowIsMagic\RainbowSix.exe" (
+  	if exist "R6Downloads\Y4S1_RainbowIsMagic\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y4S1_RainbowIsMagic\RainbowSix.exe /belaunch
+  		R6Downloads\Y4S1_RainbowIsMagic\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==1999 (
-  	if exist "Downloads\Y5S1_TheGrandLarceny\RainbowSix.exe" (
+  	if exist "R6Downloads\Y5S1_TheGrandLarceny\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y5S1_TheGrandLarceny\RainbowSix.exe /belaunch
+  		R6Downloads\Y5S1_TheGrandLarceny\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
   )
   if %startgame%==2099 (
-  	if exist "Downloads\Y5S2_MUTE\RainbowSix.exe" (
+  	if exist "R6Downloads\Y5S2_MUTE\RainbowSix.exe" (
   		echo Starting.....
-  		Downloads\Y5S2_MUTE\RainbowSix.exe /belaunch
+  		R6Downloads\Y5S2_MUTE\RainbowSix.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
@@ -4672,60 +4666,55 @@ goto dotnetSET
 :dxvcredist
   Title DirectX + VC Redist Downloader
   MODE 40,10
-  echo  What would you like to select?
-  echo - 0 : Back
-  echo - 1 : DirectX
-  echo - 10 : VC 2010 Redist  
-  echo - 12 : VC 2012 Redist  
-  echo - 15 : VC 2015 Redist  
-  echo - 17 : VC 2017 Redist
-  set /p downdxvc="Enter Selection:"
-  if %downdxvc%==0 (
+  echo     DirectX + VC Redist Downloader
+  echo  [92mWhat would you like to select?[0m 
+  Resources\cmdmenusel f8f0 "   DirectX" "   VC 2010 Redist" "   VC 2012 Redist" "   VC 2015 Redist"  "   VC 2017 Redist" " Back"
+  ::set /p downdxvc="Enter Selection:"
+  if %ERRORLEVEL% == 6 (
   cls
-  goto mainmenu
+  goto MainMenu
   )
   MODE 100,40
   
-   
-  if %downdxvc%==1 (
+  if %ERRORLEVEL% == 1 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228990 -manifest 1829726630299308803 -username %username% -remember-password -dir "dxvcredist\DirectX" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's DirectX!
-  goto mainmenu
+  goto MainMenu
   )
-  if %downdxvc%==10 (
+  if %ERRORLEVEL% == 2 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228983 -manifest 8124929965194586177 -username %username% -remember-password -dir "dxvcredist\VC_2010_Redist" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's VC 2010 Redist!
-  goto mainmenu
+  goto MainMenu
   )
-  if %downdxvc%==12 (
+  if %ERRORLEVEL% == 3 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228984 -manifest 2547553897526095397 -username %username% -remember-password -dir "dxvcredist\VC_2012_Redist" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's VC 2012 Redist!
-  goto mainmenu
+  goto MainMenu
   )
-  if %downdxvc%==15 (
+  if %ERRORLEVEL% == 4 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228986 -manifest 8782296191957114623 -username %username% -remember-password -dir "dxvcredist\VC_2015_Redist" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's VC 2015 Redist!
-  goto mainmenu
+  goto MainMenu
   )
-  if %downdxvc%==17 (
+  if %ERRORLEVEL% == 5 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228987 -manifest 4302102680580581867 -username %username% -remember-password -dir "dxvcredist\VC_2017_Redist" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete!
   echo It's VC 2017 Redist!
-  goto mainmenu
+  goto MainMenu
   )
   goto dxvcredist
 ::dxvcredist END
@@ -4748,7 +4737,7 @@ goto dotnetSET
   echo Updated Version: 2020 TDB
   pause
   cls
-  goto mainmenu
+  goto MainMenu
 ::CREDIT END
 
 
@@ -4773,7 +4762,7 @@ goto dotnetSET
  echo ------------------------------------
  :FIN
  pause
- goto mainmenu
+ goto MainMenu
 ::BattlEyeChecker END
 
 
