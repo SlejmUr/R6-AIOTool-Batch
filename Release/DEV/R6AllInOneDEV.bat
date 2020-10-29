@@ -264,6 +264,7 @@ goto dotnetSET
   echo DotNet Two exist checker is found the version - %TIME% >>log.log
   goto if7zip
   ) else (
+  echo Oh no, exist checker not found dotnet - %TIME% >>log.log
   goto dotnet
   )
 ::dotnet end
@@ -531,13 +532,14 @@ goto dotnetSET
 
 
 
+::MainCMD START
 :MainCMD
   echo MainCMD loaded>>log.log
 	cls
-	Title cmdmenusel TEST 
+	Title R6S AllInOne Tool
 	MODE 62,40 
   echo [93m----------------------------NOTES-----------------------------[0m
-  echo  Rainbow Six Siege Old Version Downloader
+  echo  Rainbow Six Siege AllInOne Tool
   echo  [31mYou MUST have a copy of Siege on Steam to use the downloader.[0m
   echo  This tools is forked from [91mZer0Bytes[0m manifest tool
   echo  Our Discord Server: [94m%discord%[0m 
@@ -588,20 +590,11 @@ goto dotnetSET
   goto MainMenu
   )
 	if %ERRORLEVEL% == 9 (
+  echo Back/Exit - %TIME%>>log.log
   goto MainMenu
   )
-	goto MainMenu
-
-
-
-
-
-
-
-
-
-
-
+	goto MainCMD
+::MainCMD END
 
 
 ::FAQ and notes START
@@ -633,37 +626,31 @@ goto dotnetSET
   echo  8
   echo  Use plaza_bo, if it doesn't work, use plaza_new
   echo  If the game is stuck on preparing content go into codex.ini and set offline=1 to offline=0
-  echo  Or set StoreConnected to 0 in codex.ini
   echo  Once you have a version downloaded grab the PLAZA's below and copy its contents to your game folder.
   echo  When it asks to overwrite a few files click yes. If your anti-virus blocks these files then make sure to allow them. 
   echo  9
-  echo  Q: I downloaded with manifest X version of Siege Liberator why said "Build is not supported"?
-  echo  A: Wait the new version of Manifest and Liberator
-  echo  10
-  echo  Q: What version is Liberator support?
-  echo  A: Read the #tool-releases, or go to Liberator "About" button
-  echo  11
-  echo  What is CODEX, DepotDownloader,R6Liberator?
-  echo  CODEX : Applied to play Old Siege Version
-  echo  R6Downloader: Download R6 Old Version, it use DepotDownloader
-  echo  DepotDownloader: Created by SteamRE, you can download any manifest once you have the game
-  echo  R6-AIOTool : AllInOne Tool, many function. Created by SlejmUr
-  echo  R6 Manifest : Created by Zer0Bytes
+  echo  What is CODEX, DepotDownloader,R6Manifest?
+  echo  CODEX/Plaza : Applied to play Old Siege Version
+  echo  R6Downloader : Download R6 Old Version, it use DepotDownloader. Created by Shey
+  echo  DepotDownloader : Created by SteamRE, you can download any manifest once you have the game
+  echo  R6-AIOTool : AllInOne Tool, many function. Based on R6 Manifest. Created by SlejmUr
+  echo  R6 Manifest : Download R6 Old Version, it use DepotDownloader. Created by Zer0Bytes
   echo  FAQ readed>>log.log
   pause
   cls
   goto Notes
-
+::and
 :Notes
   Title Notes
   MODE 110,20
   echo  Notes:
-  echo  Not all Manifest support Liberator!
-  echo  I'm not tested this manifests: (ALL not have GB option) and ALL 4K Textures, and ALL Language!
-  echo  If you want to join testing phase, DM me on Discord! SlejmUr#4007
-  echo  Planning to add Extra Language option in Events!
+  echo  I Moved the my "Release" manifests to Manifest Options
+  echo  I'm not tested this manifests: (ALL not have GB option) and ALL 4K Textures, and ALL Language
+  echo  Planning to add Extra Language option in Events
   echo  Plaza_NEW not working on Shadow Legacy and Steel Wave too
-  echo  If you have a problem this tool, DM me on Discord! SlejmUr#4007
+  echo  If you want to join testing phase, DM me on Discord
+  echo  If you have a problem this tool, DM me on Discord
+  echo  My Discord: SlejmUr#4007 or join on %discord%
   echo Notes Readed!>>log.log
   pause
   cls
@@ -671,21 +658,21 @@ goto dotnetSET
 ::FAQ and notes END
 
 
+
 ::GameMenu START
 :GameMenu
  Title R6:S GameMenu
  echo GameMenu Loaded>>log.log
- MODE 33,10
- echo   Rainbow Six Siege Game Menu
- echo ---------------------------------
- echo   [92mWhat would you like to select?[0m 
+ MODE 34,10
+ echo     Rainbow Six Siege Game Menu
+ echo       Install/Uninstall/Start
+ echo [93m--------------SELECT--------------[0m 
  Resources\cmdmenusel f8f0 "    Install Rainbow Six Siege" "   Uninstall Rainbow Six Siege" "   Starting Rainbow Six Siege" "              Back"
- ::set /p option="Enter Selection:"
  
  if %ERRORLEVEL% == 1 (
- echo DownloadMenu Choosed>>log.log
+ echo InstallMenu Choosed>>log.log
  cls
- goto DownloadMenu
+ goto InstallMenu
  )
  if %ERRORLEVEL% == 2 (
  echo UninstallMenu Choosed>>log.log
@@ -705,6 +692,58 @@ goto dotnetSET
  goto GameMenu
 ::GameMenu END
 
+
+
+::InstallMenu START
+:InstallMenu
+  cls
+  Title Rainbow Six Siege InstallMenu
+  MODE 50,40
+  echo InstallMenu Loaded>>log.log
+  echo [93m-----------------------NOTES----------------------[0m
+  echo                   Install Selector
+  echo          [31mCustom manifest now is unstable![0m
+  echo      Now the Version and Release is still same.
+  echo [93m----------------------SELECT----------------------[0m
+  Resources\cmdmenusel f8f0 "   Event Downloader" "   Version Downloader" "   Release Downloader" "   Custom Downloader" "   Textures Downloader" "   Extra Downloader" "   Back"
+  
+  if %ERRORLEVEL% == 1 (
+  echo EventMenu Choosed>>log.log
+  cls
+  goto EventMenu
+  )
+  if %ERRORLEVEL% == 2 (
+  echo VersionMenu Choosed>>log.log
+  cls
+  goto DownloadMenu
+  )
+  if %ERRORLEVEL% == 3 (
+  echo ReleaseMenu Choosed>>log.log
+  cls
+  goto DownloadMenu
+  )
+  if %ERRORLEVEL% == 4 (
+  echo CustomMenu Choosed>>log.log
+  cls
+  goto CustomMenu
+  )
+  if %ERRORLEVEL% == 5 (
+  echo TextureMenu Choosed>>log.log
+  cls
+  goto TextureMenu
+  )
+  if %ERRORLEVEL% == 6 (
+  echo Extra Choosed>>log.log
+  cls
+  goto Extra
+  )
+  if %ERRORLEVEL% == 7 (
+  echo Back>>log.log
+  cls
+  goto MainCMD
+  )
+  goto InstallMenu
+::InstallMenu END
 
 
 ::DownloadMenu START
@@ -1731,23 +1770,24 @@ goto dotnetSET
  Title Rainbow Six Siege Event Downloader
  MODE 52,25
  echo EventMenu Loaded>>log.log
- echo What would you like to select?
- echo ----------------------------------------------------
- echo # 0 - Back
- echo ----------------------------------------------------
- echo # 11 = Chimera (Same With normal Chimera)
+ echo [93m-----------------------NOTES------------------------[0m
+ echo   Outback is same with normal Chimera
+ echo   Road To S.I. is same with normal Shifting Tides
+ echo   The Omega Mute is not broken, use that.
+ echo [93m-----------------------SELECT-----------------------[0m
+ echo # 0 = Back
+ echo # 11 = Outback
  echo # 13 = Mad House
  echo # 15 = Rainbow is Magic
- echo # 18 = Road To S.I. 2020 (Same with normal Shifting)
+ echo # 18 = Road To S.I. 2020
  echo # 19 = The Grand Larceny / Golden Gun
  echo # 20 = M.U.T.E Protocol (Support Omega)
  echo # 201 = M.U.T.E Protocol (Not supported Omega)
  echo # 21 = Sugar Fright / Telly
- echo ----------------------------------------------------
  set /p version="Enter Selection:"
  if %version%==0 (
  cls
- goto DownloadMenu
+ goto InstallMenu
  )
  MODE 100,40
  
