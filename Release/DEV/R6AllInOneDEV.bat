@@ -114,6 +114,7 @@ ping github.com>nul
 	set SteamName=1
 	set DevVersion=0
 	set cmdmenusel=1
+  echo S.ini set to default things >>log.log
 goto dotnetSET
 ::S:INI SET / Finder END
 
@@ -216,7 +217,6 @@ goto dotnetSET
 	) else (
 	set DevVersion=0
 	echo matec wasn't found
-	echo matec wasn't found >>log.log
 	)
 	goto ifdotnet
 :: SET SET END
@@ -1800,6 +1800,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's CHIMERA Released
+  echo Chimera or Outback Choosed>>log.log
   goto MainMenu
   )
   ::MadHouse EVENT
@@ -1810,6 +1811,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's Mad House!
+  echo Mad House Choosed>>log.log
   goto MainMenu
   )
   ::Rainbow is Magic EVENT
@@ -1820,6 +1822,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's Rainbow is Magic!
+  echo Rainbow is Magic Choosed>>log.log
   goto MainMenu
   )
   ::SHIFTING TIDES Released
@@ -1830,6 +1833,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's SHIFTING TIDES Released!
+  echo SHIFTING TIDES or Road To S.I. 2020 Choosed>>log.log
   goto MainMenu
   )
   ::The Grand Larceny
@@ -1840,6 +1844,7 @@ goto dotnetSET
   cls
   echo Download complete!
   echo It's The Grand Larceny!
+  echo  Grand Larceny Choosed>>log.log
   goto MainMenu
   )
   ::MUTE EVENT
@@ -1850,6 +1855,7 @@ goto dotnetSET
   cls
   echo Download complete
   echo It's M.U.T.E Protocol [Support Omega]
+  echo M.U.T.E Protocol [Support Omega] Choosed>>log.log
   goto MainMenu
   )
   ::MUTE EVENT W/o Omega
@@ -1859,7 +1865,8 @@ goto dotnetSET
   pause
   cls
   echo Download complete
-  echo It's M.U.T.E Protocol [Not supported Omega]
+  echo It's M.U.T.E Protocol [Not supported Omega] 
+  echo M.U.T.E Protocol [Not supported Omega] Choosed>>log.log
   goto MainMenu
   )
   ::Sugar Fright / Telly
@@ -1870,6 +1877,7 @@ goto dotnetSET
   cls
   echo Download complete 
   echo It's Sugar Fright
+  echo Sugar Fright or Telly Choosed>>log.log
   goto MainMenu
   )
   goto EventMenu
@@ -1883,7 +1891,7 @@ goto dotnetSET
   Title Rainbow Six Siege Extra Downloader
   MODE 50,25
   echo Extra Loaded>>log.log
-  echo               Extra Language Downloader
+  echo               Extra Language Selector
   echo             What would you like to select?
   echo              EVENT LANG NOT SUPPORTED!
   echo --------------------------------------------------
