@@ -114,6 +114,7 @@ ping github.com>nul
 	set SteamName=1
 	set DevVersion=0
 	set cmdmenusel=1
+  echo ------------SET START----------------->>log.log
   echo S.ini set to default things >>log.log
 goto dotnetSET
 ::S:INI SET / Finder END
@@ -207,13 +208,14 @@ goto dotnetSET
 	echo "DevVersion=1" set to 0 >>log.log
 	set DevVersion=0
 	)
+  echo ------------SET END----------------->>log.log
 	goto MateBypass
 ::matec bypass
 :MateBypass
 	if exist "C:\Users\matec\" (
 	set DevVersion=1
 	echo matec was found
-	echo matec was found >>log.log
+	echo matec was found, automaticly Dev things enabled>>log.log
 	) else (
 	set DevVersion=0
 	echo matec wasn't found
@@ -651,7 +653,7 @@ goto dotnetSET
   echo  If you want to join testing phase, DM me on Discord
   echo  If you have a problem this tool, DM me on Discord
   echo  My Discord: SlejmUr#4007 or join on %discord%
-  echo Notes Readed!>>log.log
+  echo Notes Readed - %TIME%>>log.log
   pause
   cls
   goto MainMenu
@@ -685,7 +687,7 @@ goto dotnetSET
  goto StartGame
  )
  if %ERRORLEVEL% == 4 (
- echo Back>>log.log
+ echo Back - %TIME%>>log.log
  cls
  goto MainCMD
  )
@@ -703,19 +705,20 @@ goto dotnetSET
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Install Selector
   echo          [31mCustom manifest now is unstable![0m
-  echo      Now the Version and Release is still same.
+  echo      Infos:
   echo [93m----------------------SELECT----------------------[0m
-  Resources\cmdmenusel f8f0 "   Event Downloader" "   Version Downloader" "   Release Downloader" "   Custom Downloader" "   Textures Downloader" "   Extra Downloader" "   Back"
+  Resources\cmdmenusel f8f0 "   Version Downloader" "   Event Downloader" "   Release Downloader" "   Custom Downloader" "   Textures Downloader" "   Extra Language Downloader" "   Back"
   
+
   if %ERRORLEVEL% == 1 (
+  echo VersionMenu Choosed>>log.log
+  cls
+  goto VersionMenu
+  )
+  if %ERRORLEVEL% == 2 (
   echo EventMenu Choosed>>log.log
   cls
   goto EventMenu
-  )
-  if %ERRORLEVEL% == 2 (
-  echo VersionMenu Choosed>>log.log
-  cls
-  goto DownloadMenu
   )
   if %ERRORLEVEL% == 3 (
   echo ReleaseMenu Choosed>>log.log
@@ -738,12 +741,38 @@ goto dotnetSET
   goto Extra
   )
   if %ERRORLEVEL% == 7 (
-  echo Back>>log.log
+  echo Back - %TIME%>>log.log
   cls
   goto MainCMD
   )
   goto InstallMenu
 ::InstallMenu END
+
+
+::VersionMenu START
+:VersionMenu
+  cls
+  Title Rainbow Six Siege VersionMenu
+  MODE 50,40
+  echo VersionMenu Loaded>>log.log
+  echo [93m-----------------------NOTES----------------------[0m
+  echo                   Version Selector
+  echo            Currently doesnt do anyting
+  echo [93m----------------------SELECT----------------------[0m
+  Resources\cmdmenusel f8f0 "Vanilla" "Black Ice" "Dust Line" "Skull Rain" "Red Crow" "Velvet Shell" "Health" "Blood Orchid" "White Noise" "Chimera" "Para Bellum" "Grim Sky" "Wind Bastion" "Burnt Horizon" "Phantom Sight" "Ember Rise" "Shifting Tides" "Void Edge" "Steel Wave [Mute]" "Steel Wave [Omega/Mute]" "Back"
+
+  if %ERRORLEVEL% == 1 (
+  echo test>>log.log
+  cls
+  goto MainCMD
+  )
+  if %ERRORLEVEL% == 22 (
+  echo Back - %TIME%>>log.log
+  cls
+  goto MainCMD
+  )
+  goto InstallMenu
+::VersionMenu END
 
 
 ::DownloadMenu START
