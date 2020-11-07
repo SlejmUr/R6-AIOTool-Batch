@@ -601,7 +601,7 @@ goto dotnetSET
   rd /s /q  "logs\"
   pause
   )
-	if %ERRORLEVEL% == 10 (
+  if %ERRORLEVEL% == 10 (
   echo Back/Exit - %TIME%>>log.log
   exit
   )
@@ -1321,8 +1321,8 @@ goto dotnetSET
   ::MUTE EVENT W/o Omega
   if %ERRORLEVEL%==7 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave_Morphues" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave_Morphues" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete
@@ -1364,14 +1364,17 @@ goto dotnetSET
   Resources\cmdmenusel f8f0 "4kRelease" "4kVersion" "4kEvent" "Back"
 
   if %ERRORLEVEL% == 1 (
+  echo 4kRelease Choosed>>log.log
   cls
   goto 4kRelease
   )
   if %ERRORLEVEL% == 2 (
+  echo 4kVersion Choosed>>log.log
   cls
   goto 4kVersion
   )
   if %ERRORLEVEL% == 3 (
+  echo 4kEvent Choosed>>log.log
   cls
   goto 4kEvent
   )
@@ -1579,7 +1582,7 @@ goto dotnetSET
   ::MUTEProtocol4k
   if %ERRORLEVEL%==19 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1430519549301269175 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave_Morphues" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1430519549301269175 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
@@ -1894,13 +1897,23 @@ goto dotnetSET
   ::MUTEProtocol4k
   if %ERRORLEVEL%==8 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1430519549301269175 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave_Morphues" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1430519549301269175 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
   goto MainMenu
   )
-  if %ERRORLEVEL% == 9 (
+  ::SugarFright4k
+  if %ERRORLEVEL%==9 (
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3569318872166878802 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete 
+  echo It's Sugar Fright / Telly 4K!
+  goto MainMenu
+  )
+  if %ERRORLEVEL% == 10 (
   echo Back - %TIME%>>log.log
   cls
   goto GameMenu
@@ -2203,7 +2216,7 @@ goto dotnetSET
   rd /s /q "R6Downloads\Y5S2_SteelWave"
   timeout /t 4
   cls
-  echo Y5S2_SteelWave_Morphues_V2311 Choosed [U]>>log.log
+  echo Y5S2_SteelWave Choosed [U]>>log.log
   echo Delete complete!
   goto MainMenu
   )
