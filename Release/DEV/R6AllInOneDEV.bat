@@ -375,9 +375,9 @@ goto dotnetSET
 
 :extractPlaza
   for %%I in ("plazas.zip") do (
-    echo extractPlaza
-    echo extractPlaza - %TIME%>>log.log
-    "Resources\7z.exe" x -y -o"Resources\" "%%I" && del %%I
+  echo extractPlaza
+  echo extractPlaza - %TIME%>>log.log
+  "Resources\7z.exe" x -y -o"Resources\" "%%I" && del %%I
   cls
   goto PlazaCheck
   )
