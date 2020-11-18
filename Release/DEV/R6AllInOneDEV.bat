@@ -1242,9 +1242,10 @@ goto dotnetSET
   echo [93m-----------------------NOTES------------------------[0m
   echo   Outback is same with normal Chimera
   echo   Road To S.I. is same with normal Shifting Tides
+  echo   Showdown is same with normal Phantom Sight
   echo   The Omega Mute is not broken, use that.
   echo [93m-----------------------SELECT-----------------------[0m
-  Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
+  Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
   
   ::CHIMERA Released
   if %ERRORLEVEL%==1 (
@@ -1280,8 +1281,19 @@ goto dotnetSET
   echo BURNT HORIZON [Zer0] / Rainbow Is Magic Choosed>>log.log
   goto MainMenu
   )
-  ::EMBER RISE manifest / Doctors Curse
+  ::PHANTOM SIGHT Released
   if %ERRORLEVEL%==4 (
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 693082837425613508 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5408324128694463720 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete!
+  echo It's PHANTOM SIGHT Released!
+  echo PHANTOM SIGHT / Showdown Choosed>>log.log
+  goto MainMenu
+  )
+  ::EMBER RISE manifest / Doctors Curse
+  if %ERRORLEVEL%==5 (
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
   pause
@@ -1291,7 +1303,7 @@ goto dotnetSET
   goto MainMenu
   )
   ::SHIFTING TIDES Released
-  if %ERRORLEVEL%==5 (
+  if %ERRORLEVEL%==6 (
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
@@ -1303,7 +1315,7 @@ goto dotnetSET
   goto MainMenu
   )
   ::Void Edge manifest / Gang Destruction
-  if %ERRORLEVEL%==6 (
+  if %ERRORLEVEL%==7 (
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 1378283477131353042 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1739364586766771991 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
@@ -1314,7 +1326,7 @@ goto dotnetSET
   goto MainMenu
   )
   ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
-  if %ERRORLEVEL%==7 (
+  if %ERRORLEVEL%==8 (
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
@@ -1325,7 +1337,7 @@ goto dotnetSET
   goto MainMenu
   )
   ::SteelWave (omega/Mute Protocol)
-  if %ERRORLEVEL%==8 (
+  if %ERRORLEVEL%==9 (
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
@@ -1336,7 +1348,7 @@ goto dotnetSET
   goto MainMenu
   )
   ::Sugar Fright / Telly
-  if %ERRORLEVEL%==9 (
+  if %ERRORLEVEL%==10 (
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3265954110064157115 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5436378897406471956 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
@@ -1347,7 +1359,7 @@ goto dotnetSET
   echo Sugar Fright / Telly Choosed>>log.log
   goto MainMenu
   )
-  if %ERRORLEVEL% == 10 (
+  if %ERRORLEVEL% == 11 (
   echo Back - %TIME%>>log.log
   cls
   goto InstallMenu
@@ -1521,7 +1533,7 @@ goto dotnetSET
   ::MadHouse4k
   if %ERRORLEVEL%==12 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
@@ -1540,7 +1552,7 @@ goto dotnetSET
   ::RainbowIsMagic4k
   if %ERRORLEVEL%==14 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
@@ -1559,7 +1571,7 @@ goto dotnetSET
   ::DoktorsCurse4k
   if %ERRORLEVEL%==16 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4319184561394137009 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4319184561394137009 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
@@ -1575,10 +1587,10 @@ goto dotnetSET
   echo It's Shifting Tides 4K!
   goto MainMenu
   )
-  ::GrandLarceny4k
+  ::GangDestruction4k
   if %ERRORLEVEL%==18 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
@@ -1847,7 +1859,7 @@ goto dotnetSET
   ::MadHouse4k
   if %ERRORLEVEL%==2 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "R6Downloads\Y3S3_GrimSky" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
@@ -1855,7 +1867,7 @@ goto dotnetSET
   )
   ::RainbowIsMagic4k
   if %ERRORLEVEL%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y4S1_BurntHorizon" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
@@ -1874,7 +1886,7 @@ goto dotnetSET
   ::DoktorsCurse4k
   if %ERRORLEVEL%==5 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4319184561394137009 -username %username% -remember-password -dir "R6Downloads\Y4S3_EmberRise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4319184561394137009 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
@@ -1890,10 +1902,10 @@ goto dotnetSET
   echo It's Shifting Tides / Road To S.I. 4K!
   goto MainMenu
   )
-  ::GrandLarceny4k
+  ::GangDestruction4k
   if %ERRORLEVEL%==7 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_VoidEdge" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0!
