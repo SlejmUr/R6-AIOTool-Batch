@@ -897,7 +897,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0!
-  echo GRIM SKY [Zer0] Choosed>>log.log
+  echo GRIM SKY [Zer0] / Mad House Choosed>>log.log
   goto MainMenu
   )
   ::WIND BASTION Released
@@ -918,7 +918,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0
-  echo BURNT HORIZON [Zer0] Choosed>>log.log
+  echo BURNT HORIZON [Zer0] / Rainbow Is Magic Choosed>>log.log
   goto MainMenu
   )
   ::PHANTOM SIGHT Released
@@ -939,7 +939,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0!
-  echo EMBER RISE [Zer0] Choosed>>log.log
+  echo EMBER RISE [Zer0] / Doctors Curse Choosed>>log.log
   goto MainMenu
   )
   ::SHIFTING TIDES Released
@@ -960,7 +960,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0!
-  echo Void Edge [Zer0] Choosed>>log.log
+  echo Void Edge [Zer0] / Gang Destruction Choosed>>log.log
   goto MainMenu
   )
   ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
@@ -1244,7 +1244,7 @@ goto dotnetSET
   echo   Road To S.I. is same with normal Shifting Tides
   echo   The Omega Mute is not broken, use that.
   echo [93m-----------------------SELECT-----------------------[0m
-  Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Support Omega)" "   M.U.T.E Protocol (Not supported Omega)" "   Sugar Fright / Telly" "   Back"
+  Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
   
   ::CHIMERA Released
   if %ERRORLEVEL%==1 (
@@ -1258,32 +1258,40 @@ goto dotnetSET
   echo Chimera / Outback Choosed>>log.log
   goto MainMenu
   )
-  ::MadHouse EVENT
+  ::GRIM SKY Manifest / Mad House
   if %ERRORLEVEL%==2 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1556527176552332195 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5562094852451837435 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7781202564071310413 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Mad House!
-  echo Mad House Choosed>>log.log
+  echo Download complete Thanks Zer0!
+  echo GRIM SKY [Zer0] / Mad House Choosed>>log.log
   goto MainMenu
   )
-  ::Rainbow is Magic EVENT
+  ::BURNT HORIZON manifest / Rainbow Is Magic
   if %ERRORLEVEL%==3 (
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8356277316976403078 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Rainbow is Magic!
-  echo Rainbow is Magic Choosed>>log.log
+  echo Download complete Thanks Zer0
+  echo BURNT HORIZON [Zer0] / Rainbow Is Magic Choosed>>log.log
+  goto MainMenu
+  )
+  ::EMBER RISE manifest / Doctors Curse
+  if %ERRORLEVEL%==4 (
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete Thanks Zer0!
+  echo EMBER RISE [Zer0] / Doctors Curse Choosed>>log.log
   goto MainMenu
   )
   ::SHIFTING TIDES Released
-  if %ERRORLEVEL%==4 (
+  if %ERRORLEVEL%==5 (
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
@@ -1294,44 +1302,41 @@ goto dotnetSET
   echo SHIFTING TIDES / Road To S.I. 2020 Choosed>>log.log
   goto MainMenu
   )
-  ::The Grand Larceny
-  if %ERRORLEVEL%==5 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4736360397583523381 -username %username% -remember-password -dir "R6Downloads\Y5S1_TheGrandLarceny" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6296533808765702678 -username %username% -remember-password -dir "R6Downloads\Y5S1_TheGrandLarceny" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's The Grand Larceny!
-  echo  Grand Larceny Choosed>>log.log
-  goto MainMenu
-  )
-  ::MUTE EVENT
+  ::Void Edge manifest / Gang Destruction
   if %ERRORLEVEL%==6 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 1378283477131353042 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1739364586766771991 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete
-  echo It's M.U.T.E Protocol [Support Omega]
-  echo M.U.T.E Protocol [Support Omega] Choosed>>log.log
+  echo Download complete Thanks Zer0!
+  echo Void Edge [Zer0] / Gang Destruction Choosed>>log.log
   goto MainMenu
   )
-  ::MUTE EVENT W/o Omega
+  ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
   if %ERRORLEVEL%==7 (
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete
-  echo It's M.U.T.E Protocol [Not supported Omega] 
-  echo M.U.T.E Protocol [Not supported Omega] Choosed>>log.log
+  echo Download complete Thanks Zer0!
+  echo [v14603060] steel wave [Mute Protocol] Choosed>>log.log
+  goto MainMenu
+  )
+  ::SteelWave (omega/Mute Protocol)
+  if %ERRORLEVEL%==8 (
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete Thanks Zer0!
+  echo [v14664131] SteelWave [omega/Mute Protocol] Choosed>>log.log
   goto MainMenu
   )
   ::Sugar Fright / Telly
-  if %ERRORLEVEL%==8 (
+  if %ERRORLEVEL%==9 (
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3265954110064157115 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5436378897406471956 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
@@ -1342,7 +1347,7 @@ goto dotnetSET
   echo Sugar Fright / Telly Choosed>>log.log
   goto MainMenu
   )
-  if %ERRORLEVEL% == 9 (
+  if %ERRORLEVEL% == 10 (
   echo Back - %TIME%>>log.log
   cls
   goto InstallMenu
