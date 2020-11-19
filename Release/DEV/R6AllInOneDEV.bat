@@ -114,7 +114,6 @@ set discord=discord.gg/EvrGzAV
 	::Sets
 	set SteamName=1
 	set DevVersion=0
-	set cmdmenusel=1
   echo ------------SET START----------------->>log.log
   echo S.ini set to default things >>log.log
 goto dotnetSET
@@ -357,7 +356,7 @@ goto dotnetSET
 :PlazaCheck
   cls
   if exist "Resources\Plazas\PLAZA_BO\CODEX.ini" (
-    goto ifcmd 
+    goto cmdCheck 
   ) else (
     goto GetPlaza
   )
@@ -386,13 +385,6 @@ goto dotnetSET
 
 
 ::cmdmenusel START
-:ifcmd
-	if %cmdmenusel%==1 (
-	goto cmdCheck
-	) else (
-	goto ifSteam
-	)
-
 :cmdCheck
   cls
   if exist "Resources\cmdmenusel.exe" (
@@ -1372,13 +1364,13 @@ goto dotnetSET
 :TextureMenu
   cls
   Title Rainbow Six Siege 4K Textures Downloader
-  MODE 50,38
+  MODE 50,10
   echo TextureMenu Loaded >>log.log
   echo [93m----------------------NOTES-----------------------[0m
   echo                   4K Textures Selector
   echo   Insert note here 
-  echo [93m----------------------SELECT----------------------[0m  
-  Resources\cmdmenusel f8f0 "4kRelease" "4kVersion" "4kEvent" "Back"
+  echo [93m----------------------SELECT----------------------[0m
+  Resources\cmdmenusel f8f0 "   4k Release" "   4k Version" "   4k Event" "   Back"
 
   if %ERRORLEVEL% == 1 (
   echo 4kRelease Choosed>>log.log
