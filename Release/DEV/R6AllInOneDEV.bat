@@ -77,7 +77,7 @@ set discord=discord.gg/EvrGzAV
 ::Settings.ini get START
 :SiniCheck
   MODE 62,50
-  if exist "Resources\Setting.ini" (
+  if exist "Resources\Settings.ini" (
     goto SiniSet
   ) else (
     mkdir Resources
@@ -87,20 +87,20 @@ set discord=discord.gg/EvrGzAV
 :noSini
   MODE 78,20
   echo ------------------------------------------------------------------------------
-  echo                              Downloading Setting.ini...
+  echo                              Downloading Settings.ini...
   echo ------------------------------------------------------------------------------
-  curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/Settings.ini" --output Setting.ini
-  echo Download Setting.ini - %TIME%>>log.log
+  curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/Settings.ini" --output Settings.ini
+  echo Download Settings.ini - %TIME%>>log.log
   cls
   goto moveS
   cls
   )
 
 :moveS
-  move Setting.ini Resources
-  echo Setting.ini Moved - %TIME%>>log.log
+  move Settings.ini Resources
+  echo Settings.ini Moved - %TIME%>>log.log
   goto SiniCheck
-::Setting.ini get END
+::Settings.ini get END
 
 
 
@@ -125,7 +125,7 @@ goto dotnetSET
 
 ::Set dotnet
 :dotnetSET
-	findstr /m "Dotnet=1" Resources\Setting.ini >Nul
+	findstr /m "Dotnet=1" Resources\Settings.ini >Nul
 	if %errorlevel%==0 (
 	echo "Dotnet" set to 1
 	echo "Dotnet" set to 1 >>log.log
@@ -139,7 +139,7 @@ goto dotnetSET
 	goto 7zipSET
 ::Set 7zip
 :7zipSET
-	findstr /m "zip=1" Resources\Setting.ini >Nul
+	findstr /m "zip=1" Resources\Settings.ini >Nul
 	if %errorlevel%==0 (
 	echo "zip" set to 1
 	echo "zip" set to 1  >>log.log
@@ -153,7 +153,7 @@ goto dotnetSET
 	goto DepotSET
 ::Set Depot
 :DepotSET
-	findstr /m "Depot=1" Resources\Setting.ini >Nul
+	findstr /m "Depot=1" Resources\Settings.ini >Nul
 	if %errorlevel%==0 (
 	echo "Depot" set to 1
 	echo "Depot" set to 1 >>log.log
@@ -167,7 +167,7 @@ goto dotnetSET
 	goto PlazaSET
 ::Set Plaza
 :PlazaSET
-	findstr /m "Plaza=1" Resources\Setting.ini >Nul
+	findstr /m "Plaza=1" Resources\Settings.ini >Nul
 	if %errorlevel%==0 (
 	echo "Plaza" set to 1
 	echo "Plaza" set to 1 >>log.log
@@ -184,7 +184,7 @@ goto dotnetSET
 :: SET SET START
 ::Set Get SteamName
 :SteamSET
-	findstr /m "SteamName=1" Resources\Setting.ini >Nul
+	findstr /m "SteamName=1" Resources\Settings.ini >Nul
 	if %errorlevel%==0 (
 	echo "SteamName" set to 1
 	echo "SteamName" set to 1 >>log.log
@@ -198,7 +198,7 @@ goto dotnetSET
 	goto DevVersionSET
 ::Set Dev Version
 :DevVersionSET
-	findstr /m "DevVersion=1" Resources\Setting.ini >Nul
+	findstr /m "DevVersion=1" Resources\Settings.ini >Nul
 	if %errorlevel%==0 (
 	echo "DevVersion" set to 1
 	echo "DevVersion" set to 1 >>log.log
