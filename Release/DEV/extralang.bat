@@ -1,3 +1,113 @@
+@echo off
+::For I can run it
+
+:ExtraMenu
+  cls
+  Title Rainbow Six Siege Extra Menu
+  MODE 50,25
+  echo ExtraMenu Loaded>>log.log
+  set LastSelector=Extra
+  echo [93m-----------------------NOTES----------------------[0m
+  echo                Extra Language Menu
+  echo               Placeholder
+  echo [93m-----------------------SELECT---------------------[0m
+  Resources\cmdmenusel f8f0 "    Extra Version" "    Extra Release" "    Extra Event"
+
+  if %ERRORLEVEL%==1 (
+  echo Extra Version>>log.log
+  cls
+  goto Extra
+  )
+  if %ERRORLEVEL%==2 (
+  echo Extra Release>>log.log
+  cls
+  goto Extra
+  )
+  if %ERRORLEVEL%==3 (
+  echo Extra Event>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL% == 4 (
+  cls
+  echo Where to back?>>log.log
+    if %LastSelector% == MainMenu (
+      echo Back to %LastSelector% - %TIME%>>log.log
+      cls
+      goto MainCMD
+    ) else (
+      echo Back - %TIME%>>log.log
+      cls
+      goto InstallMenu
+    )
+  )
+  goto ExtraMenu
+
+
+:ExtraEvent
+  cls
+  Title Rainbow Six Siege Extra Menu
+  MODE 50,25
+  echo ExtraMenu Loaded>>log.log
+  set LastSelector=Extra
+  echo [93m-----------------------NOTES----------------------[0m
+  echo                Extra Event Language Menu
+  echo               Placeholder
+  echo [93m-----------------------SELECT---------------------[0m
+  Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
+  
+  if %ERRORLEVEL%==1 (
+  echo Outback Extra Language Choosed>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL%==2 (
+  echo Mad House Extra Language Choosed>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL%==3 (
+  echo Rainbow is Magic Extra Language Choosed>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL%==4 (
+  echo Showdown Extra Language Choosed>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL%==5 (
+  echo Doctors Curse Extra Language Choosed>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL%==6 (
+  echo Road To S.I. 2020 Extra Language Choosed>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL%==7 (
+  echo Gang Destruction Extra Language Choosed>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL%==8 (
+  echo M.U.T.E Protocol Extra Language Choosed>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL%==9 (
+  echo Sugar Fright Extra Language Choosed>>log.log
+  cls
+  goto ExtraEvent
+  )
+  if %ERRORLEVEL%==10 (
+  echo Back - %TIME%>>log.log
+  cls
+  goto InstallMenu
+  )
+  goto ExtraEvent
+
 
 ::Extra START
 :Extra
@@ -7,8 +117,8 @@
   echo Extra Loaded>>log.log
   set LastSelector=Extra
   echo [93m-----------------------NOTES----------------------[0m
-  echo                Extra Language Selector
-  echo               EVENT LANG CURRENTLY NOT SUPPORTED
+  echo                Extra Language Release Selector
+  echo               Placeholder
   echo [93m-----------------------SELECT---------------------[0m
   Resources\cmdmenusel f8f0 "  French Language" "  Italian Language" "  German Language" "  Spanish - Spain Language" "  Portuguese - Brazil Language" "  Polish Language" "  Dutch Language" "  Czech Language" "  Korean Language" "  Traditional Chinese Language" "  Simplified Chinese Language" "  Japanese Language" "  Russian Language" "  Back"
 
