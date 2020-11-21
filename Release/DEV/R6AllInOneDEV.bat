@@ -228,13 +228,15 @@ goto dotnetSET
 
 ::Dotnet start
 :ifdotnet
-	if %dotnet%==1 (
+  echo ifdotnet Loaded>>log.log
+	if %Dotnet% == 1 (
 	goto verifydotnet
 	) else (
 	goto if7zip
 	)
 
 :verifydotnet
+  echo verifydotnet Loaded>>log.log
   MODE 50,20
   reg query "HKEY_LOCAL_MACHINE\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost" /v Version 2>nul
 
@@ -249,6 +251,7 @@ goto dotnetSET
   )
 
 :dotnet
+  echo dotnet Loaded>>log.log
   MODE 40,10
   echo ---------------------------------------
   echo       Install .NET Runtime !!
@@ -261,6 +264,7 @@ goto dotnetSET
   goto verifydotnet
 
 :checkertwo
+  echo checkertwo Loaded>>log.log
   if exist "C:\Program Files\dotnet\dotnet.exe" (
   echo DotNet Two checker is found the version
   echo DotNet Two exist checker is found the version - %TIME% >>log.log
@@ -274,6 +278,7 @@ goto dotnetSET
 
 ::7zip start
 :if7zip
+  echo if7zip Loaded>>log.log
 	if %zip%==1 (
 	goto 7zipcheck
 	) else (
@@ -281,6 +286,7 @@ goto dotnetSET
 	)
 
 :7zipcheck
+  echo 7zipcheck Loaded>>log.log
   MODE 62,50
   if exist "Resources\7z.exe" (
     goto ifDD
@@ -290,6 +296,7 @@ goto dotnetSET
   )
 
 :no7zip
+  echo no7zip Loaded>>log.log
   MODE 78,20
   echo ------------------------------------------------------------------------------
   echo                              Downloading 7-Zip...
@@ -302,6 +309,7 @@ goto dotnetSET
   )
 
 :move7
+  echo move7 Loaded>>log.log
   move 7z.exe Resources
   goto 7zipcheck
 ::7zip end
@@ -309,6 +317,7 @@ goto dotnetSET
 
 ::DD start
 :ifDD
+  echo ifDD Loaded>>log.log
 	if %zip%==1 (
 	goto DepotCheck
 	) else (
@@ -317,6 +326,7 @@ goto dotnetSET
 
 
 :DepotCheck
+  echo DepotCheck Loaded>>log.log
   cls
   if exist "Resources\DepotDownloader\DepotDownloader.dll" (
     goto ifPlaza 
@@ -325,6 +335,7 @@ goto dotnetSET
   )
 
 :DepotDownloader
+  echo DepotDownloader Loaded>>log.log
   cls
   MODE 78,20
   echo ------------------------------------------------------------------------------
@@ -336,6 +347,7 @@ goto dotnetSET
   goto extractDD
 
 :extractDD
+  echo extractDD Loaded>>log.log
   for %%I in ("depot.zip") do (
     echo extractDD
     echo extractDD - %TIME%>>log.log
@@ -347,6 +359,7 @@ goto dotnetSET
 
 ::Plaza Start
 :ifPlaza
+  echo ifPlaza Loaded>>log.log
 	if %zip%==1 (
 	goto PlazaCheck
 	) else (
@@ -354,6 +367,7 @@ goto dotnetSET
 	)
 
 :PlazaCheck
+  echo PlazaCheck Loaded>>log.log
   cls
   if exist "Resources\Plazas\PLAZA_BO\CODEX.ini" (
     goto cmdCheck 
@@ -362,6 +376,7 @@ goto dotnetSET
   )
 
 :GetPlaza
+  echo GetPlaza Loaded>>log.log
   cls
   MODE 78,20
   echo ------------------------------------------------------------------------------
@@ -373,6 +388,7 @@ goto dotnetSET
   goto extractPlaza
 
 :extractPlaza
+  echo extractPlaza Loaded>>log.log
   for %%I in ("plazas.zip") do (
   echo extractPlaza
   echo extractPlaza - %TIME%>>log.log
@@ -386,6 +402,7 @@ goto dotnetSET
 
 ::cmdmenusel START
 :cmdCheck
+  echo cmdCheck Loaded>>log.log
   cls
   if exist "Resources\cmdmenusel.exe" (
     goto ifSteam 
@@ -393,6 +410,7 @@ goto dotnetSET
     goto GetCmd
   )
 :GetCmd
+  echo GetCmd Loaded>>log.log
   cls
   MODE 78,20
   echo ------------------------------------------------------------------------------
@@ -404,6 +422,7 @@ goto dotnetSET
   goto movecmd
 
 :movecmd
+  echo movecmd Loaded>>log.log
   move cmdmenusel.exe Resources
   goto cmdCheck
 ::cmdmenusel END
@@ -412,6 +431,7 @@ goto dotnetSET
 
 ::SetSteam START
 :ifSteam
+  echo ifSteam Loaded>>log.log
 	if %SteamName%==1 (
 	goto SetSteam
 	) else (
@@ -419,6 +439,7 @@ goto dotnetSET
 	goto MainCMD
 	)
 :SetSteam
+  echo SetSteam Loaded>>log.log
 	MODE 78,20
 	echo Please type your Steam Legacy name!
 	set /p username="Enter Steam Username:"
@@ -445,15 +466,7 @@ goto dotnetSET
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
   echo  [92mWhat would you like to select?[0m 
-  echo  [33m(1)[0m [36mFAQ and Notes[0m 
-  echo  [33m(2)[0m [36mGame Menu [0m 
-  echo  [33m(3)[0m [36mExtra Language[0m 
-  echo  [33m(4)[0m [36m4K Textures [0m 
-  echo  [33m(5)[0m [36mDirectX and VC Redist Downloader [0m 
-  echo  [33m(6)[0m [36mCredits[0m 
-  echo  [33m(7)[0m [36mBattlEye Checker[0m 
-  echo  [33m(8)[0m [36mOpen LOG![0m 
-  echo  [33m(9)[0m [36mChange Steam Username[0m 
+  echo  [33m(1)[0m [36mMainCMD[0m
   echo  [33m(0)[0m [36mClose[0m 
   echo [93m--------------------------------------------------------------[0m
   set /p option="Enter Number:"
@@ -464,63 +477,6 @@ goto dotnetSET
   exit
   )
   if %option%==1 (
-  echo FAQ Choosed>>log.log
-  cls
-  goto faq
-  )
-  if %option%==2 (
-  echo GameMenu Choosed>>log.log
-  cls
-  goto GameMenu
-  )
-  if %option%==3 (
-  echo Extra Menu Choosed>>log.log
-  cls
-  goto Extra
-  )
-  if %option%==4 (
-  echo TextureMenu Choosed>>log.log
-  cls
-  goto TextureMenu
-  )
-  if %option%==5 (
-  echo dxvcredist Choosed>>log.log
-  cls
-  goto dxvcredist
-  )
-  if %option%==6 (
-  echo Credit Choosed>>log.log
-  cls
-  goto Credit
-  )
-  if %option%==7 (
-  echo BattlEyeChecker Choosed>>log.log
-  cls
-  goto BattlEyeChecker
-  )
-  if %option%==8 (
-  echo Open LOG - %TIME%>>log.log
-  cls
-  start log.log
-  pause
-  goto MainMenu
-  )
-  if %option%==9 (
-  echo Changing Steam UserName - %TIME%>>log.log
-  cls
-  set /p username="Enter Steam Username:"
-  goto MainMenu
-  )
-  if %option%==10 (
-  cls
-  goto MainMenu
-  )
-  if %option%==11 (
-  cls
-  rd /s /q  "logs\"
-  pause
-  )
-  if %option%==12 (
   cls
   goto MainCMD
   )
@@ -545,7 +501,7 @@ goto dotnetSET
   echo  Steam User: [96m%username%[0m
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
-	Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Exit"
+	Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Exit"
   if %ERRORLEVEL% == 1 (
   echo FAQ Choosed>>log.log
   cls
@@ -594,6 +550,12 @@ goto dotnetSET
   pause
   )
   if %ERRORLEVEL% == 10 (
+  echo Zer0 folder Renamer Choosed>>log.log
+  cls
+  echo Currently unavaible ^^!
+  pause
+  )
+  if %ERRORLEVEL% == 11 (
   echo Back/Exit - %TIME%>>log.log
   exit
   )
@@ -639,7 +601,7 @@ goto dotnetSET
   echo  DepotDownloader : Created by SteamRE, you can download any manifest once you have the game
   echo  R6-AIOTool : AllInOne Tool, many function. Based on R6 Manifest. Created by SlejmUr
   echo  R6 Manifest : Download R6 Old Version, it use DepotDownloader. Created by Zer0Bytes
-  echo  FAQ readed>>log.log
+  echo FAQ readed>>log.log
   pause
   cls
   goto Notes
@@ -704,12 +666,12 @@ goto dotnetSET
 :InstallMenu
   cls
   Title Rainbow Six Siege InstallMenu
-  MODE 50,40
+  MODE 50,14
   echo InstallMenu Loaded>>log.log
   set LastSelector=InstallMenu
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Install Selector
-  echo          [31mCustom manifest now is unstable![0m
+  echo          [31mExtra/4K now is unstable![0m
   echo [93m----------------------SELECT----------------------[0m
   Resources\cmdmenusel f8f0 "   Version Downloader" "   Event Downloader" "   Release Downloader" "   Custom Downloader" "   4K Textures Downloader" "   Extra Language Downloader" "   Back"
 
@@ -756,7 +718,7 @@ goto dotnetSET
 :VersionMenu
   cls
   Title Rainbow Six Siege VersionMenu
-  MODE 50,40
+  MODE 50,30
   echo VersionMenu Loaded>>log.log
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Version Selector
@@ -988,7 +950,7 @@ goto dotnetSET
 :ReleaseMenu
   cls
   Title Rainbow Six Siege ReleaseMenu
-  MODE 50,40
+  MODE 50,30
   echo ReleaseMenu Loaded>>log.log
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Release Selector
@@ -1359,6 +1321,94 @@ goto dotnetSET
   goto EventMenu
 ::EventMenu END
 
+::CustomMenu START
+:CustomMenu
+  cls
+  Title Rainbow Six Siege CustomMenu
+  MODE 50,20
+  echo CustomMenu Loaded>>log.log
+  echo [93m-----------------------NOTES----------------------[0m
+  echo                   Custom Selector
+  echo            You need set everything^^!
+  echo [93m----------------------SELECT----------------------[0m
+  Resources\cmdmenusel f8f0 "   Set App" "   Set Depot" "   Set Manifest" "   Set Path/Dir" "   Start Download" "   Back"
+  
+
+  if %ERRORLEVEL% == 1 (
+  :CustomAppID
+  echo Custom Setting AppID - %TIME%>>log.log
+  cls
+  echo Siege AppID Is : 359550
+  set /p AppID="Enter AppID: "
+  goto CustomMenu
+  )
+  if %ERRORLEVEL% == 2 (
+  :CustomDepotID
+  echo Custom Setting DepotID - %TIME%>>log.log
+  cls
+  echo Use Valid DepotID ^^!
+  set /p DepotID="Enter DepotID: "
+  goto CustomMenu
+  )
+  if %ERRORLEVEL% == 3 (
+  :CustomManifestID
+  echo Custom Setting ManifestID - %TIME%>>log.log
+  cls
+  echo Use Valid ManifestID ^^!
+  set /p ManifestID="Enter ManifestID: "
+  goto CustomMenu
+  )
+  if %ERRORLEVEL% == 4 (
+  :CustomDir
+  echo Custom Setting CustomDir - %TIME%>>log.log
+  cls
+  echo Set Custom Directory
+  echo Like this: ^^"DirNane/Path"
+  set /p CustomDir="Enter CustomDir: "
+  goto CustomMenu
+  )
+  if %ERRORLEVEL% == 5 (
+  MODE 100,40
+  cls
+  if [%AppID%]==[] (
+    echo AppID is empty, please set it^^!
+    echo AppID is empty>>log.log
+    pause
+    goto CustomAppID
+  )
+  if [%DepotID%]==[] (
+    echo DepotID is empty, please set it^^!
+    echo DepotID is empty>>log.log
+    pause
+    goto CustomDepotID
+  )
+  if [%ManifestID%]==[] (
+    echo ManifestID is empty, please set it^^!
+    echo ManifestID is empty>>log.log
+    pause
+    goto CustomManifestID
+  )
+  if [%CustomDir%]==[] (
+    echo CustomDir is empty, please set it^^!
+    echo CustomDir is empty>>log.log
+    pause
+    goto CustomDir
+  )
+  echo Custom Manifest %AppID% %DepotID% %ManifestID% Downloading on %CustomDir% - %TIME%>>log.log
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app %AppID% -depot %DepotID% -manifest %ManifestID% -username %username% -remember-password -dir %CustomDir% -validate -max-servers 15 -max-downloads 10
+  echo Custom: %AppID% %DepotID% %ManifestID% Downloaded on %CustomDir%
+  pause
+  goto CustomMenu
+  )
+  if %ERRORLEVEL% == 6 (
+  echo Back - %TIME%>>log.log
+  cls
+  goto InstallMenu
+  )
+  goto CustomMenu
+::CustomMenu END
+
+
 
 ::TextureMenu START
 :TextureMenu
@@ -1421,8 +1471,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Vanilla 4K!
+  echo Download complete
+  echo It's Vanilla 4K
   goto MainMenu
   )
   ::BlackIce4k
@@ -1431,8 +1481,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3756048967966286899 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Black Ice 4K!
+  echo Download complete
+  echo It's Black Ice 4K
   goto MainMenu
   )
   ::DustLine4k
@@ -1441,8 +1491,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1338949402410764888 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Dust Line 4K!
+  echo Download complete
+  echo It's Dust Line 4K
   goto MainMenu
   )
   ::SkullRain4kZero
@@ -1451,7 +1501,7 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3267970968757091405 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete Thanks Zer0!
+  echo Download complete Thanks Zer0
   goto MainMenu
   )
   )
@@ -1461,8 +1511,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1825939060444887403 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Red Crow 4K!
+  echo Download complete
+  echo It's Red Crow 4K
   goto MainMenu
   )
   ::VelvetShell4k
@@ -1471,8 +1521,8 @@ goto dotnetSET
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3196596628759979362 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Velvet Shell 4K!
+  echo Download complete
+  echo It's Velvet Shell 4K
   goto MainMenu
   )
   ::Health4kZero
@@ -2259,7 +2309,7 @@ goto dotnetSET
 
 :Extra
 cls
-echo Extra is Currently unavaible
+echo Extra is Currently unavaible ^^!
 pause
 goto MainCMD
 
@@ -2274,7 +2324,7 @@ goto MainCMD
   MODE 50,50
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Game Starter
-  echo      Currently Not Available Press 0 to go back!
+  echo      Currently Not Available Press 0 to go back^^!
   echo [93m----------------------SELECT----------------------[0m
   ::echo --------------------------------------------------
   ::echo # 0 = Back
