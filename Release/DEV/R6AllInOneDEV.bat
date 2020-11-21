@@ -350,7 +350,7 @@ goto dotnetSET
 	if %zip%==1 (
 	goto PlazaCheck
 	) else (
-	goto ifcmd
+	goto cmdCheck
 	)
 
 :PlazaCheck
