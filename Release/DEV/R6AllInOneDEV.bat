@@ -726,56 +726,56 @@ goto dotnetSET
   echo [93m----------------------SELECT----------------------[0m
   Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Back"
 
-  ::Vanilla
   if %ERRORLEVEL%==1 (
+  :Vanilla
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8358812283631269928 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 3893422760579204530 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete^^!
-  echo It's Vanilla [v8194013]
+  echo It's Vanilla
   echo Vanilla Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::BLACK ICE Released
   if %ERRORLEVEL%==2 (
+  :BlackIce
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5188997148801516344 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7932785808040895147 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete^^!
-  echo It's BLACK ICE Released [IDK how but v11726982]
+  echo It's BLACK ICE Released
   echo BLACK ICE Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::DUST LINE Released
   if %ERRORLEVEL%==3 (
+  :DustLine
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2303064029242396590 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2206497318678061176 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete^^!
-  echo It's DUST LINE Released [v9132097]
+  echo It's DUST LINE Released
   echo DUST LINE Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::Skull Rain 4.2
   if %ERRORLEVEL%==4 (
+  :SkullRainZero
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5819137024728546741 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5851804596427790505 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
-  echo Skull Rain 4.2 [v9860556]
+  echo Skull Rain 4.2
   echo Skull Rain 4.2 Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::RED CROW Released
   if %ERRORLEVEL%==5 (
+  :RedCrow
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3576607363557872807 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8569920171217002292 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
@@ -784,10 +784,10 @@ goto dotnetSET
   echo Download complete^^!
   echo It's RED CROW Released^^!
   echo RED CROW Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::VELVET SHELL Released
   if %ERRORLEVEL%==6 (
+  :VelvetShell
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2248734317261478192 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8006071763917433748 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
@@ -796,43 +796,46 @@ goto dotnetSET
   echo Download complete^^!
   echo It's VELVET SHELL Released^^!
   echo VELVET SHELL Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::Health Manifest
   if %ERRORLEVEL%==7 (
+  :HealthZero
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5875987479498297665 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 708773000306432190 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
+  echo Health [Zer0]
   echo Health [Zer0] Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::Blood Orchid 2.3.1.1
   if %ERRORLEVEL%==8 (
+  :BloodOrchidZero
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 6708129824495912434 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1613631671988840841 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
+  echo Blood Orchid 2.3.1.1
   echo Blood Orchid 2.3.1.1 [Zer0] Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::WHITE NOISE Manifest
   if %ERRORLEVEL%==9 (
+  :WhiteNoiseZero
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8748734086032257441 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4221297486420648079 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
+  echo WHITE NOISE [Zer0] 
   echo WHITE NOISE [Zer0] Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::CHIMERA Released
   if %ERRORLEVEL%==10 (
+  :Chimera
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5071357104726974256 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
@@ -841,10 +844,10 @@ goto dotnetSET
   echo Download complete^^!
   echo It's CHIMERA  Released^^!
   echo CHIMERA Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::PARA BELLUM Released
   if %ERRORLEVEL%==11 (
+  :ParaBellum
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8312108283310615233 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8765715607275074515 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
@@ -853,56 +856,58 @@ goto dotnetSET
   echo Download complete^^!
   echo It's PARA BELLUM Released^^!
   echo PARA BELLUM Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::GRIM SKY Manifest / Mad House
   if %ERRORLEVEL%==12 (
+  :MadHouse
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5562094852451837435 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7781202564071310413 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
+  echo GRIM SKY [Zer0] / Mad House
   echo GRIM SKY [Zer0] / Mad House Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::WIND BASTION Released
   if %ERRORLEVEL%==13 (
+  :WindBastion
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 6502258854032233436 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7659555540733025386 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete ^^!
-  echo It's WIND BASTION Released [v12512571]
+  echo It's WIND BASTION Released
   echo WIND BASTION [v12512571] Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::BURNT HORIZON manifest / Rainbow Is Magic
   if %ERRORLEVEL%==14 (
+  :RainbowIsMagic
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8356277316976403078 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
+  echo BURNT HORIZON [Zer0] / Rainbow Is Magic
   echo BURNT HORIZON [Zer0] / Rainbow Is Magic Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::PHANTOM SIGHT Released
   if %ERRORLEVEL%==15 (
+  :PhantomSight
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 693082837425613508 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5408324128694463720 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete^^!
-  echo It's PHANTOM SIGHT Released^^!
-  echo PHANTOM SIGHT Choosed>>log.log
-  goto MainMenu
+  echo PHANTOM SIGHT Released / Showdown
+  echo PHANTOM SIGHT / Showdown Choosed>>log.log
+  goto InstallMenu
   )
-  ::EMBER RISE manifest / Doctors Curse
   if %ERRORLEVEL%==16 (
+  :DoktorsCurse
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
@@ -910,10 +915,10 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo EMBER RISE [Zer0] / Doctors Curse Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::SHIFTING TIDES Released
   if %ERRORLEVEL%==17 (
+  :ShiftingTides
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
@@ -922,10 +927,10 @@ goto dotnetSET
   echo Download complete^^!
   echo It's SHIFTING TIDES Released^^!
   echo SHIFTING TIDES Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::Void Edge manifest / Gang Destruction
   if %ERRORLEVEL%==18 (
+  :GangDestruction
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 1378283477131353042 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1739364586766771991 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
@@ -933,29 +938,33 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo Void Edge [Zer0] / Gang Destruction Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
   ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
   if %ERRORLEVEL%==19 (
+  :MUTEProtocol
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
+  echo [v14603060] steel wave [Mute Protocol]
   echo [v14603060] steel wave [Mute Protocol] Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
   ::SteelWave (omega/Mute Protocol)
   if %ERRORLEVEL%==20 (
+  :OmegaSteelWave
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
+  echo [v14664131] SteelWave [omega/Mute Protocol]
   echo [v14664131] SteelWave [omega/Mute Protocol] Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
   if %ERRORLEVEL% == 21 (
   echo Back - %TIME%>>log.log
@@ -978,80 +987,35 @@ goto dotnetSET
   echo [93m----------------------SELECT----------------------[0m
   Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Back"
 
-  ::Vanilla
   if %ERRORLEVEL%==1 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8358812283631269928 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 3893422760579204530 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete^^!
-  echo It's Vanilla [v8194013]
-  echo Vanilla Choosed>>log.log
-  goto MainMenu
+  goto Vanilla
   )
-  ::BLACK ICE Released
   if %ERRORLEVEL%==2 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5188997148801516344 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7932785808040895147 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete^^!
-  echo It's BLACK ICE Released [IDK how but v11726982]
-  echo BLACK ICE Choosed>>log.log
-  goto MainMenu
+  goto BlackIce
   )
-  ::DUST LINE Released
   if %ERRORLEVEL%==3 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2303064029242396590 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2206497318678061176 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete^^!
-  echo It's DUST LINE Released [v9132097]
-  echo DUST LINE Choosed>>log.log
-  goto MainMenu
+  goto DustLine
   )
-  ::SKULL RAIN Released
   if %ERRORLEVEL%==4 (
+  :SkullRain
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3552784069501585540 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6528040263176897081 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete^^!
-  echo It's SKULL RAIN Released [v9654076]
+  echo It's SKULL RAIN Released
   echo SKULL RAIN Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::RED CROW Released
   if %ERRORLEVEL%==5 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3576607363557872807 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8569920171217002292 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete^^!
-  echo It's RED CROW Released^^!
-  echo RED CROW Choosed>>log.log
-  goto MainMenu
+  goto RedCrow
   )
-  ::VELVET SHELL Released
   if %ERRORLEVEL%==6 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2248734317261478192 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8006071763917433748 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete^^!
-  echo It's VELVET SHELL Released^^!
-  echo VELVET SHELL Choosed>>log.log
-  goto MainMenu
+  goto VelvetShell
   )
-  ::Health Released
   if %ERRORLEVEL%==7 (
+  :Health
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2786501509753402970 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2332919753188284154 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
@@ -1060,10 +1024,10 @@ goto dotnetSET
   echo Download complete^^!
   echo It's Health Released^^!
   echo Health Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::BLOOD ORCHID Released
   if %ERRORLEVEL%==8 (
+  :BloodOrchid
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8948840210977117778 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2410147212125863824 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
@@ -1072,10 +1036,10 @@ goto dotnetSET
   echo Download complete^^!
   echo It's BLOOD ORCHID Released^^!
   echo BLOOD ORCHID Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::WHITE NOISE Released
   if %ERRORLEVEL%==9 (
+  :WhiteNoise
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2066250193950057921 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2783803489764777627 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
@@ -1084,34 +1048,16 @@ goto dotnetSET
   echo Download complete^^!
   echo It's WHITE NOISE  Released^^!
   echo WHITE NOISE Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::CHIMERA Released
   if %ERRORLEVEL%==10 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5071357104726974256 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete^^!
-  echo It's CHIMERA  Released^^!
-  echo CHIMERA Choosed>>log.log
-  goto MainMenu
+  goto Chimera
   )
-  ::PARA BELLUM Released
   if %ERRORLEVEL%==11 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8312108283310615233 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8765715607275074515 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete^^!
-  echo It's PARA BELLUM Released^^!
-  echo PARA BELLUM Choosed>>log.log
-  goto MainMenu
+  goto ParaBellum
   )
-  ::GRIM SKY Released
   if %ERRORLEVEL%==12 (
+  :GrimSky
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7286067994760020542 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4133951394045241747 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
@@ -1119,23 +1065,14 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's GRIM SKY Released^^!
-  echo  GRIM SKY Choosed>>log.log
-  goto MainMenu
+  echo GRIM SKY Choosed>>log.log
+  goto InstallMenu
   )
-  ::WIND BASTION Released
   if %ERRORLEVEL%==13 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 6502258854032233436 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7659555540733025386 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete^^!
-  echo It's WIND BASTION Released [v12512571]
-  echo WIND BASTION [v12512571] Choosed>>log.log
-  goto MainMenu
+  goto WindBastion
   )
-  ::BURNT HORIZON Released
   if %ERRORLEVEL%==14 (
+  :BurntHorizon
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8985694971177711792 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4355229858723790756 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
@@ -1144,22 +1081,13 @@ goto dotnetSET
   echo Download complete^^!
   echo It's BURNT HORIZON Released^^!
   echo BURNT HORIZON Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::PHANTOM SIGHT Released
   if %ERRORLEVEL%==15 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 693082837425613508 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5408324128694463720 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete^^!
-  echo It's PHANTOM SIGHT Released^^!
-  echo PHANTOM SIGHT Choosed>>log.log
-  goto MainMenu
+  goto PhantomSight
   )
-  ::EMBER RISE Released
   if %ERRORLEVEL%==16 (
+  :EmberRise
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7309481042294838052 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5429930338066808153 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
@@ -1168,22 +1096,13 @@ goto dotnetSET
   echo Download complete^^!
   echo It's EMBER RISE Released^^!
   echo EMBER RISE Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::SHIFTING TIDES Released
   if %ERRORLEVEL%==17 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
-  pause
-  cls
-  echo Download complete^^!
-  echo It's SHIFTING TIDES Released^^!
-  echo SHIFTING TIDES Choosed>>log.log
-  goto MainMenu
+  goto ShiftingTides
   )
-  ::VOID EDGE Released
   if %ERRORLEVEL%==18 (
+  :VoidEdge
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8007091753837589034 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2810676266503656332 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
@@ -1192,10 +1111,10 @@ goto dotnetSET
   echo Download complete^^!
   echo It's VOID EDGE Released^^!
   echo VOID EDGE Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::STEEL WAVE
   if %ERRORLEVEL%==19 (
+  :SteelWave
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7032500641931923367 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8083217055977195199 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
@@ -1204,10 +1123,10 @@ goto dotnetSET
   echo Download complete^^!
   echo It's STEEL WAVE Released^^!
   echo STEEL WAVE Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
-  ::Shadow Legacy
   if %ERRORLEVEL%==20 (
+  :ShadowLegacy
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 885453180592640750 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7750070106878890861 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
@@ -1216,7 +1135,7 @@ goto dotnetSET
   echo Download complete^^!
   echo It's Shadow Legacy Released^^!
   echo Shadow Legacy Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
   if %ERRORLEVEL% == 21 (
   echo Back - %TIME%>>log.log
@@ -1241,117 +1160,44 @@ goto dotnetSET
   echo [93m-----------------------SELECT-----------------------[0m
   Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
   
-  ::CHIMERA Released
   if %ERRORLEVEL%==1 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5071357104726974256 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's CHIMERA Released
-  echo Chimera / Outback Choosed>>log.log
-  goto MainMenu
+  goto Chimera
   )
-  ::GRIM SKY Manifest / Mad House
   if %ERRORLEVEL%==2 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5562094852451837435 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7781202564071310413 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  echo GRIM SKY [Zer0] / Mad House Choosed>>log.log
-  goto MainMenu
+  goto MadHouse
   )
-  ::BURNT HORIZON manifest / Rainbow Is Magic
   if %ERRORLEVEL%==3 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8356277316976403078 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0
-  echo BURNT HORIZON [Zer0] / Rainbow Is Magic Choosed>>log.log
-  goto MainMenu
+  goto RainbowIsMagic
   )
-  ::PHANTOM SIGHT Released
   if %ERRORLEVEL%==4 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 693082837425613508 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5408324128694463720 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's PHANTOM SIGHT Released!
-  echo PHANTOM SIGHT / Showdown Choosed>>log.log
-  goto MainMenu
+  goto PhantomSight
   )
-  ::EMBER RISE manifest / Doctors Curse
   if %ERRORLEVEL%==5 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  echo EMBER RISE [Zer0] / Doctors Curse Choosed>>log.log
-  goto MainMenu
+  goto DoktorsCurse
   )
-  ::SHIFTING TIDES Released
   if %ERRORLEVEL%==6 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
-  pause
-  cls
-  echo Download complete!
-  echo It's SHIFTING TIDES Released!
-  echo SHIFTING TIDES / Road To S.I. 2020 Choosed>>log.log
-  goto MainMenu
+  goto ShiftingTides
   )
-  ::Void Edge manifest / Gang Destruction
   if %ERRORLEVEL%==7 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 1378283477131353042 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1739364586766771991 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  echo Void Edge [Zer0] / Gang Destruction Choosed>>log.log
-  goto MainMenu
+  goto GangDestruction
   )
-  ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
   if %ERRORLEVEL%==8 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  echo [v14603060] steel wave [Mute Protocol] Choosed>>log.log
-  goto MainMenu
+  goto MUTEProtocol
   )
-  ::SteelWave (omega/Mute Protocol)
   if %ERRORLEVEL%==9 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  echo [v14664131] SteelWave [omega/Mute Protocol] Choosed>>log.log
-  goto MainMenu
+  goto OmegaSteelWave
   )
-  ::Sugar Fright / Telly
   if %ERRORLEVEL%==10 (
+  :SugarFright
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3265954110064157115 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5436378897406471956 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
   pause
   cls
   echo Download complete 
-  echo It's Sugar Fright
+  echo Sugar Fright / Telly
   echo Sugar Fright / Telly Choosed>>log.log
-  goto MainMenu
+  goto InstallMenu
   )
   if %ERRORLEVEL% == 11 (
   echo Back - %TIME%>>log.log
@@ -1360,6 +1206,7 @@ goto dotnetSET
   )
   goto EventMenu
 ::EventMenu END
+
 
 ::CustomMenu START
 :CustomMenu
@@ -1449,7 +1296,6 @@ goto dotnetSET
 ::CustomMenu END
 
 
-
 ::TextureMenu START
 :TextureMenu
   cls
@@ -1505,187 +1351,211 @@ goto dotnetSET
   echo [93m----------------------SELECT----------------------[0m
   Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Back"
 
-  ::Vanilla4k
   if %ERRORLEVEL%==1 (
+  :Vanilla4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete
-  echo It's Vanilla 4K
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Vanilla 4K^^!
+  echo Vanilla 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::BlackIce4k
   if %ERRORLEVEL%==2 (
+  :BlackIce4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3756048967966286899 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete
-  echo It's Black Ice 4K
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Black Ice 4K^^!
+  echo BlackIce 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::DustLine4k
   if %ERRORLEVEL%==3 (
+  :DustLine4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1338949402410764888 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete
-  echo It's Dust Line 4K
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Dust Line 4K^^!
+  echo Dust Line 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::SkullRain4kZero
   if %ERRORLEVEL%==4 (
+  :SkullRain4kZero
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3267970968757091405 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete Thanks Zer0
-  goto MainMenu
+  echo Download complete Thanks Zer0 ^^!
+  echo Skull Rain 4k [Zero] Choosed>>log.log
+  goto InstallMenu
   )
-  )
-  ::RedCrow4k
   if %ERRORLEVEL%==5 (
+  :RedCrow4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1825939060444887403 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete
-  echo It's Red Crow 4K
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Red Crow 4K^^!
+  echo Red Crow 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::VelvetShell4k
   if %ERRORLEVEL%==6 (
+  :VelvetShell4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3196596628759979362 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete
-  echo It's Velvet Shell 4K
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Velvet Shell 4K^^!
+  echo Velvet Shell 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::Health4kZero
   if %ERRORLEVEL%==7 (
+  :Health4kZero
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7497579858536910279 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  echo Download complete Thanks Zer0 ^^!
+  echo Health 4k [Zero] Choosed>>log.log
+  goto InstallMenu
   )
-  ::BloodOrchid4kZero
   if %ERRORLEVEL%==8 (
+  :BloodOrchid4kZero
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6420469519659049757 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  echo Download complete Thanks Zer0 ^^!
+  echo Blood Orchid 4k [Zero] Choosed>>log.log
+  goto InstallMenu
   )
-  ::WhiteNoise4kZero
   if %ERRORLEVEL%==9 (
+  :WhiteNoise4kZero
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1118649577165385479 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 959656357428794421 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete! Thanks Zer0!
-  goto MainMenu
+  echo Download complete Thanks Zer0 ^^!
+  echo White Noise 4k [Zero] Choosed>>log.log
+  goto InstallMenu
   )
-  ::Chimera4k
   if %ERRORLEVEL%==10 (
+  :Chimera4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1668513364192382097 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Chimera 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo Chimera / Outback 4K
+  echo Chimera / Outback 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::ParaBellum4k
   if %ERRORLEVEL%==11 (
+  :ParaBellum4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 204186978012641075 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Para Bellum 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Para Bellum 4K^^!
+  echo ParaBellum4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::MadHouse4k
   if %ERRORLEVEL%==12 (
+  :MadHouse4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  echo Download complete Thanks Zer0 ^^!
+  echo MadHouse 4k
+  echo MadHouse 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::WindBastion4k
   if %ERRORLEVEL%==13 (
+  :WindBastion4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2243348760021617592 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Wind Bastion 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Wind Bastion 4K^^!
+  echo Wind Bastion 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::RainbowIsMagic4k
   if %ERRORLEVEL%==14 (
+  :RainbowIsMagic4k
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3462709886432904855 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  echo Download complete Thanks Zer0 ^^!
+  echo Rainbow Is Magic 4k
+  echo Rainbow Is Magic 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::PhantomSight4k
   if %ERRORLEVEL%==15 (
+  :PhantomSight4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4107080515154236795 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Phantom Sight 4K!
-  goto MainMenu
+  echo Download complete ^^!
+  echo It's Phantom Sight 4K ^^!
+  echo Phantom Sight 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::DoktorsCurse4k
   if %ERRORLEVEL%==16 (
+  :DoktorsCurse4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4319184561394137009 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  echo Download complete Thanks Zer0 ^^!
+  echo Doktors Curse 4k 
+  echo Doktors Curse 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::ShiftingTides4k
   if %ERRORLEVEL%==17 (
+  :ShiftingTides4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6048763664997452513 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Shifting Tides 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Shifting Tides 4K^^!
+  echo Shifting Tides / Road To S.I. 4K 
+  echo Shifting Tides / Road To S.I. 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::GangDestruction4k
   if %ERRORLEVEL%==18 (
+  :GangDestruction4k
   MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1775661942779524815 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  echo Download complete Thanks Zer0 ^^!
+  echo Gang Destruction 4k
+  echo Gang Destruction 4k Choosed>>log.log
+  goto InstallMenu
   )
-  ::MUTEProtocol4k
   if %ERRORLEVEL%==19 (
+  :MUTEProtocol4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1430519549301269175 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  echo Download complete Thanks Zer0 ^^!
+  echo MUTE Protocol 4k
+  echo MUTE Protocol 4k Choosed>>log.log
+  goto InstallMenu
   )
   if %ERRORLEVEL% == 20 (
   echo Back - %TIME%>>log.log
@@ -1707,205 +1577,146 @@ goto dotnetSET
   echo [93m----------------------SELECT----------------------[0m
   Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Back"
 
-  ::Vanilla4k
   if %ERRORLEVEL%==1 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Vanilla 4K!
-  goto MainMenu
+  goto Vanilla4k
   )
-  ::BlackIce4k
   if %ERRORLEVEL%==2 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3756048967966286899 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Black Ice 4K!
-  goto MainMenu
+  goto BlackIce4k
   )
-  ::DustLine4k
   if %ERRORLEVEL%==3 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1338949402410764888 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Dust Line 4K!
-  goto MainMenu
+  goto DustLine4k
   )
-  ::SkullRain4k
   if %ERRORLEVEL%==4 (
+  :SkullRain4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 5184390432533910806 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Skull Rain 4K! 
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Skull Rain 4K^^!
+  echo Skull Rain 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::RedCrow4k
   if %ERRORLEVEL%==5 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1825939060444887403 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Red Crow 4K!
-  goto MainMenu
+  goto RedCrow4k
   )
-  ::VelvetShell4k
   if %ERRORLEVEL%==6 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3196596628759979362 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Velvet Shell 4K!
-  goto MainMenu
+  goto VelvetShell4k
   )
-  ::Health4k
   if %ERRORLEVEL%==7 (
+  :Health4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7497579858536910279 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Health 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Health 4K^^!
+  echo Health 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::BloodOrchid4k
   if %ERRORLEVEL%==8 (
+  :BloodOrchid4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3065193946575458487 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Blood Orchid 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Blood Orchid 4K^^!
+  echo Blood Orchid 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::WhiteNoise4k
   if %ERRORLEVEL%==9 (
+  :WhiteNoise4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1118649577165385479 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's White Noise 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's White Noise 4K^^!
+  echo White Noise 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::Chimera4k
   if %ERRORLEVEL%==10 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1668513364192382097 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Chimera 4K!
-  goto MainMenu
+  goto Chimera4k
   )
-  ::ParaBellum4k
   if %ERRORLEVEL%==11 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 204186978012641075 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Para Bellum 4K!
-  goto MainMenu
+  goto ParaBellum4k
   )
-  ::GrimSky4k
   if %ERRORLEVEL%==12 (
+  :GrimSky4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3378966402050009606 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Grim Sky 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Grim Sky 4K^^!
+  echo Grim Sky 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::WindBastion4k
+
   if %ERRORLEVEL%==13 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2243348760021617592 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Wind Bastion 4K!
-  goto MainMenu
+  goto WindBastion4k
   )
-  ::BurntHorizon4k
   if %ERRORLEVEL%==14 (
+  :BurntHorizon4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 888629411354320742 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Burnt Horizon 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Burnt Horizon 4K^^!
+  echo Burnt Horizon 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::PhantomSight4k
   if %ERRORLEVEL%==15 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4107080515154236795 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Phantom Sight 4K!
-  goto MainMenu
+  goto PhantomSight4k
   )
-  ::EmberRise4k
   if %ERRORLEVEL%==16 (
+  :EmberRise4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8340682081776225833 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Ember Rise 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Ember Rise 4K^^!
+  echo Ember Rise 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::ShiftingTides4k
   if %ERRORLEVEL%==17 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6048763664997452513 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Shifting Tides 4K!
-  goto MainMenu
+  goto ShiftingTides4k
   )
-  ::VoidEdge4k
   if %ERRORLEVEL%==18 (
+  :VoidEdge4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Void Edge 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Void Edge 4K^^!
+  echo Void Edge 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::SteelWave4k
   if %ERRORLEVEL%==19 (
+  :SteelWave4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3257522596542046976 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Steel Wave 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Steel Wave 4K^^!
+  echo Steel Wave 4K Choosed>>log.log
+  goto InstallMenu
   )
-  ::ShadowLegacy4k
   if %ERRORLEVEL%==20 (
+  :ShadowLegacy4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 5051396185388503167 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's Shadow Legacy 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Shadow Legacy 4K^^!
+  echo Shadow Legacy 4K Choosed>>log.log
+  goto InstallMenus
   )
   if %ERRORLEVEL% == 21 (
   echo Back - %TIME%>>log.log
@@ -1928,89 +1739,41 @@ goto dotnetSET
   echo [93m----------------------SELECT----------------------[0m
   Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doktors Curse" "   Road To S.I. 2020" "   The Grand Larceny / Golden Gun" "   M.U.T.E Protocol (Support Omega)" "   Sugar Fright / Telly" "   Back"
   
-  ::Chimera4k
   if %ERRORLEVEL%==1 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1668513364192382097 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Chimera / Outback 4K!
-  goto MainMenu
+  goto Chimera4k
   )
-  ::MadHouse4k
   if %ERRORLEVEL%==2 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  goto MadHouse4k
   )
-  ::RainbowIsMagic4k
   if %ERRORLEVEL%==3 (
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  goto RainbowIsMagic4k
   )
-  ::PhantomSight4k
   if %ERRORLEVEL%==4 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4107080515154236795 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Phantom Sight 4K!
-  goto MainMenu
+  goto PhantomSight4k
   )
-  ::DoktorsCurse4k
   if %ERRORLEVEL%==5 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4319184561394137009 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  goto DoktorsCurse4k
+
   )
-  ::ShiftingTides4k
   if %ERRORLEVEL%==6 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6048763664997452513 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete!
-  echo It's Shifting Tides / Road To S.I. 4K!
-  goto MainMenu
+  goto ShiftingTides4k
   )
-  ::GangDestruction4k
   if %ERRORLEVEL%==7 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  goto GangDestruction4k
   )
-  ::MUTEProtocol4k
   if %ERRORLEVEL%==8 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1430519549301269175 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
-  pause
-  cls
-  echo Download complete Thanks Zer0!
-  goto MainMenu
+  goto MUTEProtocol4k
   )
-  ::SugarFright4k
   if %ERRORLEVEL%==9 (
+  :SugarFright4k
   MODE 100,40
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3569318872166878802 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete 
-  echo It's Sugar Fright / Telly 4K!
-  goto MainMenu
+  echo Download complete^^!
+  echo It's Sugar Fright / Telly 4K^^!
+  echo Sugar Fright / Telly 4K Choosed>>log.log
+  goto InstallMenu
   )
   if %ERRORLEVEL% == 10 (
   echo Back - %TIME%>>log.log
@@ -2027,312 +1790,14 @@ goto dotnetSET
   Title Rainbow Six Siege UninstallMenu
   echo UninstallMenu Loaded>>log.log
   MODE 50,50
-  echo                  Version Uninstaller
-  echo           What would you like to select?
-  echo --------------------------------------------------
-  echo # 0 - Back
-  echo --------------------------------------------------
-  echo # 1 = Vanilla 1.0 (Y1S0)
-  echo # 2 = Black Ice (Y1S1_release)
-  echo # 3 = Dust Line (Y1S2_release)
-  echo # 4 = Skull Rain (Y1S3_release)
-  echo # 41 = Skull Rain (Zer0 Manifest) 
-  echo # 5 = Red Crow (Y1S4_release)
-  echo # 6 = Velvet Shell (Y2S1_release)
-  echo # 7 = Health (Y2S2_release)
-  echo # 71 = Health (Zer0 Manifest)
-  echo # 8 = Blood Orchid (Y2S3_release)
-  echo # 81 = Blood Orchid (Zer0 Manifest)
-  echo # 9 = White Noise (Y2S4_release)
-  echo # 91 =  White Noise (Zer0 Manifest)
-  echo # 10 = Chimera [(Y3S1_release)]
-  echo # 11 = Para Bellum (Y3S2_release)
-  echo # 12 = Grim Sky (Y3S3_release)
-  echo # 120 = Mad House
-  echo # 121 = Grim Sky (Zer0 Manifest)
-  echo # 13 = Wind Bastion (Y3S4_release)
-  echo # 14 = Burnt Horizon (Y3S1_release)
-  echo # 140 = Rainbow is Magic
-  echo # 141= Burnt Horizon (Zer0 Manifest)
-  echo # 15 = Phantom Sight (Y4S2_release)
-  echo # 16 = Ember Rise (Y4S3_release)
-  echo # 161 = Ember Rise (Zer0 Manifest)
-  echo # 17 = Shifting Tides (Y4S4_release)
-  echo # 18 = Void Edge (Y5S1_release)
-  echo # 180 = The Grand Larceny / Golden Gun
-  echo # 181 = Void Edge (Zer0 Manifest)
-  echo # 19 = Steel Wave (Y5S2_release) 
-  echo # 190 = M.U.T.E Protocol
-  echo # 191 = Steel Wave (Zer0 Manifest) [Omega/Mute]
-  echo # 20 = Shadow Legacy (Y5S3_release)
-  echo # 21 = Sugar Fright / Telly
-  ::echo # 21 = Placeholder
-  echo --------------------------------------------------
+  echo [93m-----------------------NOTES----------------------[0m
+  echo                   Uninstall Menu
+  echo      Currently Not Available Press 0 to go back^^!
+  echo [93m----------------------SELECT----------------------[0m
   set /p version="Enter Selection:"
 
-
-  if %version%==1 (
-  rd /s /q "R6Downloads\Y1S0_Vanilla"
-  timeout /t 4
+  if %startgame%==0 (
   cls
-  echo Vanilla Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==2 (
-  rd /s /q "R6Downloads\Y1S1_Black_Ice"
-  timeout /t 4
-  cls
-  echo Y1S1_Black_Ice Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==3 (
-  rd /s /q "R6Downloads\Y1S2_Dust_Line"
-  timeout /t 4
-  cls
-  echo Y1S2_Dust_Line Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==4 (
-  rd /s /q "R6Downloads\Y1S3_Skull_Rain"
-  timeout /t 4
-  cls
-  echo Y1S3_Skull_Rain Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==41 (
-  rd /s /q "R6Downloads\Y1S3_SkullRain"
-  timeout /t 4
-  cls
-  echo Y1S3_SkullRain Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==5 (
-  rd /s /q "R6Downloads\Y1S4_Red_Crow"
-  timeout /t 4
-  cls
-  echo Y1S4_Red_Crow Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==6 (
-  rd /s /q "R6Downloads\Y2S1_Velvet_Shell"
-  timeout /t 4
-  cls
-  echo Y2S1_Velvet_Shell Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==7 (
-  rd /s /q "R6Downloads\Y2S2_Health"
-  timeout /t 4
-  cls
-  echo Y2S2_Health Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==71 (
-  rd /s /q "R6Downloads\Y2S2_Health_2"
-  timeout /t 4
-  cls
-  echo Y2S2_Health_2 Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==8 (
-  rd /s /q "R6Downloads\Y2S3_Blood_Orchid"
-  timeout /t 4
-  cls
-  echo Y2S3_Blood_Orchid Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==81 (
-  rd /s /q "R6Downloads\Y2S3_BloodOrchid"
-  timeout /t 4
-  cls
-  echo Y2S3_BloodOrchid Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==9 (
-  rd /s /q "R6Downloads\Y2S4_White_Noise"
-  timeout /t 4
-  cls
-  echo Y2S4_White_Noise Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==91 (
-  rd /s /q "R6Downloads\Y2S4_WhiteNoise"
-  timeout /t 4
-  cls
-  echo Y2S4_WhiteNoise Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==10 (
-  rd /s /q "R6Downloads\Y3S1_Chimera"
-  timeout /t 4
-  cls
-  echo Y3S1_Chimera Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==11 (
-  rd /s /q "R6Downloads\Y3S2_Para_Bellum"
-  timeout /t 4
-  cls
-  echo Y3S2_Para_Bellum Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==12 (
-  rd /s /q "R6Downloads\Y3S3_Grim_Sky"
-  timeout /t 4
-  cls
-  echo Y3S3_Grim_Sky Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==120 (
-  rd /s /q "R6Downloads\Y3S3_MadHouse"
-  timeout /t 4
-  cls
-  echo Y3S3_MadHouse Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==121 (
-  rd /s /q "R6Downloads\Y3S3_GrimSky"
-  timeout /t 4
-  cls
-  echo Y3S3_GrimSky Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==13 (
-  rd /s /q "R6Downloads\Y3S4_Wind_Bastion"
-  timeout /t 4
-  cls
-  echo Y3S4_Wind_Bastion Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==14 (
-  rd /s /q "R6Downloads\Y4S1_Burnt_Horizon"
-  timeout /t 4
-  cls
-  echo Y4S1_Burnt_Horizon Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==140 (
-  rd /s /q "R6Downloads\Y4S1_RainbowIsMagic"
-  timeout /t 4
-  cls
-  echo Y4S1_RainbowIsMagic Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==141 (
-  rd /s /q "R6Downloads\Y4S1_BurntHorizon"
-  timeout /t 4
-  cls
-  echo Y4S1_BurntHorizon Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==15 (
-  rd /s /q "R6Downloads\Y4S2_Phantom_Sight"
-  timeout /t 4
-  cls
-  echo Y4S2_Phantom_Sight Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==16 (
-  rd /s /q "R6Downloads\Y4S3_Ember_Rise"
-  timeout /t 4
-  cls
-  echo Y4S3_Ember_Rise Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==17 (
-  rd /s /q "R6Downloads\Y4S4_Shifting_Tides"
-  timeout /t 4
-  cls
-  echo Y4S4_Shifting_Tides Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==18 (
-  rd /s /q "R6Downloads\Y5S1_Void_Edge"
-  timeout /t 4
-  cls
-  echo Y5S1_Void_Edge Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==190 (
-  rd /s /q "R6Downloads\Y5S1_TheGrandLarceny"
-  timeout /t 4
-  cls
-  echo Y5S1_TheGrandLarceny Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==181 (
-  rd /s /q "R6Downloads\Y5S1_VoidEdge"
-  timeout /t 4
-  cls
-  echo Y5S1_VoidEdge Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==19 (
-  rd /s /q "R6Downloads\Y5S2_Steel_Wave"
-  timeout /t 4
-  cls
-  echo Y5S2_Steel_Wave Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==190 (
-  rd /s /q "R6Downloads\Y5S2_MUTE"
-  timeout /t 4
-  cls
-  echo Y5S2_SteelWave Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==191 (
-  rd /s /q "R6Downloads\Y5S2_SteelWave"
-  timeout /t 4
-  cls
-  echo Y5S2_SteelWave Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==20 (
-  rd /s /q "R6Downloads\Y5S3_Shadow_Legacy"
-  timeout /t 4
-  cls
-  echo Y5S3_Shadow_Legacy Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
-  )
-  if %version%==21 (
-  rd /s /q "R6Downloads\Y5S3_Sugar_Fright"
-  timeout /t 4
-  cls
-  echo Sugar Fright / Telly Choosed [U]>>log.log
-  echo Delete complete!
   goto MainMenu
   )
   if %version%==22 (
@@ -2366,116 +1831,17 @@ goto MainCMD
   echo                   Game Starter
   echo      Currently Not Available Press 0 to go back^^!
   echo [93m----------------------SELECT----------------------[0m
-  ::echo --------------------------------------------------
-  ::echo # 0 = Back
-  ::echo --------------------------------------------------
-  ::echo Start Game:
-  ::echo # 2 = Vanilla 1.0 (Y1S0) [First Steam Version] 
-  ::echo # 3 = Black Ice (Y1S1_release)
-  ::echo # 4 = Dust Line (Y1S2_release)
-  ::echo # 5 = Skull Rain (Y1S3_release)
-  ::echo # 51 = Skull Rain (4.2)
-  ::echo # 6 = Red Crow (Y1S4_release)
-  ::echo # 7 = Velvet Shell (Y2S1_release)
-  ::echo # 8 = Health (Y2S2_release)
-  ::echo # 81 = Health (Zer0 Manifest)
-  ::echo # 9 = Blood Orchid (Y2S3_release)
-  ::echo # 91 = Blood Orchid (2.3.1.1) X
-  ::echo # 10 = White Noise (Y2S4_release)
-  ::echo # 101= White Noise (Zer0 Manifest)
-  ::echo # 11 = Chimera [(Y3S1_release)] X 
-  ::echo # 12 = Para Bellum (Y3S2_release)
-  ::echo # 13 = Grim Sky (Y3S3_release)
-  ::echo # 131 = Grim Sky (Zer0 Manifest)
-  ::echo # 14 = Wind Bastion (Y3S4_release)
-  ::echo # 15 = Burnt Horizon (Y3S1_release)
-  ::echo # 151 = Burnt Horizon (Zer0 Manifest)
-  ::echo # 16 = Phantom Sight (Y4S2_release)
-  ::echo # 17 = Ember Rise (Y4S3_release)
-  ::echo # 171 = Ember Rise (Zer0 Manifest)
-  ::echo # 18 = Shifting Tides (Y4S4_release)
-  ::echo # 19 = Void Edge (Y5S1_release)
-  ::echo # 191 = Void Edge (Zer0 Manifest)
-  ::echo # 20 = Steel Wave (Y5S2_release)
-  ::echo # 201 = Steel Wave (Zer0 Manifest)
-  ::echo # 21 = Shadow Legacy (Y5S3_release)
-  ::echo --------------------------------------------------
-  ::echo Start Event:
-  ::echo # 1399 = Mad House
-  ::echo # 1599 = Rainbow is Magic
-  ::echo # 1999 = The Grand Larceny
-  ::echo # 2099 = M.U.T.E
-  ::echo --------------------------------------------------
-  set /p startgame="Start:"
+  set /p startgame="Enter Selection:"
+
   if %startgame%==0 (
   cls
   goto MainMenu
   )
-  ::Start GameStarter
-  if %startgame%==1 (
-  cls
-  goto FAQ
-  )
-  if %startgame%==2 (
-  	if exist "R6Downloads\Y1S0_Vanilla\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y1S0_Vanilla\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==3 (
-  	if exist "R6Downloads\Y1S1_Black_Ice\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y1S1_Black_Ice\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==4 (
-  	if exist "R6Downloads\Y1S2_Dust_Line\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y1S2_Dust_Line\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
+  ::Examples:
   if %startgame%==5 (
   	if exist "R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe" (
   		echo Starting.....
   		R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==51 (
-  	if exist "R6Downloads\Y1S3_SkullRain\RainbowSixGame.exe" (
-  		echo Starting.....
-  		R6Downloads\Y1S3_SkullRain\RainbowSixGame.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==6 (
-  	if exist "R6Downloads\Y1S4_Red_Crow\RainbowSixGame.exe" (
-  		echo Starting.....
-  		R6Downloads\Y1S4_Red_Crow\RainbowSixGame.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==7 (
-  	if exist "R6Downloads\Y2S1_Velvet_Shell\RainbowSixGame.exe" (
-  		echo Starting.....
-  		R6Downloads\Y2S1_Velvet_Shell\RainbowSixGame.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==8 (
-  	if exist "R6Downloads\Y2S2_Health\RainbowSixGame.exe" (
-  		echo Starting.....
-  		R6Downloads\Y2S2_Health\RainbowSixGame.exe /belaunch
   		pause
   		)
   	goto DownloadMenu
@@ -2488,209 +1854,6 @@ goto MainCMD
       )
     goto DownloadMenu
   )
-  if %startgame%==9 (
-  	if exist "R6Downloads\Y2S3_Blood_Orchid\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y2S3_Blood_Orchid\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==91 (
-  	if exist "R6Downloads\Y2S3_BloodOrchid\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y2S3_BloodOrchid\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==10 (
-  	if exist "R6Downloads\Y2S4_White_Noise\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y2S4_White_Noise\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==101 (
-    if exist "R6Downloads\Y2S4_WhiteNoise\RainbowSix.exe" (
-      echo Starting.....
-      R6Downloads\Y2S4_WhiteNoise\RainbowSix.exe /belaunch
-      pause
-      )
-    goto DownloadMenu
-  )
-  if %startgame%==11 (
-  	if exist "R6Downloads\Y3S1_Chimera\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y3S1_Chimera\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==12 (
-  	if exist "R6Downloads\Y3S2_Para_Bellum\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y3S2_Para_Bellum\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==13 (
-  	if exist "R6Downloads\Y3S3_Grim_Sky\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y3S3_Grim_Sky\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==131 (
-    if exist "R6Downloads\Y3S3_GrimSky\RainbowSix.exe" (
-      echo Starting.....
-      R6Downloads\Y3S3_GrimSky\RainbowSix.exe /belaunch
-      pause
-      )
-    goto DownloadMenu
-  )
-  if %startgame%==14 (
-  	if exist "R6Downloads\Y3S4_Wind_Bastion\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y3S4_Wind_Bastion\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==15 (
-  	if exist "R6Downloads\Y4S1_Burnt_Horizon\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y4S1_Burnt_Horizon\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==151 (
-    if exist "R6Downloads\Y4S1_BurntHorizon\RainbowSix.exe" (
-      echo Starting.....
-      R6Downloads\Y4S1_BurntHorizon\RainbowSix.exe /belaunch
-      pause
-      )
-    goto DownloadMenu
-  )
-  if %startgame%==16 (
-  	if exist "R6Downloads\Y4S2_Phantom_Sight\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y4S2_Phantom_Sight\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==17 (
-  	if exist "R6Downloads\Y4S3_Ember_Rise\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y4S3_Ember_Rise\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==171 (
-    if exist "R6Downloads\Y4S3_EmberRise\RainbowSix.exe" (
-      echo Starting.....
-      R6Downloads\Y4S3_EmberRise\RainbowSix.exe /belaunch
-      pause
-      )
-    goto DownloadMenu
-  )
-  if %startgame%==18 (
-  	if exist "R6Downloads\Y4S4_Shifting_Tides\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y4S4_Shifting_Tides\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==19 (
-  	if exist "R6Downloads\Y5S1_Void_Edge\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y5S1_Void_Edge\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==191 (
-    if exist "R6Downloads\Y5S1_VoidEdge\RainbowSix.exe" (
-      echo Starting.....
-      R6Downloads\Y5S1_VoidEdge\RainbowSix.exe /belaunch
-      pause
-      )
-    goto DownloadMenu
-  )
-  if %startgame%==20 (
-  	if exist "R6Downloads\Y5S2_Steel_Wave\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y5S2_Steel_Wave\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==201 (
-    if exist "R6Downloads\Y5S2_SteelWave\RainbowSix.exe" (
-      echo Starting.....
-      R6Downloads\Y5S2_SteelWave\RainbowSix.exe /belaunch
-      pause
-      )
-    goto DownloadMenu
-  )
-  if %startgame%==21 (
-    if exist "R6Downloads\Y5S3_Shadow_Legacy\RainbowSix.exe" (
-      echo Starting.....
-      R6Downloads\Y5S3_Shadow_Legacy\RainbowSix.exe /belaunch
-      pause
-      )
-  if %startgame%==22 (
-    if exist "R6Downloads\Placeholder\RainbowSix.exe" (
-      echo Starting.....
-      R6Downloads\Placeholder\RainbowSix.exe /belaunch
-      pause
-      )
-    goto DownloadMenu
-  )
-    goto DownloadMenu
-  )
-  ::End GameStarter
-  ::Start EvenStrarter
-  if %startgame%==1399 (
-  	if exist "R6Downloads\Y3S3_MadHouse\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y3S3_MadHouse\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==1599 (
-  	if exist "R6Downloads\Y4S1_RainbowIsMagic\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y4S1_RainbowIsMagic\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==1999 (
-  	if exist "R6Downloads\Y5S1_TheGrandLarceny\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y5S1_TheGrandLarceny\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  if %startgame%==2099 (
-  	if exist "R6Downloads\Y5S2_MUTE\RainbowSix.exe" (
-  		echo Starting.....
-  		R6Downloads\Y5S2_MUTE\RainbowSix.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
-  )
-  ::End EventStarter
   goto StartGame
 ::StartGame END
 
@@ -2711,8 +1874,9 @@ goto MainCMD
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228990 -manifest 1829726630299308803 -username %username% -remember-password -dir "R6Downloads\DirectX" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's DirectX!
+  echo Download complete^^!
+  echo It's DirectX^^!
+  echo DirectX Choosed>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 2 (
@@ -2720,8 +1884,9 @@ goto MainCMD
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228983 -manifest 8124929965194586177 -username %username% -remember-password -dir "R6Downloads\VC_2010_Redist" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's VC 2010 Redist!
+  echo Download complete^^!
+  echo It's VC 2010 Redist^^!
+  echo VC 2010 Redist Choosed>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 3 (
@@ -2729,8 +1894,9 @@ goto MainCMD
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228984 -manifest 2547553897526095397 -username %username% -remember-password -dir "R6Downloads\VC_2012_Redist" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's VC 2012 Redist!
+  echo Download complete^^!
+  echo It's VC 2012 Redist^^!
+  echo VC 2012 Redist Choosed>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 4 (
@@ -2738,8 +1904,9 @@ goto MainCMD
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228986 -manifest 8782296191957114623 -username %username% -remember-password -dir "R6Downloads\VC_2015_Redist" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's VC 2015 Redist!
+  echo Download complete^^!
+  echo It's VC 2015 Redist^^!
+  echo VC 2015 Redist Choosed>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 5 (
@@ -2747,8 +1914,9 @@ goto MainCMD
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228987 -manifest 4302102680580581867 -username %username% -remember-password -dir "R6Downloads\VC_2017_Redist" -validate -max-servers 15 -max-downloads 10
   pause
   cls
-  echo Download complete!
-  echo It's VC 2017 Redist!
+  echo Download complete^^!
+  echo It's VC 2017 Redist^^!
+  echo VC 2017 Redist Choosed>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 6 (
@@ -2770,10 +1938,11 @@ goto MainCMD
   echo Thanks DepotDownloader creators!
   echo Thanks SteamDB!
   echo Thanks Markster for Plaza's!
-  echo And thank you for using it!
   echo Thanks Ancientkingg for Log idea, DotNet Checker Second Version
+  echo And thank you for using it!
   echo First Version: 2020 June 17
-  echo Updated Version: 2020 TDB
+  echo Updated Version: 2020 
+  echo Released Version: TDB
   pause
   cls
   goto MainMenu
