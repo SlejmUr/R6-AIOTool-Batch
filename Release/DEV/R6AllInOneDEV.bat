@@ -58,6 +58,8 @@ set discord=discord.gg/EvrGzAV
 
 ::Github Connect START
 :github
+  echo Loading...
+  echo Checking things..
   ping github.com>nul
   if errorlevel 1 (
   echo I cant connect github, Continue at OW RISK^^!
@@ -107,13 +109,13 @@ set discord=discord.gg/EvrGzAV
 ::S:INI SET / Finder START
 :SiniSet
   ::Checkers
-	set Dotnet=1
-	set zip=1
-	set Depot=1
-	set Plaza=1
-	::Sets
-	set SteamName=1
-	set DevVersion=0
+  set Dotnet=1
+  set zip=1
+  set Depot=1
+  set Plaza=1
+  ::Sets
+  set SteamName=1
+  set DevVersion=0
   echo ------------SET START----------------->>log.log
   echo S.ini set to default things >>log.log
 goto dotnetSET
@@ -229,15 +231,14 @@ goto dotnetSET
 ::Dotnet start
 :ifdotnet
   echo ifdotnet Loaded>>log.log
-	if %Dotnet% == 1 (
-	goto verifydotnet
-	) else (
-	goto if7zip
-	)
+  if %Dotnet% == 1 (
+  goto verifydotnet
+  ) else (
+  goto if7zip
+  )
 
 :verifydotnet
   echo verifydotnet Loaded>>log.log
-  MODE 50,20
   reg query "HKEY_LOCAL_MACHINE\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost" /v Version 2>nul
 
   if errorlevel 1 (
@@ -279,11 +280,11 @@ goto dotnetSET
 ::7zip start
 :if7zip
   echo if7zip Loaded>>log.log
-	if %zip%==1 (
-	goto 7zipcheck
-	) else (
-	goto ifDD
-	)
+  if %zip%==1 (
+  goto 7zipcheck
+  ) else (
+  goto ifDD
+  )
 
 :7zipcheck
   echo 7zipcheck Loaded>>log.log
@@ -318,11 +319,11 @@ goto dotnetSET
 ::DD start
 :ifDD
   echo ifDD Loaded>>log.log
-	if %zip%==1 (
-	goto DepotCheck
-	) else (
-	goto ifPlaza
-	)
+  if %zip%==1 (
+  goto DepotCheck
+  ) else (
+  goto ifPlaza
+  )
 
 
 :DepotCheck
@@ -352,19 +353,19 @@ goto dotnetSET
     echo extractDD
     echo extractDD - %TIME%>>log.log
     "Resources\7z.exe" x -y -o"Resources\DepotDownloader" "%%I" && del %%I
-  cls
-  goto DepotCheck
+    cls
+    goto DepotCheck
   )
 ::DD end
 
 ::Plaza Start
 :ifPlaza
   echo ifPlaza Loaded>>log.log
-	if %zip%==1 (
-	goto PlazaCheck
-	) else (
-	goto cmdCheck
-	)
+  if %zip%==1 (
+  goto PlazaCheck
+  ) else (
+  goto cmdCheck
+  )
 
 :PlazaCheck
   echo PlazaCheck Loaded>>log.log
@@ -432,19 +433,19 @@ goto dotnetSET
 ::SetSteam START
 :ifSteam
   echo ifSteam Loaded>>log.log
-	if %SteamName%==1 (
-	goto SetSteam
-	) else (
+  if %SteamName%==1 (
+  goto SetSteam
+  ) else (
   set username=matecraft1111
-	goto MainCMD
-	)
+  goto MainCMD
+  )
 :SetSteam
   echo SetSteam Loaded>>log.log
-	MODE 78,20
-	echo Please type your Steam Legacy name!
-	set /p username="Enter Steam Username:"
-	cls
-	goto MainMenu
+  MODE 78,20
+  echo Please type your Steam Legacy name!
+  set /p username="Enter Steam Username:"
+  cls
+  goto MainMenu
 ::SetSteam END
 
 
@@ -501,7 +502,8 @@ goto dotnetSET
   echo  Steam User: [96m%username%[0m
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
-	Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Exit"
+  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Exit"
+  
   if %ERRORLEVEL% == 1 (
   echo FAQ Choosed>>log.log
   cls
@@ -559,7 +561,7 @@ goto dotnetSET
   echo Back/Exit - %TIME%>>log.log
   exit
   )
-	goto MainCMD
+  goto MainCMD
 ::MainCMD END
 
 
@@ -1218,10 +1220,19 @@ goto dotnetSET
   echo                   Custom Selector
   echo            You need set everything ^^!
   echo [93m----------------------SELECT----------------------[0m
-  Resources\cmdmenusel f8f0 "   Set App" "   Set Depot" "   Set Manifest" "   Set Path/Dir" "   Start Download" "   Back"
+  Resources\cmdmenusel f8f0 "   Set Default things" "   Set App" "   Set Depot" "   Set Manifest" "   Set Path/Dir" "   Start Download" "   Back"
   
-
   if %ERRORLEVEL% == 1 (
+  echo Custom Setting Default - %TIME%>>log.log
+  cls
+  set AppID=359550
+  set CustomDir="R6Downloads/%ALL%"
+  echo Successfully set default things^^!
+  echo You still need to set ManifestID and DepotID ^^!
+  pause
+  goto CustomMenu
+  )
+  if %ERRORLEVEL% == 2 (
   :CustomAppID
   echo Custom Setting AppID - %TIME%>>log.log
   cls
@@ -1229,7 +1240,7 @@ goto dotnetSET
   set /p AppID="Enter AppID: "
   goto CustomMenu
   )
-  if %ERRORLEVEL% == 2 (
+  if %ERRORLEVEL% == 3 (
   :CustomDepotID
   echo Custom Setting DepotID - %TIME%>>log.log
   cls
@@ -1237,7 +1248,7 @@ goto dotnetSET
   set /p DepotID="Enter DepotID: "
   goto CustomMenu
   )
-  if %ERRORLEVEL% == 3 (
+  if %ERRORLEVEL% == 4 (
   :CustomManifestID
   echo Custom Setting ManifestID - %TIME%>>log.log
   cls
@@ -1245,7 +1256,7 @@ goto dotnetSET
   set /p ManifestID="Enter ManifestID: "
   goto CustomMenu
   )
-  if %ERRORLEVEL% == 4 (
+  if %ERRORLEVEL% == 5 (
   :CustomDir
   echo Custom Setting CustomDir - %TIME%>>log.log
   cls
@@ -1254,7 +1265,7 @@ goto dotnetSET
   set /p CustomDir="Enter CustomDir: "
   goto CustomMenu
   )
-  if %ERRORLEVEL% == 5 (
+  if %ERRORLEVEL% == 6 (
   MODE 100,40
   cls
   if [%AppID%]==[] (
@@ -1287,7 +1298,7 @@ goto dotnetSET
   pause
   goto CustomMenu
   )
-  if %ERRORLEVEL% == 6 (
+  if %ERRORLEVEL% == 7 (
   echo Back - %TIME%>>log.log
   cls
   goto InstallMenu
