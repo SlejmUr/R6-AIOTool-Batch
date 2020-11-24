@@ -505,37 +505,37 @@ goto dotnetSET
   Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Exit"
   
   if %ERRORLEVEL% == 1 (
-  echo FAQ Choosed>>log.log
+  echo FAQ Chosen>>log.log
   cls
   goto faq
   )
   if %ERRORLEVEL% == 2 (
-  echo GameMenu Choosed>>log.log
+  echo GameMenu Chosen>>log.log
   cls
   goto GameMenu
   )
   if %ERRORLEVEL% == 3 (
-  echo Extra Menu Choosed>>log.log
+  echo Extra Menu Chosen>>log.log
   cls
   goto Extra
   )
   if %ERRORLEVEL% == 4 (
-  echo TextureMenu Choosed>>log.log
+  echo TextureMenu Chosen>>log.log
   cls
   goto TextureMenu
   )
   if %ERRORLEVEL% == 5 (
-  echo dxvcredist Choosed>>log.log
+  echo dxvcredist Chosen>>log.log
   cls
   goto dxvcredist
   )
   if %ERRORLEVEL% == 6 (
-  echo Credit Choosed>>log.log
+  echo Credit Chosen>>log.log
   cls
   goto Credit
   )
   if %ERRORLEVEL% == 7 (
-  echo BattlEyeChecker Choosed>>log.log
+  echo BattlEyeChecker Chosen>>log.log
   cls
   goto BattlEyeChecker
   )
@@ -546,13 +546,13 @@ goto dotnetSET
   goto MainMenu
   )
   if %ERRORLEVEL% == 9 (
-  echo Logs Delete Choosed>>log.log
+  echo Logs Delete Chosen>>log.log
   cls
   rd /s /q  "logs\"
   pause
   )
   if %ERRORLEVEL% == 10 (
-  echo Zer0 folder Renamer Choosed>>log.log
+  echo Zer0 folder Renamer Chosen>>log.log
   cls
   echo Currently unavaible ^^!
   pause
@@ -640,17 +640,17 @@ goto dotnetSET
   Resources\cmdmenusel f8f0 "    Install Rainbow Six Siege" "   Uninstall Rainbow Six Siege" "   Starting Rainbow Six Siege" "              Back"
 
   if %ERRORLEVEL% == 1 (
-  echo InstallMenu Choosed>>log.log
+  echo InstallMenu Chosen>>log.log
   cls
   goto InstallMenu
   )
   if %ERRORLEVEL% == 2 (
-  echo UninstallMenu Choosed>>log.log
+  echo UninstallMenu Chosen>>log.log
   cls
   goto UninstallMenu
   )
   if %ERRORLEVEL% == 3 (
-  echo StartGame Choosed>>log.log
+  echo StartGame Chosen>>log.log
   cls
   goto StartGame
   )
@@ -678,32 +678,32 @@ goto dotnetSET
   Resources\cmdmenusel f8f0 "   Version Downloader" "   Event Downloader" "   Release Downloader" "   Custom Downloader" "   4K Textures Downloader" "   Extra Language Downloader" "   Back"
 
   if %ERRORLEVEL% == 1 (
-  echo VersionMenu Choosed>>log.log
+  echo VersionMenu Chosen>>log.log
   cls
   goto VersionMenu
   )
   if %ERRORLEVEL% == 2 (
-  echo EventMenu Choosed>>log.log
+  echo EventMenu Chosen>>log.log
   cls
   goto EventMenu
   )
   if %ERRORLEVEL% == 3 (
-  echo ReleaseMenu Choosed>>log.log
+  echo ReleaseMenu Chosen>>log.log
   cls
   goto ReleaseMenu
   )
   if %ERRORLEVEL% == 4 (
-  echo CustomMenu Choosed>>log.log
+  echo CustomMenu Chosen>>log.log
   cls
   goto CustomMenu
   )
   if %ERRORLEVEL% == 5 (
-  echo TextureMenu Choosed>>log.log
+  echo TextureMenu Chosen>>log.log
   cls
   goto TextureMenu
   )
   if %ERRORLEVEL% == 6 (
-  echo Extra Choosed>>log.log
+  echo Extra Chosen>>log.log
   cls
   goto Extra
   )
@@ -737,7 +737,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Vanilla
-  echo Vanilla Choosed>>log.log
+  echo Vanilla Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==2 (
@@ -749,7 +749,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's BLACK ICE Released
-  echo BLACK ICE Choosed>>log.log
+  echo BLACK ICE Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==3 (
@@ -761,7 +761,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's DUST LINE Released
-  echo DUST LINE Choosed>>log.log
+  echo DUST LINE Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==4 (
@@ -773,7 +773,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo Skull Rain 4.2
-  echo Skull Rain 4.2 Choosed>>log.log
+  echo Skull Rain 4.2 Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==5 (
@@ -785,7 +785,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's RED CROW Released^^!
-  echo RED CROW Choosed>>log.log
+  echo RED CROW Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==6 (
@@ -797,7 +797,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's VELVET SHELL Released^^!
-  echo VELVET SHELL Choosed>>log.log
+  echo VELVET SHELL Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==7 (
@@ -809,7 +809,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo Health [Zer0]
-  echo Health [Zer0] Choosed>>log.log
+  echo Health [Zer0] Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==8 (
@@ -821,7 +821,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo Blood Orchid 2.3.1.1
-  echo Blood Orchid 2.3.1.1 [Zer0] Choosed>>log.log
+  echo Blood Orchid 2.3.1.1 [Zer0] Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==9 (
@@ -833,7 +833,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo WHITE NOISE [Zer0] 
-  echo WHITE NOISE [Zer0] Choosed>>log.log
+  echo WHITE NOISE [Zer0] Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==10 (
@@ -845,7 +845,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's CHIMERA  Released^^!
-  echo CHIMERA Choosed>>log.log
+  echo CHIMERA Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==11 (
@@ -857,7 +857,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's PARA BELLUM Released^^!
-  echo PARA BELLUM Choosed>>log.log
+  echo PARA BELLUM Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==12 (
@@ -869,7 +869,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo GRIM SKY [Zer0] / Mad House
-  echo GRIM SKY [Zer0] / Mad House Choosed>>log.log
+  echo GRIM SKY [Zer0] / Mad House Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==13 (
@@ -881,7 +881,7 @@ goto dotnetSET
   cls
   echo Download complete ^^!
   echo It's WIND BASTION Released
-  echo WIND BASTION [v12512571] Choosed>>log.log
+  echo WIND BASTION [v12512571] Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==14 (
@@ -893,7 +893,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo BURNT HORIZON [Zer0] / Rainbow Is Magic
-  echo BURNT HORIZON [Zer0] / Rainbow Is Magic Choosed>>log.log
+  echo BURNT HORIZON [Zer0] / Rainbow Is Magic Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==15 (
@@ -905,7 +905,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo PHANTOM SIGHT Released / Showdown
-  echo PHANTOM SIGHT / Showdown Choosed>>log.log
+  echo PHANTOM SIGHT / Showdown Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==16 (
@@ -916,7 +916,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
-  echo EMBER RISE [Zer0] / Doctors Curse Choosed>>log.log
+  echo EMBER RISE [Zer0] / Doctors Curse Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==17 (
@@ -928,7 +928,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's SHIFTING TIDES Released^^!
-  echo SHIFTING TIDES Choosed>>log.log
+  echo SHIFTING TIDES Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==18 (
@@ -939,7 +939,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
-  echo Void Edge [Zer0] / Gang Destruction Choosed>>log.log
+  echo Void Edge [Zer0] / Gang Destruction Chosen>>log.log
   goto InstallMenu
   )
   ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
@@ -952,7 +952,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo [v14603060] steel wave [Mute Protocol]
-  echo [v14603060] steel wave [Mute Protocol] Choosed>>log.log
+  echo [v14603060] steel wave [Mute Protocol] Chosen>>log.log
   goto InstallMenu
   )
   ::SteelWave (omega/Mute Protocol)
@@ -965,7 +965,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo [v14664131] SteelWave [omega/Mute Protocol]
-  echo [v14664131] SteelWave [omega/Mute Protocol] Choosed>>log.log
+  echo [v14664131] SteelWave [omega/Mute Protocol] Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL% == 21 (
@@ -1007,7 +1007,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's SKULL RAIN Released
-  echo SKULL RAIN Choosed>>log.log
+  echo SKULL RAIN Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==5 (
@@ -1025,7 +1025,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Health Released^^!
-  echo Health Choosed>>log.log
+  echo Health Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==8 (
@@ -1037,7 +1037,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's BLOOD ORCHID Released^^!
-  echo BLOOD ORCHID Choosed>>log.log
+  echo BLOOD ORCHID Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==9 (
@@ -1049,7 +1049,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's WHITE NOISE  Released^^!
-  echo WHITE NOISE Choosed>>log.log
+  echo WHITE NOISE Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==10 (
@@ -1067,7 +1067,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's GRIM SKY Released^^!
-  echo GRIM SKY Choosed>>log.log
+  echo GRIM SKY Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==13 (
@@ -1082,7 +1082,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's BURNT HORIZON Released^^!
-  echo BURNT HORIZON Choosed>>log.log
+  echo BURNT HORIZON Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==15 (
@@ -1097,7 +1097,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's EMBER RISE Released^^!
-  echo EMBER RISE Choosed>>log.log
+  echo EMBER RISE Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==17 (
@@ -1112,7 +1112,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's VOID EDGE Released^^!
-  echo VOID EDGE Choosed>>log.log
+  echo VOID EDGE Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==19 (
@@ -1124,7 +1124,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's STEEL WAVE Released^^!
-  echo STEEL WAVE Choosed>>log.log
+  echo STEEL WAVE Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==20 (
@@ -1136,7 +1136,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Shadow Legacy Released^^!
-  echo Shadow Legacy Choosed>>log.log
+  echo Shadow Legacy Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL% == 21 (
@@ -1198,7 +1198,7 @@ goto dotnetSET
   cls
   echo Download complete 
   echo Sugar Fright / Telly
-  echo Sugar Fright / Telly Choosed>>log.log
+  echo Sugar Fright / Telly Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL% == 11 (
@@ -1320,17 +1320,17 @@ goto dotnetSET
   Resources\cmdmenusel f8f0 "   4k Release" "   4k Version" "   4k Event" "   Back"
 
   if %ERRORLEVEL% == 1 (
-  echo 4kRelease Choosed>>log.log
+  echo 4kRelease Chosen>>log.log
   cls
   goto 4kRelease
   )
   if %ERRORLEVEL% == 2 (
-  echo 4kVersion Choosed>>log.log
+  echo 4kVersion Chosen>>log.log
   cls
   goto 4kVersion
   )
   if %ERRORLEVEL% == 3 (
-  echo 4kEvent Choosed>>log.log
+  echo 4kEvent Chosen>>log.log
   cls
   goto 4kEvent
   )
@@ -1370,7 +1370,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Vanilla 4K^^!
-  echo Vanilla 4k Choosed>>log.log
+  echo Vanilla 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==2 (
@@ -1381,7 +1381,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Black Ice 4K^^!
-  echo BlackIce 4k Choosed>>log.log
+  echo BlackIce 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==3 (
@@ -1392,7 +1392,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Dust Line 4K^^!
-  echo Dust Line 4k Choosed>>log.log
+  echo Dust Line 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==4 (
@@ -1402,7 +1402,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
-  echo Skull Rain 4k [Zero] Choosed>>log.log
+  echo Skull Rain 4k [Zero] Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==5 (
@@ -1413,7 +1413,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Red Crow 4K^^!
-  echo Red Crow 4k Choosed>>log.log
+  echo Red Crow 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==6 (
@@ -1424,7 +1424,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Velvet Shell 4K^^!
-  echo Velvet Shell 4k Choosed>>log.log
+  echo Velvet Shell 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==7 (
@@ -1434,7 +1434,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
-  echo Health 4k [Zero] Choosed>>log.log
+  echo Health 4k [Zero] Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==8 (
@@ -1444,7 +1444,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
-  echo Blood Orchid 4k [Zero] Choosed>>log.log
+  echo Blood Orchid 4k [Zero] Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==9 (
@@ -1454,7 +1454,7 @@ goto dotnetSET
   pause
   cls
   echo Download complete Thanks Zer0 ^^!
-  echo White Noise 4k [Zero] Choosed>>log.log
+  echo White Noise 4k [Zero] Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==10 (
@@ -1465,7 +1465,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo Chimera / Outback 4K
-  echo Chimera / Outback 4K Choosed>>log.log
+  echo Chimera / Outback 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==11 (
@@ -1476,7 +1476,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Para Bellum 4K^^!
-  echo ParaBellum4k Choosed>>log.log
+  echo ParaBellum4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==12 (
@@ -1487,7 +1487,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo MadHouse 4k
-  echo MadHouse 4k Choosed>>log.log
+  echo MadHouse 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==13 (
@@ -1498,7 +1498,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Wind Bastion 4K^^!
-  echo Wind Bastion 4k Choosed>>log.log
+  echo Wind Bastion 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==14 (
@@ -1509,7 +1509,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo Rainbow Is Magic 4k
-  echo Rainbow Is Magic 4k Choosed>>log.log
+  echo Rainbow Is Magic 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==15 (
@@ -1520,7 +1520,7 @@ goto dotnetSET
   cls
   echo Download complete ^^!
   echo It's Phantom Sight 4K ^^!
-  echo Phantom Sight 4K Choosed>>log.log
+  echo Phantom Sight 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==16 (
@@ -1531,7 +1531,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo Doktors Curse 4k 
-  echo Doktors Curse 4k Choosed>>log.log
+  echo Doktors Curse 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==17 (
@@ -1543,7 +1543,7 @@ goto dotnetSET
   echo Download complete^^!
   echo It's Shifting Tides 4K^^!
   echo Shifting Tides / Road To S.I. 4K 
-  echo Shifting Tides / Road To S.I. 4K Choosed>>log.log
+  echo Shifting Tides / Road To S.I. 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==18 (
@@ -1554,7 +1554,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo Gang Destruction 4k
-  echo Gang Destruction 4k Choosed>>log.log
+  echo Gang Destruction 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==19 (
@@ -1565,7 +1565,7 @@ goto dotnetSET
   cls
   echo Download complete Thanks Zer0 ^^!
   echo MUTE Protocol 4k
-  echo MUTE Protocol 4k Choosed>>log.log
+  echo MUTE Protocol 4k Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL% == 20 (
@@ -1605,7 +1605,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Skull Rain 4K^^!
-  echo Skull Rain 4K Choosed>>log.log
+  echo Skull Rain 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==5 (
@@ -1622,7 +1622,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Health 4K^^!
-  echo Health 4K Choosed>>log.log
+  echo Health 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==8 (
@@ -1633,7 +1633,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Blood Orchid 4K^^!
-  echo Blood Orchid 4K Choosed>>log.log
+  echo Blood Orchid 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==9 (
@@ -1644,7 +1644,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's White Noise 4K^^!
-  echo White Noise 4K Choosed>>log.log
+  echo White Noise 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==10 (
@@ -1661,7 +1661,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Grim Sky 4K^^!
-  echo Grim Sky 4K Choosed>>log.log
+  echo Grim Sky 4K Chosen>>log.log
   goto InstallMenu
   )
 
@@ -1676,7 +1676,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Burnt Horizon 4K^^!
-  echo Burnt Horizon 4K Choosed>>log.log
+  echo Burnt Horizon 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==15 (
@@ -1690,7 +1690,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Ember Rise 4K^^!
-  echo Ember Rise 4K Choosed>>log.log
+  echo Ember Rise 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==17 (
@@ -1704,7 +1704,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Void Edge 4K^^!
-  echo Void Edge 4K Choosed>>log.log
+  echo Void Edge 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==19 (
@@ -1715,7 +1715,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Steel Wave 4K^^!
-  echo Steel Wave 4K Choosed>>log.log
+  echo Steel Wave 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL%==20 (
@@ -1726,7 +1726,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Shadow Legacy 4K^^!
-  echo Shadow Legacy 4K Choosed>>log.log
+  echo Shadow Legacy 4K Chosen>>log.log
   goto InstallMenus
   )
   if %ERRORLEVEL% == 21 (
@@ -1783,7 +1783,7 @@ goto dotnetSET
   cls
   echo Download complete^^!
   echo It's Sugar Fright / Telly 4K^^!
-  echo Sugar Fright / Telly 4K Choosed>>log.log
+  echo Sugar Fright / Telly 4K Chosen>>log.log
   goto InstallMenu
   )
   if %ERRORLEVEL% == 10 (
@@ -1800,35 +1800,167 @@ goto dotnetSET
 :UninstallMenu
   Title Rainbow Six Siege UninstallMenu
   echo UninstallMenu Loaded>>log.log
-  MODE 50,50
+  MODE 50,40
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Uninstall Menu
-  echo      Currently Not Available Press 0 to go back^^!
+  echo      Currently Not Available Please go back^^!
   echo [93m----------------------SELECT----------------------[0m
-  set /p version="Enter Selection:"
 
-  if %startgame%==0 (
-  cls
-  goto MainMenu
+  Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Back"
+
+  if %ERRORLEVEL%==1 (
+  set DeleteDir="R6Downloads\Y1S0_Vanilla"
+  goto DeleteFolder
   )
-  if %version%==22 (
-  rd /s /q "R6Downloads\Placeholder"
-  timeout /t 4
-  cls
-  echo Placeholder Choosed [U]>>log.log
-  echo Delete complete!
-  goto MainMenu
+  if %ERRORLEVEL%==2 (
+  set DeleteDir="R6Downloads\Y1S1_Black_Ice"
+  goto DeleteFolder
   )
+  if %ERRORLEVEL%==3 (
+  set DeleteDir="R6Downloads\Y1S2_Dust_Line"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==4 (
+  set DeleteDir="R6Downloads\Y1S3_Skull_Rain"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==5 (
+  set DeleteDir="R6Downloads\Y1S3_SkullRain"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==6 (
+  set DeleteDir="R6Downloads\Y1S4_Red_Crow"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==7 (
+  set DeleteDir="R6Downloads\Y2S1_Velvet_Shell"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==8 (
+  set DeleteDir="R6Downloads\Y2S2_Health"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==9 (
+  set DeleteDir="R6Downloads\Y2S2_Health_2"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==10 (
+  set DeleteDir="R6Downloads\Y2S3_Blood_Orchid"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==11 (
+  set DeleteDir="R6Downloads\Y2S3_BloodOrchid"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==12 (
+  set DeleteDir="R6Downloads\Y2S4_White_Noise"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==13 (
+  set DeleteDir="R6Downloads\Y2S4_WhiteNoise"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==14 (
+  set DeleteDir="R6Downloads\Y3S1_Chimera"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==15 (
+  set DeleteDir="R6Downloads\Y3S2_Para_Bellum"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==16 (
+  set DeleteDir="R6Downloads\Y3S3_Grim_Sky"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==17 (
+  set DeleteDir="R6Downloads\Y3S3_MadHouse"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==18 (
+  set DeleteDir="R6Downloads\Y3S4_Wind_Bastion"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==19 (
+  set DeleteDir="R6Downloads\Y4S1_Burnt_Horizon"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==20 (
+  set DeleteDir="R6Downloads\Y4S1_RainbowIsMagic"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==21 (
+  set DeleteDir="R6Downloads\Y4S2_Phantom_Sight"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==22 (
+  set DeleteDir="R6Downloads\Y4S3_Ember_Rise"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==23 (
+  set DeleteDir="R6Downloads\Y4S3_DoktorsCurse"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==24 (
+  set DeleteDir="R6Downloads\Y4S4_Shifting_Tides"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==25 (
+  set DeleteDir="R6Downloads\Y5S1_Void_Edge"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==26 (
+  set DeleteDir="R6Downloads\Y5S1_GangDestruction"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==27 (
+  set DeleteDir="R6Downloads\Y5S2_Steel_Wave"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==28 (
+  set DeleteDir="R6Downloads\Y5S2_MUTE"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==29 (
+  set DeleteDir="R6Downloads\Y5S2_SteelWave"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==30 (
+  set DeleteDir="R6Downloads\Y5S3_Shadow_Legacy"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==31 (
+  set DeleteDir="R6Downloads\Y5S3_Sugar_Fright"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==32 (
+  echo Back - %TIME%>>log.log
+  cls
   goto GameMenu
+  )
+  goto UninstallMenu
 ::UninstallMenu END
 
-
-:Extra
-cls
-echo Extra is Currently unavaible ^^!
-pause
-goto MainCMD
-
+::DeleteFolder START
+  :DeleteFolder
+  MODE 60,20
+  cls
+  echo %DeleteDir% Chosen [U]>>log.log
+  rd /s /q %DeleteDir% 2>nul || echo Error^^!
+  if errorlevel 2 (
+    echo Selected folder doesn^'t exist.>>log.log
+    echo Make sure you^'ve selected the correct download folder.
+    pause
+    goto UninstallMenu
+    )
+  if errorlevel 0 (
+    echo Waiting to fully delete the folder.
+    timeout /t 4 >nul 
+    echo %DeleteDir% deleted [U]>>log.log
+    echo Folder deleted^^!
+    pause
+    goto GameMenu
+  )
+::DeleteFolder END
 
 
 
@@ -1840,16 +1972,16 @@ goto MainCMD
   MODE 50,50
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Game Starter
-  echo      Currently Not Available Press 0 to go back^^!
+  echo      Currently Not Available Please go back^^!
   echo [93m----------------------SELECT----------------------[0m
-  set /p startgame="Enter Selection:"
+  Resources\cmdmenusel f8f0 "   Back" "   Placeholder Version" "   Placeholder Release" "   Placeholder Event"
 
-  if %startgame%==0 (
+  if %ERRORLEVEL%==1 (
   cls
-  goto MainMenu
+  goto GameMenu
   )
   ::Examples:
-  if %startgame%==5 (
+  if %ERRORLEVEL%==5 (
   	if exist "R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe" (
   		echo Starting.....
   		R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe /belaunch
@@ -1857,7 +1989,7 @@ goto MainCMD
   		)
   	goto DownloadMenu
   )
-  if %startgame%==81 (
+  if %ERRORLEVEL%==81 (
     if exist "R6Downloads\Y2S2_Health_2\RainbowSix.exe" (
       echo Starting.....
       R6Downloads\Y2S2_Health_2\RainbowSix.exe /belaunch
@@ -1867,6 +1999,13 @@ goto MainCMD
   )
   goto StartGame
 ::StartGame END
+
+
+:Extra
+cls
+echo Extra is Currently unavaible ^^!
+pause
+goto MainCMD
 
 
 
@@ -1887,7 +2026,7 @@ goto MainCMD
   cls
   echo Download complete^^!
   echo It's DirectX^^!
-  echo DirectX Choosed>>log.log
+  echo DirectX Chosen>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 2 (
@@ -1897,7 +2036,7 @@ goto MainCMD
   cls
   echo Download complete^^!
   echo It's VC 2010 Redist^^!
-  echo VC 2010 Redist Choosed>>log.log
+  echo VC 2010 Redist Chosen>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 3 (
@@ -1907,7 +2046,7 @@ goto MainCMD
   cls
   echo Download complete^^!
   echo It's VC 2012 Redist^^!
-  echo VC 2012 Redist Choosed>>log.log
+  echo VC 2012 Redist Chosen>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 4 (
@@ -1917,7 +2056,7 @@ goto MainCMD
   cls
   echo Download complete^^!
   echo It's VC 2015 Redist^^!
-  echo VC 2015 Redist Choosed>>log.log
+  echo VC 2015 Redist Chosen>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 5 (
@@ -1927,7 +2066,7 @@ goto MainCMD
   cls
   echo Download complete^^!
   echo It's VC 2017 Redist^^!
-  echo VC 2017 Redist Choosed>>log.log
+  echo VC 2017 Redist Chosen>>log.log
   goto MainMenu
   )
   if %ERRORLEVEL% == 6 (
