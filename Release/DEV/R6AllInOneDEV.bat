@@ -59,7 +59,7 @@ set discord=discord.gg/EvrGzAV
 ::Github Connect START
 :github
   echo Loading...
-  echo Checking things..
+  echo Please be patient ^^!
   ping github.com>nul
   if errorlevel 1 (
   echo I cant connect github, Continue at OW RISK^^!
