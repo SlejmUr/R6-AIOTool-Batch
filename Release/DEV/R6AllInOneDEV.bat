@@ -502,7 +502,7 @@ goto dotnetSET
   echo  Steam User: [96m%username%[0m
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
-  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Exit"
+  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit"
   
   if %ERRORLEVEL% == 1 (
   echo FAQ Chosen>>log.log
@@ -557,7 +557,12 @@ goto dotnetSET
   cls
   goto ZeroFolderRenamer
   )
-  if %ERRORLEVEL% == 11 (
+  if %ERRORLEVEL%==11 (
+  echo Update Chosen>>log.log
+  cls
+  goto Update
+  )
+  if %ERRORLEVEL% == 12 (
   echo Back/Exit - %TIME%>>log.log
   exit
   )
@@ -2075,6 +2080,8 @@ goto MainCMD
   goto dxvcredist
 ::dxvcredist END
 
+
+::ZeroFolderRenamer START
 :ZeroFolderRenamer
   cls
   Title Zero Folder Renamer
@@ -2122,6 +2129,7 @@ goto MainCMD
   echo Renamer end ^^!
   pause >nul | echo Press any key to go back to MainCMD
   goto MainCMD
+::ZeroFolderRenamer END
 
 
 ::CREDIT START
@@ -2130,12 +2138,14 @@ goto MainCMD
   Title CREDIT
   MODE 75,20
   echo I would like to thank everyone who helped this project getting developed:
-  echo Thanks Zer0Byte the first version of MenuV and for can I forked him code!
-  echo Thanks DepotDownloader creators!
-  echo Thanks SteamDB!
-  echo Thanks Markster for Plaza's!
+  echo Thanks Zer0Byte the first version of MenuV and I can fork his code^^!
+  echo Thanks DepotDownloader creators^^!
+  echo Thanks SteamDB^^!
+  echo Thanks Markster for Plaza^'s^^!
+  echo Thanks LoneWolf and Pixie for helped me^^!
   echo Thanks Ancientkingg for Log idea, DotNet Checker Second Version
-  echo And thank you for using it!
+  echo And thank you for using it^^!
+  echo.
   echo First Version: 2020 June 17
   echo Updated Version: 2020 
   echo Released Version: TDB
@@ -2143,6 +2153,16 @@ goto MainCMD
   cls
   goto MainMenu
 ::CREDIT END
+
+
+::Update START
+:Update
+  Title Update
+  MODE 75,20
+  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/notes"
+  echo.
+  pause
+  goto MainCMD
 
 
 
