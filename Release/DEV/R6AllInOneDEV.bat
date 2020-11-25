@@ -549,13 +549,13 @@ goto dotnetSET
   echo Logs Delete Chosen>>log.log
   cls
   rd /s /q  "logs\"
+  echo Logs Deleted^^!
   pause
   )
   if %ERRORLEVEL% == 10 (
   echo Zer0 folder Renamer Chosen>>log.log
   cls
-  echo Currently unavaible ^^!
-  pause
+  goto ZeroFolderRenamer
   )
   if %ERRORLEVEL% == 11 (
   echo Back/Exit - %TIME%>>log.log
@@ -1805,7 +1805,6 @@ goto dotnetSET
   echo                   Uninstall Menu
   echo      Currently Not Available Please go back^^!
   echo [93m----------------------SELECT----------------------[0m
-
   Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Back"
 
   if %ERRORLEVEL%==1 (
@@ -2076,6 +2075,53 @@ goto MainCMD
   goto dxvcredist
 ::dxvcredist END
 
+:ZeroFolderRenamer
+  cls
+  Title Zero Folder Renamer
+  echo Zero Folder Renamer Loaded>>log.log
+  MODE 50,30
+  echo Make sure you not Downloaded two times^^!
+  pause
+  echo Waiting to fully rename the folders.
+  echo -------------RENAME START----------->>log.log
+  ren "R6Downloads\Y1S1_BlackIce" "Y1S1_Black_Ice" 2>nul
+  echo Y1S1_BlackIce Renamed>>log.log
+  ren "R6Downloads\Y1S2_DustLine" "Y1S2_Dust_Line" 2>nul
+  echo Y1S2_DustLine Renamed>>log.log
+  ren "R6Downloads\Y1S4_RedCrow" "Y1S4_Red_Crow" 2>nul
+  echo Y1S4_RedCrow Renamed>>log.log
+  ren "R6Downloads\Y2S1_VelvetShell" "Y2S1_Velvet_Shell" 2>nul
+  echo Y2S1_VelvetShell Renamed>>log.log
+  ren "R6Downloads\Y2S2_Health_FixingAndRepairingTheGame" "Y2S2_Health_2" 2>nul
+  echo Y2S2_Health_FixingAndRepairingTheGame Renamed>>log.log
+  ren "R6Downloads\Y2S4_WhiteNoise" "Y2S4_White_Noise" 2>nul
+  echo Y2S4_WhiteNoise Renamed>>log.log
+  ren "R6Downloads\Y3S1_Chimera_Outbreak" "Y3S1_Chimera" 2>nul
+  echo Y3S1_Chimera_Outbreak Renamed>>log.log
+  ren "R6Downloads\Y3S2_ParaBellum" "Y3S2_Para_Bellum" 2>nul
+  echo Y3S2_ParaBellum Renamed>>log.log
+  ren "R6Downloads\Y3S3_GrimSky_MadHouse" "Y3S3_MadHouse" 2>nul
+  echo Y3S3_GrimSky_MadHouse Renamed>>log.log
+  ren "R6Downloads\Y3S4_WindBastion" "Y3S4_Wind_Bastion" 2>nul
+  echo Y3S4_WindBastion Renamed>>log.log
+  ren "R6Downloads\Y4S1_BurntHorizon_RainbowisMagic" "Y4S1_RainbowIsMagic" 2>nul
+  echo Y4S1_BurntHorizon_RainbowisMagic Renamed>>log.log
+  ren "R6Downloads\Y4S2_PhantomSight_Showdown" "Y4S2_Phantom_Sight" 2>nul
+  echo Y4S2_PhantomSight_Showdown Renamed>>log.log
+  ren "R6Downloads\Y4S3_EmberRise_DoktorsCurse" "Y4S3_DoktorsCurse" 2>nul
+  echo Y4S3_EmberRise_DoktorsCurse Renamed>>log.log
+  ren "R6Downloads\Y4S4_ShiftingTides_Stadium" "Y4S4_Shifting_Tides" 2>nul
+  echo Y4S4_ShiftingTides_Stadium Renamed>>log.log
+  ren "R6Downloads\Y5S1_VoidEdge_GangDestruction" "Y5S1_GangDestruction" 2>nul
+  echo Y5S1_VoidEdge_GangDestruction Renamed>>log.log
+  ren "R6Downloads\Y5S2_SteelWave_Morphues" "Y5S2_MUTE" 2>nul
+  echo Y5S2_SteelWave_Morphues Renamed>>log.log
+  ren "R6Downloads\Y5S2_SteelWave_Morphues_V2311" "Y5S2_Steel_Wave" 2>nul
+  echo Y5S2_SteelWave_Morphues_V2311 Renamed>>log.log
+  echo -------------RENAME END----------->>log.log
+  echo Renamer end ^^!
+  pause >nul | echo Press any key to go back to MainCMD
+  goto MainCMD
 
 
 ::CREDIT START
