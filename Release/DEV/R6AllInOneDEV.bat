@@ -617,8 +617,8 @@ goto dotnetSET
   Title Notes
   MODE 110,20
   echo  Notes:
-  echo  I Moved the my "Release" manifests to Manifest Options
-  echo  I'm not tested all manifests^^!
+  echo  I Moved my "Release" manifests to Manifest Options
+  echo  I did not tested all manifests^^!
   echo  Planning to add Extra Language option in Events
   echo  Plaza_NEW not working on Shadow Legacy and Steel Wave too^^!
   echo  If you want to join testing phase, DM me on Discord
@@ -2192,3 +2192,4 @@ goto MainCMD
 
 
 exit
+
