@@ -23,16 +23,16 @@ set discord=discord.gg/EvrGzAV
 
 ::TIME SET START
 :settime
-	FOR /f "tokens=1-8 delims=/.:- " %%A in ("%date% %time%") DO (
-	SET Month=%%B
-	SET Day=%%C
-	SET Year=%%D
-	SET Hours=%%E
-	SET Minutes=%%F
-	SET Seconds=%%G
-	SET All=%%B-%%C-%%D_%%E-%%F-%%G
-	)
-	goto log
+  FOR /f "tokens=1-8 delims=/.:- " %%A in ("%date% %time%") DO (
+  SET Month=%%B
+  SET Day=%%C
+  SET Year=%%D
+  SET Hours=%%E
+  SET Minutes=%%F
+  SET Seconds=%%G
+  SET All=%%B-%%C-%%D_%%E-%%F-%%G
+  )
+  goto log
 ::TIME SET END
 
 
@@ -126,103 +126,103 @@ goto dotnetSET
 
 ::Set dotnet
 :dotnetSET
-	findstr /m "Dotnet=1" Resources\Settings.ini >Nul
-	if %errorlevel%==0 (
-	echo "Dotnet" set to 1
-	echo "Dotnet" set to 1 >>log.log
-	set Dotnet=1
-	)
-	if %errorlevel%==1 (
-	echo "Dotnet" set to 0
-	echo "Dotnet" set to 0 >>log.log
-	set Dotnet=0
-	)
-	goto 7zipSET
+  findstr /m "Dotnet=1" Resources\Settings.ini >Nul
+  if %errorlevel%==0 (
+  echo "Dotnet" set to 1
+  echo "Dotnet" set to 1 >>log.log
+  set Dotnet=1
+  )
+  if %errorlevel%==1 (
+  echo "Dotnet" set to 0
+  echo "Dotnet" set to 0 >>log.log
+  set Dotnet=0
+  )
+  goto 7zipSET
 ::Set 7zip
 :7zipSET
-	findstr /m "zip=1" Resources\Settings.ini >Nul
-	if %errorlevel%==0 (
-	echo "zip" set to 1
-	echo "zip" set to 1  >>log.log
-	set zip=1
-	)
-	if %errorlevel%==1 (
-	echo "zip" set to 0
-	echo "zip" set to 0 >>log.log
-	set zip=0
-	)
-	goto DepotSET
+  findstr /m "zip=1" Resources\Settings.ini >Nul
+  if %errorlevel%==0 (
+  echo "zip" set to 1
+  echo "zip" set to 1  >>log.log
+  set zip=1
+  )
+  if %errorlevel%==1 (
+  echo "zip" set to 0
+  echo "zip" set to 0 >>log.log
+  set zip=0
+  )
+  goto DepotSET
 ::Set Depot
 :DepotSET
-	findstr /m "Depot=1" Resources\Settings.ini >Nul
-	if %errorlevel%==0 (
-	echo "Depot" set to 1
-	echo "Depot" set to 1 >>log.log
-	set Depot=1
-	)
-	if %errorlevel%==1 (
-	echo "Depot" set to 0
-	echo "Depot" set to 0 >>log.log
-	set Depot=0
-	)
-	goto PlazaSET
+  findstr /m "Depot=1" Resources\Settings.ini >Nul
+  if %errorlevel%==0 (
+  echo "Depot" set to 1
+  echo "Depot" set to 1 >>log.log
+  set Depot=1
+  )
+  if %errorlevel%==1 (
+  echo "Depot" set to 0
+  echo "Depot" set to 0 >>log.log
+  set Depot=0
+  )
+  goto PlazaSET
 ::Set Plaza
 :PlazaSET
-	findstr /m "Plaza=1" Resources\Settings.ini >Nul
-	if %errorlevel%==0 (
-	echo "Plaza" set to 1
-	echo "Plaza" set to 1 >>log.log
-	set Plaza=1
-	)
-	if %errorlevel%==1 (
-	echo "Plaza" set to 0
-	echo "Plaza" set to 0 >>log.log
-	set Plaza=0
-	)
-	goto SteamSET
+  findstr /m "Plaza=1" Resources\Settings.ini >Nul
+  if %errorlevel%==0 (
+  echo "Plaza" set to 1
+  echo "Plaza" set to 1 >>log.log
+  set Plaza=1
+  )
+  if %errorlevel%==1 (
+  echo "Plaza" set to 0
+  echo "Plaza" set to 0 >>log.log
+  set Plaza=0
+  )
+  goto SteamSET
 :: SET CHECKERS END
 
 :: SET SET START
 ::Set Get SteamName
 :SteamSET
-	findstr /m "SteamName=1" Resources\Settings.ini >Nul
-	if %errorlevel%==0 (
-	echo "SteamName" set to 1
-	echo "SteamName" set to 1 >>log.log
-	set SteamName=1
-	)
-	if %errorlevel%==1 (
-	echo "SteamName" set to 0
-	echo "SteamName" set to 0 >>log.log
-	set SteamName=0
-	)
-	goto DevVersionSET
+  findstr /m "SteamName=1" Resources\Settings.ini >Nul
+  if %errorlevel%==0 (
+  echo "SteamName" set to 1
+  echo "SteamName" set to 1 >>log.log
+  set SteamName=1
+  )
+  if %errorlevel%==1 (
+  echo "SteamName" set to 0
+  echo "SteamName" set to 0 >>log.log
+  set SteamName=0
+  )
+  goto DevVersionSET
 ::Set Dev Version
 :DevVersionSET
-	findstr /m "DevVersion=1" Resources\Settings.ini >Nul
-	if %errorlevel%==0 (
-	echo "DevVersion" set to 1
-	echo "DevVersion" set to 1 >>log.log
-	set DevVersion=1
-	)
-	if %errorlevel%==1 (
-	echo "DevVersion=1" set to 0
-	echo "DevVersion=1" set to 0 >>log.log
-	set DevVersion=0
-	)
+  findstr /m "DevVersion=1" Resources\Settings.ini >Nul
+  if %errorlevel%==0 (
+  echo "DevVersion" set to 1
+  echo "DevVersion" set to 1 >>log.log
+  set DevVersion=1
+  )
+  if %errorlevel%==1 (
+  echo "DevVersion=1" set to 0
+  echo "DevVersion=1" set to 0 >>log.log
+  set DevVersion=0
+  )
   echo ------------SET END----------------->>log.log
-	goto MateBypass
+  goto MateBypass
 ::matec bypass
 :MateBypass
-	if exist "C:\Users\matec\" (
-	set DevVersion=1
-	echo matec was found
-	echo matec was found, automaticly Dev things enabled>>log.log
-	) else (
-	set DevVersion=0
-	echo matec wasn't found
-	)
-	goto ifdotnet
+  if exist "C:\Users\matec\" (
+  set DevVersion=1
+  echo matec was found
+  echo matec was found, automaticly Dev things enabled>>log.log
+  ) else (
+  set DevVersion=0
+  echo matec wasn't found
+  )
+  goto ifdotnet
 :: SET SET END
 ::SET Things END
 
@@ -1986,12 +1986,12 @@ goto dotnetSET
   )
   ::Examples:
   if %ERRORLEVEL%==5 (
-  	if exist "R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe" (
-  		echo Starting.....
-  		R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe /belaunch
-  		pause
-  		)
-  	goto DownloadMenu
+    if exist "R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe" (
+      echo Starting.....
+      R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe /belaunch
+      pause
+      )
+    goto DownloadMenu
   )
   if %ERRORLEVEL%==81 (
     if exist "R6Downloads\Y2S2_Health_2\RainbowSix.exe" (
@@ -2192,4 +2192,3 @@ goto MainCMD
 
 
 exit
-
