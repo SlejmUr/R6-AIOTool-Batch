@@ -62,8 +62,8 @@ set discord=discord.gg/EvrGzAV
   echo Please be patient ^^!
   ping github.com>nul
   if errorlevel 1 (
-  echo I cant connect github, Continue at OW RISK^^!
-  echo I cant connect github, Continue at OW RISK! - %TIME% >>log.log
+  echo I cant connect to github, Continue at OW RISK^^!
+  echo I cant connect to github, Continue at OW RISK! - %TIME% >>log.log
   pause
   goto MainCMD
   ) 
