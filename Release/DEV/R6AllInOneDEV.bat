@@ -1808,7 +1808,7 @@ goto dotnetSET
   MODE 50,40
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Uninstall Menu
-  echo      Currently Not Available Please go back^^!
+  echo    Please select the correct downloaded folder.
   echo [93m----------------------SELECT----------------------[0m
   Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Back"
 
@@ -1968,41 +1968,211 @@ goto dotnetSET
 
 
 
+::FULL STARTGAME START
 ::StartGame START
 :StartGame
-  cls
   Title Rainbow Six Siege Game Starter
   echo StartGame Loaded>>log.log
-  MODE 50,50
+  MODE 50,40
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Game Starter
-  echo      Currently Not Available Please go back^^!
+  echo    Please select the correct downloaded folder.
   echo [93m----------------------SELECT----------------------[0m
-  Resources\cmdmenusel f8f0 "   Back" "   Placeholder Version" "   Placeholder Release" "   Placeholder Event"
+  Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Back"
 
   if %ERRORLEVEL%==1 (
+  set StartDir=R6Downloads\Y1S0_Vanilla
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==2 (
+  set StartDir=R6Downloads\Y1S1_Black_Ice
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==3 (
+  set StartDir=R6Downloads\Y1S2_Dust_Line
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==4 (
+  set StartDir=R6Downloads\Y1S3_Skull_Rain
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==5 (
+  set StartDir=R6Downloads\Y1S3_SkullRain
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==6 (
+  set StartDir=R6Downloads\Y1S4_Red_Crow
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==7 (
+  set StartDir=R6Downloads\Y2S1_Velvet_Shell
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==8 (
+  set StartDir=R6Downloads\Y2S2_Health
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==9 (
+  set StartDir=R6Downloads\Y2S2_Health_2
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==10 (
+  set StartDir=R6Downloads\Y2S3_Blood_Orchid
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==11 (
+  set StartDir=R6Downloads\Y2S3_BloodOrchid
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==12 (
+  set StartDir=R6Downloads\Y2S4_White_Noise
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==13 (
+  set StartDir=R6Downloads\Y2S4_WhiteNoise
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==14 (
+  set StartDir=R6Downloads\Y3S1_Chimera
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==15 (
+  set StartDir=R6Downloads\Y3S2_Para_Bellum
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==16 (
+  set StartDir=R6Downloads\Y3S3_Grim_Sky
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==17 (
+  set StartDir=R6Downloads\Y3S3_MadHouse
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==18 (
+  set StartDir=R6Downloads\Y3S4_Wind_Bastion
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==19 (
+  set StartDir=R6Downloads\Y4S1_Burnt_Horizon
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==20 (
+  set StartDir=R6Downloads\Y4S1_RainbowIsMagic
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==21 (
+  set StartDir=R6Downloads\Y4S2_Phantom_Sight
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==22 (
+  set StartDir=R6Downloads\Y4S3_Ember_Rise
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==23 (
+  set StartDir=R6Downloads\Y4S3_DoktorsCurse
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==24 (
+  set StartDir=R6Downloads\Y4S4_Shifting_Tides
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==25 (
+  set StartDir=R6Downloads\Y5S1_Void_Edge
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==26 (
+  set StartDir=R6Downloads\Y5S1_GangDestruction
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==27 (
+  set StartDir=R6Downloads\Y5S2_Steel_Wave
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==28 (
+  set StartDir=R6Downloads\Y5S2_MUTE
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==29 (
+  set StartDir=R6Downloads\Y5S2_SteelWave
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==30 (
+  set StartDir=R6Downloads\Y5S3_Shadow_Legacy
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==31 (
+  set StartDir=R6Downloads\Y5S3_Sugar_Fright
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==32 (
+  echo Back - %TIME%>>log.log
   cls
   goto GameMenu
   )
-  ::Examples:
-  if %ERRORLEVEL%==5 (
-    if exist "R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe" (
-      echo Starting.....
-      R6Downloads\Y1S3_Skull_Rain\RainbowSixGame.exe /belaunch
-      pause
-      )
-    goto DownloadMenu
-  )
-  if %ERRORLEVEL%==81 (
-    if exist "R6Downloads\Y2S2_Health_2\RainbowSix.exe" (
-      echo Starting.....
-      R6Downloads\Y2S2_Health_2\RainbowSix.exe /belaunch
-      pause
-      )
-    goto DownloadMenu
-  )
   goto StartGame
 ::StartGame END
+
+::StartFolder START
+:StartFolder
+  cls
+  echo %StartDir% Chosen [S]>>log.log
+  goto BEcheck
+::StartFolder END
+
+::BE Disable/ RSG Skip START
+  :BEcheck
+  if exist "%StartDir%\RainbowSix_BE.exe" (
+    echo Founded RainbowSix_BE.exe >>log.log
+    goto StartChoose
+    )
+    goto nothaveBE
+
+  :nothaveBE
+  if exist "%StartDir%\RainbowSixGame.exe" (
+    echo Founded RainbowSixGame.exe >>log.log
+    set startexe=%StartDir%\RainbowSixGame.exe
+    goto gamestarter
+    ) else (
+    goto StartGame
+    )
+    goto nothaveBE
+::BE Disable/ RSG Skip END
+
+::StartChoose START
+:StartChoose
+  MODE 50,10
+  echo [93m-----------------------NOTES----------------------[0m
+  echo                   Start Choose
+  echo        DirectX is a normal default R6:S
+  echo [93m----------------------SELECT----------------------[0m
+  Resources\cmdmenusel f8f0 "   DirectX" "   Vulkan" "   Back"
+
+  if %ERRORLEVEL%==1 (
+  set startexe=%StartDir%\RainbowSix.exe
+  goto gamestarter
+  )
+  if %ERRORLEVEL%==2 (
+  set startexe=%StartDir%\RainbowSix_Vulkan.exe
+  goto gamestarter
+  )
+  if %ERRORLEVEL%==3 (
+  echo Back - %TIME%>>log.log
+  cls
+  goto GameMenu
+  )
+  goto StartChoose
+::StartChoose END
+
+::GameStarter START
+:GameStarter
+  cls
+  MODE 60,20
+  echo Starting : %startexe%
+  start %startexe% /belaunch
+  pause
+  goto GameMenu
+::GameStarter END
+::FULL STARTGAME END
 
 
 :Extra
@@ -2163,6 +2333,7 @@ goto MainCMD
   echo.
   pause
   goto MainCMD
+::Update END
 
 
 
