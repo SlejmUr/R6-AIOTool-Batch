@@ -32,45 +32,55 @@ set discord=discord.gg/EvrGzAV
   SET Seconds=%%G
   SET All=%%B-%%C-%%D_%%E-%%F-%%G
   )
-  goto log
+  goto logstart
 ::TIME SET END
 
 
 
 ::LOG start
-:log
-  if exist "log.log" (
-  ren "log.log" "%ALL%-log.log"
-  mkdir logs
-  move "%ALL%-log.log" "logs"
-  cls
-  echo ------------------------------------------------>>log.log
-  echo You are using %AllInOneVersion% version>>log.log
+:logstart
+  echo.>>log.log
+  echo %TIME% ^| INFO ^| Started %AllInOneVersion%>>log.log
   goto github
-  ) else (
-  echo ------------------------------------------------>>log.log
-  echo You are using %AllInOneVersion% version>>log.log
-  goto github
-  )
 ::LOG end
 
-
+:logtolog
+:: 
+:: 1 = INFO
+:: 2 = WARN
+:: 3 = ERROR
+::
+  if %LogNumber%==1 (
+    set LOGTYPE=INFO
+  )
+  if %LogNumber%==2 (
+    set LOGTYPE=WARN
+  )
+  if %LogNumber%==3 (
+    set LOGTYPE=ERROR
+  )
+  echo %TIME% ^| %LOGTYPE% ^| %LOGINFO%>>log.log
+  goto %Position%
 
 ::Github Connect START
 :github
+  set Position=SiniCheck
   echo Loading...
   echo Please be patient ^^!
   ping github.com>nul
   if errorlevel 1 (
+  set Position=MainMenu
   echo I cant connect to github, Continue at OW RISK^^!
-  echo I cant connect to github, Continue at OW RISK! - %TIME% >>log.log
+  set LOGINFO=CANT connect Github
+  set LogNumber=2
   pause
-  goto MainCMD
+  goto logtolog
   ) 
   if errorlevel 0 (
   echo I can connect github, YEY^^!
-  echo I can connect github, YEY - %TIME% >>log.log
-  goto SiniCheck
+  set LOGINFO=Can connect Github
+  set LogNumber=1
+  goto logtolog
   )
 ::Github Connect END
 
@@ -87,21 +97,23 @@ set discord=discord.gg/EvrGzAV
   )
 
 :noSini
+  set Position=moveS
   MODE 78,20
   echo ------------------------------------------------------------------------------
   echo                              Downloading Settings.ini...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/Settings.ini" --output Settings.ini
-  echo Download Settings.ini - %TIME%>>log.log
-  cls
-  goto moveS
-  cls
-  )
+  set LOGINFO=Settings.ini Downloaded
+  set LogNumber=1
+  goto logtolog
+
 
 :moveS
+  set Position=SiniCheck
   move Settings.ini Resources
-  echo Settings.ini Moved - %TIME%>>log.log
-  goto SiniCheck
+  set LOGINFO=Settings.ini Moved
+  set LogNumber=1
+  goto logtolog
 ::Settings.ini get END
 
 
@@ -116,9 +128,10 @@ set discord=discord.gg/EvrGzAV
   ::Sets
   set SteamName=1
   set DevVersion=0
-  echo ------------SET START----------------->>log.log
-  echo S.ini set to default things >>log.log
-goto dotnetSET
+  set Position=dotnetSET
+  set LOGINFO=Settings.ini Set to Default Settings
+  set LogNumber=1
+  goto logtolog
 ::S:INI SET / Finder END
 
 ::SET Things START
@@ -129,12 +142,10 @@ goto dotnetSET
   findstr /m "Dotnet=1" Resources\Settings.ini >Nul
   if %errorlevel%==0 (
   echo "Dotnet" set to 1
-  echo "Dotnet" set to 1 >>log.log
   set Dotnet=1
   )
   if %errorlevel%==1 (
   echo "Dotnet" set to 0
-  echo "Dotnet" set to 0 >>log.log
   set Dotnet=0
   )
   goto 7zipSET
@@ -143,12 +154,10 @@ goto dotnetSET
   findstr /m "zip=1" Resources\Settings.ini >Nul
   if %errorlevel%==0 (
   echo "zip" set to 1
-  echo "zip" set to 1  >>log.log
   set zip=1
   )
   if %errorlevel%==1 (
   echo "zip" set to 0
-  echo "zip" set to 0 >>log.log
   set zip=0
   )
   goto DepotSET
@@ -157,12 +166,10 @@ goto dotnetSET
   findstr /m "Depot=1" Resources\Settings.ini >Nul
   if %errorlevel%==0 (
   echo "Depot" set to 1
-  echo "Depot" set to 1 >>log.log
   set Depot=1
   )
   if %errorlevel%==1 (
   echo "Depot" set to 0
-  echo "Depot" set to 0 >>log.log
   set Depot=0
   )
   goto PlazaSET
@@ -171,12 +178,10 @@ goto dotnetSET
   findstr /m "Plaza=1" Resources\Settings.ini >Nul
   if %errorlevel%==0 (
   echo "Plaza" set to 1
-  echo "Plaza" set to 1 >>log.log
   set Plaza=1
   )
   if %errorlevel%==1 (
   echo "Plaza" set to 0
-  echo "Plaza" set to 0 >>log.log
   set Plaza=0
   )
   goto SteamSET
@@ -188,12 +193,10 @@ goto dotnetSET
   findstr /m "SteamName=1" Resources\Settings.ini >Nul
   if %errorlevel%==0 (
   echo "SteamName" set to 1
-  echo "SteamName" set to 1 >>log.log
   set SteamName=1
   )
   if %errorlevel%==1 (
   echo "SteamName" set to 0
-  echo "SteamName" set to 0 >>log.log
   set SteamName=0
   )
   goto DevVersionSET
@@ -202,24 +205,19 @@ goto dotnetSET
   findstr /m "DevVersion=1" Resources\Settings.ini >Nul
   if %errorlevel%==0 (
   echo "DevVersion" set to 1
-  echo "DevVersion" set to 1 >>log.log
   set DevVersion=1
   )
   if %errorlevel%==1 (
   echo "DevVersion=1" set to 0
-  echo "DevVersion=1" set to 0 >>log.log
   set DevVersion=0
   )
-  echo ------------SET END----------------->>log.log
   goto MateBypass
 ::matec bypass
 :MateBypass
   if exist "C:\Users\matec\" (
   set DevVersion=1
   echo matec was found
-  echo matec was found, automaticly Dev things enabled>>log.log
   ) else (
-  set DevVersion=0
   echo matec wasn't found
   )
   goto ifdotnet
@@ -437,7 +435,7 @@ goto dotnetSET
   goto SetSteam
   ) else (
   set username=matecraft1111
-  goto MainCMD
+  goto MainMenu
   )
 :SetSteam
   echo SetSteam Loaded>>log.log
@@ -453,45 +451,9 @@ goto dotnetSET
 ::MainMenu START
 :MainMenu
   cls
-  Title R6S AllInOne Downloader
-  MODE 62,42
-  echo MainMenu Loaded>>log.log
-  set LastSelector=MainMenu
-  echo [93m----------------------------NOTES-----------------------------[0m
-  echo  Rainbow Six Siege Old Version Downloader
-  echo  [31mYou MUST have a copy of Siege on Steam to use the downloader.[0m
-  echo  This tools is forked from [91mZer0Bytes[0m manifest tool
-  echo  Our Discord Server: [94m%discord%[0m 
-  echo  AIO Tool Version: [32m%AllInOneVersion%[0m 
-  echo  Steam User: [96m%username%[0m
-  echo  Read FAQ!
-  echo [93m----------------------------SELECT----------------------------[0m
-  echo  [92mWhat would you like to select?[0m 
-  echo  [33m(1)[0m [36mMainCMD[0m
-  echo  [33m(0)[0m [36mClose[0m 
-  echo [93m--------------------------------------------------------------[0m
-  set /p option="Enter Number:"
-
-  if %option%==0 (
-  echo Exited - %TIME%>>log.log
-  cls
-  exit
-  )
-  if %option%==1 (
-  cls
-  goto MainCMD
-  )
-  goto MainMenu
-::MainMenu END
-
-
-
-::MainCMD START
-:MainCMD
-  cls
   Title R6S AllInOne Tool
   MODE 62,30
-  echo MainCMD loaded>>log.log
+  echo MainMenu loaded>>log.log
   set LastSelector=MainMenu
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege AllInOne Tool
@@ -548,9 +510,14 @@ goto dotnetSET
   if %ERRORLEVEL% == 9 (
   echo Logs Delete Chosen>>log.log
   cls
+  del log.log
   rd /s /q  "logs\"
   echo Logs Deleted^^!
   pause
+  set Position=MainMenu
+  set LOGTYPE=2
+  set LOGINFO=Full log deleted
+  goto logtolog
   )
   if %ERRORLEVEL% == 10 (
   echo Zer0 folder Renamer Chosen>>log.log
@@ -563,11 +530,13 @@ goto dotnetSET
   goto Update
   )
   if %ERRORLEVEL% == 12 (
-  echo Back/Exit - %TIME%>>log.log
-  exit
+  set Position=exitng
+  set LOGTYPE=1
+  set LOGINFO=Exited
+  goto logtolog
   )
-  goto MainCMD
-::MainCMD END
+  goto MainMenu
+::MainMenu END
 
 
 ::FAQ and notes START
@@ -662,7 +631,7 @@ goto dotnetSET
   if %ERRORLEVEL% == 4 (
   echo Back - %TIME%>>log.log
   cls
-  goto MainCMD
+  goto MainMenu
   )
   goto GameMenu
 ::GameMenu END
@@ -1345,7 +1314,7 @@ goto dotnetSET
     if %LastSelector% == MainMenu (
       echo Back to %LastSelector% - %TIME%>>log.log
       cls
-      goto MainCMD
+      goto MainMenu
     ) else (
       echo Back - %TIME%>>log.log
       cls
@@ -2168,6 +2137,7 @@ goto dotnetSET
   cls
   MODE 60,20
   echo Starting : %startexe%
+  echo Starting : %startexe% >>log.log
   start %startexe% /belaunch
   pause
   goto GameMenu
@@ -2179,7 +2149,7 @@ goto dotnetSET
 cls
 echo Extra is Currently unavaible ^^!
 pause
-goto MainCMD
+goto MainMenu
 
 
 
@@ -2245,7 +2215,7 @@ goto MainCMD
   )
   if %ERRORLEVEL% == 6 (
   cls
-  goto MainCMD
+  goto MainMenu
   )
   goto dxvcredist
 ::dxvcredist END
@@ -2297,8 +2267,8 @@ goto MainCMD
   echo Y5S2_SteelWave_Morphues_V2311 Renamed>>log.log
   echo -------------RENAME END----------->>log.log
   echo Renamer end ^^!
-  pause >nul | echo Press any key to go back to MainCMD
-  goto MainCMD
+  pause >nul | echo Press any key to go back to MainMenu
+  goto MainMenu
 ::ZeroFolderRenamer END
 
 
@@ -2332,7 +2302,7 @@ goto MainCMD
   curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/notes"
   echo.
   pause
-  goto MainCMD
+  goto MainMenu
 ::Update END
 
 
@@ -2362,4 +2332,6 @@ goto MainCMD
 
 
 
+:exiting
+echo. >>log.log
 exit
