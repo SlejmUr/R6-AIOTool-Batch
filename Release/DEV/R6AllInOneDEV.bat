@@ -961,7 +961,7 @@ set discord=discord.gg/EvrGzAV
   echo                   Release Selector
   echo      Only new, released version of game build
   echo [93m----------------------SELECT----------------------[0m
-  Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Back"
+  Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Neon Dawn" "   Back"
 
   if %ERRORLEVEL%==1 (
   goto Vanilla
@@ -1113,7 +1113,19 @@ set discord=discord.gg/EvrGzAV
   echo Shadow Legacy Chosen>>log.log
   goto InstallMenu
   )
-  if %ERRORLEVEL% == 21 (
+  if %ERRORLEVEL%==21 (
+  :NeonDawn
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 752517632960395491 -username %username% -remember-password -dir "R6Downloads\Y5S4_Neon_Dawn" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7979405601806736439 -username %username% -remember-password -dir "R6Downloads\Y5S4_Neon_Dawn" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete^^!
+  echo It's Neon Dawn Released^^!
+  echo Neon Dawn Chosen>>log.log
+  goto InstallMenu
+  )
+  if %ERRORLEVEL% == 22 (
   echo Back - %TIME%>>log.log
   cls
   goto InstallMenu
@@ -1560,7 +1572,7 @@ set discord=discord.gg/EvrGzAV
   echo   Health, White Noise, Void Edge, Vanilla, etc...
   echo   Stuff is same with in R6Manifest / 4kVersion
   echo [93m----------------------SELECT----------------------[0m
-  Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Back"
+  Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Neon Dawn" "   Back"
 
   if %ERRORLEVEL%==1 (
   goto Vanilla4k
@@ -1703,7 +1715,18 @@ set discord=discord.gg/EvrGzAV
   echo Shadow Legacy 4K Chosen>>log.log
   goto InstallMenus
   )
-  if %ERRORLEVEL% == 21 (
+  if %ERRORLEVEL%==21 (
+  :NeonDawn4k
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7681923351308243133 -username %username% -remember-password -dir "R6Downloads\Y5S4_Neon_Dawn" -validate -max-servers 15 -max-downloads 10
+  pause
+  cls
+  echo Download complete^^!
+  echo It's Neon Dawn 4K^^!
+  echo Neon Dawn 4K Chosen>>log.log
+  goto InstallMenus
+  )
+  if %ERRORLEVEL% == 22 (
   echo Back - %TIME%>>log.log
   cls
   goto TextureMenu
@@ -1779,7 +1802,7 @@ set discord=discord.gg/EvrGzAV
   echo                   Uninstall Menu
   echo    Please select the correct downloaded folder.
   echo [93m----------------------SELECT----------------------[0m
-  Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Back"
+  Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright" "   Y5S4_Neon_Dawn"   "   Back"
 
   if %ERRORLEVEL%==1 (
   set DeleteDir="R6Downloads\Y1S0_Vanilla"
@@ -1906,6 +1929,10 @@ set discord=discord.gg/EvrGzAV
   goto DeleteFolder
   )
   if %ERRORLEVEL%==32 (
+  set DeleteDir="R6Downloads\Y5S4_Neon_Dawn"
+  goto DeleteFolder
+  )
+  if %ERRORLEVEL%==33 (
   echo Back - %TIME%>>log.log
   cls
   goto GameMenu
@@ -1947,7 +1974,7 @@ set discord=discord.gg/EvrGzAV
   echo                   Game Starter
   echo    Please select the correct downloaded folder.
   echo [93m----------------------SELECT----------------------[0m
-  Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Back"
+  Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Y5S4_Neon_Dawn"   "   Back"
 
   if %ERRORLEVEL%==1 (
   set StartDir=R6Downloads\Y1S0_Vanilla
@@ -2074,6 +2101,10 @@ set discord=discord.gg/EvrGzAV
   goto StartFolder
   )
   if %ERRORLEVEL%==32 (
+  set StartDir=R6Downloads\Y5S4_Neon_Dawn
+  goto StartFolder
+  )
+  if %ERRORLEVEL%==33 (
   echo Back - %TIME%>>log.log
   cls
   goto GameMenu
