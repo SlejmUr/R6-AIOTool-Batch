@@ -20,6 +20,7 @@ setlocal enableextensions enabledelayedexpansion
 set homepath=%cd%
 set AllInOneVersion=DEV
 set discord=discord.gg/EvrGzAV
+Title STARTUP
 
 ::TIME SET START
 :settime
@@ -34,7 +35,6 @@ set discord=discord.gg/EvrGzAV
   )
   goto logstart
 ::TIME SET END
-
 
 
 ::LOG start
@@ -67,6 +67,7 @@ set discord=discord.gg/EvrGzAV
   set Position=SiniCheck
   echo Loading...
   echo Please be patient ^^!
+
   ping github.com>nul
   if errorlevel 1 (
   set Position=MainMenu
@@ -228,64 +229,70 @@ set discord=discord.gg/EvrGzAV
 
 ::Dotnet start
 :ifdotnet
-  echo ifdotnet Loaded>>log.log
   if %Dotnet% == 1 (
   goto verifydotnet
   ) else (
   goto if7zip
   )
+  goto ifdotnet
 
 :verifydotnet
-  echo verifydotnet Loaded>>log.log
+  set Position=checkertwo
   reg query "HKEY_LOCAL_MACHINE\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost" /v Version 2>nul
 
   if errorlevel 1 (
   echo Oh no, registery editor not found dotnet
-  echo Oh no, registery editor not found dotnet - %TIME% >>log.log
-  goto checkertwo
+  set LOGINFO=Registery editor not found dotnet
+  set LogNumber=2
+  goto logtolog
   ) else (
   echo DotNet One checker is found the version
-  echo DotNet One reg query checker is found the version - %TIME% >>log.log
-  goto checkertwo
+  set LOGINFO=Registery editor is found the dotnet
+  set LogNumber=1
+  goto logtolog
   )
+  goto verifydotnet
 
 :dotnet
-  echo dotnet Loaded>>log.log
+  set Position=verifydotnet
   MODE 40,10
   echo ---------------------------------------
   echo       Install .NET Runtime ^^!
   echo ---------------------------------------
-  echo Install .NET Runtime - %TIME% >>log.log
   start www.tinyurl.com/dotnetruntimer6
   pause
-  echo      Press Space after install
-  echo ---------------------------------------
-  goto verifydotnet
+  set LOGINFO=Install .NET Runtime
+  set LogNumber=3
+  goto logtolog
 
 :checkertwo
-  echo checkertwo Loaded>>log.log
+  set Position=if7zip
   if exist "C:\Program Files\dotnet\dotnet.exe" (
   echo DotNet Two checker is found the version
-  echo DotNet Two exist checker is found the version - %TIME% >>log.log
-  goto if7zip
+  set LOGINFO=Exist checker is found the version
+  set LogNumber=1
+  goto logtolog
   ) else (
-  echo Oh no, exist checker not found dotnet - %TIME% >>log.log
-  goto dotnet
+  set Position=dotnet
+  echo Oh no, exist checker not found dotnet
+  set LOGINFO=Exist checker not found dotnet
+  set LogNumber=2
+  goto logtolog
   )
+  goto checkertwo
 ::dotnet end
 
 
 ::7zip start
 :if7zip
-  echo if7zip Loaded>>log.log
   if %zip%==1 (
   goto 7zipcheck
   ) else (
   goto ifDD
   )
+  goto if7zip
 
 :7zipcheck
-  echo 7zipcheck Loaded>>log.log
   MODE 62,50
   if exist "Resources\7z.exe" (
     goto ifDD
@@ -293,40 +300,35 @@ set discord=discord.gg/EvrGzAV
     mkdir Resources
     goto no7zip
   )
+  goto 7zipcheck
 
 :no7zip
-  echo no7zip Loaded>>log.log
+  set Position=7zipcheck
+  cls
   MODE 78,20
   echo ------------------------------------------------------------------------------
   echo                              Downloading 7-Zip...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/DataCluster0/R6TBBatchTool/raw/master/Requirements/7z.exe" --output 7z.exe
-  echo Download 7zip - %TIME%>>log.log
   cls
-  goto move7
-  cls
-  )
-
-:move7
-  echo move7 Loaded>>log.log
   move 7z.exe Resources
-  goto 7zipcheck
+  set LOGINFO=7zip Successfully Downloaded and Moved
+  set LogNumber=1
+  goto logtolog
 ::7zip end
 
 
 ::DD start
 :ifDD
-  echo ifDD Loaded>>log.log
   if %zip%==1 (
   goto DepotCheck
   ) else (
   goto ifPlaza
   )
+  goto ifDD
 
 
 :DepotCheck
-  echo DepotCheck Loaded>>log.log
-  cls
   if exist "Resources\DepotDownloader\DepotDownloader.dll" (
     goto ifPlaza 
   ) else (
@@ -334,116 +336,123 @@ set discord=discord.gg/EvrGzAV
   )
 
 :DepotDownloader
-  echo DepotDownloader Loaded>>log.log
+  set Position=extractDD
   cls
   MODE 78,20
   echo ------------------------------------------------------------------------------
   echo                        Downloading DepotDownloader...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.3.6/depotdownloader-2.3.6.zip" --output depot.zip
-  echo Download DepotDownloader - %TIME%>>log.log
   cls
-  goto extractDD
+  set LOGINFO=DepotDownloader Successfully Downloaded
+  set LogNumber=1
+  goto logtolog
 
 :extractDD
-  echo extractDD Loaded>>log.log
+  set Position=DepotCheck
   for %%I in ("depot.zip") do (
     echo extractDD
-    echo extractDD - %TIME%>>log.log
     "Resources\7z.exe" x -y -o"Resources\DepotDownloader" "%%I" && del %%I
     cls
-    goto DepotCheck
+    set LOGINFO=DepotDownloader Successfully extracted
+    set LogNumber=1
+    goto logtolog
   )
+  goto extractDD
 ::DD end
 
 ::Plaza Start
 :ifPlaza
-  echo ifPlaza Loaded>>log.log
   if %zip%==1 (
   goto PlazaCheck
   ) else (
   goto cmdCheck
   )
+  goto ifPlaza
 
 :PlazaCheck
-  echo PlazaCheck Loaded>>log.log
   cls
   if exist "Resources\Plazas\PLAZA_BO\CODEX.ini" (
     goto cmdCheck 
   ) else (
     goto GetPlaza
   )
+  goto PlazaCheck
 
 :GetPlaza
-  echo GetPlaza Loaded>>log.log
+  set Position=extractPlaza
   cls
   MODE 78,20
   echo ------------------------------------------------------------------------------
   echo                        Downloading Plazas...
   echo ------------------------------------------------------------------------------
   curl -L  "https://cdn.discordapp.com/attachments/722089860755881996/743466352475635832/Plazas.zip" --output plazas.zip
-  echo Download Plazas - %TIME%>>log.log
   cls
-  goto extractPlaza
+  set LOGINFO=Plazas Successfully Downloaded
+  set LogNumber=1
+  goto logtolog
 
 :extractPlaza
-  echo extractPlaza Loaded>>log.log
+  set Position=PlazaCheck
   for %%I in ("plazas.zip") do (
   echo extractPlaza
-  echo extractPlaza - %TIME%>>log.log
   "Resources\7z.exe" x -y -o"Resources\" "%%I" && del %%I
   cls
-  goto PlazaCheck
+  set LOGINFO=Plazas Successfully extracted
+  set LogNumber=1
+  goto logtolog
   )
+  goto extractPlaza
 ::Plaza End
 
 
 
 ::cmdmenusel START
 :cmdCheck
-  echo cmdCheck Loaded>>log.log
   cls
   if exist "Resources\cmdmenusel.exe" (
     goto ifSteam 
   ) else (
     goto GetCmd
   )
+  goto cmdCheck
+
 :GetCmd
-  echo GetCmd Loaded>>log.log
+  set Position=cmdCheck
   cls
   MODE 78,20
   echo ------------------------------------------------------------------------------
   echo                        Downloading cmdmenusel...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/cmdmenusel.exe" --output cmdmenusel.exe
-  echo Download cmdmenusel - %TIME%>>log.log
   cls
-  goto movecmd
-
-:movecmd
-  echo movecmd Loaded>>log.log
   move cmdmenusel.exe Resources
-  goto cmdCheck
+  set LOGINFO=cmdmenusel Successfully Downloaded and Moved
+  set LogNumber=1
+  goto logtolog
 ::cmdmenusel END
 
 
 
 ::SetSteam START
 :ifSteam
-  echo ifSteam Loaded>>log.log
   if %SteamName%==1 (
   goto SetSteam
   ) else (
   set username=matecraft1111
   goto MainMenu
   )
+  goto ifSteam
+
 :SetSteam
-  echo SetSteam Loaded>>log.log
+  set Position=MainMenu
   MODE 78,20
   echo Please type your Steam Legacy name!
   set /p username="Enter Steam Username:"
   cls
-  goto MainMenu
+  set "LOGINFO=Steam Legacy Name (Username) set to %username%"
+  set LogNumber=1
+  goto logtolog
 ::SetSteam END
 
 
@@ -453,7 +462,6 @@ set discord=discord.gg/EvrGzAV
   cls
   Title R6S AllInOne Tool
   MODE 62,30
-  echo MainMenu loaded>>log.log
   set LastSelector=MainMenu
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege AllInOne Tool
@@ -511,7 +519,7 @@ set discord=discord.gg/EvrGzAV
   echo Logs Delete Chosen>>log.log
   cls
   del log.log
-  rd /s /q  "logs\"
+  rd /s /q  "logs\" 2>nul
   echo Logs Deleted^^!
   pause
   set Position=MainMenu
@@ -1322,7 +1330,6 @@ set discord=discord.gg/EvrGzAV
   )
   if %ERRORLEVEL% == 4 (
   cls
-  echo Where to back?>>log.log
     if %LastSelector% == MainMenu (
       echo Back to %LastSelector% - %TIME%>>log.log
       cls
