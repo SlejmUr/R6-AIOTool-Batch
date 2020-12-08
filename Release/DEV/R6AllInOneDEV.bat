@@ -12,7 +12,7 @@
 ::                       hMMy.NMMMMy  discord.gg/EvrGzAV
 ::                       `ohmNMNmh+   
 :: Zer0Bytes#4428 https://i.imgur.com/nBKIDOX.png
-:: Updated by SlejmUr#4007
+:: Updated by SlejmUr#4007 Verified Dickhead
 ::
 
 @echo off
@@ -20,7 +20,11 @@ setlocal enableextensions enabledelayedexpansion
 set homepath=%cd%
 set AllInOneVersion=DEV
 set discord=discord.gg/EvrGzAV
-Title STARTUP
+
+::STARTUP
+  Title STARTUP
+  echo Loading...
+  echo Please be patient ^^!
 
 ::TIME SET START
 :settime
@@ -65,9 +69,6 @@ Title STARTUP
 ::Github Connect START
 :github
   set Position=SiniCheck
-  echo Loading...
-  echo Please be patient ^^!
-
   ping github.com>nul
   if errorlevel 1 (
   set Position=MainMenu
@@ -352,7 +353,7 @@ Title STARTUP
   set Position=DepotCheck
   for %%I in ("depot.zip") do (
     echo extractDD
-    "Resources\7z.exe" x -y -o"Resources\DepotDownloader" "%%I" && del %%I
+    "Resources\7z.exe" x -y -o"Resources\DepotDownloader" "%%I" -aoa && del %%I
     cls
     set LOGINFO=DepotDownloader Successfully extracted
     set LogNumber=1
@@ -396,7 +397,7 @@ Title STARTUP
   set Position=PlazaCheck
   for %%I in ("plazas.zip") do (
   echo extractPlaza
-  "Resources\7z.exe" x -y -o"Resources\" "%%I" && del %%I
+  "Resources\7z.exe" x -y -o"Resources\" "%%I" -aoa && del %%I
   cls
   set LOGINFO=Plazas Successfully extracted
   set LogNumber=1
@@ -459,10 +460,11 @@ Title STARTUP
 
 ::MainMenu START
 :MainMenu
+  set LastSelector=MainMenu
+  set Position=MainMenu
   cls
   Title R6S AllInOne Tool
   MODE 62,30
-  set LastSelector=MainMenu
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege AllInOne Tool
   echo  [31mYou MUST have a copy of Siege on Steam to use the downloader^^![0m
@@ -475,66 +477,47 @@ Title STARTUP
   Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit"
   
   if %ERRORLEVEL% == 1 (
-  echo FAQ Chosen>>log.log
-  cls
   goto faq
   )
   if %ERRORLEVEL% == 2 (
-  echo GameMenu Chosen>>log.log
-  cls
   goto GameMenu
   )
   if %ERRORLEVEL% == 3 (
-  echo Extra Menu Chosen>>log.log
-  cls
   goto Extra
   )
   if %ERRORLEVEL% == 4 (
-  echo TextureMenu Chosen>>log.log
-  cls
   goto TextureMenu
   )
   if %ERRORLEVEL% == 5 (
-  echo dxvcredist Chosen>>log.log
-  cls
   goto dxvcredist
   )
   if %ERRORLEVEL% == 6 (
-  echo Credit Chosen>>log.log
-  cls
   goto Credit
   )
   if %ERRORLEVEL% == 7 (
-  echo BattlEyeChecker Chosen>>log.log
-  cls
   goto BattlEyeChecker
   )
   if %ERRORLEVEL% == 8 (
-  echo Changing Steam UserName - %TIME%>>log.log
   cls
   set /p username="Enter Steam Username:"
-  goto MainMenu
+  set "LOGINFO=Changing Steam UserName to %username%"
+  set LogNumber=1
+  goto logtolog
   )
   if %ERRORLEVEL% == 9 (
-  echo Logs Delete Chosen>>log.log
   cls
   del log.log
   rd /s /q  "logs\" 2>nul
   echo Logs Deleted^^!
   pause
-  set Position=MainMenu
   set LOGTYPE=2
   set LOGINFO=Full log deleted
   goto logtolog
   )
   if %ERRORLEVEL% == 10 (
-  echo Zer0 folder Renamer Chosen>>log.log
-  cls
   goto ZeroFolderRenamer
   )
   if %ERRORLEVEL%==11 (
-  echo Update Chosen>>log.log
-  cls
   goto Update
   )
   if %ERRORLEVEL% == 12 (
@@ -549,6 +532,7 @@ Title STARTUP
 
 ::FAQ and notes START
 :faq
+  cls
   Title FAQ
   MODE 120,45
   echo  1.
@@ -1948,7 +1932,7 @@ Title STARTUP
 ::UninstallMenu END
 
 ::DeleteFolder START
-  :DeleteFolder
+:DeleteFolder
   MODE 60,20
   cls
   echo %DeleteDir% Chosen [U]>>log.log
@@ -2184,15 +2168,16 @@ Title STARTUP
 
 
 :Extra
-cls
-echo Extra is Currently unavaible ^^!
-pause
-goto MainMenu
+  cls
+  echo Extra is Currently unavaible ^^!
+  pause
+  goto MainMenu
 
 
 
 ::dxvcredist START
 :dxvcredist
+  cls
   Title DirectX + VC Redist Downloader
   MODE 41,10
   echo dxvcredist Loaded>>log.log
@@ -2261,58 +2246,42 @@ goto MainMenu
 
 ::ZeroFolderRenamer START
 :ZeroFolderRenamer
+  set Position=MainMenu
   cls
   Title Zero Folder Renamer
-  echo Zero Folder Renamer Loaded>>log.log
   MODE 50,30
   echo Make sure you not Downloaded two times^^!
   pause
   echo Waiting to fully rename the folders.
-  echo -------------RENAME START----------->>log.log
   ren "R6Downloads\Y1S1_BlackIce" "Y1S1_Black_Ice" 2>nul
-  echo Y1S1_BlackIce Renamed>>log.log
   ren "R6Downloads\Y1S2_DustLine" "Y1S2_Dust_Line" 2>nul
-  echo Y1S2_DustLine Renamed>>log.log
   ren "R6Downloads\Y1S4_RedCrow" "Y1S4_Red_Crow" 2>nul
-  echo Y1S4_RedCrow Renamed>>log.log
   ren "R6Downloads\Y2S1_VelvetShell" "Y2S1_Velvet_Shell" 2>nul
-  echo Y2S1_VelvetShell Renamed>>log.log
   ren "R6Downloads\Y2S2_Health_FixingAndRepairingTheGame" "Y2S2_Health_2" 2>nul
-  echo Y2S2_Health_FixingAndRepairingTheGame Renamed>>log.log
   ren "R6Downloads\Y2S4_WhiteNoise" "Y2S4_White_Noise" 2>nul
-  echo Y2S4_WhiteNoise Renamed>>log.log
   ren "R6Downloads\Y3S1_Chimera_Outbreak" "Y3S1_Chimera" 2>nul
-  echo Y3S1_Chimera_Outbreak Renamed>>log.log
   ren "R6Downloads\Y3S2_ParaBellum" "Y3S2_Para_Bellum" 2>nul
-  echo Y3S2_ParaBellum Renamed>>log.log
   ren "R6Downloads\Y3S3_GrimSky_MadHouse" "Y3S3_MadHouse" 2>nul
-  echo Y3S3_GrimSky_MadHouse Renamed>>log.log
   ren "R6Downloads\Y3S4_WindBastion" "Y3S4_Wind_Bastion" 2>nul
-  echo Y3S4_WindBastion Renamed>>log.log
   ren "R6Downloads\Y4S1_BurntHorizon_RainbowisMagic" "Y4S1_RainbowIsMagic" 2>nul
-  echo Y4S1_BurntHorizon_RainbowisMagic Renamed>>log.log
   ren "R6Downloads\Y4S2_PhantomSight_Showdown" "Y4S2_Phantom_Sight" 2>nul
-  echo Y4S2_PhantomSight_Showdown Renamed>>log.log
   ren "R6Downloads\Y4S3_EmberRise_DoktorsCurse" "Y4S3_DoktorsCurse" 2>nul
-  echo Y4S3_EmberRise_DoktorsCurse Renamed>>log.log
   ren "R6Downloads\Y4S4_ShiftingTides_Stadium" "Y4S4_Shifting_Tides" 2>nul
-  echo Y4S4_ShiftingTides_Stadium Renamed>>log.log
   ren "R6Downloads\Y5S1_VoidEdge_GangDestruction" "Y5S1_GangDestruction" 2>nul
-  echo Y5S1_VoidEdge_GangDestruction Renamed>>log.log
   ren "R6Downloads\Y5S2_SteelWave_Morphues" "Y5S2_MUTE" 2>nul
-  echo Y5S2_SteelWave_Morphues Renamed>>log.log
   ren "R6Downloads\Y5S2_SteelWave_Morphues_V2311" "Y5S2_Steel_Wave" 2>nul
-  echo Y5S2_SteelWave_Morphues_V2311 Renamed>>log.log
-  echo -------------RENAME END----------->>log.log
   echo Renamer end ^^!
   pause >nul | echo Press any key to go back to MainMenu
-  goto MainMenu
+  set LOGINFO=Fully rename the folders.
+  set LogNumber=1
+  goto logtolog
 ::ZeroFolderRenamer END
 
 
 ::CREDIT START
 ::© 2020 SlejmUr
 :Credit
+  cls
   Title CREDIT
   MODE 75,20
   echo I would like to thank everyone who helped this project getting developed:
@@ -2335,6 +2304,7 @@ goto MainMenu
 
 ::Update START
 :Update
+  cls
   Title Update
   MODE 75,20
   curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/notes"
@@ -2347,29 +2317,33 @@ goto MainMenu
 
 ::BattlEyeChecker START
 :BattlEyeChecker
- color 09
- MODE 36,8
- set EXE=RainbowSix_BE.exe
- FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto FOUND
- goto NOTFOUND
- :NOTFOUND
- echo ------------------------------------
- echo [-] BattleEye is Not running
- echo [-] BattleEye is Not running  - %TIME% >>log.log
- echo ------------------------------------
- goto FIN
- :FOUND
- echo ------------------------------------
- echo [+] BattleEye is running
- echo [+] BattleEye is running  - %TIME% >>log.log
- echo ------------------------------------
- :FIN
- pause
- goto MainMenu
+  set Position=MainMenu
+  cls
+  color 09
+  MODE 36,8
+  set EXE=RainbowSix_BE.exe
+  FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto FOUND
+  goto NOTFOUND
+  :NOTFOUND
+  echo ------------------------------------
+  echo [-] BattleEye is Not running
+  echo ------------------------------------
+  pause
+  set LOGINFO=BattleEye is Not running
+  set LogNumber=1
+  goto logtolog
+  :FOUND
+  echo ------------------------------------
+  echo [+] BattleEye is running
+  echo ------------------------------------
+  pause
+  set LOGINFO=BattleEye is running
+  set LogNumber=2
+  goto logtolog
 ::BattlEyeChecker END
 
 
 
 :exiting
-echo. >>log.log
-exit
+  echo. >>log.log
+  exit
