@@ -66,6 +66,11 @@ set discord=discord.gg/EvrGzAV
   echo %TIME% ^| %LOGTYPE% ^| %LOGINFO%>>log.log
   goto %Position%
 
+:GoingTo
+  set LOGINFO=Going to %Position%
+  set LogNumber=1
+  goto logtolog
+
 ::Github Connect START
 :github
   set Position=SiniCheck
@@ -328,7 +333,6 @@ set discord=discord.gg/EvrGzAV
   )
   goto ifDD
 
-
 :DepotCheck
   if exist "Resources\DepotDownloader\DepotDownloader.dll" (
     goto ifPlaza 
@@ -477,25 +481,32 @@ set discord=discord.gg/EvrGzAV
   Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit"
   
   if %ERRORLEVEL% == 1 (
-  goto faq
+  set Position=faq
+  goto GoingTo
   )
   if %ERRORLEVEL% == 2 (
-  goto GameMenu
+  set Position=GameMenu
+  goto GoingTo
   )
   if %ERRORLEVEL% == 3 (
-  goto Extra
+  set Position=Extra
+  goto GoingTo
   )
   if %ERRORLEVEL% == 4 (
-  goto TextureMenu
+  set Position=TextureMenu
+  goto GoingTo
   )
   if %ERRORLEVEL% == 5 (
-  goto dxvcredist
+  set Position=dxvcredist
+  goto GoingTo
   )
   if %ERRORLEVEL% == 6 (
-  goto Credit
+  set Position=Credit
+  goto GoingTo
   )
   if %ERRORLEVEL% == 7 (
-  goto BattlEyeChecker
+  set Position=BattlEyeChecker
+  goto GoingTo
   )
   if %ERRORLEVEL% == 8 (
   cls
@@ -515,13 +526,15 @@ set discord=discord.gg/EvrGzAV
   goto logtolog
   )
   if %ERRORLEVEL% == 10 (
-  goto ZeroFolderRenamer
+  set Position=ZeroFolderRenamer
+  goto GoingTo
   )
   if %ERRORLEVEL%==11 (
-  goto Update
+  set Position=Update
+  goto GoingTo
   )
   if %ERRORLEVEL% == 12 (
-  set Position=exitng
+  set Position=exiting
   set LOGTYPE=1
   set LOGINFO=Exited
   goto logtolog
@@ -569,7 +582,6 @@ set discord=discord.gg/EvrGzAV
   echo  DepotDownloader : Created by SteamRE, you can download any manifest once you have the game
   echo  R6-AIOTool : AllInOne Tool, many function. Based on R6 Manifest. Created by SlejmUr
   echo  R6 Manifest : Download R6 Old Version, it use DepotDownloader. Created by Zer0Bytes
-  echo FAQ readed>>log.log
   pause
   cls
   goto Notes
@@ -585,7 +597,6 @@ set discord=discord.gg/EvrGzAV
   echo  If you want to join testing phase, DM me on Discord
   echo  If you have a problem this tool, DM me on Discord
   echo  My Discord: SlejmUr#4007 or join on %discord%
-  echo Notes Readed - %TIME%>>log.log
   pause
   cls
   goto MainMenu
@@ -595,10 +606,10 @@ set discord=discord.gg/EvrGzAV
 
 ::GameMenu START
 :GameMenu
+  set Position=MainMenu
   cls
   Title R6:S GameMenu
   MODE 34,10
-  echo GameMenu Loaded>>log.log
   echo [93m---------------NOTES--------------[0m
   echo     Rainbow Six Siege Game Menu
   echo       Install/Uninstall/Start
@@ -606,24 +617,21 @@ set discord=discord.gg/EvrGzAV
   Resources\cmdmenusel f8f0 "    Install Rainbow Six Siege" "   Uninstall Rainbow Six Siege" "   Starting Rainbow Six Siege" "              Back"
 
   if %ERRORLEVEL% == 1 (
-  echo InstallMenu Chosen>>log.log
-  cls
-  goto InstallMenu
+  set Position=InstallMenu
+  goto GoingTo
   )
   if %ERRORLEVEL% == 2 (
-  echo UninstallMenu Chosen>>log.log
-  cls
-  goto UninstallMenu
+  set Position=UninstallMenu
+  goto GoingTo
   )
   if %ERRORLEVEL% == 3 (
-  echo StartGame Chosen>>log.log
-  cls
-  goto StartGame
+  set Position=StartGame
+  goto GoingTo
   )
   if %ERRORLEVEL% == 4 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto MainMenu
+  set "LOGINFO=Back to %Position%"
+  set LogNumber=1
+  goto logtolog
   )
   goto GameMenu
 ::GameMenu END
@@ -632,11 +640,11 @@ set discord=discord.gg/EvrGzAV
 
 ::InstallMenu START
 :InstallMenu
+  set Position=GameMenu
+  set LastSelector=InstallMenu
   cls
   Title Rainbow Six Siege InstallMenu
   MODE 50,14
-  echo InstallMenu Loaded>>log.log
-  set LastSelector=InstallMenu
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Install Selector
   echo          [31mExtra/4K now is unstable ^^![0m
@@ -644,39 +652,33 @@ set discord=discord.gg/EvrGzAV
   Resources\cmdmenusel f8f0 "   Version Downloader" "   Event Downloader" "   Release Downloader" "   Custom Downloader" "   4K Textures Downloader" "   Extra Language Downloader" "   Back"
 
   if %ERRORLEVEL% == 1 (
-  echo VersionMenu Chosen>>log.log
-  cls
-  goto VersionMenu
+  set Position=VersionMenu
+  goto GoingTo
   )
   if %ERRORLEVEL% == 2 (
-  echo EventMenu Chosen>>log.log
-  cls
-  goto EventMenu
+  set Position=EventMenu
+  goto GoingTo
   )
   if %ERRORLEVEL% == 3 (
-  echo ReleaseMenu Chosen>>log.log
-  cls
-  goto ReleaseMenu
+  set Position=ReleaseMenu
+  goto GoingTo
   )
   if %ERRORLEVEL% == 4 (
-  echo CustomMenu Chosen>>log.log
-  cls
-  goto CustomMenu
+  set Position=CustomMenu
+  goto GoingTo
   )
   if %ERRORLEVEL% == 5 (
-  echo TextureMenu Chosen>>log.log
-  cls
-  goto TextureMenu
+  set Position=TextureMenu
+  goto GoingTo
   )
   if %ERRORLEVEL% == 6 (
-  echo Extra Chosen>>log.log
-  cls
-  goto Extra
+  set Position=Extra
+  goto GoingTo
   )
   if %ERRORLEVEL% == 7 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto GameMenu
+  set "LOGINFO=Back to %Position%"
+  set LogNumber=1
+  goto logtolog
   )
   goto InstallMenu
 ::InstallMenu END
@@ -1786,6 +1788,8 @@ set discord=discord.gg/EvrGzAV
 
 ::UninstallMenu START
 :UninstallMenu
+  set Position=GameMenu
+  cls
   Title Rainbow Six Siege UninstallMenu
   echo UninstallMenu Loaded>>log.log
   MODE 50,40
@@ -1924,9 +1928,9 @@ set discord=discord.gg/EvrGzAV
   goto DeleteFolder
   )
   if %ERRORLEVEL%==33 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto GameMenu
+  set "LOGINFO=Back to %Position%"
+  set LogNumber=1
+  goto logtolog
   )
   goto UninstallMenu
 ::UninstallMenu END
@@ -1958,8 +1962,9 @@ set discord=discord.gg/EvrGzAV
 ::FULL STARTGAME START
 ::StartGame START
 :StartGame
+  set Position=GameMenu
+  cls
   Title Rainbow Six Siege Game Starter
-  echo StartGame Loaded>>log.log
   MODE 50,40
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Game Starter
@@ -2096,16 +2101,15 @@ set discord=discord.gg/EvrGzAV
   goto StartFolder
   )
   if %ERRORLEVEL%==33 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto GameMenu
+  set "LOGINFO=Back to %Position%"
+  set LogNumber=1
+  goto logtolog
   )
   goto StartGame
 ::StartGame END
 
 ::StartFolder START
 :StartFolder
-  cls
   echo %StartDir% Chosen [S]>>log.log
   goto BEcheck
 ::StartFolder END
@@ -2131,6 +2135,8 @@ set discord=discord.gg/EvrGzAV
 
 ::StartChoose START
 :StartChoose
+  set Position=GameMenu
+  cls
   MODE 50,10
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Start Choose
@@ -2147,9 +2153,9 @@ set discord=discord.gg/EvrGzAV
   goto gamestarter
   )
   if %ERRORLEVEL%==3 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto GameMenu
+  set "LOGINFO=Back to %Position%"
+  set LogNumber=1
+  goto logtolog
   )
   goto StartChoose
 ::StartChoose END
@@ -2177,6 +2183,7 @@ set discord=discord.gg/EvrGzAV
 
 ::dxvcredist START
 :dxvcredist
+  set Position=MainMenu
   cls
   Title DirectX + VC Redist Downloader
   MODE 41,10
@@ -2237,8 +2244,9 @@ set discord=discord.gg/EvrGzAV
   goto MainMenu
   )
   if %ERRORLEVEL% == 6 (
-  cls
-  goto MainMenu
+  set "LOGINFO=Back to %Position%"
+  set LogNumber=1
+  goto logtolog
   )
   goto dxvcredist
 ::dxvcredist END
