@@ -1,4 +1,3 @@
-@shift /0
 ::
 ::                        +hmNNNmh+    
 ::                       yMMMMMMMMMy  
@@ -12,19 +11,20 @@
 ::                       hMMy.NMMMMy  discord.gg/EvrGzAV
 ::                       `ohmNMNmh+   
 :: Zer0Bytes#4428 https://i.imgur.com/nBKIDOX.png
-:: Updated by SlejmUr#4007 Verified Dickhead
+:: Updated by SlejmUr#4007 ✓ Verified Dickhead
 ::
-
+@shift /0
 @echo off
 setlocal enableextensions enabledelayedexpansion
-set homepath=%cd%
-set AllInOneVersion=DEV
-set discord=discord.gg/EvrGzAV
 
 ::STARTUP
   Title STARTUP
   echo Loading...
   echo Please be patient ^^!
+  set homepath=%cd%
+  set AllInOneVersion=DEV
+  set discord=discord.gg/EvrGzAV
+  goto settime
 
 ::TIME SET START
 :settime
@@ -41,35 +41,12 @@ set discord=discord.gg/EvrGzAV
 ::TIME SET END
 
 
-::LOG start
+::logstart start
 :logstart
   echo.>>log.log
   echo %TIME% ^| INFO ^| Started %AllInOneVersion%>>log.log
   goto github
-::LOG end
-
-:logtolog
-:: 
-:: 1 = INFO
-:: 2 = WARN
-:: 3 = ERROR
-::
-  if %LogNumber%==1 (
-    set LOGTYPE=INFO
-  )
-  if %LogNumber%==2 (
-    set LOGTYPE=WARN
-  )
-  if %LogNumber%==3 (
-    set LOGTYPE=ERROR
-  )
-  echo %TIME% ^| %LOGTYPE% ^| %LOGINFO%>>log.log
-  goto %Position%
-
-:GoingTo
-  set LOGINFO=Going to %Position%
-  set LogNumber=1
-  goto logtolog
+::logstart end
 
 ::Github Connect START
 :github
@@ -97,49 +74,25 @@ set discord=discord.gg/EvrGzAV
 :SiniCheck
   MODE 62,50
   if exist "Resources\Settings.ini" (
-    goto SiniSet
+    goto dotnetSET
   ) else (
     mkdir Resources
     goto noSini
   )
 
 :noSini
-  set Position=moveS
+  set Position=SiniCheck
   MODE 78,20
   echo ------------------------------------------------------------------------------
   echo                              Downloading Settings.ini...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/Settings.ini" --output Settings.ini
-  set LOGINFO=Settings.ini Downloaded
-  set LogNumber=1
-  goto logtolog
-
-
-:moveS
-  set Position=SiniCheck
   move Settings.ini Resources
-  set LOGINFO=Settings.ini Moved
+  set LOGINFO=Settings.ini Downloaded and Moved
   set LogNumber=1
   goto logtolog
 ::Settings.ini get END
 
-
-
-::S:INI SET / Finder START
-:SiniSet
-  ::Checkers
-  set Dotnet=1
-  set zip=1
-  set Depot=1
-  set Plaza=1
-  ::Sets
-  set SteamName=1
-  set DevVersion=0
-  set Position=dotnetSET
-  set LOGINFO=Settings.ini Set to Default Settings
-  set LogNumber=1
-  goto logtolog
-::S:INI SET / Finder END
 
 ::SET Things START
 :: SET CHECKERS START
@@ -267,7 +220,7 @@ set discord=discord.gg/EvrGzAV
   echo ---------------------------------------
   start www.tinyurl.com/dotnetruntimer6
   pause
-  set LOGINFO=Install .NET Runtime
+  set LOGINFO= .NET Runtime not found, please Install it!
   set LogNumber=3
   goto logtolog
 
@@ -316,7 +269,6 @@ set discord=discord.gg/EvrGzAV
   echo                              Downloading 7-Zip...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/DataCluster0/R6TBBatchTool/raw/master/Requirements/7z.exe" --output 7z.exe
-  cls
   move 7z.exe Resources
   set LOGINFO=7zip Successfully Downloaded and Moved
   set LogNumber=1
@@ -341,29 +293,20 @@ set discord=discord.gg/EvrGzAV
   )
 
 :DepotDownloader
-  set Position=extractDD
+  set Position=DepotCheck
   cls
   MODE 78,20
   echo ------------------------------------------------------------------------------
   echo                        Downloading DepotDownloader...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.3.6/depotdownloader-2.3.6.zip" --output depot.zip
-  cls
-  set LOGINFO=DepotDownloader Successfully Downloaded
+  ::Extract
+  for %%I in ("depot.zip") do (
+    "Resources\7z.exe" x -y -o"Resources\DepotDownloader" "%%I" -aoa && del %%I
+  )
+  set LOGINFO=DepotDownloader Successfully Downloaded and Extracted
   set LogNumber=1
   goto logtolog
-
-:extractDD
-  set Position=DepotCheck
-  for %%I in ("depot.zip") do (
-    echo extractDD
-    "Resources\7z.exe" x -y -o"Resources\DepotDownloader" "%%I" -aoa && del %%I
-    cls
-    set LOGINFO=DepotDownloader Successfully extracted
-    set LogNumber=1
-    goto logtolog
-  )
-  goto extractDD
 ::DD end
 
 ::Plaza Start
@@ -376,7 +319,6 @@ set discord=discord.gg/EvrGzAV
   goto ifPlaza
 
 :PlazaCheck
-  cls
   if exist "Resources\Plazas\PLAZA_BO\CODEX.ini" (
     goto cmdCheck 
   ) else (
@@ -385,29 +327,20 @@ set discord=discord.gg/EvrGzAV
   goto PlazaCheck
 
 :GetPlaza
-  set Position=extractPlaza
+  set Position=PlazaCheck
   cls
   MODE 78,20
   echo ------------------------------------------------------------------------------
   echo                        Downloading Plazas...
   echo ------------------------------------------------------------------------------
   curl -L  "https://cdn.discordapp.com/attachments/722089860755881996/743466352475635832/Plazas.zip" --output plazas.zip
-  cls
-  set LOGINFO=Plazas Successfully Downloaded
-  set LogNumber=1
-  goto logtolog
-
-:extractPlaza
-  set Position=PlazaCheck
+  ::Extract
   for %%I in ("plazas.zip") do (
-  echo extractPlaza
   "Resources\7z.exe" x -y -o"Resources\" "%%I" -aoa && del %%I
-  cls
-  set LOGINFO=Plazas Successfully extracted
+  )
+  set LOGINFO=Plazas Successfully Downloaded and Extracted
   set LogNumber=1
   goto logtolog
-  )
-  goto extractPlaza
 ::Plaza End
 
 
@@ -430,7 +363,6 @@ set discord=discord.gg/EvrGzAV
   echo                        Downloading cmdmenusel...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/cmdmenusel.exe" --output cmdmenusel.exe
-  cls
   move cmdmenusel.exe Resources
   set LOGINFO=cmdmenusel Successfully Downloaded and Moved
   set LogNumber=1
@@ -455,7 +387,7 @@ set discord=discord.gg/EvrGzAV
   echo Please type your Steam Legacy name!
   set /p username="Enter Steam Username:"
   cls
-  set "LOGINFO=Steam Legacy Name (Username) set to %username%"
+  set "LOGINFO=Steam Legacy Name [Username] set to %username%"
   set LogNumber=1
   goto logtolog
 ::SetSteam END
@@ -478,8 +410,8 @@ set discord=discord.gg/EvrGzAV
   echo  Steam User: [96m%username%[0m
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
-  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit"
-  
+  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit" " "
+
   if %ERRORLEVEL% == 1 (
   set Position=faq
   goto GoingTo
@@ -538,6 +470,9 @@ set discord=discord.gg/EvrGzAV
   set LOGTYPE=1
   set LOGINFO=Exited
   goto logtolog
+  )
+  if %ERRORLEVEL% == 13 (
+  start Devlog.txt
   )
   goto MainMenu
 ::MainMenu END
@@ -606,7 +541,6 @@ set discord=discord.gg/EvrGzAV
 
 ::GameMenu START
 :GameMenu
-  set Position=MainMenu
   cls
   Title R6:S GameMenu
   MODE 34,10
@@ -629,9 +563,8 @@ set discord=discord.gg/EvrGzAV
   goto GoingTo
   )
   if %ERRORLEVEL% == 4 (
-  set "LOGINFO=Back to %Position%"
-  set LogNumber=1
-  goto logtolog
+  set Position=MainMenu
+  goto BackTo
   )
   goto GameMenu
 ::GameMenu END
@@ -640,7 +573,6 @@ set discord=discord.gg/EvrGzAV
 
 ::InstallMenu START
 :InstallMenu
-  set Position=GameMenu
   set LastSelector=InstallMenu
   cls
   Title Rainbow Six Siege InstallMenu
@@ -676,9 +608,8 @@ set discord=discord.gg/EvrGzAV
   goto GoingTo
   )
   if %ERRORLEVEL% == 7 (
-  set "LOGINFO=Back to %Position%"
-  set LogNumber=1
-  goto logtolog
+  set Position=GameMenu
+  goto BackTo
   )
   goto InstallMenu
 ::InstallMenu END
@@ -689,7 +620,6 @@ set discord=discord.gg/EvrGzAV
   cls
   Title Rainbow Six Siege VersionMenu
   MODE 50,30
-  echo VersionMenu Loaded>>log.log
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Version Selector
   echo      Manifests is from Zer0Bytes Manifest tool
@@ -937,9 +867,8 @@ set discord=discord.gg/EvrGzAV
   goto InstallMenu
   )
   if %ERRORLEVEL% == 21 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto InstallMenu
+  set Position=InstallMenu
+  goto BackTo
   )
   goto VersionMenu
 ::VersionMenu END
@@ -950,7 +879,6 @@ set discord=discord.gg/EvrGzAV
   cls
   Title Rainbow Six Siege ReleaseMenu
   MODE 50,30
-  echo ReleaseMenu Loaded>>log.log
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Release Selector
   echo      Only new, released version of game build
@@ -1120,9 +1048,8 @@ set discord=discord.gg/EvrGzAV
   goto InstallMenu
   )
   if %ERRORLEVEL% == 22 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto InstallMenu
+  set Position=InstallMenu
+  goto BackTo
   )
   goto ReleaseMenu
 ::ReleaseMenu END
@@ -1133,7 +1060,6 @@ set discord=discord.gg/EvrGzAV
   cls
   Title Rainbow Six Siege Event Downloader
   MODE 52,25
-  echo EventMenu Loaded>>log.log
   echo [93m-----------------------NOTES------------------------[0m
   echo   Outback is same with normal Chimera
   echo   Road To S.I. is same with normal Shifting Tides
@@ -1182,9 +1108,8 @@ set discord=discord.gg/EvrGzAV
   goto InstallMenu
   )
   if %ERRORLEVEL% == 11 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto InstallMenu
+  set Position=InstallMenu
+  goto BackTo
   )
   goto EventMenu
 ::EventMenu END
@@ -1195,7 +1120,6 @@ set discord=discord.gg/EvrGzAV
   cls
   Title Rainbow Six Siege CustomMenu
   MODE 50,20
-  echo CustomMenu Loaded>>log.log
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Custom Selector
   echo            You need set everything ^^!
@@ -1279,9 +1203,8 @@ set discord=discord.gg/EvrGzAV
   goto CustomMenu
   )
   if %ERRORLEVEL% == 7 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto InstallMenu
+  set Position=InstallMenu
+  goto BackTo
   )
   goto CustomMenu
 ::CustomMenu END
@@ -1292,7 +1215,6 @@ set discord=discord.gg/EvrGzAV
   cls
   Title Rainbow Six Siege 4K Textures Downloader
   MODE 50,10
-  echo TextureMenu Loaded >>log.log
   echo [93m----------------------NOTES-----------------------[0m
   echo                   4K Textures Selector
   echo   Insert note here 
@@ -1300,30 +1222,24 @@ set discord=discord.gg/EvrGzAV
   Resources\cmdmenusel f8f0 "   4k Release" "   4k Version" "   4k Event" "   Back"
 
   if %ERRORLEVEL% == 1 (
-  echo 4kRelease Chosen>>log.log
-  cls
-  goto 4kRelease
+  set Position=4kRelease
+  goto GoingTo
   )
   if %ERRORLEVEL% == 2 (
-  echo 4kVersion Chosen>>log.log
-  cls
-  goto 4kVersion
+  set Position=4kVersion
+  goto GoingTo
   )
   if %ERRORLEVEL% == 3 (
-  echo 4kEvent Chosen>>log.log
-  cls
-  goto 4kEvent
+  set Position=4kEvent
+  goto GoingTo
   )
   if %ERRORLEVEL% == 4 (
-  cls
     if %LastSelector% == MainMenu (
-      echo Back to %LastSelector% - %TIME%>>log.log
-      cls
-      goto MainMenu
+      set Position=MainMenu
+      goto BackTo
     ) else (
-      echo Back - %TIME%>>log.log
-      cls
-      goto InstallMenu
+      set Position=InstallMenu
+      goto BackTo
     )
   )
   goto TextureMenu
@@ -1334,7 +1250,6 @@ set discord=discord.gg/EvrGzAV
   cls
   Title Rainbow Six Siege 4K Version Downloader
   MODE 50,38
-  echo 4kRelease Loaded >>log.log
   echo [93m----------------------NOTES-----------------------[0m
   echo   Health, White Noise, Void Edge, Vanilla, etc...
   echo   Stuff is same with in R6Manifest / 4kRelease
@@ -1548,11 +1463,10 @@ set discord=discord.gg/EvrGzAV
   goto InstallMenu
   )
   if %ERRORLEVEL% == 20 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto GameMenu
+  set Position=GameMenu
+  goto BackTo
   )
-  4kVersion
+  goto 4kVersion
 ::4kVersion END
 
 ::4kRelease START
@@ -1560,7 +1474,6 @@ set discord=discord.gg/EvrGzAV
   cls
   Title Rainbow Six Siege 4K Release Downloader
   MODE 50,38
-  echo 4kRelease Loaded >>log.log
   echo [93m----------------------NOTES-----------------------[0m
   echo   Health, White Noise, Void Edge, Vanilla, etc...
   echo   Stuff is same with in R6Manifest / 4kVersion
@@ -1720,9 +1633,8 @@ set discord=discord.gg/EvrGzAV
   goto InstallMenus
   )
   if %ERRORLEVEL% == 22 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto TextureMenu
+  set Position=TextureMenu
+  goto BackTo
   )
   goto 4kRelease
 ::4kRelease END
@@ -1732,7 +1644,6 @@ set discord=discord.gg/EvrGzAV
   cls
   Title Rainbow Six Siege 4K Event Downloader
   MODE 50,38
-  echo 4kRelease Loaded >>log.log
   echo [93m----------------------NOTES-----------------------[0m
   echo   Outback is same with normal Chimera
   echo   Road To S.I. is same with normal Shifting Tides
@@ -1777,21 +1688,18 @@ set discord=discord.gg/EvrGzAV
   goto InstallMenu
   )
   if %ERRORLEVEL% == 10 (
-  echo Back - %TIME%>>log.log
-  cls
-  goto GameMenu
+  set Position=GameMenu
+  goto BackTo
   )
-  4kEvent
+  goto 4kEvent
 ::4kEvent END
 
 
 
 ::UninstallMenu START
 :UninstallMenu
-  set Position=GameMenu
   cls
   Title Rainbow Six Siege UninstallMenu
-  echo UninstallMenu Loaded>>log.log
   MODE 50,40
   echo [93m-----------------------NOTES----------------------[0m
   echo                   Uninstall Menu
@@ -1801,136 +1709,135 @@ set discord=discord.gg/EvrGzAV
 
   if %ERRORLEVEL%==1 (
   set DeleteDir="R6Downloads\Y1S0_Vanilla"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==2 (
   set DeleteDir="R6Downloads\Y1S1_Black_Ice"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==3 (
   set DeleteDir="R6Downloads\Y1S2_Dust_Line"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==4 (
   set DeleteDir="R6Downloads\Y1S3_Skull_Rain"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==5 (
   set DeleteDir="R6Downloads\Y1S3_SkullRain"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==6 (
   set DeleteDir="R6Downloads\Y1S4_Red_Crow"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==7 (
   set DeleteDir="R6Downloads\Y2S1_Velvet_Shell"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==8 (
   set DeleteDir="R6Downloads\Y2S2_Health"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==9 (
   set DeleteDir="R6Downloads\Y2S2_Health_2"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==10 (
   set DeleteDir="R6Downloads\Y2S3_Blood_Orchid"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==11 (
   set DeleteDir="R6Downloads\Y2S3_BloodOrchid"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==12 (
   set DeleteDir="R6Downloads\Y2S4_White_Noise"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==13 (
   set DeleteDir="R6Downloads\Y2S4_WhiteNoise"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==14 (
   set DeleteDir="R6Downloads\Y3S1_Chimera"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==15 (
   set DeleteDir="R6Downloads\Y3S2_Para_Bellum"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==16 (
   set DeleteDir="R6Downloads\Y3S3_Grim_Sky"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==17 (
   set DeleteDir="R6Downloads\Y3S3_MadHouse"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==18 (
   set DeleteDir="R6Downloads\Y3S4_Wind_Bastion"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==19 (
   set DeleteDir="R6Downloads\Y4S1_Burnt_Horizon"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==20 (
   set DeleteDir="R6Downloads\Y4S1_RainbowIsMagic"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==21 (
   set DeleteDir="R6Downloads\Y4S2_Phantom_Sight"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==22 (
   set DeleteDir="R6Downloads\Y4S3_Ember_Rise"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==23 (
   set DeleteDir="R6Downloads\Y4S3_DoktorsCurse"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==24 (
   set DeleteDir="R6Downloads\Y4S4_Shifting_Tides"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==25 (
   set DeleteDir="R6Downloads\Y5S1_Void_Edge"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==26 (
   set DeleteDir="R6Downloads\Y5S1_GangDestruction"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==27 (
   set DeleteDir="R6Downloads\Y5S2_Steel_Wave"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==28 (
   set DeleteDir="R6Downloads\Y5S2_MUTE"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==29 (
   set DeleteDir="R6Downloads\Y5S2_SteelWave"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==30 (
   set DeleteDir="R6Downloads\Y5S3_Shadow_Legacy"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==31 (
   set DeleteDir="R6Downloads\Y5S3_Sugar_Fright"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==32 (
   set DeleteDir="R6Downloads\Y5S4_Neon_Dawn"
-  goto DeleteFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==33 (
-  set "LOGINFO=Back to %Position%"
-  set LogNumber=1
-  goto logtolog
+  set Position=GameMenu
+  goto BackTo
   )
   goto UninstallMenu
 ::UninstallMenu END
@@ -1939,21 +1846,18 @@ set discord=discord.gg/EvrGzAV
 :DeleteFolder
   MODE 60,20
   cls
-  echo %DeleteDir% Chosen [U]>>log.log
   rd /s /q %DeleteDir% 2>nul || echo Error^^!
   if errorlevel 2 (
-    echo Selected folder doesn^'t exist.>>log.log
     echo Make sure you^'ve selected the correct download folder.
     pause
-    goto UninstallMenu
+    goto Failed
     )
   if errorlevel 0 (
     echo Waiting to fully delete the folder.
     timeout /t 4 >nul 
-    echo %DeleteDir% deleted [U]>>log.log
     echo Folder deleted^^!
     pause
-    goto GameMenu
+    goto DeleteDone
   )
 ::DeleteFolder END
 
@@ -1962,7 +1866,6 @@ set discord=discord.gg/EvrGzAV
 ::FULL STARTGAME START
 ::StartGame START
 :StartGame
-  set Position=GameMenu
   cls
   Title Rainbow Six Siege Game Starter
   MODE 50,40
@@ -1974,159 +1877,156 @@ set discord=discord.gg/EvrGzAV
 
   if %ERRORLEVEL%==1 (
   set StartDir=R6Downloads\Y1S0_Vanilla
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==2 (
   set StartDir=R6Downloads\Y1S1_Black_Ice
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==3 (
   set StartDir=R6Downloads\Y1S2_Dust_Line
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==4 (
   set StartDir=R6Downloads\Y1S3_Skull_Rain
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==5 (
   set StartDir=R6Downloads\Y1S3_SkullRain
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==6 (
   set StartDir=R6Downloads\Y1S4_Red_Crow
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==7 (
   set StartDir=R6Downloads\Y2S1_Velvet_Shell
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==8 (
   set StartDir=R6Downloads\Y2S2_Health
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==9 (
   set StartDir=R6Downloads\Y2S2_Health_2
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==10 (
   set StartDir=R6Downloads\Y2S3_Blood_Orchid
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==11 (
   set StartDir=R6Downloads\Y2S3_BloodOrchid
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==12 (
   set StartDir=R6Downloads\Y2S4_White_Noise
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==13 (
   set StartDir=R6Downloads\Y2S4_WhiteNoise
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==14 (
   set StartDir=R6Downloads\Y3S1_Chimera
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==15 (
   set StartDir=R6Downloads\Y3S2_Para_Bellum
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==16 (
   set StartDir=R6Downloads\Y3S3_Grim_Sky
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==17 (
   set StartDir=R6Downloads\Y3S3_MadHouse
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==18 (
   set StartDir=R6Downloads\Y3S4_Wind_Bastion
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==19 (
   set StartDir=R6Downloads\Y4S1_Burnt_Horizon
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==20 (
   set StartDir=R6Downloads\Y4S1_RainbowIsMagic
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==21 (
   set StartDir=R6Downloads\Y4S2_Phantom_Sight
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==22 (
   set StartDir=R6Downloads\Y4S3_Ember_Rise
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==23 (
   set StartDir=R6Downloads\Y4S3_DoktorsCurse
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==24 (
   set StartDir=R6Downloads\Y4S4_Shifting_Tides
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==25 (
   set StartDir=R6Downloads\Y5S1_Void_Edge
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==26 (
   set StartDir=R6Downloads\Y5S1_GangDestruction
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==27 (
   set StartDir=R6Downloads\Y5S2_Steel_Wave
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==28 (
   set StartDir=R6Downloads\Y5S2_MUTE
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==29 (
   set StartDir=R6Downloads\Y5S2_SteelWave
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==30 (
   set StartDir=R6Downloads\Y5S3_Shadow_Legacy
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==31 (
   set StartDir=R6Downloads\Y5S3_Sugar_Fright
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==32 (
   set StartDir=R6Downloads\Y5S4_Neon_Dawn
-  goto StartFolder
+  goto SelectToCheck
   )
   if %ERRORLEVEL%==33 (
-  set "LOGINFO=Back to %Position%"
-  set LogNumber=1
-  goto logtolog
+  set Position=GameMenu
+  goto BackTo
   )
   goto StartGame
 ::StartGame END
 
-::StartFolder START
-:StartFolder
-  echo %StartDir% Chosen [S]>>log.log
-  goto BEcheck
-::StartFolder END
-
 ::BE Disable/ RSG Skip START
   :BEcheck
   if exist "%StartDir%\RainbowSix_BE.exe" (
-    echo Founded RainbowSix_BE.exe >>log.log
-    goto StartChoose
+    set Position=StartChoose
+    set LOGINFO=RainbowSix_BE.exe Founded
+    set LogNumber=1
+    goto logtolog
     )
     goto nothaveBE
 
   :nothaveBE
   if exist "%StartDir%\RainbowSixGame.exe" (
-    echo Founded RainbowSixGame.exe >>log.log
     set startexe=%StartDir%\RainbowSixGame.exe
-    goto gamestarter
+    set Position=GameStarter
+    set LOGINFO=RainbowSixGame.exe Founded
+    set LogNumber=1
+    goto logtolog
     ) else (
     goto StartGame
     )
@@ -2135,7 +2035,6 @@ set discord=discord.gg/EvrGzAV
 
 ::StartChoose START
 :StartChoose
-  set Position=GameMenu
   cls
   MODE 50,10
   echo [93m-----------------------NOTES----------------------[0m
@@ -2146,16 +2045,15 @@ set discord=discord.gg/EvrGzAV
 
   if %ERRORLEVEL%==1 (
   set startexe=%StartDir%\RainbowSix.exe
-  goto gamestarter
+  goto GameStarter
   )
   if %ERRORLEVEL%==2 (
   set startexe=%StartDir%\RainbowSix_Vulkan.exe
-  goto gamestarter
+  goto GameStarter
   )
   if %ERRORLEVEL%==3 (
-  set "LOGINFO=Back to %Position%"
-  set LogNumber=1
-  goto logtolog
+  set Position=GameMenu
+  goto BackTo
   )
   goto StartChoose
 ::StartChoose END
@@ -2165,10 +2063,12 @@ set discord=discord.gg/EvrGzAV
   cls
   MODE 60,20
   echo Starting : %startexe%
-  echo Starting : %startexe% >>log.log
   start %startexe% /belaunch
   pause
-  goto GameMenu
+  set Position=GameMenu
+  set LOGINFO=%startexe% Started
+  set LogNumber=1
+  goto logtolog
 ::GameStarter END
 ::FULL STARTGAME END
 
@@ -2183,11 +2083,9 @@ set discord=discord.gg/EvrGzAV
 
 ::dxvcredist START
 :dxvcredist
-  set Position=MainMenu
   cls
   Title DirectX + VC Redist Downloader
   MODE 41,10
-  echo dxvcredist Loaded>>log.log
   echo [93m------------------NOTES------------------[0m
   echo     DirectX + VC Redist Downloader
   echo [93m------------------SELECT-----------------[0m
@@ -2244,9 +2142,8 @@ set discord=discord.gg/EvrGzAV
   goto MainMenu
   )
   if %ERRORLEVEL% == 6 (
-  set "LOGINFO=Back to %Position%"
-  set LogNumber=1
-  goto logtolog
+  set Position=MainMenu
+  goto BackTo
   )
   goto dxvcredist
 ::dxvcredist END
@@ -2350,8 +2247,89 @@ set discord=discord.gg/EvrGzAV
   goto logtolog
 ::BattlEyeChecker END
 
+::LOG THINGS START
+  :logtolog
+    if %LogNumber%==1 (
+      set LOGTYPE=INFO
+    )
+    if %LogNumber%==2 (
+      set LOGTYPE=WARN
+    )
+    if %LogNumber%==3 (
+      set LOGTYPE=ERROR
+    )
+    echo %TIME% ^| %LOGTYPE% ^| %LOGINFO%>>log.log
+    goto %Position%
+
+  :GoingTo
+    set LOGINFO=Going to %Position%
+    set LogNumber=1
+    goto logtolog
+
+  :BackTo
+    set LOGINFO=Back to %Position%
+    set LogNumber=1
+    goto logtolog
+
+  :SelectToCheck
+    if [%DeleteDir%]==[] (
+    goto StartDirCheck
+    ) else (
+    goto DeleteDirCheck
+    )
+    if [%StartDir%]==[] (
+    goto Failed
+    ) else (
+    goto StartDirCheck
+    )
+    goto Failed
 
 
+  :StartDirCheck
+    if exist "%StartDir%\RainbowSix.exe" (
+      set "Selected=%StartDir%"
+      goto StartDirFound
+    ) else (
+      goto Failed
+    )
+    goto Failed
+
+  :StartDirFound
+    set Position=BEcheck
+    set LOGINFO=%Selected% Selected to Started
+    set LogNumber=1
+    goto logtolog
+
+
+  :DeleteDirCheck
+    if %DeleteDir%==[] (
+    goto FailedToDelete
+    ) else (
+    set "Selected=%DeleteDir%"
+    goto DeleteDirFound
+    )
+    goto DeleteDirCheck
+
+  :DeleteDirFound
+    set Position=DeleteFolder
+    set LOGINFO=%Selected% Selected to Deleted
+    set LogNumber=1
+    goto logtolog
+
+  :DeleteDone
+    set Position=GameMenu
+    set LOGINFO=%Selected% Successfully Deleted
+    set LogNumber=1
+    goto logtolog
+
+  :Failed
+    set Position=GameMenu
+    set LOGINFO=Selected folder doesn't exist, moved to GameMenu
+    set LogNumber=2
+    goto logtolog
+::LOG THINGS END
+
+::Exiting
 :exiting
   echo. >>log.log
   exit
