@@ -349,7 +349,7 @@ setlocal enableextensions enabledelayedexpansion
 :cmdCheck
   cls
   if exist "Resources\cmdmenusel.exe" (
-    goto ifSteam 
+    goto ReplacerCheck 
   ) else (
     goto GetCmd
   )
@@ -369,6 +369,30 @@ setlocal enableextensions enabledelayedexpansion
   goto logtolog
 ::cmdmenusel END
 
+::replacer START
+:ReplacerCheck
+  cls
+  if exist "Resources\replacer.exe" (
+    goto ifSteam 
+  ) else (
+    goto GetReplacer
+  )
+  goto ReplacerCheck
+
+:GetReplacer
+  set Position=ReplacerCheck
+  cls
+  MODE 78,20
+  echo ------------------------------------------------------------------------------
+  echo                        Downloading replacer...
+  echo ------------------------------------------------------------------------------
+  curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/replacer.exe" --output replacer.exe
+  move replacer.exe Resources
+  set LOGINFO=Replacer Successfully Downloaded and Moved
+  set LogNumber=1
+  goto logtolog
+::replacer END
+
 
 
 ::SetSteam START
@@ -382,7 +406,7 @@ setlocal enableextensions enabledelayedexpansion
   goto ifSteam
 
 :SetSteam
-  set Position=MainMenu
+  set Position=PopUpCheck
   MODE 78,20
   echo Please type your Steam Legacy name!
   set /p username="Enter Steam Username:"
@@ -393,6 +417,16 @@ setlocal enableextensions enabledelayedexpansion
 ::SetSteam END
 
 
+::FAQ popup START
+:PopUpCheck
+  findstr /m "POPUP=1" Resources\Settings.ini >Nul
+  if %errorlevel%==0 (
+  goto faq
+  )
+  if %errorlevel%==1 (
+  goto MainMenu
+  )
+::FAQ popup END
 
 ::MainMenu START
 :MainMenu
@@ -535,6 +569,7 @@ setlocal enableextensions enabledelayedexpansion
   echo  If you want to join testing phase, DM me on Discord
   echo  If you have a problem this tool, DM me on Discord
   echo  My Discord: SlejmUr#4007 or join on %discord%
+  Resources\replacer.exe Resources\Settings.ini POPUP=1 POPUP=0 >nul
   pause
   cls
   goto MainMenu
