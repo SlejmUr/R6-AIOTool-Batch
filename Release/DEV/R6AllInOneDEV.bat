@@ -38,13 +38,12 @@ setlocal enableextensions enabledelayedexpansion
   SET All=%%B-%%C-%%D_%%E-%%F-%%G
   SET logzip=%%B-%%C-%%D
   )
-  goto logsize
+  goto LogCheck
 ::TIME SET END
 
 
 ::logstart start
 :logstart
-  echo.>>log.log
   echo %TIME% ^| INFO ^| Started %AllInOneVersion%>>log.log
   goto github
 ::logstart end
@@ -261,18 +260,17 @@ setlocal enableextensions enabledelayedexpansion
   )
   goto 7zipcheck
 
-
 :Emer7zip
+  set Position=LogZipping
   cls
   echo ------------------------------------------------------------------------------
   echo                       Emergency Downloading 7-Zip...
   echo ------------------------------------------------------------------------------
   curl -L  "https://github.com/DataCluster0/R6TBBatchTool/raw/master/Requirements/7z.exe" --output 7z.exe
   move 7z.exe Resources
-  goto logexist
-
-
-
+  set LOGINFO=Emergency 7zip Successfully Downloaded and Moved, Compressing....
+  set LogNumber=1
+  goto logtolog
 
 :no7zip
   set Position=7zipcheck
@@ -423,8 +421,7 @@ setlocal enableextensions enabledelayedexpansion
   MODE 78,20
   echo Please type your Steam Legacy name!
   set /p username="Enter Steam Username:"
-  cls
-  set "LOGINFO=Steam Legacy Name [Username] set to %username%"
+  set "LOGINFO=Steam Legacy Name [Username] set to %username% "
   set LogNumber=1
   goto logtolog
 ::SetSteam END
@@ -2398,41 +2395,41 @@ setlocal enableextensions enabledelayedexpansion
 ::BattlEyeChecker END
 
 ::LOG THINGS START
-  :logsize
-    set maxlogsize=102400
+  :LogCheck
+    if exist "log.log" (
+    goto SizeCheck
+    ) else (
+    echo.>>log.log
+    goto logstart
+    )
+
+  :SizeCheck
+  set maxlogsize=102400
+  FOR /F "usebackq" %%A IN ('log.log') DO set size=%%~zA
+  IF %size% LSS %maxlogsize% ( 
+    echo.>>log.log
+    set Position=logstart
+    set LogNumber=1
+    set "LOGINFO=Log file smaller than %maxlogsize% Byte, Continue..."
+    goto logtolog
+    ) else ( 
+    set Position=LogZipping
+    set LogNumber=2
+    set "LOGINFO=Log file bigger than %maxlogsize% Byte, Zipping..."
+    goto logtolog
+    )
+
+  :LogZipping
     if exist "Resources\7z.exe" (
-      goto logexist
+      mkdir logs
+      "Resources\7z.exe" a -tzip -y %logzip%.zip log.log -mmt >nul
+      move %logzip%.zip logs >nul
+      del log.log >nul
+      goto logstart
     ) else (
       mkdir Resources
       goto Emer7zip
     )
-
-  :logexist
-    if exist "log.log" (
-    mkdir logs
-    goto logzipping
-    ) else (
-    goto logstart
-    )
-    goto logstart
-
-:logzipping
-  FOR /F "usebackq" %%A IN ('log.log') DO set size=%%~zA
-  IF %size% LSS %maxlogsize% ( 
-    :: Kisebb
-    goto logstart
-    ) else ( 
-    :: Nagyobb 
-    goto zipthelog
-    )
-
-:zipthelog
-  "Resources\7z.exe" a -tzip -y %logzip%.zip log.log -mmt >nul
-  move %logzip%.zip logs >nul
-  del log.log >nul
-  goto logstart
-
-
 
   :logtolog
     if %LogNumber%==1 (
