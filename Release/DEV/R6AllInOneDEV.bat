@@ -1405,7 +1405,7 @@ setlocal enableextensions enabledelayedexpansion
   echo Skull Rain 4k [Zero]
   pause
   cls
-  set Downloaded=Skull Rain 4k [Zero]
+  set Downloaded=Skull Rain 4K [Zero]
   goto DownloadCheck
   )
   if %ERRORLEVEL%==5 (
@@ -1441,7 +1441,7 @@ setlocal enableextensions enabledelayedexpansion
   echo Health 4k [Zero]
   pause
   cls
-  set Downloaded=Health 4K
+  set Downloaded=Health 4K [Zero]
   goto DownloadCheck
   )
   if %ERRORLEVEL%==8 (
@@ -1453,7 +1453,7 @@ setlocal enableextensions enabledelayedexpansion
   echo Blood Orchid 4k [Zero]
   pause
   cls
-  set Downloaded=Blood Orchid 4K
+  set Downloaded=Blood Orchid 4K [Zero]
   goto DownloadCheck
   )
   if %ERRORLEVEL%==9 (
@@ -1465,7 +1465,7 @@ setlocal enableextensions enabledelayedexpansion
   echo White Noise 4k [Zero]
   pause
   cls
-  set Downloaded=White Noise 4K
+  set Downloaded=White Noise 4K [Zero]
   goto DownloadCheck
   )
   if %ERRORLEVEL%==10 (
@@ -1498,7 +1498,7 @@ setlocal enableextensions enabledelayedexpansion
   dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
   echo.
   echo Download complete Thanks Zer0 ^^!
-  echo MadHouse 4k
+  echo MadHouse 4k 
   pause
   cls
   set Downloaded=Mad House 4K
@@ -1513,7 +1513,7 @@ setlocal enableextensions enabledelayedexpansion
   echo It's Wind Bastion 4K^^!
   pause
   cls
-  set Downloaded=Wind Bastion  4K
+  set Downloaded=Wind Bastion 4K
   goto DownloadCheck
   )
   if %ERRORLEVEL%==14 (
