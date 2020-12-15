@@ -36,8 +36,9 @@ setlocal enableextensions enabledelayedexpansion
   SET Minutes=%%F
   SET Seconds=%%G
   SET All=%%B-%%C-%%D_%%E-%%F-%%G
+  SET logzip=%%B-%%C-%%D
   )
-  goto logstart
+  goto logsize
 ::TIME SET END
 
 
@@ -72,7 +73,6 @@ setlocal enableextensions enabledelayedexpansion
 
 ::Settings.ini get START
 :SiniCheck
-  MODE 62,50
   if exist "Resources\Settings.ini" (
     goto dotnetSET
   ) else (
@@ -261,6 +261,19 @@ setlocal enableextensions enabledelayedexpansion
   )
   goto 7zipcheck
 
+
+:Emer7zip
+  cls
+  echo ------------------------------------------------------------------------------
+  echo                       Emergency Downloading 7-Zip...
+  echo ------------------------------------------------------------------------------
+  curl -L  "https://github.com/DataCluster0/R6TBBatchTool/raw/master/Requirements/7z.exe" --output 7z.exe
+  move 7z.exe Resources
+  goto logexist
+
+
+
+
 :no7zip
   set Position=7zipcheck
   cls
@@ -333,7 +346,7 @@ setlocal enableextensions enabledelayedexpansion
   echo ------------------------------------------------------------------------------
   echo                        Downloading Plazas...
   echo ------------------------------------------------------------------------------
-  curl -L  "https://cdn.discordapp.com/attachments/722089860755881996/743466352475635832/Plazas.zip" --output plazas.zip
+  curl -L  "https://cdn.discordapp.com/attachments/722089860755881996/788352276497825802/Plazas.zip" --output plazas.zip
   ::Extract
   for %%I in ("plazas.zip") do (
   "Resources\7z.exe" x -y -o"Resources\" "%%I" -aoa && del %%I
@@ -444,7 +457,7 @@ setlocal enableextensions enabledelayedexpansion
   echo  Steam User: [96m%username%[0m
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
-  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit" "  Devlog" "  Codex Renamer"
+  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit" "  Devlog" "  Codex Renamer and Move"
 
   if %ERRORLEVEL% == 1 (
   set Position=faq
@@ -2385,6 +2398,42 @@ setlocal enableextensions enabledelayedexpansion
 ::BattlEyeChecker END
 
 ::LOG THINGS START
+  :logsize
+    set maxlogsize=102400
+    if exist "Resources\7z.exe" (
+      goto logexist
+    ) else (
+      mkdir Resources
+      goto Emer7zip
+    )
+
+  :logexist
+    if exist "log.log" (
+    mkdir logs
+    goto logzipping
+    ) else (
+    goto logstart
+    )
+    goto logstart
+
+:logzipping
+  FOR /F "usebackq" %%A IN ('log.log') DO set size=%%~zA
+  IF %size% LSS %maxlogsize% ( 
+    :: Kisebb
+    goto logstart
+    ) else ( 
+    :: Nagyobb 
+    goto zipthelog
+    )
+
+:zipthelog
+  "Resources\7z.exe" a -tzip -y %logzip%.zip log.log -mmt >nul
+  move %logzip%.zip logs >nul
+  del log.log >nul
+  goto logstart
+
+
+
   :logtolog
     if %LogNumber%==1 (
       set LOGTYPE=INFO
