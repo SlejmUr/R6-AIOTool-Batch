@@ -1323,18 +1323,18 @@ setlocal enableextensions enabledelayedexpansion
   echo                   4K Textures Selector
   echo   Insert note here 
   echo [93m----------------------SELECT----------------------[0m
-  Resources\cmdmenusel f8f0 "   4k Release" "   4k Version" "   4k Event" "   Back"
+  Resources\cmdmenusel f8f0 "   4K Version" "   4K Event" "   4K Release" "   Back"
 
   if %ERRORLEVEL% == 1 (
-  set Position=4kRelease
-  goto GoingTo
-  )
-  if %ERRORLEVEL% == 2 (
   set Position=4kVersion
   goto GoingTo
   )
-  if %ERRORLEVEL% == 3 (
+  if %ERRORLEVEL% == 2 (
   set Position=4kEvent
+  goto GoingTo
+  )
+  if %ERRORLEVEL% == 3 (
+  set Position=4kRelease
   goto GoingTo
   )
   if %ERRORLEVEL% == 4 (
@@ -1741,7 +1741,7 @@ setlocal enableextensions enabledelayedexpansion
   echo It's Steel Wave 4K^^!
   pause
   cls
-  set Downloaded=Steel Wave  4K
+  set Downloaded=Steel Wave 4K
   goto DownloadCheck
   )
   if %ERRORLEVEL%==20 (
