@@ -54,11 +54,11 @@ echo %Downloaded% >>log.log
   goto ExtraMenu
 
 
+::ExtraEvent START
 :ExtraEvent
   cls
   Title Rainbow Six Siege Extra Event
   MODE 50,25
-  echo ExtraEvent Loaded>>log.log
   echo [93m-----------------------NOTES----------------------[0m
   echo             Extra Event Language Menu
   echo               Placeholder
@@ -74,17 +74,18 @@ echo %Downloaded% >>log.log
   goto BackTo
   )
   goto ExtraEvent
+::ExtraEvent END
 
 
-::Extra START
+::ExtraVersion START
 :ExtraVersion
   cls
   Title Rainbow Six Siege Extra Version
   MODE 50,30
   set LastSelector=Extra
   echo [93m-----------------------NOTES----------------------[0m
-  echo             Extra Event Language Menu
-  ::echo               Placeholder - /Red Crow/
+  echo             Extra Version Language Menu
+  ::echo               Placeholder - /RELEASE NOT MANIFEST/
   echo [93m-----------------------SELECT---------------------[0m
   Resources\cmdmenusel f8f0 "  Vanilla" "  Black Ice" "  Dust Line" "  Skull Rain" "  Red Crow" "  Velvet Shell" "  Health" "  Blood Orchid" "  White Noise" "  Chimera" "  Para Bellum" "  Grim Sky" "  Wind Bastion" "  Burnt Horizon" "  Phantom Sight" "  Ember Rise" "  Shifting Tides" "  Void Edge" "  Steel Wave" "  Shadow Legacy" "  Neon Dawn"  "  Back"
   
@@ -113,7 +114,7 @@ echo %Downloaded% >>log.log
   goto BackTo
   )
   goto Extra
-::Extra END
+::ExtraVersion END
 
 
 ::Vanilla START
@@ -290,6 +291,179 @@ echo %Downloaded% >>log.log
   goto VanillaLang
 ::Vanilla END
 
+::Black Ice START
+:BlackIceLang
+  cls
+  Title Rainbow Six Siege Black Ice Lang Downloader
+  MODE 50,38
+  echo [93m-----------------------NOTES----------------------[0m
+  echo          Black Ice Language Downloader
+  echo               Placeholder
+  echo [93m-----------------------SELECT---------------------[0m
+  Resources\cmdmenusel f8f0 "    French Lang" "    Italian Lang" "    German Lang" "    Spanish - Spain Lang" "    Portuguese - Brazil Lang" "    Polish Lang" "    Dutch Lang" "    Czech Lang" "    Korean Lang" "    Traditional Chinese Lang" "    Simplified Chinese Lang" "    Japanese Lang" "    Russian Lang" "    Back"
+
+  if %ERRORLEVEL%==1 (
+  :BlackIceFrench
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 3933270230638281254 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's French Lang on Black Ice
+  pause
+  cls
+  set Downloaded=French Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==2 (
+  :BlackIceItalian
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 5760263381471720373 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Italian Lang on Black Ice
+  pause
+  cls
+  set Downloaded=Italian Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==3 (
+  :BlackIceGerman
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7470955591961528063 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's German Lang on Black Ice
+  pause
+  cls
+  set Downloaded=German Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==4 (
+  :BlackIceSpanish
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 6534545487175120142 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Spanish Lang on Black Ice
+  pause
+  cls
+  set Downloaded=Spanish Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==5 (
+  :BlackIceBrasilian
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 5712713603408405370 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Brasilian Lang on Black Ice
+  pause
+  cls
+  set Downloaded=Brasilian Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==6 (
+  :BlackIcePolish
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 611380037218554981 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Polish Lang on Black Ice
+  pause
+  cls
+  set Downloaded=Polish Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==7 (
+  :BlackIceDutch
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 2252756710796870124 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Dutch Lang on Black Ice
+  pause
+  cls
+  set Downloaded=Dutch Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==8 (
+  :BlackIceCzech
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 9083464997167398804 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Czech Lang on Black Ice
+  pause
+  cls
+  set Downloaded=Czech Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==9 (
+  :BlackIceKorean
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 1679233699688952842 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Korean Lang on Black Ice
+  pause
+  cls
+  set Downloaded=Korean Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==10 (
+  :BlackIceTChinese
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 6415534268030477043 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's TChinese Lang on Black Ice
+  pause
+  cls
+  set Downloaded=TChinese Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==11 (
+  :BlackIceSChinese
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 695733873875406938 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's SChinese Lang on Black Ice
+  pause
+  cls
+  set Downloaded=SChinese Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==12 (
+  :BlackIceJapanese
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 7819798899236214261 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Japanese Lang on Black Ice
+  pause
+  cls
+  set Downloaded=Japanese Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==13 (
+  :BlackIceRussian
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 7163789544030656935 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Russian Lang on Black Ice
+  pause
+  cls
+  set Downloaded=Russian Lang on Black Ice
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==14 (
+  set Position=ExtraMenu
+  goto BackTo
+  )
+  goto BlackIceLang
+::Black Ice END
 
 
 
@@ -343,7 +517,7 @@ echo %Downloaded% >>log.log
 
 
 ::_ START
-:_Lang
+:=Lang
   cls
   Title Rainbow Six Siege _ Lang Downloader
   MODE 50,38
@@ -513,5 +687,5 @@ echo %Downloaded% >>log.log
   set Position=ExtraMenu
   goto BackTo
   )
-  goto _Lang
+  goto :=Lang
 ::_ END
