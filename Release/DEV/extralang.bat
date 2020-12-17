@@ -633,7 +633,123 @@ echo %Downloaded% >>log.log
   goto SkullRainVersionLang
 ::Skull Rain END
 
+::Red Crow START
+:RedCrowLang
+  cls
+  Title Rainbow Six Siege Red Crow Lang Downloader
+  MODE 50,38
+  echo [93m-----------------------NOTES----------------------[0m
+  echo          Red Crow Language Downloader
+  echo               Placeholder
+  echo [93m-----------------------SELECT---------------------[0m
+  Resources\cmdmenusel f8f0 "    French Lang" "    Italian Lang" "    German Lang" "    Spanish - Spain Lang" "    Portuguese - Brazil Lang" "    Polish Lang" "    Dutch Lang" "    Czech Lang" "    Korean Lang" "    Traditional Chinese Lang" "    Simplified Chinese Lang" "    Japanese Lang" "    Russian Lang" "    Back"
 
+  if %ERRORLEVEL%==1 (
+  :RedCrowFrench
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 6096643115970852289 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's French Lang on Red Crow
+  pause
+  cls
+  set Downloaded=French Lang on Red Crow
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==2 (
+  :RedCrowItalian
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 8822593964618949966 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Italian Lang on Red Crow
+  pause
+  cls
+  set Downloaded=Italian Lang on Red Crow
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==3 (
+  :RedCrowGerman
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 7995072742170754868 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's German Lang on Red Crow
+  pause
+  cls
+  set Downloaded=German Lang on Red Crow
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==4 (
+  :RedCrowSpanish
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3745420316643316529 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Spanish Lang on Red Crow
+  pause
+  cls
+  set Downloaded=Spanish Lang on Red Crow
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==5 (
+  :RedCrowBrasilian
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 9177769359376990903 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Brasilian Lang on Red Crow
+  pause
+  cls
+  set Downloaded=Brasilian Lang on Red Crow
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==6 (
+  set Position=NoLang
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==7 (
+  set Position=NoLang
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==8 (
+  set Position=NoLang
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==9 (
+  set Position=NoLang
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==10 (
+  set Position=NoLang
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==11 (
+  set Position=NoLang
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==12 (
+  :RedCrowJapanese
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 8573459241975382853 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Japanese Lang on Red Crow
+  pause
+  cls
+  set Downloaded=Japanese Lang on Red Crow
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==13 (
+  set Position=NoLang
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==14 (
+  set Position=ExtraMenu
+  goto BackTo
+  )
+  goto RedCrowLang
+::Red Crow END
 
 
 
