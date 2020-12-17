@@ -8,22 +8,17 @@ goto %Position%
 :DownloadCheck
 echo %Downloaded% >>log.log
 
-
-
 :InstallMenu
   cls 
   exit
   ::just for not get failure
 
 
-
-
-
+::ExtraMenu START
 :ExtraMenu
   cls
   Title Rainbow Six Siege Extra Menu
   MODE 50,25
-  set LastSelector=Extra
   echo [93m-----------------------NOTES----------------------[0m
   echo                Extra Language Menu
   echo               Placeholder
@@ -52,7 +47,7 @@ echo %Downloaded% >>log.log
     )
   )
   goto ExtraMenu
-
+::ExtraMenu END
 
 ::ExtraEvent START
 :ExtraEvent
@@ -82,7 +77,6 @@ echo %Downloaded% >>log.log
   cls
   Title Rainbow Six Siege Extra Version
   MODE 50,30
-  set LastSelector=Extra
   echo [93m-----------------------NOTES----------------------[0m
   echo             Extra Version Language Menu
   ::echo               Placeholder - /RELEASE NOT MANIFEST/
@@ -102,7 +96,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==4 (
-  set Position=SkullRainLang
+  set Position=SkullRainVersionLang
   goto GoingTo
   )
   if %ERRORLEVEL%==5 (
@@ -464,6 +458,200 @@ echo %Downloaded% >>log.log
   )
   goto BlackIceLang
 ::Black Ice END
+
+::Skull Rain START
+:SkullRainVersionLang
+  cls
+  Title Rainbow Six Siege Skull Rain Version Lang Downloader
+  MODE 50,38
+  echo [93m-----------------------NOTES----------------------[0m
+  echo          Skull Rain Version Language Downloader
+  echo               Placeholder
+  echo [93m-----------------------SELECT---------------------[0m
+  Resources\cmdmenusel f8f0 "    French Lang" "    Italian Lang" "    German Lang" "    Spanish - Spain Lang" "    Portuguese - Brazil Lang" "    Polish Lang" "    Dutch Lang" "    Czech Lang" "    Korean Lang" "    Traditional Chinese Lang" "    Simplified Chinese Lang" "    Japanese Lang" "    Russian Lang" "    Back"
+
+  if %ERRORLEVEL%==1 (
+  :SkullRainVersionFrench
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359553 -manifest 5132022816747475711 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's French Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=French Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==2 (
+  :SkullRainVersionItalian
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359554 -manifest 1819965373025810009 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Italian Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=Italian Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==3 (
+  :SkullRainVersionGerman
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359555 -manifest 1926652807113950777 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's German Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=German Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==4 (
+  :SkullRainVersionSpanish
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359556 -manifest 3102063947541599011 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Spanish Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=Spanish Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==5 (
+  :SkullRainVersionBrasilian
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359557 -manifest 1002387473375422601 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Brasilian Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=Brasilian Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==6 (
+  :SkullRainVersionPolish
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359558 -manifest 2324023684915670753 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Polish Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=Polish Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==7 (
+  :SkullRainVersionDutch
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377230 -manifest 6519643449965700176 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Dutch Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=Dutch Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==8 (
+  :SkullRainVersionCzech
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377231 -manifest 2274850673348857246 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Czech Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=Czech Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==9 (
+  :SkullRainVersionKorean
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377232 -manifest 3010562235525323962 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Korean Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=Korean Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==10 (
+  :SkullRainVersionTChinese
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377233 -manifest 4953478873615251033 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's TChinese Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=TChinese Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==11 (
+  :SkullRainVersionSChinese
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377234 -manifest 6056122284734366189 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's SChinese Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=SChinese Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==12 (
+  :SkullRainVersionJapanese
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377235 -manifest 4940468394032132183 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Japanese Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=Japanese Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==13 (
+  :SkullRainVersionRussian
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377236 -manifest 792795160700208918 -username %username% -remember-password -dir "R6Downloads\Y1S4_Skull_Rain" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete!
+  echo It's Russian Lang on Skull Rain
+  pause
+  cls
+  set Downloaded=Russian Lang on Skull Rain
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL%==14 (
+  set Position=ExtraMenu
+  goto BackTo
+  )
+  goto SkullRainVersionLang
+::Skull Rain END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
