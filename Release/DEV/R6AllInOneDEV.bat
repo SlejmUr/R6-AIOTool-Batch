@@ -442,7 +442,7 @@ setlocal enableextensions enabledelayedexpansion
   echo  Steam User: [96m%username%[0m
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
-  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit" "  Devlog" "  Codex Renamer and Move"
+  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit"
 
   if %ERRORLEVEL% == 1 (
   set Position=faq
@@ -474,13 +474,15 @@ setlocal enableextensions enabledelayedexpansion
   )
   if %ERRORLEVEL% == 8 (
   cls
-  set /p username="Enter Steam Username:"
+  MODE 78,20
+  set /p username="Enter New Steam Username:"
   set "LOGINFO=Changing Steam UserName to %username%"
   set LogNumber=1
   goto logtolog
   )
   if %ERRORLEVEL% == 9 (
   cls
+  MODE 78,20
   del log.log
   rd /s /q  "logs\" 2>nul
   echo Logs Deleted^^!
@@ -502,12 +504,6 @@ setlocal enableextensions enabledelayedexpansion
   set LOGTYPE=1
   set LOGINFO=Exited
   goto logtolog
-  )
-  if %ERRORLEVEL% == 13 (
-  start Devlog.txt
-  )
-  if %ERRORLEVEL% == 14 (
-  goto CodexRenamer
   )
   goto MainMenu
 ::MainMenu END
@@ -3291,13 +3287,6 @@ setlocal enableextensions enabledelayedexpansion
   pause
   goto MainMenu
 ::Update END
-
-
-:CodexRenamer
-  cls
-  echo CODEX Renamer is Currently unavaible ^^!
-  pause
-  goto MainMenu
 
 
 ::BattlEyeChecker START
