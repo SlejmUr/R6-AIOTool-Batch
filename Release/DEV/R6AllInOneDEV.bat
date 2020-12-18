@@ -149,27 +149,6 @@ setlocal enableextensions enabledelayedexpansion
       echo "SteamName" set to 0
       set SteamName=0
       )
-      goto DevVersionSET
-    ::Set Dev Version
-    :DevVersionSET
-      findstr /m "DevVersion=1" Resources\Settings.ini >Nul
-      if %errorlevel%==0 (
-      echo "DevVersion" set to 1
-      set DevVersion=1
-      )
-      if %errorlevel%==1 (
-      echo "DevVersion=1" set to 0
-      set DevVersion=0
-      )
-      goto MateBypass
-    ::matec bypass
-    :MateBypass
-      if exist "C:\Users\matec\" (
-      set DevVersion=1
-      echo matec was found
-      ) else (
-      echo matec wasn't found
-      )
       goto ifdotnet
   :: SET SET END
 ::SET Things END
@@ -3269,8 +3248,8 @@ setlocal enableextensions enabledelayedexpansion
   echo And thank you for using it^^!
   echo.
   echo First Version: 2020 June 17
-  echo Updated Version: 2020 
-  echo Released Version: TDB
+  echo Updated Version: 2020 December 18
+  echo Released Version: 2020 December
   pause
   cls
   goto MainMenu
