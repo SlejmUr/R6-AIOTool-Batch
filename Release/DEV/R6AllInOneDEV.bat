@@ -919,7 +919,7 @@ setlocal enableextensions enabledelayedexpansion
   echo Steel Wave [Mute Protocol]
   pause
   cls
-  set Downloaded=Steel Wave [omega/Mute Protocol]
+  set Downloaded=Steel Wave [Mute Protocol]
   goto DownloadCheck
   )
   ::SteelWave (omega/Mute Protocol)
@@ -942,6 +942,67 @@ setlocal enableextensions enabledelayedexpansion
   )
   goto VersionMenu
 ::VersionMenu END
+
+
+::EventMenu START
+:EventMenu
+  cls
+  Title Rainbow Six Siege Event Downloader
+  MODE 52,25
+  echo [93m-----------------------NOTES------------------------[0m
+  echo   Outback is same with normal Chimera
+  echo   Road To S.I. is same with normal Shifting Tides
+  echo   Showdown is same with normal Phantom Sight
+  echo   The Omega Mute is not broken, use that.
+  echo [93m-----------------------SELECT-----------------------[0m
+  Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
+  
+  if %ERRORLEVEL%==1 (
+  goto Chimera
+  )
+  if %ERRORLEVEL%==2 (
+  goto MadHouse
+  )
+  if %ERRORLEVEL%==3 (
+  goto RainbowIsMagic
+  )
+  if %ERRORLEVEL%==4 (
+  goto PhantomSight
+  )
+  if %ERRORLEVEL%==5 (
+  goto DoktorsCurse
+  )
+  if %ERRORLEVEL%==6 (
+  goto ShiftingTides
+  )
+  if %ERRORLEVEL%==7 (
+  goto GangDestruction
+  )
+  if %ERRORLEVEL%==8 (
+  goto MUTEProtocol
+  )
+  if %ERRORLEVEL%==9 (
+  goto OmegaSteelWave
+  )
+  if %ERRORLEVEL%==10 (
+  :SugarFright
+  MODE 100,40
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3265954110064157115 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
+  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5436378897406471956 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
+  echo.
+  echo Download complete ^^!
+  echo Sugar Fright / Telly
+  pause
+  cls
+  set Downloaded=Sugar Fright / Telly
+  goto DownloadCheck
+  )
+  if %ERRORLEVEL% == 11 (
+  set Position=InstallMenu
+  goto BackTo
+  )
+  goto EventMenu
+::EventMenu END
 
 
 ::ReleaseMenu START
@@ -1134,67 +1195,6 @@ setlocal enableextensions enabledelayedexpansion
   )
   goto ReleaseMenu
 ::ReleaseMenu END
-
-
-::EventMenu START
-:EventMenu
-  cls
-  Title Rainbow Six Siege Event Downloader
-  MODE 52,25
-  echo [93m-----------------------NOTES------------------------[0m
-  echo   Outback is same with normal Chimera
-  echo   Road To S.I. is same with normal Shifting Tides
-  echo   Showdown is same with normal Phantom Sight
-  echo   The Omega Mute is not broken, use that.
-  echo [93m-----------------------SELECT-----------------------[0m
-  Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
-  
-  if %ERRORLEVEL%==1 (
-  goto Chimera
-  )
-  if %ERRORLEVEL%==2 (
-  goto MadHouse
-  )
-  if %ERRORLEVEL%==3 (
-  goto RainbowIsMagic
-  )
-  if %ERRORLEVEL%==4 (
-  goto PhantomSight
-  )
-  if %ERRORLEVEL%==5 (
-  goto DoktorsCurse
-  )
-  if %ERRORLEVEL%==6 (
-  goto ShiftingTides
-  )
-  if %ERRORLEVEL%==7 (
-  goto GangDestruction
-  )
-  if %ERRORLEVEL%==8 (
-  goto MUTEProtocol
-  )
-  if %ERRORLEVEL%==9 (
-  goto OmegaSteelWave
-  )
-  if %ERRORLEVEL%==10 (
-  :SugarFright
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3265954110064157115 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5436378897406471956 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
-  echo.
-  echo Download complete ^^!
-  echo Sugar Fright / Telly
-  pause
-  cls
-  set Downloaded=Sugar Fright / Telly
-  goto DownloadCheck
-  )
-  if %ERRORLEVEL% == 11 (
-  set Position=InstallMenu
-  goto BackTo
-  )
-  goto EventMenu
-::EventMenu END
 
 
 ::CustomMenu START
