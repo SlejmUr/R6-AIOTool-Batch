@@ -562,8 +562,7 @@ setlocal enableextensions enabledelayedexpansion
     echo  Notes:
     echo  I Moved my "Release" manifests to Manifest Options
     echo  I did not tested all manifests^^!
-    echo  Planning to add Extra Language option in Events
-    echo  Plaza_NEW not working on Shadow Legacy and Steel Wave too^^!
+    echo  Plaza_NEW not working on Shadow Legacy and upper^^!
     echo  If you want to join testing phase, DM me on Discord
     echo  If you have a problem this tool, DM me on Discord
     echo  My Discord: SlejmUr#4007 or join on %discord%
@@ -614,7 +613,7 @@ setlocal enableextensions enabledelayedexpansion
     MODE 50,14
     echo [93m-----------------------NOTES----------------------[0m
     echo                   Install Selector
-    echo          [31mExtra/4K now is unstable ^^![0m
+    echo          [31mExtra/4K now is stable ^^![0m
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Version Downloader" "   Event Downloader" "   Release Downloader" "   Custom Downloader" "   4K Textures Downloader" "   Extra Language Downloader" "   Back"
 
