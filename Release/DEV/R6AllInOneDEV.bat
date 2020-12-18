@@ -1572,7 +1572,7 @@ setlocal enableextensions enabledelayedexpansion
     goto DownloadCheck
     )
     if %ERRORLEVEL% == 20 (
-    set Position=GameMenu
+    set Position=TextureMenu
     goto BackTo
     )
     goto 4kVersion
@@ -1627,7 +1627,7 @@ setlocal enableextensions enabledelayedexpansion
     goto DownloadCheck
     )
     if %ERRORLEVEL% == 10 (
-    set Position=GameMenu
+    set Position=TextureMenu
     goto BackTo
     )
     goto 4kEvent
