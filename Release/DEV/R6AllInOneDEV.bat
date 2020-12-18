@@ -518,7 +518,7 @@ setlocal enableextensions enabledelayedexpansion
     echo  8
     echo  Use plaza_bo, if it doesn't work, use plaza_new
     echo  If the game is stuck on preparing content go into codex.ini and set offline=1 to offline=0
-    echo  Once you have a version downloaded grab the PLAZA's below and copy its contents to your game folder.
+    echo  Once you have grab the PLAZA's in "Resources\Plazas" and copy its contents to your game folder.
     echo  When it asks to overwrite a few files click yes. If your anti-virus blocks these files then make sure to allow them. 
     echo  9
     echo  What is CODEX, DepotDownloader,R6Manifest?
