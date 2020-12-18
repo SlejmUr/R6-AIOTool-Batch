@@ -8,14 +8,12 @@ goto %Position%
 goto %Position%
 :DownloadCheck
 echo %Downloaded% >>log.log
-
+goto ExtraMenu
 :InstallMenu
-  cls 
-  exit
+exit
   ::just for not get failure
 
 ::LANG START
-
 ::ExtraMenu START
 :ExtraMenu
   cls
@@ -25,18 +23,18 @@ echo %Downloaded% >>log.log
   echo                Extra Language Menu
   echo               Placeholder
   echo [93m-----------------------SELECT---------------------[0m
-  Resources\cmdmenusel f8f0 "    Extra Version" "    Extra Release" "    Extra Event" "    Back"
+  Resources\cmdmenusel f8f0 "    Extra Version" "    Extra Event" "    Extra Release" "    Back"
 
   if %ERRORLEVEL%==1 (
   set Position=ExtraVersion
   goto GoingTo
   )
   if %ERRORLEVEL%==2 (
-  set Position=ExtraRelease
+  set Position=ExtraEvent
   goto GoingTo
   )
   if %ERRORLEVEL%==3 (
-  set Position=ExtraEvent
+  set Position=ExtraRelease
   goto GoingTo
   )
   if %ERRORLEVEL% == 4 (
@@ -51,6 +49,190 @@ echo %Downloaded% >>log.log
   goto ExtraMenu
 ::ExtraMenu END
 
+::ExtraVersion START
+:ExtraVersion
+  cls
+  Title Rainbow Six Siege Extra Version
+  MODE 50,30
+  echo [93m-----------------------NOTES----------------------[0m
+  echo             Extra Version Language Menu
+  echo      Manifests is from Zer0Bytes Manifest tool
+  echo [93m----------------------SELECT----------------------[0m
+  Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Back"
+
+  if %ERRORLEVEL%==1 (
+  goto VanillaLang
+  )
+  if %ERRORLEVEL%==2 (
+  goto BlackIceLang
+  )
+  if %ERRORLEVEL%==3 (
+  goto DustLineLang
+  )
+  if %ERRORLEVEL%==4 (
+  :SkullRainZero
+  goto NoLang
+  )
+  if %ERRORLEVEL%==5 (
+  goto RedCrowLang
+  )
+  if %ERRORLEVEL%==6 (
+  goto VelvetShellLang
+  )
+  if %ERRORLEVEL%==7 (
+  :HealthZeroLang
+  set Position=DownloadLang
+  set ExtraName=Health [Zer0]
+  set ExtraPath=R6Downloads\Y2S2_Health_2
+  set FrenchManifest=6096643115970852289
+  set ItalianManifest=8822593964618949966
+  set GermanManifest=7995072742170754868
+  set SpanishManifest=3745420316643316529
+  set BrasilianManifest=9177769359376990903
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=8573459241975382853
+  set RussianManifest=
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==8 (
+  :BloodOrchidZeroLang
+  set Position=DownloadLang
+  set ExtraName=Blood Orchid [Zer0]
+  set ExtraPath=R6Downloads\Y2S3_BloodOrchid
+  set FrenchManifest=838721240709370593
+  set ItalianManifest=517536193576958217
+  set GermanManifest=633861069103225490
+  set SpanishManifest=5021367039292610416
+  set BrasilianManifest=8777677445681226676
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=1264611426492480643
+  set RussianManifest=
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==9 (
+  :WhiteNoiseZeroLang
+  set Position=DownloadLang
+  set ExtraName=White Noise [Zer0]
+  set ExtraPath=R6Downloads\Y2S4_WhiteNoise
+  set FrenchManifest=2308260537166778249
+  set ItalianManifest=3617045189518866236
+  set GermanManifest=135229608888957003
+  set SpanishManifest=1059330510186835259
+  set BrasilianManifest=1542751081173628894
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=4082361510758614272
+  set RussianManifest=
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==10 (
+  goto ChimeraLang
+  )
+  if %ERRORLEVEL%==11 (
+  goto ParaBellumLang
+  )
+  if %ERRORLEVEL%==12 (
+  :MadHouseLang
+  set Position=DownloadLang
+  set ExtraName=Mad House
+  set ExtraPath=R6Downloads\Y3S3_MadHouse
+  set FrenchManifest=2691692271374235298
+  set ItalianManifest=8974449918057622636
+  set GermanManifest=1633663749570094592
+  set SpanishManifest=3038736562055087492
+  set BrasilianManifest=5405729512726659651
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=7218304239314966517
+  set RussianManifest=9201863984356390492
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==13 (
+  goto WindBastionLang
+  )
+  if %ERRORLEVEL%==14 (
+  :RainbowIsMagicLang
+  goto NoLang
+  )
+  if %ERRORLEVEL%==15 (
+  goto PhantomSightLang
+  )
+  if %ERRORLEVEL%==16 (
+  :DoktorsCurseLang
+  set Position=DownloadLang
+  set ExtraName=Doktors Curse
+  set ExtraPath=R6Downloads\Y4S3_DoktorsCurse
+  set FrenchManifest=
+  set ItalianManifest=
+  set GermanManifest=
+  set SpanishManifest=3299372491475509511
+  set BrasilianManifest=
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=
+  set RussianManifest=
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==17 (
+  goto ShiftingTidesLang
+  )
+  if %ERRORLEVEL%==18 (
+  :GangDestructionLang
+  goto NoLang
+  )
+  if %ERRORLEVEL%==19 (
+  :MUTEProtocolLang
+  set Position=DownloadLang
+  set ExtraName=MUTE Protocol
+  set ExtraPath=R6Downloads\Y5S2_MUTE
+  set FrenchManifest=
+  set ItalianManifest=6930464470779050499
+  set GermanManifest=3439024125519410144
+  set SpanishManifest=5706819750425064069
+  set BrasilianManifest=3586507048095856048
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=6080135122250419494
+  set RussianManifest=29489895101354465
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==20 (
+  :OmegaSteelWaveLang
+  goto NoLang
+  )
+  if %ERRORLEVEL% == 21 (
+  set Position=ExtraMenu
+  goto BackTo
+  )
+  goto ExtraVersion
+::ExtraVersion END
+
 ::ExtraEvent START
 :ExtraEvent
   cls
@@ -58,21 +240,65 @@ echo %Downloaded% >>log.log
   MODE 50,25
   echo [93m-----------------------NOTES----------------------[0m
   echo             Extra Event Language Menu
-  echo               Placeholder
+  echo   Outback is same with normal Chimera
+  echo   Road To S.I. is same with normal Shifting Tides
+  echo   Showdown is same with normal Phantom Sight
+  echo   The Omega Mute is not broken, use that.
   echo [93m-----------------------SELECT---------------------[0m
-  Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
-  
+  Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
+   
   if %ERRORLEVEL%==1 (
-  set Position=ExtraEvent
-  goto GoingTo
+  goto ChimeraLang
+  )
+  if %ERRORLEVEL%==2 (
+  goto MadHouseLang
+  )
+  if %ERRORLEVEL%==3 (
+  goto RainbowIsMagicang
+  )
+  if %ERRORLEVEL%==4 (
+  goto PhantomSightLang
+  )
+  if %ERRORLEVEL%==5 (
+  goto DoktorsCurseLang
+  )
+  if %ERRORLEVEL%==6 (
+  goto ShiftingTidesLang
+  )
+  if %ERRORLEVEL%==7 (
+  goto GangDestructionLang
+  )
+  if %ERRORLEVEL%==8 (
+  goto MUTEProtocolLang
+  )
+  if %ERRORLEVEL%==9 (
+  goto OmegaSteelWaveLang
   )
   if %ERRORLEVEL%==10 (
+  set Position=DownloadLang
+  set ExtraName=Sugar Fright / Telly
+  set ExtraPath=R6Downloads\Y5S3_Sugar_Fright
+  set FrenchManifest=2497671185450045247
+  set ItalianManifest=1016302273030784247
+  set GermanManifest=2219450000740333965
+  set SpanishManifest=6129893474695042229
+  set BrasilianManifest=7009669290553062347
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=7140373705378561321
+  set RussianManifest=1758819456862451579
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==11 (
   set Position=ExtraMenu
   goto BackTo
   )
   goto ExtraEvent
 ::ExtraEvent END
-
 
 ::ExtraRelease START
 :ExtraRelease
@@ -86,6 +312,7 @@ echo %Downloaded% >>log.log
   Resources\cmdmenusel f8f0 "  Vanilla" "  Black Ice" "  Dust Line" "  Skull Rain" "  Red Crow" "  Velvet Shell" "  Health" "  Blood Orchid" "  White Noise" "  Chimera" "  Para Bellum" "  Grim Sky" "  Wind Bastion" "  Burnt Horizon" "  Phantom Sight" "  Ember Rise" "  Shifting Tides" "  Void Edge" "  Steel Wave" "  Shadow Legacy" "  Neon Dawn"  "  Back"
   
   if %ERRORLEVEL%==1 (
+  :VanillaLang
   set Position=DownloadLang
   set ExtraName=Vanilla
   set ExtraPath=R6Downloads\Y1S0_Vanilla
@@ -105,6 +332,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==2 (
+  :BlackIceLang
   set Position=DownloadLang
   set ExtraName=Black Ice
   set ExtraPath=R6Downloads\Y1S1_Black_Ice
@@ -124,6 +352,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==3 (
+  :DustLineLang
   set Position=DownloadLang
   set ExtraName=Dust Line
   set ExtraPath=R6Downloads\Y1S2_Dust_Line
@@ -143,6 +372,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==4 (
+  :SkullRainLang
   set Position=DownloadLang
   set ExtraName=Skull Rain
   set ExtraPath=R6Downloads\Y1S3_Skull_Rain
@@ -162,6 +392,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==5 (
+  :RedCrowLang
   set Position=DownloadLang
   set ExtraName=Red Crow
   set ExtraPath=R6Downloads\Y1S4_Red_Crow
@@ -181,6 +412,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==6 (
+  :VelvetShellLang
   set Position=DownloadLang
   set ExtraName=Velvet Shell
   set ExtraPath=R6Downloads\Y2S1_Velvet_Shell
@@ -200,6 +432,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==7 (
+  :HealthLang
   set Position=DownloadLang
   set ExtraName=Health
   set ExtraPath=R6Downloads\Y2S2_Health
@@ -219,6 +452,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==8 (
+  :BloodOrchidLang
   set Position=DownloadLang
   set ExtraName=Blood Orchid
   set ExtraPath=R6Downloads\Y2S4_Blood_Orhid
@@ -238,6 +472,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==9 (
+  :WhiteNoiseLang
   set Position=DownloadLang
   set ExtraName=White Noise
   set ExtraPath=R6Downloads\Y2S4_White_Noise
@@ -257,6 +492,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==10 (
+  :ChimeraLang
   set Position=DownloadLang
   set ExtraName=Chimera
   set ExtraPath=R6Downloads\Y3S1_Chimera
@@ -276,6 +512,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==11 (
+  :ParaBellumLang
   set Position=DownloadLang
   set ExtraName=Para Bellum
   set ExtraPath=R6Downloads\Y3S2_Para_Bellum
@@ -295,6 +532,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==12 (
+  :GrimSkyLang
   set Position=DownloadLang
   set ExtraName=Grim Sky
   set ExtraPath=R6Downloads\Y3S3_Grim_Sky
@@ -314,6 +552,7 @@ echo %Downloaded% >>log.log
   goto GoingTo
   )
   if %ERRORLEVEL%==13 (
+  :WindBastionLang
   set Position=DownloadLang
   set ExtraName=Wind Bastion
   set ExtraPath=R6Downloads\Y3S4_Wind_Bastion
@@ -332,13 +571,172 @@ echo %Downloaded% >>log.log
   set RussianManifest=8306800552570152557
   goto GoingTo
   )
+  if %ERRORLEVEL%==14 (
+  :BurntHorizonLang
+  set Position=DownloadLang
+  set ExtraName=Burnt Horizon
+  set ExtraPath=R6Downloads\Y4S1_Burnt_Horizon
+  set FrenchManifest=2489165098014835664
+  set ItalianManifest=5912470135426316642
+  set GermanManifest=6166102473910342218
+  set SpanishManifest=8980928302668128431
+  set BrasilianManifest=5742909617569886590
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=6205462284383635854
+  set RussianManifest=5305534200661405563
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==15 (
+  :PhantomSightLang
+  set Position=DownloadLang
+  set ExtraName=Phantom Sight
+  set ExtraPath=R6Downloads\Y4S2_Phantom_Sight
+  set FrenchManifest=8209966773310799535
+  set ItalianManifest=5551310338808720316
+  set GermanManifest=2945239480726569964
+  set SpanishManifest=3119251800260595817
+  set BrasilianManifest=2060894578496472402
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=735237222551525964
+  set RussianManifest=8063779007427415388
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==16 (
+  :EmberRiseLang
+  set Position=DownloadLang
+  set ExtraName=Ember Rise
+  set ExtraPath=R6Downloads\Y4S3_Ember_Rise
+  set FrenchManifest=9167311800727871226
+  set ItalianManifest=9032788833180559255
+  set GermanManifest=5892684040914151033
+  set SpanishManifest=4178602548762056641
+  set BrasilianManifest=8187109316671389619
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=8453132699861289149
+  set RussianManifest=4195459193643803058
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==17 (
+  :ShiftingTidesLang
+  set Position=DownloadLang
+  set ExtraName=Shifting Tides
+  set ExtraPath=R6Downloads\Y4S4Shifting_Tides
+  set FrenchManifest=982226827055842157
+  set ItalianManifest=7669952636769439421
+  set GermanManifest=1771833119782386213
+  set SpanishManifest=5607986007728468442
+  set BrasilianManifest=3980031497374187833
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=4121849146546499241
+  set RussianManifest=2337212093593824035
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==18 (
+  :VoidEdgeLang
+  set Position=DownloadLang
+  set ExtraName=Void Edge
+  set ExtraPath=R6Downloads\Y5S1_Void_Edge
+  set FrenchManifest=6351511531186309516
+  set ItalianManifest=2083562978649529043
+  set GermanManifest=4220186838055347645
+  set SpanishManifest=8280780297583800068
+  set BrasilianManifest=1408940456585952484
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=6728091120574045367
+  set RussianManifest=3817096039931934373
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==19 (
+  :SteelWaveLang
+  set Position=DownloadLang
+  set ExtraName=Steel Wave
+  set ExtraPath=R6Downloads\Y5S2_Steel_Wave
+  set FrenchManifest=379201990182673961
+  set ItalianManifest=7015749936618767871
+  set GermanManifest=9103781936104145156
+  set SpanishManifest=3323378213398656976
+  set BrasilianManifest=3124010063296699270
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=5460615762069731497
+  set RussianManifest=3790966697198053253
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==20 (
+  :ShadowLegacyLang
+  set Position=DownloadLang
+  set ExtraName=Shadow Legacy
+  set ExtraPath=R6Downloads\Y5S3_Shadow_Legacy
+  set FrenchManifest=490063692268635993
+  set ItalianManifest=8865509294556462405
+  set GermanManifest=615915835199657008
+  set SpanishManifest=2485600059396261361
+  set BrasilianManifest=6424468667015085021
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=5904431813628700863
+  set RussianManifest=5914186776656034602
+  goto GoingTo
+  )
+  if %ERRORLEVEL%==21 (
+  :NeonDawnLang
+  set Position=DownloadLang
+  set ExtraName=Neon Dawn
+  set ExtraPath=R6Downloads\Y5S4_Neon_Dawn
+  set FrenchManifest=6330535362940694984
+  set ItalianManifest=5619411246287036654
+  set GermanManifest=4632151886610949289
+  set SpanishManifest=2656856004069997335
+  set BrasilianManifest=1759088489247336476
+  set PolishManifest=
+  set DutchManifest=
+  set CzechManifest=
+  set KoreanManifest=
+  set TChineseManifest=
+  set SChineseManifest=
+  set JapaneseManifest=7065992309208248805
+  set RussianManifest=3097797074643326862
+  goto GoingTo
+  )
   if %ERRORLEVEL% == 22 (
   set Position=ExtraMenu
   goto BackTo
   )
   goto Extra
 ::ExtraRelease END
-
 
 ::DownloadLang START
 :DownloadLang
@@ -553,7 +951,6 @@ echo %Downloaded% >>log.log
   goto DowmloadLang
 ::DowmloadLang END
 
-
 ::NoLang START
 :NoLang
   cls
@@ -572,5 +969,4 @@ echo %Downloaded% >>log.log
   )
   goto NoLang
 ::NoLang END
-
 ::LANG END
