@@ -385,7 +385,7 @@ setlocal enableextensions enabledelayedexpansion
 
   :SetSteam
     set Position=PopUpCheck
-    MODE 78,20
+    MODE 78,10
     echo Please type your Steam Legacy name!
     set /p username="Enter Steam Username:"
     set "LOGINFO=Steam Legacy Name [Username] set to %username% "
@@ -411,7 +411,7 @@ setlocal enableextensions enabledelayedexpansion
   set Position=MainMenu
   cls
   Title R6S AllInOne Tool
-  MODE 62,30
+  MODE 62,22
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege AllInOne Tool
   echo  [31mYou MUST have a copy of Siege on Steam to use the downloader^^![0m
@@ -492,7 +492,7 @@ setlocal enableextensions enabledelayedexpansion
   :faq
     cls
     Title FAQ
-    MODE 120,45
+    MODE 120,36
     echo  1.
     echo  Q: Is it safe to enter my password?
     echo  A: Yes it is. You can view the source code for Depot Downloader here: https://github.com/SteamRE/DepotDownloader
@@ -523,7 +523,6 @@ setlocal enableextensions enabledelayedexpansion
     echo  9
     echo  What is CODEX, DepotDownloader,R6Manifest?
     echo  CODEX/Plaza : Applied to play Old Siege Version
-    echo  R6Downloader : Download R6 Old Version, it use DepotDownloader. Created by Shey
     echo  DepotDownloader : Created by SteamRE, you can download any manifest once you have the game
     echo  R6-AIOTool : AllInOne Tool, many function. Based on R6 Manifest. Created by SlejmUr
     echo  R6 Manifest : Download R6 Old Version, it use DepotDownloader. Created by Zer0Bytes
@@ -533,7 +532,7 @@ setlocal enableextensions enabledelayedexpansion
   ::and
   :Notes
     Title Notes
-    MODE 110,20
+    MODE 60,14
     echo  Notes:
     echo  I Moved my "Release" manifests to Manifest Options
     echo  I did not tested all manifests^^!
@@ -584,11 +583,11 @@ setlocal enableextensions enabledelayedexpansion
   :InstallMenu
     set LastSelector=InstallMenu
     cls
-    Title Rainbow Six Siege InstallMenu
-    MODE 50,14
+    Title Rainbow Six Siege Install Selector
+    MODE 50,12
     echo [93m-----------------------NOTES----------------------[0m
     echo                   Install Selector
-    echo          [31mExtra/4K now is stable ^^![0m
+    echo            [31mEverything is now stable^^![0m
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Version Downloader" "   Event Downloader" "   Release Downloader" "   Custom Downloader" "   4K Textures Downloader" "   Extra Language Downloader" "   Back"
 
@@ -626,10 +625,10 @@ setlocal enableextensions enabledelayedexpansion
   ::VersionMenu START
   :VersionMenu
     cls
-    Title Rainbow Six Siege VersionMenu
-    MODE 50,30
+    Title Rainbow Six Siege Version Downloader
+    MODE 50,26
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Version Selector
+    echo                   Version Downloader
     echo      Manifests is from Zer0Bytes Manifest tool
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Back"
@@ -907,7 +906,7 @@ setlocal enableextensions enabledelayedexpansion
   :EventMenu
     cls
     Title Rainbow Six Siege Event Downloader
-    MODE 52,25
+    MODE 52,18
     echo [93m-----------------------NOTES------------------------[0m
     echo   Outback is same with normal Chimera
     echo   Road To S.I. is same with normal Shifting Tides
@@ -966,10 +965,10 @@ setlocal enableextensions enabledelayedexpansion
   ::ReleaseMenu START
   :ReleaseMenu
     cls
-    Title Rainbow Six Siege ReleaseMenu
-    MODE 50,30
+    Title Rainbow Six Siege Release Downloader
+    MODE 50,28
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Release Selector
+    echo                   Release Downloader
     echo      Only new, released version of game build
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Neon Dawn" "   Back"
@@ -1157,11 +1156,11 @@ setlocal enableextensions enabledelayedexpansion
   ::CustomMenu START
   :CustomMenu
     cls
-    Title Rainbow Six Siege CustomMenu
-    MODE 50,20
+    Title Rainbow Six Siege Custom Downloader
+    MODE 50,12
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Custom Selector
-    echo            You need set everything ^^!
+    echo                   Custom Downloader
+    echo            You need set everything^^!
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Set Default things" "   Set App" "   Set Depot" "   Set Manifest" "   Set Path/Dir" "   Start Download" "   Back"
     
@@ -1278,8 +1277,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege 4K Textures Downloader
     MODE 50,10
     echo [93m----------------------NOTES-----------------------[0m
-    echo                   4K Textures Selector
-    echo   Insert note here 
+    echo                 4K Textures Selector
+    echo             Event Textures finally added^^! 
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   4K Version" "   4K Event" "   4K Release" "   Back"
 
@@ -1311,7 +1310,7 @@ setlocal enableextensions enabledelayedexpansion
   :4kVersion
     cls
     Title Rainbow Six Siege 4K Version Downloader
-    MODE 50,38
+    MODE 50,26
     echo [93m----------------------NOTES-----------------------[0m
     echo   Health, White Noise, Void Edge, Vanilla, etc...
     echo   Stuff is same with in R6Manifest / 4kRelease
@@ -1557,7 +1556,7 @@ setlocal enableextensions enabledelayedexpansion
   :4kEvent
     cls
     Title Rainbow Six Siege 4K Event Downloader
-    MODE 50,38
+    MODE 50,16
     echo [93m----------------------NOTES-----------------------[0m
     echo   Outback is same with normal Chimera
     echo   Road To S.I. is same with normal Shifting Tides
@@ -1612,7 +1611,7 @@ setlocal enableextensions enabledelayedexpansion
   :4kRelease
     cls
     Title Rainbow Six Siege 4K Release Downloader
-    MODE 50,38
+    MODE 50,28
     echo [93m----------------------NOTES-----------------------[0m
     echo   Health, White Noise, Void Edge, Vanilla, etc...
     echo   Stuff is same with in R6Manifest / 4kVersion
@@ -1789,12 +1788,13 @@ setlocal enableextensions enabledelayedexpansion
   ::4kRelease END
 ::4K TEXTURES END
 
+
 ::UNINSTALL START
   ::UninstallMenu START
   :UninstallMenu
     cls
     Title Rainbow Six Siege UninstallMenu
-    MODE 50,40
+    MODE 50,38
     echo [93m-----------------------NOTES----------------------[0m
     echo                   Uninstall Menu
     echo    Please select the correct downloaded folder.
@@ -1938,7 +1938,7 @@ setlocal enableextensions enabledelayedexpansion
 
   ::DeleteFolder START
   :DeleteFolder
-    MODE 60,20
+    MODE 60,10
     cls
     rd /s /q %DeleteDir% 2>nul || echo Error^^!
     if errorlevel 2 (
@@ -1962,7 +1962,7 @@ setlocal enableextensions enabledelayedexpansion
   :StartGame
     cls
     Title Rainbow Six Siege Game Starter
-    MODE 50,40
+    MODE 50,38
     echo [93m-----------------------NOTES----------------------[0m
     echo                   Game Starter
     echo    Please select the correct downloaded folder.
@@ -2130,7 +2130,7 @@ setlocal enableextensions enabledelayedexpansion
   ::StartChoose START
   :StartChoose
     cls
-    MODE 50,10
+    MODE 50,8
     echo [93m-----------------------NOTES----------------------[0m
     echo                   Start Choose
     echo        DirectX is a normal default R6:S
@@ -2155,7 +2155,7 @@ setlocal enableextensions enabledelayedexpansion
   ::GameStarter START
   :GameStarter
     cls
-    MODE 60,20
+    MODE 60,10
     echo Starting : %startexe%
     start %startexe% /belaunch
     pause
@@ -2172,10 +2172,10 @@ setlocal enableextensions enabledelayedexpansion
   :ExtraMenu
     cls
     Title Rainbow Six Siege Extra Menu
-    MODE 50,25
+    MODE 50,10
     echo [93m-----------------------NOTES----------------------[0m
     echo                Extra Language Menu
-    echo               Placeholder
+    echo             Extra Language finally added^^!
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "    Extra Version" "    Extra Event" "    Extra Release" "    Back"
 
@@ -2207,7 +2207,7 @@ setlocal enableextensions enabledelayedexpansion
   :ExtraVersion
     cls
     Title Rainbow Six Siege Extra Version
-    MODE 50,30
+    MODE 50,26
     echo [93m-----------------------NOTES----------------------[0m
     echo             Extra Version Language Menu
     echo      Manifests is from Zer0Bytes Manifest tool
@@ -2391,7 +2391,7 @@ setlocal enableextensions enabledelayedexpansion
   :ExtraEvent
     cls
     Title Rainbow Six Siege Extra Event
-    MODE 50,25
+    MODE 50,18
     echo [93m-----------------------NOTES----------------------[0m
     echo             Extra Event Language Menu
     echo   Outback is same with normal Chimera
@@ -2457,7 +2457,7 @@ setlocal enableextensions enabledelayedexpansion
   :ExtraRelease
     cls
     Title Rainbow Six Siege Extra Release
-    MODE 50,30
+    MODE 50,28
     echo [93m-----------------------NOTES----------------------[0m
     echo             Extra Release Language Menu
     echo      Only new, released version of game build
@@ -2895,10 +2895,10 @@ setlocal enableextensions enabledelayedexpansion
   :DownloadLang
     cls
     Title Rainbow Six Siege %ExtraName% Lang Downloader
-    MODE 50,38
+    MODE 50,20
     echo [93m-----------------------NOTES----------------------[0m
-    echo          %ExtraName% Language Downloader
-    echo               Placeholder
+    echo           %ExtraName% Language Downloader
+    echo       Some Language not contain manifest file
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "    French Lang" "    Italian Lang" "    German Lang" "    Spanish - Spain Lang" "    Portuguese - Brazil Lang" "    Polish Lang" "    Dutch Lang" "    Czech Lang" "    Korean Lang" "    Traditional Chinese Lang" "    Simplified Chinese Lang" "    Japanese Lang" "    Russian Lang" "    Back"
 
@@ -3108,7 +3108,7 @@ setlocal enableextensions enabledelayedexpansion
   :NoLang
     cls
     Title Rainbow Six Siege No Language File
-    MODE 50,20
+    MODE 50,8
     echo [93m-----------------------NOTES----------------------[0m
     echo          [31mNo Language for this operation[0m
     echo      Sorry , but for this operation not contain 
@@ -3133,7 +3133,7 @@ setlocal enableextensions enabledelayedexpansion
   echo [93m------------------NOTES------------------[0m
   echo     DirectX + VC Redist Downloader
   echo [93m------------------SELECT-----------------[0m
-  Resources\cmdmenusel f8f0 "   DirectX" "   VC 2010 Redist" "   VC 2012 Redist" "   VC 2015 Redist"  "   VC 2017 Redist" " Back"
+  Resources\cmdmenusel f8f0 "   DirectX" "   VC 2010 Redist" "   VC 2012 Redist" "   VC 2015 Redist"  "   VC 2017 Redist" "   Back"
 
   if %ERRORLEVEL% == 1 (
   MODE 100,40
@@ -3203,7 +3203,7 @@ setlocal enableextensions enabledelayedexpansion
   set Position=MainMenu
   cls
   Title Zero Folder Renamer
-  MODE 50,30
+  MODE 50,20
   echo Make sure you not Downloaded two times^^!
   pause
   echo Waiting to fully rename the folders.
