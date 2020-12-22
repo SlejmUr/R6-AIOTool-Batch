@@ -1318,232 +1318,157 @@ setlocal enableextensions enabledelayedexpansion
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Back"
 
     if %ERRORLEVEL%==1 (
-    :Vanilla4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8394183851197739981 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Vanilla 4K^^!
-    pause
-    cls
-    set Downloaded=Vanilla 4K
-    goto DownloadCheck
+    :VanillaHighText
+    set Position=Download4K
+    set Name4K=Vanilla 4K
+    set Path4K=R6Downloads\Y1S0_Vanilla
+    set Manifest4K=8394183851197739981
+    goto GoingTo
     )
     if %ERRORLEVEL%==2 (
     :BlackIce4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3756048967966286899 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Black Ice 4K^^!
-    pause
-    cls
-    set Downloaded=Black Ice 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Black Ice 4K
+    set Path4K=R6Downloads\Y1S1_Black_Ice
+    set Manifest4K=3756048967966286899
+    goto GoingTo
     )
     if %ERRORLEVEL%==3 (
     :DustLine4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1338949402410764888 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Dust Line 4K^^!
-    pause
-    cls
-    set Downloaded=Dust Line 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Dust Line 4K
+    set Path4K=R6Downloads\Y1S2_Dust_Line
+    set Manifest4K=1338949402410764888
+    goto GoingTo
     )
     if %ERRORLEVEL%==4 (
     :SkullRain4kZero
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3267970968757091405 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Skull Rain 4k [Zero]
-    pause
-    cls
-    set Downloaded=Skull Rain 4K [Zero]
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Skull Rain [Zero] 4K
+    set Path4K=R6Downloads\Y1S3_SkullRain
+    set Manifest4K=3267970968757091405
+    goto GoingTo
     )
     if %ERRORLEVEL%==5 (
     :RedCrow4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1825939060444887403 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Red Crow 4K^^!
-    pause
-    cls
-    set Downloaded=Red Crow 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Red Crow 4K
+    set Path4K=R6Downloads\Y1S4_Red_Crow
+    set Manifest4K=1825939060444887403
+    goto GoingTo
     )
     if %ERRORLEVEL%==6 (
     :VelvetShell4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3196596628759979362 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Velvet Shell 4K^^!
-    pause
-    cls
-    set Downloaded=Velvet Shell 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Velvet Shell 4K
+    set Path4K=R6Downloads\Y2S1_Velvet_Shell
+    set Manifest4K=3196596628759979362
+    goto GoingTo
     )
     if %ERRORLEVEL%==7 (
     :Health4kZero
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7497579858536910279 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Health 4k [Zero]
-    pause
-    cls
-    set Downloaded=Health 4K [Zero]
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Health [Zero] 4K
+    set Path4K=R6Downloads\Y2S2_Health_2
+    set Manifest4K=7497579858536910279
+    goto GoingTo
     )
     if %ERRORLEVEL%==8 (
     :BloodOrchid4kZero
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6420469519659049757 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Blood Orchid 4k [Zero]
-    pause
-    cls
-    set Downloaded=Blood Orchid 4K [Zero]
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Blood Orchid [Zero] 4K
+    set Path4K=R6Downloads\Y2S3_BloodOrchid
+    set Manifest4K=6420469519659049757
+    goto GoingTo
     )
     if %ERRORLEVEL%==9 (
     :WhiteNoise4kZero
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 959656357428794421 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo White Noise 4k [Zero]
-    pause
-    cls
-    set Downloaded=White Noise 4K [Zero]
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=White Noise [Zero] 4K
+    set Path4K=R6Downloads\Y2S4_WhiteNoise
+    set Manifest4K=959656357428794421
+    goto GoingTo
     )
     if %ERRORLEVEL%==10 (
     :Chimera4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1668513364192382097 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo Chimera / Outback 4K
-    pause
-    cls
-    set Downloaded=Chimera / Outback 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Chimera / Outback 4K
+    set Path4K=R6Downloads\Y3S1_Chimera
+    set Manifest4K=1668513364192382097
+    goto GoingTo
     )
     if %ERRORLEVEL%==11 (
     :ParaBellum4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 204186978012641075 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Para Bellum 4K^^!
-    pause
-    cls
-    set Downloaded=Para Bellum 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Para Bellum 4K
+    set Path4K=R6Downloads\Y3S2_Para_Bellum
+    set Manifest4K=204186978012641075
+    goto GoingTo
     )
     if %ERRORLEVEL%==12 (
     :MadHouse4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6431001239225997495 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo MadHouse 4k 
-    pause
-    cls
-    set Downloaded=Mad House 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Mad House 4K
+    set Path4K=R6Downloads\Y3S3_MadHouse
+    set Manifest4K=6431001239225997495
+    goto GoingTo
     )
     if %ERRORLEVEL%==13 (
     :WindBastion4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2243348760021617592 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Wind Bastion 4K^^!
-    pause
-    cls
-    set Downloaded=Wind Bastion 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Wind Bastion 4K
+    set Path4K=R6Downloads\Y3S4_Wind_Bastion
+    set Manifest4K=2243348760021617592
+    goto GoingTo
     )
     if %ERRORLEVEL%==14 (
     :RainbowIsMagic4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3462709886432904855 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Rainbow Is Magic 4k
-    pause
-    cls
-    set Downloaded=Rainbow Is Magic 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K==Rainbow Is Magic 4K
+    set Path4K=R6Downloads\Y4S1_RainbowIsMagic
+    set Manifest4K=3462709886432904855
+    goto GoingTo
     )
     if %ERRORLEVEL%==15 (
     :PhantomSight4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4107080515154236795 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete ^^!
-    echo It's Phantom Sight 4K ^^!
-    pause
-    cls
-    set Downloaded=Phantom Sight 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K==Phantom Sight 4K
+    set Path4K=R6Downloads\Y4S2_Phantom_Sight
+    set Manifest4K=4107080515154236795
+    goto GoingTo
     )
     if %ERRORLEVEL%==16 (
     :DoktorsCurse4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 4319184561394137009 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Doktors Curse 4k 
-    pause
-    cls
-    set Downloaded=Doktors Curse 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Doktors Curse 4K
+    set Path4K=R6Downloads\Y4S3_DoktorsCurse
+    set Manifest4K=4319184561394137009
+    goto GoingTo
     )
     if %ERRORLEVEL%==17 (
     :ShiftingTides4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 6048763664997452513 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Shifting Tides / Road To S.I. 4K^^!
-    pause
-    cls
-    set Downloaded=Shifting Tides / Road To S.I. 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Shifting Tides / Road To S.I. 4K
+    set Path4K=R6Downloads\Y4S4_Shifting_Tides
+    set Manifest4K=6048763664997452513
+    goto GoingTo
+
     )
     if %ERRORLEVEL%==18 (
     :GangDestruction4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1775661942779524815 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Gang Destruction 4k
-    pause
-    cls
-    set Downloaded=Gang Destruction 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Gang Destruction 4K
+    set Path4K=R6Downloads\Y5S1_GangDestruction
+    set Manifest4K=1775661942779524815
+    goto GoingTo
     )
     if %ERRORLEVEL%==19 (
     :MUTEProtocol4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1430519549301269175 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo MUTE Protocol 4k
-    pause
-    cls
-    set Downloaded=MUTE Protocol 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=MUTE Protocol 4K
+    set Path4K=R6Downloads\Y5S2_MUTE
+    set Manifest4K=1430519549301269175
+    goto GoingTo
     )
     if %ERRORLEVEL% == 20 (
     set Position=TextureMenu
@@ -1590,15 +1515,11 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==9 (
     :SugarFright4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3569318872166878802 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Sugar Fright / Telly 4K^^!
-    pause
-    cls
-    set Downloaded=Sugar Fright / Telly 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Sugar Fright / Telly 4K
+    set Path4K=R6Downloads\Y5S3_Sugar_Fright
+    set Manifest4K=3569318872166878802
+    goto GoingTo
     )
     if %ERRORLEVEL% == 10 (
     set Position=TextureMenu
@@ -1629,15 +1550,11 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==4 (
     :SkullRain4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 5184390432533910806 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Skull Rain 4K^^!
-    pause
-    cls
-    set Downloaded=Skull Rain 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Skull Rain 4K
+    set Path4K=R6Downloads\Y1S3_Skull_Rain
+    set Manifest4K=5184390432533910806
+    goto GoingTo
     )
     if %ERRORLEVEL%==5 (
     goto RedCrow4k
@@ -1647,39 +1564,27 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==7 (
     :Health4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7497579858536910279 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Health 4K^^!
-    pause
-    cls
-    set Downloaded=Health 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Nealth 4K
+    set Path4K=R6Downloads\Y2S2_Health
+    set Manifest4K=7497579858536910279
+    goto GoingTo
     )
     if %ERRORLEVEL%==8 (
     :BloodOrchid4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3065193946575458487 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Blood Orchid 4K^^!
-    pause
-    cls
-    set Downloaded=Blood Orchid 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Blood Orchid 4K
+    set Path4K=R6Downloads\Y2S3_Blood_Orchid
+    set Manifest4K=3065193946575458487
+    goto GoingTo
     )
     if %ERRORLEVEL%==9 (
     :WhiteNoise4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 1118649577165385479 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's White Noise 4K^^!
-    pause
-    cls
-    set Downloaded=White Noise 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=White Noise 4K
+    set Path4K=R6Downloads\Y2S4_White_Noise
+    set Manifest4K=1118649577165385479
+    goto GoingTo
     )
     if %ERRORLEVEL%==10 (
     goto Chimera4k
@@ -1689,96 +1594,68 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==12 (
     :GrimSky4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3378966402050009606 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Grim Sky 4K^^!
-    pause
-    cls
-    set Downloaded=Grim Sky 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Grim Sky 4K
+    set Path4K=R6Downloads\Y3S3_Grim_Sky
+    set Manifest4K=3378966402050009606
+    goto GoingTo
     )
     if %ERRORLEVEL%==13 (
     goto WindBastion4k
     )
     if %ERRORLEVEL%==14 (
     :BurntHorizon4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 888629411354320742 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Burnt Horizon 4K^^!
-    pause
-    cls
-    set Downloaded=Burnt Horizon 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Burnt Horizon 4K
+    set Path4K=R6Downloads\Y4S1_Burnt_Horizon
+    set Manifest4K=888629411354320742
+    goto GoingTo
     )
     if %ERRORLEVEL%==15 (
     goto PhantomSight4k
     )
     if %ERRORLEVEL%==16 (
     :EmberRise4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 8340682081776225833 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Ember Rise 4K^^!
-    pause
-    cls
-    set Downloaded=Ember Rise 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Ember Rise 4K
+    set Path4K=R6Downloads\Y4S3_Ember_Rise
+    set Manifest4K=8340682081776225833
+    goto GoingTo
     )
     if %ERRORLEVEL%==17 (
     goto ShiftingTides4k
     )
     if %ERRORLEVEL%==18 (
     :VoidEdge4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 2194493692563107142 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Void Edge 4K^^!
-    pause
-    cls
-    set Downloaded=Void Edge 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Void Edge 4K
+    set Path4K=R6Downloads\Y5S1_Void_Edge
+    set Manifest4K=2194493692563107142
+    goto GoingTo
     )
     if %ERRORLEVEL%==19 (
     :SteelWave4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 3257522596542046976 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Steel Wave 4K^^!
-    pause
-    cls
-    set Downloaded=Steel Wave 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Steel Wave 4K
+    set Path4K=R6Downloads\Y5S2_Steel_Wave
+    set Manifest4K=3257522596542046976
+    goto GoingTo
     )
     if %ERRORLEVEL%==20 (
     :ShadowLegacy4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 5051396185388503167 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Shadow Legacy 4K^^!
-    pause
-    cls
-    set Downloaded=Shadow Legacy 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Shadow Legacy 4K
+    set Path4K=R6Downloads\Y5S3_Shadow_Legacy
+    set Manifest4K=5051396185388503167
+    goto GoingTo
     )
     if %ERRORLEVEL%==21 (
     :NeonDawn4k
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest 7681923351308243133 -username %username% -remember-password -dir "R6Downloads\Y5S4_Neon_Dawn" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Neon Dawn 4K^^!
-    pause
-    cls
-    set Downloaded=Neon Dawn 4K
-    goto DownloadCheck
+    set Position=Download4K
+    set Name4K=Neon Dawn 4K
+    set Path4K=R6Downloads\Y5S4_Neon_Dawn
+    set Manifest4K=7681923351308243133
+    goto GoingTo
     )
     if %ERRORLEVEL% == 22 (
     set Position=TextureMenu
@@ -1786,6 +1663,20 @@ setlocal enableextensions enabledelayedexpansion
     )
     goto 4kRelease
   ::4kRelease END
+
+
+  ::Download4K START
+  :Download4K
+    MODE 100,40
+    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377239 -manifest %Manifest4K% -username %username% -remember-password -dir "%Path4K%" -validate -max-servers 15 -max-downloads 10
+    echo.
+    echo Download complete^^!
+    echo It's %Name4K%
+    pause
+    cls
+    set Downloaded="%Name4K%"
+    goto DownloadCheck
+  ::Download4K END
 ::4K TEXTURES END
 
 
@@ -2914,7 +2805,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's French Lang on %ExtraName%
     pause
     cls
-    set Downloaded=French Lang on %ExtraName%
+    set Downloaded="French Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==2 (
@@ -2929,7 +2820,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's Italian Lang on %ExtraName%
     pause
     cls
-    set Downloaded=Italian Lang on %ExtraName%
+    set Downloaded="Italian Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==3 (
@@ -2944,7 +2835,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's German Lang on %ExtraName%
     pause
     cls
-    set Downloaded=German Lang on %ExtraName%
+    set Downloaded="German Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==4 (
@@ -2959,7 +2850,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's Spanish Lang on %ExtraName%
     pause
     cls
-    set Downloaded=Spanish Lang on %ExtraName%
+    set Downloaded="Spanish Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==5 (
@@ -2989,7 +2880,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's Polish Lang on %ExtraName%
     pause
     cls
-    set Downloaded=Polish Lang on %ExtraName%
+    set Downloaded="Polish Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==7 (
@@ -3004,7 +2895,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's Dutch Lang on %ExtraName%
     pause
     cls
-    set Downloaded=Dutch Lang on %ExtraName%
+    set Downloaded="Dutch Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==8 (
@@ -3019,7 +2910,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's Czech Lang on %ExtraName%
     pause
     cls
-    set Downloaded=Czech Lang on %ExtraName%
+    set Downloaded="Czech Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==9 (
@@ -3034,7 +2925,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's Korean Lang on %ExtraName%
     pause
     cls
-    set Downloaded=Korean Lang on %ExtraName%
+    set Downloaded="Korean Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==10 (
@@ -3049,7 +2940,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's TChinese Lang on %ExtraName%
     pause
     cls
-    set Downloaded=TChinese Lang on %ExtraName%
+    set Downloaded="TChinese Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==11 (
@@ -3064,7 +2955,7 @@ setlocal enableextensions enabledelayedexpansion
       echo It's SChinese Lang on %ExtraName%
       pause
       cls
-      set Downloaded=SChinese Lang on %ExtraName%
+      set Downloaded="SChinese Lang on %ExtraName%"
       goto DownloadCheck
     )
     if %ERRORLEVEL%==12 (
@@ -3079,7 +2970,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's Japanese Lang on %ExtraName%
     pause
     cls
-    set Downloaded=Japanese Lang on %ExtraName%
+    set Downloaded="Japanese Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==13 (
@@ -3094,7 +2985,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's Russian Lang on %ExtraName%
     pause
     cls
-    set Downloaded=Russian Lang on %ExtraName%
+    set Downloaded="Russian Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==14 (
@@ -3143,7 +3034,7 @@ setlocal enableextensions enabledelayedexpansion
   echo It's DirectX^^!
   pause
   cls
-  set Downloaded=DirectX
+  set Downloaded="DirectX"
   goto DownloadCheck
   )
   if %ERRORLEVEL% == 2 (
@@ -3154,7 +3045,7 @@ setlocal enableextensions enabledelayedexpansion
   echo It's VC 2010 Redist^^!
   pause
   cls
-  set Downloaded=VC 2010 Redist
+  set Downloaded="VC 2010 Redist"
   goto DownloadCheck
   )
   if %ERRORLEVEL% == 3 (
@@ -3165,7 +3056,7 @@ setlocal enableextensions enabledelayedexpansion
   echo It's VC 2012 Redist^^!
   pause
   cls
-  set Downloaded=VC 2012 Redist
+  set Downloaded="VC 2012 Redist"
   goto DownloadCheck
   )
   if %ERRORLEVEL% == 4 (
@@ -3176,7 +3067,7 @@ setlocal enableextensions enabledelayedexpansion
   echo It's VC 2015 Redist^^!
   pause
   cls
-  set Downloaded=VC 2015 Redist
+  set Downloaded="VC 2015 Redist"
   goto DownloadCheck
   )
   if %ERRORLEVEL% == 5 (
@@ -3187,7 +3078,7 @@ setlocal enableextensions enabledelayedexpansion
   echo It's VC 2017 Redist^^!
   pause
   cls
-  set Downloaded=VC 2017 Redist
+  set Downloaded="VC 2017 Redist"
   goto DownloadCheck
   )
   if %ERRORLEVEL% == 6 (
@@ -3399,7 +3290,7 @@ setlocal enableextensions enabledelayedexpansion
 
   :DownloadFound
     set Position=GameMenu
-    set LOGINFO=%Selected% Downloaded
+    set "LOGINFO=%Selected% Downloaded"
     set LogNumber=1
     goto logtolog
 
