@@ -24,6 +24,8 @@ setlocal enableextensions enabledelayedexpansion
   set homepath=%cd%
   set AllInOneVersion=DEV
   set discord=discord.gg/EvrGzAV
+  set DepotSDK=377237
+  ::depot set for future swapping
   goto settime
 
 ::TIME SET START
@@ -635,265 +637,185 @@ setlocal enableextensions enabledelayedexpansion
 
     if %ERRORLEVEL%==1 (
     :Vanilla
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8358812283631269928 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 3893422760579204530 -username %username% -remember-password -dir "R6Downloads\Y1S0_Vanilla" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Vanilla
-    pause
-    cls
-    set Downloaded=Vanilla
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Vanilla
+    set ManifestSDK=8358812283631269928
+    set ManifestContent=3893422760579204530
+    set DownloadPath=R6Downloads\Y1S0_Vanilla
+    goto GoingTo
     )
     if %ERRORLEVEL%==2 (
     :BlackIce
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5188997148801516344 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7932785808040895147 -username %username% -remember-password -dir "R6Downloads\Y1S1_Black_Ice" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Black Ice Released
-    pause
-    cls
-    set Downloaded=Black Ice
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Black Ice
+    set ManifestSDK=5188997148801516344
+    set ManifestContent=7932785808040895147
+    set DownloadPath=R6Downloads\Y1S1_Black_Ice
+    goto GoingTo
     )
     if %ERRORLEVEL%==3 (
     :DustLine
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2303064029242396590 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2206497318678061176 -username %username% -remember-password -dir "R6Downloads\Y1S2_Dust_Line" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Dust Line Released
-    pause
-    cls
-    set Downloaded=Dust Line
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Dust Line
+    set ManifestSDK=2303064029242396590
+    set ManifestContent=2206497318678061176
+    set DownloadPath=R6Downloads\Y1S2_Dust_Line
+    goto GoingTo
     )
     if %ERRORLEVEL%==4 (
     :SkullRainZero
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5819137024728546741 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5851804596427790505 -username %username% -remember-password -dir "R6Downloads\Y1S3_SkullRain" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Skull Rain 4.2
-    pause
-    cls
-    set Downloaded=Skull Rain 4.2
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Skull Rain 4.2
+    set ManifestSDK=5819137024728546741
+    set ManifestContent=5851804596427790505
+    set DownloadPath=R6Downloads\Y1S3_SkullRain
+    goto GoingTo
     )
     if %ERRORLEVEL%==5 (
     :RedCrow
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3576607363557872807 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8569920171217002292 -username %username% -remember-password -dir "R6Downloads\Y1S4_Red_Crow" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Red Crow Released^^!
-    pause
-    cls
-    set Downloaded=Red Crow
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Red Crow
+    set ManifestSDK=3576607363557872807
+    set ManifestContent=8569920171217002292
+    set DownloadPath=R6Downloads\Y1S4_Red_Crow
+    goto GoingTo
     )
     if %ERRORLEVEL%==6 (
     :VelvetShell
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2248734317261478192 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8006071763917433748 -username %username% -remember-password -dir "R6Downloads\Y2S1_Velvet_Shell" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Velvet Shell Released^^!
-    pause
-    cls
-    set Downloaded=Velvet Shell
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Velvet Shell
+    set ManifestSDK=2248734317261478192
+    set ManifestContent=8006071763917433748
+    set DownloadPath=R6Downloads\Y2S1_Velvet_Shell
+    goto GoingTo
     )
     if %ERRORLEVEL%==7 (
     :HealthZero
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5875987479498297665 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 708773000306432190 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health_2" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Health [Zer0]
-    pause
-    cls
-    set Downloaded=Health [Zer0]
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Health [Zer0]
+    set ManifestSDK=5875987479498297665
+    set ManifestContent=708773000306432190
+    set DownloadPath=R6Downloads\Y2S2_Health_2
+    goto GoingTo
     )
     if %ERRORLEVEL%==8 (
     :BloodOrchidZero
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 6708129824495912434 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1613631671988840841 -username %username% -remember-password -dir "R6Downloads\Y2S3_BloodOrchid" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Blood Orchid 2.3.1.1
-    pause
-    cls
-    set Downloaded=Blood Orchid 2.3.1.1 [Zer0]
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Blood Orchid 2.3.1.1 [Zer0]
+    set ManifestSDK=6708129824495912434
+    set ManifestContent=1613631671988840841
+    set DownloadPath=R6Downloads\Y2S3_BloodOrchid
+    goto GoingTo
     )
     if %ERRORLEVEL%==9 (
     :WhiteNoiseZero
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8748734086032257441 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4221297486420648079 -username %username% -remember-password -dir "R6Downloads\Y2S4_WhiteNoise" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo WHITE NOISE [Zer0] 
-    pause
-    cls
-    set Downloaded=White Noise [Zer0]
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=White Noise [Zer0]
+    set ManifestSDK=8748734086032257441
+    set ManifestContent=4221297486420648079
+    set DownloadPath=R6Downloads\Y2S4_WhiteNoise
+    goto GoingTo
     )
     if %ERRORLEVEL%==10 (
     :Chimera
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5071357104726974256 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4701787239566783972 -username %username% -remember-password -dir "R6Downloads\Y3S1_Chimera" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Chimera Released^^!
-    pause
-    cls
-    set Downloaded=Chimera
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Chimera
+    set ManifestSDK=5071357104726974256
+    set ManifestContent=4701787239566783972
+    set DownloadPath=R6Downloads\Y3S1_Chimera
+    goto GoingTo
     )
     if %ERRORLEVEL%==11 (
     :ParaBellum
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8312108283310615233 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8765715607275074515 -username %username% -remember-password -dir "R6Downloads\Y3S2_Para_Bellum" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Para Bellum Released^^!
-    pause
-    cls
-    set Downloaded=Para Bellum
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Para Bellum
+    set ManifestSDK=8312108283310615233
+    set ManifestContent=8765715607275074515
+    set DownloadPath=R6Downloads\Y3S2_Para_Bellum
+    goto GoingTo
     )
     if %ERRORLEVEL%==12 (
     :MadHouse
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 5562094852451837435 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7781202564071310413 -username %username% -remember-password -dir "R6Downloads\Y3S3_MadHouse" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo GRIM SKY [Zer0] / Mad House
-    pause
-    cls
-    set Downloaded=GRIM SKY [Zer0] / Mad House
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=GRIM SKY [Zer0] / Mad House
+    set ManifestSDK=5562094852451837435
+    set ManifestContent=7781202564071310413
+    set DownloadPath=R6Downloads\Y3S3_MadHouse
+    goto GoingTo
     )
     if %ERRORLEVEL%==13 (
     :WindBastion
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 6502258854032233436 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7659555540733025386 -username %username% -remember-password -dir "R6Downloads\Y3S4_Wind_Bastion" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete ^^!
-    echo It's Wind Bastion Released
-    pause
-    cls
-    set Downloaded=Wind Bastion
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Wind Bastion
+    set ManifestSDK=6502258854032233436
+    set ManifestContent=7659555540733025386
+    set DownloadPath=R6Downloads\Y3S4_Wind_Bastion
+    goto GoingTo
     )
     if %ERRORLEVEL%==14 (
     :RainbowIsMagic
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8356277316976403078 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5935578581006804383 -username %username% -remember-password -dir "R6Downloads\Y4S1_RainbowIsMagic" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo BURNT HORIZON [Zer0] / Rainbow Is Magic
-    pause
-    cls
-    set Downloaded=BURNT HORIZON [Zer0] / Rainbow Is Magic
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=BURNT HORIZON [Zer0] / Rainbow Is Magic
+    set ManifestSDK=8356277316976403078
+    set ManifestContent=5935578581006804383
+    set DownloadPath=R6Downloads\Y4S1_RainbowIsMagic
+    goto GoingTo
     )
     if %ERRORLEVEL%==15 (
     :PhantomSight
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 693082837425613508 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5408324128694463720 -username %username% -remember-password -dir "R6Downloads\Y4S2_Phantom_Sight" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo PHANTOM SIGHT Released / Showdown
-    pause
-    cls
-    set Downloaded=PHANTOM SIGHT / Showdown
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=PHANTOM SIGHT / Showdown
+    set ManifestSDK=693082837425613508
+    set ManifestContent=5408324128694463720
+    set DownloadPath=R6Downloads\Y4S2_Phantom_Sight
+    goto GoingTo
     )
     if %ERRORLEVEL%==16 (
     :DoktorsCurse
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3546781236735558235 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7869081741739849703 -username %username% -remember-password -dir "R6Downloads\Y4S3_DoktorsCurse" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo EMBER RISE [Zer0] / Doctors Curse
-    pause
-    cls
-    set Downloaded=EMBER RISE [Zer0] / Doctors Curse
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=EMBER RISE [Zer0] / Doctors Curse
+    set ManifestSDK=3546781236735558235
+    set ManifestContent=7869081741739849703
+    set DownloadPath=R6Downloads\Y4S3_DoktorsCurse
+    goto GoingTo
     )
     if %ERRORLEVEL%==17 (
     :ShiftingTides
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 299124516841461614 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1842268638395240106 -username %username% -remember-password -dir "R6Downloads\Y4S4_Shifting_Tides" -validate -max-servers 20 -max-downloads 15
-    echo.
-    echo Download complete^^!
-    echo It's Shifting Tides Released^^!
-    pause
-    cls
-    set Downloaded=Shifting Tides
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Shifting Tides
+    set ManifestSDK=299124516841461614
+    set ManifestContent=1842268638395240106
+    set DownloadPath=R6Downloads\Y4S4_Shifting_Tides
+    goto GoingTo
     )
     if %ERRORLEVEL%==18 (
     :GangDestruction
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 1378283477131353042 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1739364586766771991 -username %username% -remember-password -dir "R6Downloads\Y5S1_GangDestruction" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Void Edge [Zer0] / Gang Destruction
-    pause
-    cls
-    set Downloaded=Void Edge [Zer0] / Gang Destruction
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Void Edge [Zer0] / Gang Destruction
+    set ManifestSDK=1378283477131353042
+    set ManifestContent=1739364586766771991
+    set DownloadPath=R6Downloads\Y5S1_GangDestruction
+    goto GoingTo
     )
     ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
     if %ERRORLEVEL%==19 (
     :MUTEProtocol
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2287849678928593252 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 1610834739284564851 -username %username% -remember-password -dir "R6Downloads\Y5S2_MUTE" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Steel Wave [Mute Protocol]
-    pause
-    cls
-    set Downloaded=Steel Wave [Mute Protocol]
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Steel Wave [Mute Protocol]
+    set ManifestSDK=2287849678928593252
+    set ManifestContent=1610834739284564851
+    set DownloadPath=R6Downloads\Y5S2_MUTE
+    goto GoingTo
     )
     ::SteelWave (omega/Mute Protocol)
     if %ERRORLEVEL%==20 (
     :OmegaSteelWave
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 4367817844736324940 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 893971391196952070 -username %username% -remember-password -dir "R6Downloads\Y5S2_SteelWave" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete Thanks Zer0 ^^!
-    echo Steel Wave [omega/Mute Protocol]
-    pause
-    cls
-    set Downloaded=Steel Wave [omega/Mute Protocol]
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Steel Wave [Omega/Mute Protocol]
+    set ManifestSDK=4367817844736324940
+    set ManifestContent=893971391196952070
+    set DownloadPath=R6Downloads\Y5S2_SteelWave
+    goto GoingTo
     )
     if %ERRORLEVEL% == 21 (
     set Position=InstallMenu
@@ -944,16 +866,12 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==10 (
     :SugarFright
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3265954110064157115 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5436378897406471956 -username %username% -remember-password -dir "R6Downloads\Y5S3_Sugar_Fright" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete ^^!
-    echo Sugar Fright / Telly
-    pause
-    cls
-    set Downloaded=Sugar Fright / Telly
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Sugar Fright / Telly
+    set ManifestSDK=3265954110064157115
+    set ManifestContent=5436378897406471956
+    set DownloadPath=R6Downloads\Y5S3_Sugar_Fright
+    goto GoingTo
     )
     if %ERRORLEVEL% == 11 (
     set Position=InstallMenu
@@ -984,16 +902,12 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==4 (
     :SkullRain
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 3552784069501585540 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 6528040263176897081 -username %username% -remember-password -dir "R6Downloads\Y1S3_Skull_Rain" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Skull Rain Released^^!
-    pause
-    cls
-    set Downloaded=Skull Rain
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Skull Rain
+    set ManifestSDK=3552784069501585540
+    set ManifestContent=6528040263176897081
+    set DownloadPath=R6Downloads\Y1S3_Skull_Rain
+    goto GoingTo
     )
     if %ERRORLEVEL%==5 (
     goto RedCrow
@@ -1003,42 +917,30 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==7 (
     :Health
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2786501509753402970 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2332919753188284154 -username %username% -remember-password -dir "R6Downloads\Y2S2_Health" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Health Released^^!
-    pause
-    cls
-    set Downloaded=Health
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Health
+    set ManifestSDK=2786501509753402970
+    set ManifestContent=2332919753188284154
+    set DownloadPath=R6Downloads\Y2S2_Health
+    goto GoingTo
     )
     if %ERRORLEVEL%==8 (
     :BloodOrchid
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8948840210977117778 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2410147212125863824 -username %username% -remember-password -dir "R6Downloads\Y2S3_Blood_Orchid" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Blood Orchid Released^^!
-    pause
-    cls
-    set Downloaded=Blood Orchid
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Blood Orchid
+    set ManifestSDK=8948840210977117778
+    set ManifestContent=2410147212125863824
+    set DownloadPath=R6Downloads\Y2S3_Blood_Orchid
+    goto GoingTo
     )
     if %ERRORLEVEL%==9 (
     :WhiteNoise
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 2066250193950057921 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2783803489764777627 -username %username% -remember-password -dir "R6Downloads\Y2S4_White_Noise" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's White Noise Released^^!
-    pause
-    cls
-    set Downloaded=White Noise
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=White Noise
+    set ManifestSDK=2066250193950057921
+    set ManifestContent=2783803489764777627
+    set DownloadPath=R6Downloads\Y2S4_White_Noise
+    goto GoingTo
     )
     if %ERRORLEVEL%==10 (
     goto Chimera
@@ -1048,103 +950,75 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==12 (
     :GrimSky
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7286067994760020542 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4133951394045241747 -username %username% -remember-password -dir "R6Downloads\Y3S3_Grim_Sky" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Grim Sky Released^^!
-    pause
-    cls
-    set Downloaded=Grim Sky
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Grim Sky
+    set ManifestSDK=7286067994760020542
+    set ManifestContent=4133951394045241747
+    set DownloadPath=R6Downloads\Y3S3_Grim_Sky
+    goto GoingTo
     )
     if %ERRORLEVEL%==13 (
     goto WindBastion
     )
     if %ERRORLEVEL%==14 (
     :BurntHorizon
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8985694971177711792 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 4355229858723790756 -username %username% -remember-password -dir "R6Downloads\Y4S1_Burnt_Horizon" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Burnt Horizon Released^^!
-    pause
-    cls
-    set Downloaded=Burnt Horizon
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Burnt Horizon
+    set ManifestSDK=8985694971177711792
+    set ManifestContent=4355229858723790756
+    set DownloadPath=R6Downloads\Y4S1_Burnt_Horizon
+    goto GoingTo
     )
     if %ERRORLEVEL%==15 (
     goto PhantomSight
     )
     if %ERRORLEVEL%==16 (
     :EmberRise
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7309481042294838052 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 5429930338066808153 -username %username% -remember-password -dir "R6Downloads\Y4S3_Ember_Rise" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Ember Rise Released^^!
-    pause
-    cls
-    set Downloaded=Ember Rise
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Ember Rise
+    set ManifestSDK=7309481042294838052
+    set ManifestContent=5429930338066808153
+    set DownloadPath=R6Downloads\Y4S3_Ember_Rise
+    goto GoingTo
     )
     if %ERRORLEVEL%==17 (
     goto ShiftingTides
     )
     if %ERRORLEVEL%==18 (
     :VoidEdge
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 8007091753837589034 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 2810676266503656332 -username %username% -remember-password -dir "R6Downloads\Y5S1_Void_Edge" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Void Edge Released^^!
-    pause
-    cls
-    set Downloaded=Void Edge
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Void Edge
+    set ManifestSDK=8007091753837589034
+    set ManifestContent=2810676266503656332
+    set DownloadPath=R6Downloads\Y5S1_Void_Edge
+    goto GoingTo
     )
     if %ERRORLEVEL%==19 (
     :SteelWave
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 7032500641931923367 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 8083217055977195199 -username %username% -remember-password -dir "R6Downloads\Y5S2_Steel_Wave" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Steel Wave Released^^!
-    pause
-    cls
-    set Downloaded=Steel Wave
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Steel Wave
+    set ManifestSDK=7032500641931923367
+    set ManifestContent=8083217055977195199
+    set DownloadPath=R6Downloads\Y5S2_Steel_Wave
+    goto GoingTo
     )
     if %ERRORLEVEL%==20 (
     :ShadowLegacy
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 885453180592640750 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7750070106878890861 -username %username% -remember-password -dir "R6Downloads\Y5S3_Shadow_Legacy" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Shadow Legacy Released^^!
-    pause
-    cls
-    set Downloaded=Shadow Legacy
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Shadow Legacy
+    set ManifestSDK=885453180592640750
+    set ManifestContent=7750070106878890861
+    set DownloadPath=R6Downloads\Y5S3_Shadow_Legacy
+    goto GoingTo
     )
     if %ERRORLEVEL%==21 (
     :NeonDawn
-    MODE 100,40
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 377237 -manifest 752517632960395491 -username %username% -remember-password -dir "R6Downloads\Y5S4_Neon_Dawn" -validate -max-servers 15 -max-downloads 10
-    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest 7979405601806736439 -username %username% -remember-password -dir "R6Downloads\Y5S4_Neon_Dawn" -validate -max-servers 15 -max-downloads 10
-    echo.
-    echo Download complete^^!
-    echo It's Neon Dawn Released^^!
-    pause
-    cls
-    set Downloaded=Neon Dawn
-    goto DownloadCheck
+    set Position=Downloading
+    set DownloadName=Neon Dawn
+    set ManifestSDK=752517632960395491
+    set ManifestContent=7979405601806736439
+    set DownloadPath=R6Downloads\Y5S4_Neon_Dawn
+    goto GoingTo
     )
     if %ERRORLEVEL% == 22 (
     set Position=InstallMenu
@@ -1268,6 +1142,20 @@ setlocal enableextensions enabledelayedexpansion
     )
     goto CustomMenu
   ::CustomMenu END
+
+  ::Downloading START
+  :Downloading
+    MODE 100,40
+    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot %DepotSDK% -manifest %ManifestSDK% -username %username% -remember-password -dir "%DownloadPath%" -validate -max-servers 15 -max-downloads 10
+    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 359551 -manifest %ManifestContent% -username %username% -remember-password -dir "%DownloadPath%" -validate -max-servers 15 -max-downloads 10
+    echo.
+    echo Download complete^^!
+    echo It's %DownloadName%
+    pause
+    cls
+    set Downloaded="%DownloadName%"
+    goto DownloadCheck
+    ::Downloading END
 ::INSTALL END
 
 ::4K TEXTURES START
