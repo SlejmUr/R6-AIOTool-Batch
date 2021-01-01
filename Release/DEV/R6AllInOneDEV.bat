@@ -25,6 +25,7 @@ setlocal enableextensions enabledelayedexpansion
   set AllInOneVersion=DEV
   set discord=discord.gg/EvrGzAV
   set DepotSDK=377237
+  set SKUname=WW Content
   ::depot set for future swapping
   goto settime
 
@@ -413,17 +414,17 @@ setlocal enableextensions enabledelayedexpansion
   set Position=MainMenu
   cls
   Title R6S AllInOne Tool
-  MODE 62,22
+  MODE 62,24
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege AllInOne Tool
   echo  [31mYou MUST have a copy of Siege on Steam to use the downloader^^![0m
   echo  This tools is forked from [91mZer0Bytes[0m manifest tool
   echo  Our Discord Server: [94m%discord%[0m 
   echo  AIO Tool Version: [32m%AllInOneVersion%[0m 
-  echo  Steam User: [96m%username%[0m
+  echo  Steam User: [96m%username%[0m ^| Sku : [36m%SKUname%[0m 
   echo  Read FAQ!
   echo [93m----------------------------SELECT----------------------------[0m
-  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Update" "  Exit"
+  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  SKU Switch" "  Update" "  Exit"
 
   if %ERRORLEVEL% == 1 (
   set Position=faq
@@ -476,11 +477,20 @@ setlocal enableextensions enabledelayedexpansion
   set Position=ZeroFolderRenamer
   goto GoingTo
   )
-  if %ERRORLEVEL%==11 (
+  if %ERRORLEVEL% == 11 (
+    if %DepotSDK% == 377237 (
+      set DepotSDK=377238
+      set SKUname=RUS Content
+      ) else (
+      set DepotSDK=377237
+      set SKUname=WW Content
+      )
+  )
+  if %ERRORLEVEL%==12 (
   set Position=Update
   goto GoingTo
   )
-  if %ERRORLEVEL% == 12 (
+  if %ERRORLEVEL% == 13 (
   set Position=exiting
   set LOGTYPE=1
   set LOGINFO=Exited
@@ -639,162 +649,234 @@ setlocal enableextensions enabledelayedexpansion
     :Vanilla
     set Position=Downloading
     set DownloadName=Vanilla
-    set ManifestSDK=8358812283631269928
     set ManifestContent=3893422760579204530
     set DownloadPath=R6Downloads\Y1S0_Vanilla
+      if %DepotSDK% == 377237 (
+        set ManifestSDK=8358812283631269928
+      ) else (
+        set ManifestSDK=6835384933146381100
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==2 (
     :BlackIce
     set Position=Downloading
     set DownloadName=Black Ice
-    set ManifestSDK=5188997148801516344
     set ManifestContent=7932785808040895147
     set DownloadPath=R6Downloads\Y1S1_Black_Ice
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=5188997148801516344
+      ) else (
+        set ManifestSDK=5362991837480196824
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==3 (
     :DustLine
     set Position=Downloading
     set DownloadName=Dust Line
-    set ManifestSDK=2303064029242396590
     set ManifestContent=2206497318678061176
     set DownloadPath=R6Downloads\Y1S2_Dust_Line
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=2303064029242396590
+      ) else (
+        set ManifestSDK=3040224537841664111
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==4 (
     :SkullRainZero
     set Position=Downloading
     set DownloadName=Skull Rain 4.2
-    set ManifestSDK=5819137024728546741
     set ManifestContent=5851804596427790505
     set DownloadPath=R6Downloads\Y1S3_SkullRain
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=5819137024728546741
+      ) else (
+        set ManifestSDK=7597187834633512926
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==5 (
     :RedCrow
     set Position=Downloading
     set DownloadName=Red Crow
-    set ManifestSDK=3576607363557872807
     set ManifestContent=8569920171217002292
     set DownloadPath=R6Downloads\Y1S4_Red_Crow
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=3576607363557872807
+      ) else (
+        set ManifestSDK=912564683190696342
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==6 (
     :VelvetShell
     set Position=Downloading
     set DownloadName=Velvet Shell
-    set ManifestSDK=2248734317261478192
     set ManifestContent=8006071763917433748
     set DownloadPath=R6Downloads\Y2S1_Velvet_Shell
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=2248734317261478192
+      ) else (
+        set ManifestSDK=2687181326074258760
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==7 (
-    :HealthZero
+    :Health
     set Position=Downloading
-    set DownloadName=Health [Zer0]
-    set ManifestSDK=5875987479498297665
+    set DownloadName=Health
     set ManifestContent=708773000306432190
-    set DownloadPath=R6Downloads\Y2S2_Health_2
+    set DownloadPath=R6Downloads\Y2S2_Health
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=5875987479498297665
+      ) else (
+        set ManifestSDK=8542242518901049325
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==8 (
     :BloodOrchidZero
     set Position=Downloading
     set DownloadName=Blood Orchid 2.3.1.1 [Zer0]
-    set ManifestSDK=6708129824495912434
     set ManifestContent=1613631671988840841
     set DownloadPath=R6Downloads\Y2S3_BloodOrchid
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=6309847129820490464
+      ) else (
+        set ManifestSDK=3899500673949464829
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==9 (
     :WhiteNoiseZero
     set Position=Downloading
     set DownloadName=White Noise [Zer0]
-    set ManifestSDK=8748734086032257441
     set ManifestContent=4221297486420648079
     set DownloadPath=R6Downloads\Y2S4_WhiteNoise
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=8748734086032257441
+      ) else (
+        set ManifestSDK=8175359039160965183
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==10 (
     :Chimera
     set Position=Downloading
     set DownloadName=Chimera
-    set ManifestSDK=5071357104726974256
     set ManifestContent=4701787239566783972
     set DownloadPath=R6Downloads\Y3S1_Chimera
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=5071357104726974256
+      ) else (
+        set ManifestSDK=4768963659370299631
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==11 (
     :ParaBellum
     set Position=Downloading
     set DownloadName=Para Bellum
-    set ManifestSDK=8312108283310615233
     set ManifestContent=8765715607275074515
     set DownloadPath=R6Downloads\Y3S2_Para_Bellum
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=8312108283310615233
+      ) else (
+        set ManifestSDK=1474330970340166539
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==12 (
     :MadHouse
     set Position=Downloading
     set DownloadName=GRIM SKY [Zer0] / Mad House
-    set ManifestSDK=5562094852451837435
     set ManifestContent=7781202564071310413
     set DownloadPath=R6Downloads\Y3S3_MadHouse
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=5562094852451837435
+      ) else (
+        set ManifestSDK=5465169470949211447
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==13 (
     :WindBastion
     set Position=Downloading
     set DownloadName=Wind Bastion
-    set ManifestSDK=6502258854032233436
     set ManifestContent=7659555540733025386
     set DownloadPath=R6Downloads\Y3S4_Wind_Bastion
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=6502258854032233436
+      ) else (
+        set ManifestSDK=5406593359909338734
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==14 (
     :RainbowIsMagic
     set Position=Downloading
     set DownloadName=BURNT HORIZON [Zer0] / Rainbow Is Magic
-    set ManifestSDK=8356277316976403078
     set ManifestContent=5935578581006804383
     set DownloadPath=R6Downloads\Y4S1_RainbowIsMagic
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=8356277316976403078
+      ) else (
+        set ManifestSDK=1384328559966859661
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==15 (
     :PhantomSight
     set Position=Downloading
     set DownloadName=PHANTOM SIGHT / Showdown
-    set ManifestSDK=693082837425613508
     set ManifestContent=5408324128694463720
     set DownloadPath=R6Downloads\Y4S2_Phantom_Sight
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=693082837425613508
+      ) else (
+        set ManifestSDK=3326664059403997209
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==16 (
     :DoktorsCurse
     set Position=Downloading
     set DownloadName=EMBER RISE [Zer0] / Doctors Curse
-    set ManifestSDK=3546781236735558235
     set ManifestContent=7869081741739849703
     set DownloadPath=R6Downloads\Y4S3_DoktorsCurse
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=3546781236735558235
+      ) else (
+        set ManifestSDK=9016692046802024636
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==17 (
     :ShiftingTides
     set Position=Downloading
     set DownloadName=Shifting Tides
-    set ManifestSDK=299124516841461614
     set ManifestContent=1842268638395240106
     set DownloadPath=R6Downloads\Y4S4_Shifting_Tides
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=299124516841461614
+      ) else (
+        set ManifestSDK=510172308722680354
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==18 (
     :GangDestruction
     set Position=Downloading
     set DownloadName=Void Edge [Zer0] / Gang Destruction
-    set ManifestSDK=1378283477131353042
     set ManifestContent=1739364586766771991
     set DownloadPath=R6Downloads\Y5S1_GangDestruction
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=1378283477131353042
+      ) else (
+        set ManifestSDK=8141661820686844368
+      )
     goto GoingTo
     )
     ::steel wave Y5S2.3.0_C5433707_D1028748_S38774_14603060 (Mute Protocol)
@@ -802,9 +884,13 @@ setlocal enableextensions enabledelayedexpansion
     :MUTEProtocol
     set Position=Downloading
     set DownloadName=Steel Wave [Mute Protocol]
-    set ManifestSDK=2287849678928593252
     set ManifestContent=1610834739284564851
     set DownloadPath=R6Downloads\Y5S2_MUTE
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=2287849678928593252
+      ) else (
+        set ManifestSDK=8753206532335363245
+      )
     goto GoingTo
     )
     ::SteelWave (omega/Mute Protocol)
@@ -812,9 +898,13 @@ setlocal enableextensions enabledelayedexpansion
     :OmegaSteelWave
     set Position=Downloading
     set DownloadName=Steel Wave [Omega/Mute Protocol]
-    set ManifestSDK=4367817844736324940
     set ManifestContent=893971391196952070
     set DownloadPath=R6Downloads\Y5S2_SteelWave
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=4367817844736324940
+      ) else (
+        set ManifestSDK=6938478745264725185
+      )
     goto GoingTo
     )
     if %ERRORLEVEL% == 21 (
@@ -868,9 +958,13 @@ setlocal enableextensions enabledelayedexpansion
     :SugarFright
     set Position=Downloading
     set DownloadName=Sugar Fright / Telly
-    set ManifestSDK=3265954110064157115
     set ManifestContent=5436378897406471956
     set DownloadPath=R6Downloads\Y5S3_Sugar_Fright
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=3265954110064157115
+      ) else (
+        set ManifestSDK=693505476132312360
+      )
     goto GoingTo
     )
     if %ERRORLEVEL% == 11 (
@@ -904,9 +998,13 @@ setlocal enableextensions enabledelayedexpansion
     :SkullRain
     set Position=Downloading
     set DownloadName=Skull Rain
-    set ManifestSDK=3552784069501585540
     set ManifestContent=6528040263176897081
     set DownloadPath=R6Downloads\Y1S3_Skull_Rain
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=3552784069501585540
+      ) else (
+        set ManifestSDK=2956768406107766016
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==5 (
@@ -916,30 +1014,32 @@ setlocal enableextensions enabledelayedexpansion
     goto VelvetShell
     )
     if %ERRORLEVEL%==7 (
-    :Health
-    set Position=Downloading
-    set DownloadName=Health
-    set ManifestSDK=2786501509753402970
-    set ManifestContent=2332919753188284154
-    set DownloadPath=R6Downloads\Y2S2_Health
-    goto GoingTo
+    goto Health
     )
     if %ERRORLEVEL%==8 (
     :BloodOrchid
     set Position=Downloading
     set DownloadName=Blood Orchid
-    set ManifestSDK=8948840210977117778
-    set ManifestContent=2410147212125863824
+    set ManifestContent=2595400291492146232
     set DownloadPath=R6Downloads\Y2S3_Blood_Orchid
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=8738820022932508379
+      ) else (
+        set ManifestSDK=4662662335520989204
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==9 (
     :WhiteNoise
     set Position=Downloading
     set DownloadName=White Noise
-    set ManifestSDK=2066250193950057921
     set ManifestContent=2783803489764777627
     set DownloadPath=R6Downloads\Y2S4_White_Noise
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=2066250193950057921
+      ) else (
+        set ManifestSDK=8421028160473337894
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==10 (
@@ -952,9 +1052,13 @@ setlocal enableextensions enabledelayedexpansion
     :GrimSky
     set Position=Downloading
     set DownloadName=Grim Sky
-    set ManifestSDK=7286067994760020542
     set ManifestContent=4133951394045241747
     set DownloadPath=R6Downloads\Y3S3_Grim_Sky
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=7286067994760020542
+      ) else (
+        set ManifestSDK=3144556314994867170
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==13 (
@@ -964,9 +1068,13 @@ setlocal enableextensions enabledelayedexpansion
     :BurntHorizon
     set Position=Downloading
     set DownloadName=Burnt Horizon
-    set ManifestSDK=8985694971177711792
     set ManifestContent=4355229858723790756
     set DownloadPath=R6Downloads\Y4S1_Burnt_Horizon
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=8985694971177711792
+      ) else (
+        set ManifestSDK=3777349673527123995
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==15 (
@@ -976,9 +1084,13 @@ setlocal enableextensions enabledelayedexpansion
     :EmberRise
     set Position=Downloading
     set DownloadName=Ember Rise
-    set ManifestSDK=7309481042294838052
     set ManifestContent=5429930338066808153
     set DownloadPath=R6Downloads\Y4S3_Ember_Rise
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=7309481042294838052
+      ) else (
+        set ManifestSDK=684480090862996679
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==17 (
@@ -988,36 +1100,52 @@ setlocal enableextensions enabledelayedexpansion
     :VoidEdge
     set Position=Downloading
     set DownloadName=Void Edge
-    set ManifestSDK=8007091753837589034
     set ManifestContent=2810676266503656332
     set DownloadPath=R6Downloads\Y5S1_Void_Edge
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=8007091753837589034
+      ) else (
+        set ManifestSDK=2583838033617047180
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==19 (
     :SteelWave
     set Position=Downloading
     set DownloadName=Steel Wave
-    set ManifestSDK=7032500641931923367
-    set ManifestContent=8083217055977195199
+    set ManifestContent=2911638056757212246
     set DownloadPath=R6Downloads\Y5S2_Steel_Wave
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=1296806240678481187
+      ) else (
+        set ManifestSDK=5838065097101371940
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==20 (
     :ShadowLegacy
     set Position=Downloading
     set DownloadName=Shadow Legacy
-    set ManifestSDK=885453180592640750
     set ManifestContent=7750070106878890861
     set DownloadPath=R6Downloads\Y5S3_Shadow_Legacy
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=885453180592640750
+      ) else (
+        set ManifestSDK=6833050800226599890
+      )
     goto GoingTo
     )
     if %ERRORLEVEL%==21 (
     :NeonDawn
     set Position=Downloading
     set DownloadName=Neon Dawn
-    set ManifestSDK=752517632960395491
     set ManifestContent=7979405601806736439
     set DownloadPath=R6Downloads\Y5S4_Neon_Dawn
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=752517632960395491
+      ) else (
+        set ManifestSDK=4263017894965855363
+      )
     goto GoingTo
     )
     if %ERRORLEVEL% == 22 (
@@ -1254,10 +1382,10 @@ setlocal enableextensions enabledelayedexpansion
     goto GoingTo
     )
     if %ERRORLEVEL%==7 (
-    :Health4kZero
+    :Health4k
     set Position=Download4K
-    set Name4K=Health [Zero] 4K
-    set Path4K=R6Downloads\Y2S2_Health_2
+    set Name4K=Health 4K
+    set Path4K=R6Downloads\Y2S2_Health
     set Manifest4K=7497579858536910279
     goto GoingTo
     )
@@ -1451,12 +1579,7 @@ setlocal enableextensions enabledelayedexpansion
     goto VelvetShell4k
     )
     if %ERRORLEVEL%==7 (
-    :Health4k
-    set Position=Download4K
-    set Name4K=Nealth 4K
-    set Path4K=R6Downloads\Y2S2_Health
-    set Manifest4K=7497579858536910279
-    goto GoingTo
+    goto Health4k
     )
     if %ERRORLEVEL%==8 (
     :BloodOrchid4k
@@ -1578,7 +1701,7 @@ setlocal enableextensions enabledelayedexpansion
     echo                   Uninstall Menu
     echo    Please select the correct downloaded folder.
     echo [93m----------------------SELECT----------------------[0m
-    Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright" "   Y5S4_Neon_Dawn"   "   Back"
+    Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"      "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright" "   Y5S4_Neon_Dawn"   "   Back"
 
     if %ERRORLEVEL%==1 (
     set DeleteDir="R6Downloads\Y1S0_Vanilla"
@@ -1613,102 +1736,98 @@ setlocal enableextensions enabledelayedexpansion
     goto SelectToCheck
     )
     if %ERRORLEVEL%==9 (
-    set DeleteDir="R6Downloads\Y2S2_Health_2"
-    goto SelectToCheck
-    )
-    if %ERRORLEVEL%==10 (
     set DeleteDir="R6Downloads\Y2S3_Blood_Orchid"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==11 (
+    if %ERRORLEVEL%==10 (
     set DeleteDir="R6Downloads\Y2S3_BloodOrchid"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==12 (
+    if %ERRORLEVEL%==11 (
     set DeleteDir="R6Downloads\Y2S4_White_Noise"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==13 (
+    if %ERRORLEVEL%==12 (
     set DeleteDir="R6Downloads\Y2S4_WhiteNoise"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==14 (
+    if %ERRORLEVEL%==13 (
     set DeleteDir="R6Downloads\Y3S1_Chimera"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==15 (
+    if %ERRORLEVEL%==14 (
     set DeleteDir="R6Downloads\Y3S2_Para_Bellum"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==16 (
+    if %ERRORLEVEL%==15 (
     set DeleteDir="R6Downloads\Y3S3_Grim_Sky"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==17 (
+    if %ERRORLEVEL%==16 (
     set DeleteDir="R6Downloads\Y3S3_MadHouse"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==18 (
+    if %ERRORLEVEL%==17 (
     set DeleteDir="R6Downloads\Y3S4_Wind_Bastion"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==19 (
+    if %ERRORLEVEL%==18 (
     set DeleteDir="R6Downloads\Y4S1_Burnt_Horizon"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==20 (
+    if %ERRORLEVEL%==19 (
     set DeleteDir="R6Downloads\Y4S1_RainbowIsMagic"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==21 (
+    if %ERRORLEVEL%==20 (
     set DeleteDir="R6Downloads\Y4S2_Phantom_Sight"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==22 (
+    if %ERRORLEVEL%==21 (
     set DeleteDir="R6Downloads\Y4S3_Ember_Rise"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==23 (
+    if %ERRORLEVEL%==22 (
     set DeleteDir="R6Downloads\Y4S3_DoktorsCurse"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==24 (
+    if %ERRORLEVEL%==23 (
     set DeleteDir="R6Downloads\Y4S4_Shifting_Tides"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==25 (
+    if %ERRORLEVEL%==24 (
     set DeleteDir="R6Downloads\Y5S1_Void_Edge"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==26 (
+    if %ERRORLEVEL%==25 (
     set DeleteDir="R6Downloads\Y5S1_GangDestruction"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==27 (
+    if %ERRORLEVEL%==26 (
     set DeleteDir="R6Downloads\Y5S2_Steel_Wave"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==28 (
+    if %ERRORLEVEL%==27 (
     set DeleteDir="R6Downloads\Y5S2_MUTE"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==29 (
+    if %ERRORLEVEL%==28 (
     set DeleteDir="R6Downloads\Y5S2_SteelWave"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==30 (
+    if %ERRORLEVEL%==29 (
     set DeleteDir="R6Downloads\Y5S3_Shadow_Legacy"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==31 (
+    if %ERRORLEVEL%==30 (
     set DeleteDir="R6Downloads\Y5S3_Sugar_Fright"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==32 (
+    if %ERRORLEVEL%==31 (
     set DeleteDir="R6Downloads\Y5S4_Neon_Dawn"
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==33 (
+    if %ERRORLEVEL%==32 (
     set Position=GameMenu
     goto BackTo
     )
@@ -1746,7 +1865,7 @@ setlocal enableextensions enabledelayedexpansion
     echo                   Game Starter
     echo    Please select the correct downloaded folder.
     echo [93m----------------------SELECT----------------------[0m
-    Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"    "   Y2S2_Health_2"    "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Y5S4_Neon_Dawn"   "   Back"
+    Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"     "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Y5S4_Neon_Dawn"   "   Back"
 
     if %ERRORLEVEL%==1 (
     set StartDir=R6Downloads\Y1S0_Vanilla
@@ -1781,102 +1900,98 @@ setlocal enableextensions enabledelayedexpansion
     goto SelectToCheck
     )
     if %ERRORLEVEL%==9 (
-    set StartDir=R6Downloads\Y2S2_Health_2
-    goto SelectToCheck
-    )
-    if %ERRORLEVEL%==10 (
     set StartDir=R6Downloads\Y2S3_Blood_Orchid
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==11 (
+    if %ERRORLEVEL%==10 (
     set StartDir=R6Downloads\Y2S3_BloodOrchid
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==12 (
+    if %ERRORLEVEL%==11 (
     set StartDir=R6Downloads\Y2S4_White_Noise
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==13 (
+    if %ERRORLEVEL%==12 (
     set StartDir=R6Downloads\Y2S4_WhiteNoise
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==14 (
+    if %ERRORLEVEL%==13 (
     set StartDir=R6Downloads\Y3S1_Chimera
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==15 (
+    if %ERRORLEVEL%==14 (
     set StartDir=R6Downloads\Y3S2_Para_Bellum
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==16 (
+    if %ERRORLEVEL%==15 (
     set StartDir=R6Downloads\Y3S3_Grim_Sky
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==17 (
+    if %ERRORLEVEL%==16 (
     set StartDir=R6Downloads\Y3S3_MadHouse
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==18 (
+    if %ERRORLEVEL%==17 (
     set StartDir=R6Downloads\Y3S4_Wind_Bastion
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==19 (
+    if %ERRORLEVEL%==18 (
     set StartDir=R6Downloads\Y4S1_Burnt_Horizon
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==20 (
+    if %ERRORLEVEL%==19 (
     set StartDir=R6Downloads\Y4S1_RainbowIsMagic
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==21 (
+    if %ERRORLEVEL%==20 (
     set StartDir=R6Downloads\Y4S2_Phantom_Sight
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==22 (
+    if %ERRORLEVEL%==21 (
     set StartDir=R6Downloads\Y4S3_Ember_Rise
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==23 (
+    if %ERRORLEVEL%==22 (
     set StartDir=R6Downloads\Y4S3_DoktorsCurse
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==24 (
+    if %ERRORLEVEL%==23 (
     set StartDir=R6Downloads\Y4S4_Shifting_Tides
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==25 (
+    if %ERRORLEVEL%==24 (
     set StartDir=R6Downloads\Y5S1_Void_Edge
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==26 (
+    if %ERRORLEVEL%==25 (
     set StartDir=R6Downloads\Y5S1_GangDestruction
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==27 (
+    if %ERRORLEVEL%==26 (
     set StartDir=R6Downloads\Y5S2_Steel_Wave
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==28 (
+    if %ERRORLEVEL%==27 (
     set StartDir=R6Downloads\Y5S2_MUTE
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==29 (
+    if %ERRORLEVEL%==28 (
     set StartDir=R6Downloads\Y5S2_SteelWave
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==30 (
+    if %ERRORLEVEL%==29 (
     set StartDir=R6Downloads\Y5S3_Shadow_Legacy
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==31 (
+    if %ERRORLEVEL%==30 (
     set StartDir=R6Downloads\Y5S3_Sugar_Fright
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==32 (
+    if %ERRORLEVEL%==31 (
     set StartDir=R6Downloads\Y5S4_Neon_Dawn
     goto SelectToCheck
     )
-    if %ERRORLEVEL%==33 (
+    if %ERRORLEVEL%==32 (
     set Position=GameMenu
     goto BackTo
     )
@@ -2013,10 +2128,10 @@ setlocal enableextensions enabledelayedexpansion
     goto VelvetShellLang
     )
     if %ERRORLEVEL%==7 (
-    :HealthZeroLang
+    :HealthLang
     set Position=DownloadLang
-    set ExtraName=Health [Zer0]
-    set ExtraPath=R6Downloads\Y2S2_Health_2
+    set ExtraName=Health
+    set ExtraPath=R6Downloads\Y2S2_Health
     set FrenchManifest=6096643115970852289
     set ItalianManifest=8822593964618949966
     set GermanManifest=7995072742170754868
@@ -2364,24 +2479,7 @@ setlocal enableextensions enabledelayedexpansion
     goto GoingTo
     )
     if %ERRORLEVEL%==7 (
-    :HealthLang
-    set Position=DownloadLang
-    set ExtraName=Health
-    set ExtraPath=R6Downloads\Y2S2_Health
-    set FrenchManifest=5499656844751782586
-    set ItalianManifest=4814130789498386116
-    set GermanManifest=4850286352511597480
-    set SpanishManifest=7743695641492470240
-    set BrasilianManifest=740877577181398044
-    set PolishManifest=
-    set DutchManifest=
-    set CzechManifest=
-    set KoreanManifest=
-    set TChineseManifest=
-    set SChineseManifest=
-    set JapaneseManifest=6208821339116662917
-    set RussianManifest=
-    goto GoingTo
+    goto HealthLang
     )
     if %ERRORLEVEL%==8 (
     :BloodOrchidLang
@@ -2990,7 +3088,7 @@ setlocal enableextensions enabledelayedexpansion
   ren "R6Downloads\Y1S2_DustLine" "Y1S2_Dust_Line" 2>nul
   ren "R6Downloads\Y1S4_RedCrow" "Y1S4_Red_Crow" 2>nul
   ren "R6Downloads\Y2S1_VelvetShell" "Y2S1_Velvet_Shell" 2>nul
-  ren "R6Downloads\Y2S2_Health_FixingAndRepairingTheGame" "Y2S2_Health_2" 2>nul
+  ren "R6Downloads\Y2S2_Health_FixingAndRepairingTheGame" "Y2S2_Health" 2>nul
   ren "R6Downloads\Y2S4_WhiteNoise" "Y2S4_White_Noise" 2>nul
   ren "R6Downloads\Y3S1_Chimera_Outbreak" "Y3S1_Chimera" 2>nul
   ren "R6Downloads\Y3S2_ParaBellum" "Y3S2_Para_Bellum" 2>nul
