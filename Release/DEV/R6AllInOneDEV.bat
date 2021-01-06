@@ -26,7 +26,7 @@ setlocal enableextensions enabledelayedexpansion
   set discord=discord.gg/EvrGzAV
   set DepotSDK=377237
   set SKUname=WW Content
-  ::depot set for future swapping
+  set lang=eng
   goto settime
 
 ::TIME SET START
@@ -50,15 +50,15 @@ setlocal enableextensions enabledelayedexpansion
     ping github.com>nul
     if errorlevel 1 (
     set Position=MainMenu
-    echo I cant connect to github, Continue at OW RISK^^!
-    set LOGINFO=CANT connect Github
+    echo Connection to GitHub failed, continue at your own risk.^^!
+    set LOGINFO=Cannot establish connection to Github.
     set LogNumber=2
     pause
     goto logtolog
     ) 
     if errorlevel 0 (
-    echo I can connect github, YEY^^!
-    set LOGINFO=Can connect Github
+    echo Connection to Github successful.^^!
+    set LOGINFO=Connection to Github successful.
     set LogNumber=1
     goto logtolog
     )
@@ -82,7 +82,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/Settings.ini" --output Settings.ini
     move Settings.ini Resources
-    set LOGINFO=Settings.ini Downloaded and Moved
+    set LOGINFO=Settings.ini Downloaded and moved.
     set LogNumber=1
     goto logtolog
 ::Settings.ini get END
@@ -171,12 +171,12 @@ setlocal enableextensions enabledelayedexpansion
     reg query "HKEY_LOCAL_MACHINE\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost" /v Version 2>nul
 
     if errorlevel 1 (
-    echo Oh no, registery editor not found dotnet
+    echo .NET is not found in the registry.
     set LOGINFO=Registery editor not found dotnet
     set LogNumber=2
     goto logtolog
     ) else (
-    echo DotNet One checker is found the version
+    echo .NET found.
     set LOGINFO=Registery editor is found the dotnet
     set LogNumber=1
     goto logtolog
@@ -191,20 +191,20 @@ setlocal enableextensions enabledelayedexpansion
     echo ---------------------------------------
     start www.tinyurl.com/dotnetruntimer6
     pause
-    set LOGINFO= .NET Runtime not found, please Install it!
+    set LOGINFO= .NET Runtime is missing, please install it.
     set LogNumber=3
     goto logtolog
 
   :checkertwo
     set Position=if7zip
     if exist "C:\Program Files\dotnet\dotnet.exe" (
-    echo DotNet Two checker is found the version
+    echo .NET found.
     set LOGINFO=Exist checker is found the version
     set LogNumber=1
     goto logtolog
     ) else (
     set Position=dotnet
-    echo Oh no, exist checker not found dotnet
+    echo .NET is missing, please install it.
     set LOGINFO=Exist checker not found dotnet
     set LogNumber=2
     goto logtolog
@@ -236,11 +236,11 @@ setlocal enableextensions enabledelayedexpansion
     set Position=LogZipping
     cls
     echo ------------------------------------------------------------------------------
-    echo                       Emergency Downloading 7-Zip...
+    echo                       Downloading 7-Zip as dependency...
     echo ------------------------------------------------------------------------------
     curl -L  "https://github.com/DataCluster0/R6TBBatchTool/raw/master/Requirements/7z.exe" --output 7z.exe
     move 7z.exe Resources
-    set LOGINFO=Emergency 7zip Successfully Downloaded and Moved, Compressing....
+    set LOGINFO=7zip (as dependency) Successfully downloaded, Compressing....
     set LogNumber=1
     goto logtolog
 
@@ -253,7 +253,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     curl -L  "https://github.com/DataCluster0/R6TBBatchTool/raw/master/Requirements/7z.exe" --output 7z.exe
     move 7z.exe Resources
-    set LOGINFO=7zip Successfully Downloaded and Moved
+    set LOGINFO=7zip Successfully downloaded.
     set LogNumber=1
     goto logtolog
 ::7zip END
@@ -287,7 +287,7 @@ setlocal enableextensions enabledelayedexpansion
     for %%I in ("depot.zip") do (
       "Resources\7z.exe" x -y -o"Resources\DepotDownloader" "%%I" -aoa && del %%I
     )
-    set LOGINFO=DepotDownloader Successfully Downloaded and Extracted
+    set LOGINFO=DepotDownloader Download complete.
     set LogNumber=1
     goto logtolog
 ::DD END
@@ -314,14 +314,14 @@ setlocal enableextensions enabledelayedexpansion
     cls
     MODE 78,20
     echo ------------------------------------------------------------------------------
-    echo                        Downloading Plazas...
+    echo                          Downloading Plaza Bypass...
     echo ------------------------------------------------------------------------------
     curl -L  "https://cdn.discordapp.com/attachments/722089860755881996/788352276497825802/Plazas.zip" --output plazas.zip
     ::Extract
     for %%I in ("plazas.zip") do (
     "Resources\7z.exe" x -y -o"Resources\" "%%I" -aoa && del %%I
     )
-    set LOGINFO=Plazas Successfully Downloaded and Extracted
+    set LOGINFO=Plaza Bypass Successfully downloaded.
     set LogNumber=1
     goto logtolog
 ::Plaza END
@@ -346,7 +346,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/cmdmenusel.exe" --output cmdmenusel.exe
     move cmdmenusel.exe Resources
-    set LOGINFO=cmdmenusel Successfully Downloaded and Moved
+    set LOGINFO=cmdmenusel Successfully downloaded.
     set LogNumber=1
     goto logtolog
 ::cmdmenusel END
@@ -370,7 +370,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/replacer.exe" --output replacer.exe
     move replacer.exe Resources
-    set LOGINFO=Replacer Successfully Downloaded and Moved
+    set LOGINFO=Replacer Successfully downloaded.
     set LogNumber=1
     goto logtolog
 ::replacer END
@@ -389,7 +389,7 @@ setlocal enableextensions enabledelayedexpansion
   :SetSteam
     set Position=PopUpCheck
     MODE 78,10
-    echo Please type your Steam Legacy name!
+    echo Please type in your Steam username! (Not the profile name.)
     set /p username="Enter Steam Username:"
     set "LOGINFO=Steam Legacy Name [Username] set to %username% "
     set LogNumber=1
@@ -418,13 +418,13 @@ setlocal enableextensions enabledelayedexpansion
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege AllInOne Tool
   echo  [31mYou MUST have a copy of Siege on Steam to use the downloader^^![0m
-  echo  This tools is forked from [91mZer0Bytes[0m manifest tool
+  echo  This tools is forked from [91mZer0Bytes'[0m manifest tool
   echo  Our Discord Server: [94m%discord%[0m 
   echo  AIO Tool Version: [32m%AllInOneVersion%[0m 
   echo  Steam User: [96m%username%[0m ^| Sku : [36m%SKUname%[0m 
-  echo  Read FAQ!
+  echo  Language: %lang%
   echo [93m----------------------------SELECT----------------------------[0m
-  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  SKU Switch" "  Update" "  Exit"
+  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  SKU Switch" "  Lang Switch" "  Update" "  Exit"
 
   if %ERRORLEVEL% == 1 (
   set Position=faq
@@ -487,10 +487,17 @@ setlocal enableextensions enabledelayedexpansion
       )
   )
   if %ERRORLEVEL%==12 (
+    if %lang% == eng (
+  		set lang=hun
+      ) else (
+  		set lang=eng
+      )
+  )
+  if %ERRORLEVEL%==13 (
   set Position=Update
   goto GoingTo
-  )
-  if %ERRORLEVEL% == 13 (
+  ) 
+  if %ERRORLEVEL% == 14 (
   set Position=exiting
   set LOGTYPE=1
   set LOGINFO=Exited
@@ -505,52 +512,16 @@ setlocal enableextensions enabledelayedexpansion
     cls
     Title FAQ
     MODE 120,36
-    echo  1.
-    echo  Q: Is it safe to enter my password?
-    echo  A: Yes it is. You can view the source code for Depot Downloader here: https://github.com/SteamRE/DepotDownloader
-    echo  2
-    echo  Q: Why can't i see my password?
-    echo  A: You are typing its invisible 
-    echo  3
-    echo  Q: Where can i change my name?
-    echo  A: In the Codex.ini file line 28 "UserName=CODEX"
-    echo  4
-    echo  Q: Why is my game crashing at the start screen?
-    echo  A: In the Codex.ini file line 20 "GameName=RainbowSixSiege" change it to something else
-    echo  5
-    echo  Q: Why am i getting "Encountered unexpected error downloading chunk xxxxxxxxxxxx: The operation was canceled." errors?
-    echo  A: Its normal ignore them, prefer to always download again
-    echo  6
-    echo  Q: Why is my Anti-Virus detecting blocking some of the downloaded files?
-    echo  A: Its a false positive, whitelist all of the files provided
-    echo  7
-    echo  Q: Why is my download stuck at X percent?
-    echo  A: The last few files in a build are larger than the rest and may take longer to download, please be patient.
-    echo  Best way to tell if it's still working is to check if it's using your network in task manager.
-    echo  8
-    echo  Use plaza_bo, if it doesn't work, use plaza_new
-    echo  If the game is stuck on preparing content go into codex.ini and set offline=1 to offline=0
-    echo  Once you have grab the PLAZA's in "Resources\Plazas" and copy its contents to your game folder.
-    echo  When it asks to overwrite a few files click yes. If your anti-virus blocks these files then make sure to allow them. 
-    echo  9
-    echo  What is CODEX, DepotDownloader,R6Manifest?
-    echo  CODEX/Plaza : Applied to play Old Siege Version
-    echo  DepotDownloader : Created by SteamRE, you can download any manifest once you have the game
-    echo  R6-AIOTool : AllInOne Tool, many function. Based on R6 Manifest. Created by SlejmUr
-    echo  R6 Manifest : Download R6 Old Version, it use DepotDownloader. Created by Zer0Bytes
+	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/lang/"%lang%"/faq.txt"
+	echo.
     pause
     cls
     goto Notes
   ::and
   :Notes
     Title Notes
-    MODE 60,14
-    echo  Notes:
-    echo  I Moved my "Release" manifests to Manifest Options
-    echo  I did not tested all manifests^^!
-    echo  Plaza_NEW not working on Shadow Legacy and upper^^!
-    echo  If you want to join testing phase, DM me on Discord
-    echo  If you have a problem this tool, DM me on Discord
+    MODE 90,14
+	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/lang/"%lang%"/notes.txt"
     echo  My Discord: SlejmUr#4007 or join on %discord%
     Resources\replacer.exe Resources\Settings.ini POPUP=1 POPUP=0 >nul
     pause
@@ -640,8 +611,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Version Downloader
     MODE 50,26
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Version Downloader
-    echo      Manifests is from Zer0Bytes Manifest tool
+    echo                     Version Downloader
+    echo         Manifests from Zer0Bytes' Manifest tool
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Back"
 
@@ -919,13 +890,13 @@ setlocal enableextensions enabledelayedexpansion
     cls
     Title Rainbow Six Siege Event Downloader
     MODE 52,18
-    echo [93m-----------------------NOTES------------------------[0m
-    echo   Outback is same with normal Chimera
-    echo   Road To S.I. is same with normal Shifting Tides
-    echo   Showdown is same with normal Phantom Sight
-    echo   The Omega Mute is not broken, use that.
-    echo [93m-----------------------SELECT-----------------------[0m
-    Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
+    echo [93m--------------------------NOTES---------------------------------[0m
+    echo   Outbreak will download Operation Chimera.
+    echo   Road To S.I. will download Shifting Tides.
+    echo   Showdown will download Phantom Sight.
+    echo   Mute Protocol (Omega) is supported by Myxtc.Jnx's R6SGlobal tool.
+    echo [93m--------------------------SELECT--------------------------------[0m
+    Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not supported by Omega)" "   M.U.T.E Protocol (Supported by Omega)" "   Sugar Fright / Telly" "   Back"
     
     if %ERRORLEVEL%==1 (
     goto Chimera
@@ -981,7 +952,7 @@ setlocal enableextensions enabledelayedexpansion
     MODE 50,28
     echo [93m-----------------------NOTES----------------------[0m
     echo                   Release Downloader
-    echo      Only new, released version of game build
+    echo        Only new, released version of game build
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Neon Dawn" "   Back"
 
@@ -1161,8 +1132,9 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Custom Downloader
     MODE 50,12
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Custom Downloader
-    echo            You need set everything^^!
+    echo                      Custom Downloader
+    echo            You need to set the values manually. ^^!
+    echo        This can be used to download any game you own.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Set Default things" "   Set App" "   Set Depot" "   Set Manifest" "   Set Path/Dir" "   Start Download" "   Back"
     
@@ -1170,7 +1142,7 @@ setlocal enableextensions enabledelayedexpansion
     cls
     set AppID=359550
     set CustomDir="R6Downloads/%ALL%"
-    echo Successfully set default things^^!
+    echo Default values set. ^^!
     echo You still need to set ManifestID and DepotID ^^!
     pause
     set Position=CustomMenu
@@ -1293,8 +1265,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege 4K Textures Downloader
     MODE 50,10
     echo [93m----------------------NOTES-----------------------[0m
-    echo                 4K Textures Selector
-    echo             Event Textures finally added^^! 
+    echo                  4K Textures Selector
+    echo                Event Textures are added^^! 
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   4K Version" "   4K Event" "   4K Release" "   Back"
 
@@ -1328,8 +1300,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege 4K Version Downloader
     MODE 50,26
     echo [93m----------------------NOTES-----------------------[0m
-    echo   Health, White Noise, Void Edge, Vanilla, etc...
-    echo   Stuff is same with in R6Manifest / 4kRelease
+    echo      Health, White Noise, Void Edge, Vanilla, etc...
+    echo      Similar to the ones in R6Manifest / 4kRelease.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Back"
 
@@ -1499,11 +1471,11 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege 4K Event Downloader
     MODE 50,16
     echo [93m----------------------NOTES-----------------------[0m
-    echo   Outback is same with normal Chimera
-    echo   Road To S.I. is same with normal Shifting Tides
-    echo   Showdown is same with Phantom Sight
+    echo           Outbreak will download Chimera.
+    echo       Road To S.I. will download Shifting Tides.
+    echo           Showdown will download Phantom Sight.
     echo [93m----------------------SELECT----------------------[0m
-    Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doktors Curse" "   Road To S.I. 2020" "   The Grand Larceny / Golden Gun" "   M.U.T.E Protocol (Support Omega)" "   Sugar Fright / Telly" "   Back"
+    Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doktors Curse" "   Road To S.I. 2020" "   The Grand Larceny / Golden Gun" "   M.U.T.E Protocol (Supported by Omega)" "   Sugar Fright / Telly" "   Back"
     
     if %ERRORLEVEL%==1 (
     goto Chimera4k
@@ -1551,7 +1523,7 @@ setlocal enableextensions enabledelayedexpansion
     MODE 50,28
     echo [93m----------------------NOTES-----------------------[0m
     echo   Health, White Noise, Void Edge, Vanilla, etc...
-    echo   Stuff is same with in R6Manifest / 4kVersion
+    echo   Similar to the ones in R6Manifest / 4kVersion.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Neon Dawn" "   Back"
 
@@ -1698,8 +1670,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege UninstallMenu
     MODE 50,38
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Uninstall Menu
-    echo    Please select the correct downloaded folder.
+    echo                        Uninstall Menu
+    echo         Please select the correct download folder.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"      "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright" "   Y5S4_Neon_Dawn"   "   Back"
 
@@ -1845,7 +1817,7 @@ setlocal enableextensions enabledelayedexpansion
       goto Failed
       )
     if errorlevel 0 (
-      echo Waiting to fully delete the folder.
+      echo Waiting to remove the folder...
       timeout /t 4 >nul 
       echo Folder deleted^^!
       pause
@@ -1862,8 +1834,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Game Starter
     MODE 50,38
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Game Starter
-    echo    Please select the correct downloaded folder.
+    echo                   Game Launcher
+    echo    Please select the correct download folder.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"     "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Y5S4_Neon_Dawn"   "   Back"
 
@@ -2026,8 +1998,10 @@ setlocal enableextensions enabledelayedexpansion
     cls
     MODE 50,8
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Start Choose
-    echo        DirectX is a normal default R6:S
+    echo                   DirectX or Vulkan?
+    echo             DirectX is the default renderer.
+    echo       Use DirectX if you don't know what this is.
+    echo          Some tools will only support DirectX.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   DirectX" "   Vulkan" "   Back"
 
@@ -2068,8 +2042,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Extra Menu
     MODE 50,10
     echo [93m-----------------------NOTES----------------------[0m
-    echo                Extra Language Menu
-    echo             Extra Language finally added^^!
+    echo                   Extra Language Menu
+    echo                Extra Languages are added^^!
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "    Extra Version" "    Extra Event" "    Extra Release" "    Back"
 
@@ -2103,8 +2077,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Extra Version
     MODE 50,26
     echo [93m-----------------------NOTES----------------------[0m
-    echo             Extra Version Language Menu
-    echo      Manifests is from Zer0Bytes Manifest tool
+    echo                Extra Version Language Menu
+    echo         Manifests from Zer0Bytes' Manifest tool.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Back"
 
@@ -2287,12 +2261,12 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Extra Event
     MODE 50,18
     echo [93m-----------------------NOTES----------------------[0m
-    echo             Extra Event Language Menu
-    echo   Outback is same with normal Chimera
-    echo   Road To S.I. is same with normal Shifting Tides
-    echo   Showdown is same with normal Phantom Sight
+    echo                 Extra Event Language Menu
+    echo               Outbreak will download Chimera.
+    echo           Road To S.I. will download Shifting Tides.
+    echo               Showdown will download Phantom Sight.
     echo [93m-----------------------SELECT---------------------[0m
-    Resources\cmdmenusel f8f0 "   Outback" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
+    Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
      
     if %ERRORLEVEL%==1 (
     goto ChimeraLang
@@ -2353,8 +2327,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Extra Release
     MODE 50,28
     echo [93m-----------------------NOTES----------------------[0m
-    echo             Extra Release Language Menu
-    echo      Only new, released version of game build
+    echo                Extra Release Language Menu
+    echo         Only new, released version of game build.
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "  Vanilla" "  Black Ice" "  Dust Line" "  Skull Rain" "  Red Crow" "  Velvet Shell" "  Health" "  Blood Orchid" "  White Noise" "  Chimera" "  Para Bellum" "  Grim Sky" "  Wind Bastion" "  Burnt Horizon" "  Phantom Sight" "  Ember Rise" "  Shifting Tides" "  Void Edge" "  Steel Wave" "  Shadow Legacy" "  Neon Dawn"  "  Back"
     
@@ -2775,7 +2749,7 @@ setlocal enableextensions enabledelayedexpansion
     MODE 50,20
     echo [93m-----------------------NOTES----------------------[0m
     echo           %ExtraName% Language Downloader
-    echo       Some Language not contain manifest file
+    echo       Some Languages may not have a manifest file.
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "    French Lang" "    Italian Lang" "    German Lang" "    Spanish - Spain Lang" "    Portuguese - Brazil Lang" "    Polish Lang" "    Dutch Lang" "    Czech Lang" "    Korean Lang" "    Traditional Chinese Lang" "    Simplified Chinese Lang" "    Japanese Lang" "    Russian Lang" "    Back"
 
@@ -2988,8 +2962,8 @@ setlocal enableextensions enabledelayedexpansion
     MODE 50,8
     echo [93m-----------------------NOTES----------------------[0m
     echo          [31mNo Language for this operation[0m
-    echo      Sorry , but for this operation not contain 
-    echo          any language file or depot :(
+    echo         Sorry, but there are no manifests for 
+    echo             this language/this operation.
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "   Back"
 
@@ -3008,7 +2982,7 @@ setlocal enableextensions enabledelayedexpansion
   Title DirectX + VC Redist Downloader
   MODE 41,10
   echo [93m------------------NOTES------------------[0m
-  echo     DirectX + VC Redist Downloader
+  echo           DirectX + VC Redist Downloader
   echo [93m------------------SELECT-----------------[0m
   Resources\cmdmenusel f8f0 "   DirectX" "   VC 2010 Redist" "   VC 2012 Redist" "   VC 2015 Redist"  "   VC 2017 Redist" "   Back"
 
@@ -3081,7 +3055,7 @@ setlocal enableextensions enabledelayedexpansion
   cls
   Title Zero Folder Renamer
   MODE 50,20
-  echo Make sure you not Downloaded two times^^!
+  echo Make sure to now download it twice^^!
   pause
   echo Waiting to fully rename the folders.
   ren "R6Downloads\Y1S1_BlackIce" "Y1S1_Black_Ice" 2>nul
@@ -3115,13 +3089,14 @@ setlocal enableextensions enabledelayedexpansion
   cls
   Title CREDIT
   MODE 75,20
-  echo I would like to thank everyone who helped this project getting developed:
-  echo Thanks Zer0Byte the first version of MenuV and I can fork his code^^!
-  echo Thanks DepotDownloader creators^^!
-  echo Thanks SteamDB^^!
-  echo Thanks Markster for Plaza^'s^^!
-  echo Thanks LoneWolf and Pixie for helped me^^!
-  echo Thanks Ancientkingg for Log idea, DotNet Checker Second Version
+  echo I would like to thank everyone who contributed to this project:
+  echo Thanks Zer0Bytes for the R6Manifest tool, which serves as a base to this tool. ^^!
+  echo Thanks DepotDownloader creators. ^^!
+  echo Thanks SteamDB for providing info on the depots. ^^!
+  echo Thanks Markster for Plaza Bypasses. ^^!
+  echo Thanks LoneWolf and Pixie for helping me with this tool. ^^!
+  echo Thanks Ancientkingg for the logger, as well as .NET Checker (V2)
+  echo Thanks hanakomisa for proofreading and fixing grammartic/spelling mistakes.
   echo And thank you for using it^^!
   echo.
   echo First Version: 2020 June 17
@@ -3156,15 +3131,15 @@ setlocal enableextensions enabledelayedexpansion
   goto NOTFOUND
   :NOTFOUND
   echo ------------------------------------
-  echo [-] BattleEye is Not running
+  echo [-] BattleEye is Not running.
   echo ------------------------------------
   pause
-  set LOGINFO=BattleEye is Not running
+  set LOGINFO=BattleEye is Not running.
   set LogNumber=1
   goto logtolog
   :FOUND
   echo ------------------------------------
-  echo [+] BattleEye is running
+  echo [+] BattleEye is running.
   echo ------------------------------------
   pause
   set LOGINFO=BattleEye is running
@@ -3292,7 +3267,7 @@ setlocal enableextensions enabledelayedexpansion
 
   :DeleteDirFound
     set Position=DeleteFolder
-    set LOGINFO=%Selected% Selected to Deleted
+    set LOGINFO=%Selected% Selected to Delete
     set LogNumber=1
     goto logtolog
 
