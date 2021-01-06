@@ -1,6 +1,6 @@
  Notes:
  I've moved my "Release" manifests to Manifest Options.
- Not all manifests are tested. ^^!
- Plaza_NEW will not work on Shadow Legacy and later, and probably never will. ^^!
+ Not all manifests are tested. !
+ Plaza_NEW will not work on Shadow Legacy and later, and probably never will. !
  If you want to beta test, DM me on Discord.
  If you have a problem with this tool, DM me on Discord.
