@@ -1,0 +1,5 @@
+Jegyzetek:
+ Nem lett tesztelve az összes Manfiest!
+ Plaza_NEW nem működik a Shadow Legacy-val és feljebb se fog!
+ Ha akarsz jönni tesztelni jelölj meg Discord-on.
+ Ha valami problémád van ezzel az eszközzel írj rám Discord-on!
