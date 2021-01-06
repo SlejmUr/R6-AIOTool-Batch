@@ -1,0 +1,33 @@
+1.
+Q: Is it safe to enter my password?
+A: Yes it is. You can view the source code for Depot Downloader here: https://github.com/SteamRE/DepotDownloader
+2
+Q: Why can't i see my password?
+A: You are typing its invisible 
+3
+Q: Where can i change my name?
+A: In the Codex.ini file line 28 "UserName=CODEX"
+4
+Q: Why is my game crashing at the start screen?
+A: In the Codex.ini file line 20 "GameName=RainbowSixSiege" change it to something else
+5
+Q: Why am i getting "Encountered unexpected error downloading chunk xxxxxxxxxxxx: The operation was canceled." errors?
+A: Its normal, ignore them, if it outright fails just redownload again, it'll verify the files you have.
+6
+Q: Why is my Anti-Virus detecting blocking some of the downloaded files?
+A: Its a false positive, whitelist all of the files provided.
+7
+Q: Why is my download stuck at X percent?
+A: The last few files in a build are larger than the rest and may take longer to download, please be patient.
+Best way to tell if it's still working is to check if it's using your network in task manager.
+8
+Use plaza_bo, if it doesn't work, use plaza_new
+If the game is stuck on preparing content go into codex.ini and set offline=1 to offline=0
+Once you have grab the PLAZA's in "Resources\Plazas" and copy its contents to your game folder.
+When it asks to overwrite a few files click yes. If your anti-virus blocks these files then make sure to allow them. 
+9
+What is CODEX, DepotDownloader,R6Manifest?
+CODEX/Plaza : Applied to bypass DRMs on old Siege versions.
+DepotDownloader : Created by SteamRE, you can download any manifest once you have the game license.
+R6-AIOTool : AllInOne Tool, many function. Based on R6 Manifest. Created by SlejmUr.
+R6 Manifest : Downloads old versions of R6 utilizing DepotDownloader. Created by Zer0Bytes.
