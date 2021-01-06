@@ -240,7 +240,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     curl -L  "https://github.com/DataCluster0/R6TBBatchTool/raw/master/Requirements/7z.exe" --output 7z.exe
     move 7z.exe Resources
-    set LOGINFO=7zip (as dependency) Successfully downloaded, Compressing....
+    set LOGINFO=7zip [as dependency] Successfully downloaded, Compressing....
     set LogNumber=1
     goto logtolog
 
@@ -389,7 +389,7 @@ setlocal enableextensions enabledelayedexpansion
   :SetSteam
     set Position=PopUpCheck
     MODE 78,10
-    echo Please type in your Steam username! (Not the profile name.)
+    echo Please type in your Steam username^^! [Not the profile name.]
     set /p username="Enter Steam Username:"
     set "LOGINFO=Steam Legacy Name [Username] set to %username% "
     set LogNumber=1
@@ -422,7 +422,7 @@ setlocal enableextensions enabledelayedexpansion
   echo  Our Discord Server: [94m%discord%[0m 
   echo  AIO Tool Version: [32m%AllInOneVersion%[0m 
   echo  Steam User: [96m%username%[0m ^| Sku : [36m%SKUname%[0m 
-  echo  Language: %lang%
+  echo  FAQ Language: %lang%
   echo [93m----------------------------SELECT----------------------------[0m
   Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  SKU Switch" "  Lang Switch" "  Update" "  Exit"
 
@@ -522,7 +522,7 @@ setlocal enableextensions enabledelayedexpansion
     Title Notes
     MODE 90,14
 	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/lang/"%lang%"/notes.txt"
-    echo  My Discord: SlejmUr#4007 or join on %discord%
+    echo  Discord: SlejmUr#4007 ^| Server: %discord%
     Resources\replacer.exe Resources\Settings.ini POPUP=1 POPUP=0 >nul
     pause
     cls
@@ -889,12 +889,12 @@ setlocal enableextensions enabledelayedexpansion
   :EventMenu
     cls
     Title Rainbow Six Siege Event Downloader
-    MODE 52,18
+    MODE 64,20
     echo [93m--------------------------NOTES---------------------------------[0m
     echo   Outbreak will download Operation Chimera.
     echo   Road To S.I. will download Shifting Tides.
     echo   Showdown will download Phantom Sight.
-    echo   Mute Protocol (Omega) is supported by Myxtc.Jnx's R6SGlobal tool.
+    echo   Mute (Omega) is supported by Myxtc.Jnx's R6SGlobal tool.
     echo [93m--------------------------SELECT--------------------------------[0m
     Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not supported by Omega)" "   M.U.T.E Protocol (Supported by Omega)" "   Sugar Fright / Telly" "   Back"
     
@@ -1130,11 +1130,11 @@ setlocal enableextensions enabledelayedexpansion
   :CustomMenu
     cls
     Title Rainbow Six Siege Custom Downloader
-    MODE 50,12
+    MODE 50,16
     echo [93m-----------------------NOTES----------------------[0m
     echo                      Custom Downloader
     echo            You need to set the values manually. ^^!
-    echo        This can be used to download any game you own.
+    echo    This can be used to download any game you own.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Set Default things" "   Set App" "   Set Depot" "   Set Manifest" "   Set Path/Dir" "   Start Download" "   Back"
     
@@ -1300,8 +1300,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege 4K Version Downloader
     MODE 50,26
     echo [93m----------------------NOTES-----------------------[0m
-    echo      Health, White Noise, Void Edge, Vanilla, etc...
-    echo      Similar to the ones in R6Manifest / 4kRelease.
+    echo   Health, White Noise, Void Edge, Vanilla, etc...
+    echo   Similar to the ones in R6Manifest / 4kRelease.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Back"
 
@@ -1820,6 +1820,7 @@ setlocal enableextensions enabledelayedexpansion
       echo Waiting to remove the folder...
       timeout /t 4 >nul 
       echo Folder deleted^^!
+      set DeleteDir=
       pause
       goto DeleteDone
     )
@@ -1996,7 +1997,7 @@ setlocal enableextensions enabledelayedexpansion
   ::StartChoose START
   :StartChoose
     cls
-    MODE 50,8
+    MODE 50,10
     echo [93m-----------------------NOTES----------------------[0m
     echo                   DirectX or Vulkan?
     echo             DirectX is the default renderer.
@@ -2027,6 +2028,7 @@ setlocal enableextensions enabledelayedexpansion
     echo Starting : %startexe%
     start %startexe% /belaunch
     pause
+	set StartDir=
     set Position=GameMenu
     set LOGINFO=%startexe% Started
     set LogNumber=1
@@ -2261,10 +2263,10 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Extra Event
     MODE 50,18
     echo [93m-----------------------NOTES----------------------[0m
-    echo                 Extra Event Language Menu
-    echo               Outbreak will download Chimera.
-    echo           Road To S.I. will download Shifting Tides.
-    echo               Showdown will download Phantom Sight.
+    echo              Extra Event Language Menu
+    echo            Outbreak will download Chimera.
+    echo        Road To S.I. will download Shifting Tides.
+    echo            Showdown will download Phantom Sight.
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
      
@@ -3088,20 +3090,9 @@ setlocal enableextensions enabledelayedexpansion
 :Credit
   cls
   Title CREDIT
-  MODE 75,20
-  echo I would like to thank everyone who contributed to this project:
-  echo Thanks Zer0Bytes for the R6Manifest tool, which serves as a base to this tool. ^^!
-  echo Thanks DepotDownloader creators. ^^!
-  echo Thanks SteamDB for providing info on the depots. ^^!
-  echo Thanks Markster for Plaza Bypasses. ^^!
-  echo Thanks LoneWolf and Pixie for helping me with this tool. ^^!
-  echo Thanks Ancientkingg for the logger, as well as .NET Checker (V2)
-  echo Thanks hanakomisa for proofreading and fixing grammartic/spelling mistakes.
-  echo And thank you for using it^^!
+  MODE 78,20
+  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/lang/"%lang%"/credit.txt"
   echo.
-  echo First Version: 2020 June 17
-  echo Updated Version: 2020 December 18
-  echo Released Version: 2020 December
   pause
   cls
   goto MainMenu
@@ -3113,7 +3104,7 @@ setlocal enableextensions enabledelayedexpansion
   cls
   Title Update
   MODE 75,20
-  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/notes"
+  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/lang/"%lang%"/update.txt"
   echo.
   pause
   goto MainMenu
