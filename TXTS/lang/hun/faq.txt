@@ -1,0 +1,31 @@
+(OLD)
+
+1.
+Q: Elindítom errort add ki, mit tegyek?
+A: Találsz 2db PLAZA nevű mappát,abban lévő fájlokat másold be a régi R6:S-be (Ha az egyik nem megy, próbáld a másikat)
+2.
+Q: Biztonságos ha beírom a jelszóm?
+A: Igen ,teljes mértékben, meg is nézheted a Depot Downloader source Kódját itt: https://github.com/SteamRE/DepotDownloader
+3.
+Q: Miért nem látod a jelszót amit beírok?
+A: Mert láthatatlan, a biztoság miatt.
+4.
+Q: Hol tudom megváltoztatni a nevem?
+A: Codex.ini Fájl 28-adik sorában. Ahol látod ezt: "UsernName=CODEX"
+5.
+Q: Miért Crashelek kezdő képernyőnél?
+A: Codex.ini Fájl a 20-adik sorában a "GameName=RainbowSixSiege"-et írd át másra
+6.
+Q: Miért kapok "Encountered unexpected error downloading chunk xxxxxxxxxxxx: The operation was canceled." errort?
+A: Normális, csak hagyd figyelmen kívúl
+7.
+Q: Miért blockol egyes fájlokat az Anti-Virus-om?
+A: Ez hamis pozitív, tedd whitelist-re a fájlokat
+(Leggyakrabban a uplay_r1_loader64.dll-t lövik ki)
+8.
+Q: Elakadt a letöltésem X %-nál,mit tegyek?
+Az utolsó öt fájl nagyobb mint a többi és lehet hogy több időbe fog telni a letöltés,kérjük legyen türelemmel.
+A legjobb módszer hogy megtudja hogy működik e,az hogy feladatkezelőben meg nézi hogy használja e a hálózatot
+9.
+Ha elakadt a játék a "preparing content"-nél akkor a Codex.ini-ben írd át az offline=1 -et offline=0 -ra
+Ha az egyes fájlok hibásak, csak töltsd le újra
