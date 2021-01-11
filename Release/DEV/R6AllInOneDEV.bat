@@ -609,12 +609,12 @@ setlocal enableextensions enabledelayedexpansion
   :VersionMenu
     cls
     Title Rainbow Six Siege Version Downloader
-    MODE 50,26
+    MODE 50,27
     echo [93m-----------------------NOTES----------------------[0m
     echo                     Version Downloader
     echo         Manifests from Zer0Bytes' Manifest tool
     echo [93m----------------------SELECT----------------------[0m
-    Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Back"
+    Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Sugar Fright / Telly [R6Global]" "   Back"
 
     if %ERRORLEVEL%==1 (
     :Vanilla
@@ -878,7 +878,20 @@ setlocal enableextensions enabledelayedexpansion
       )
     goto GoingTo
     )
-    if %ERRORLEVEL% == 21 (
+    if %ERRORLEVEL%==21 (
+    :Sugar_Fright
+    set Position=Downloading
+    set DownloadName=Sugar Fright / Telly [R6Global]
+    set ManifestContent=3089981610366186823
+    set DownloadPath=R6Downloads\Sugar_Fright
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=85893637567200342
+      ) else (
+        set ManifestSDK=4020038723910014041
+      )
+    goto GoingTo
+    ) 
+    if %ERRORLEVEL% == 22 (
     set Position=InstallMenu
     goto BackTo
     )
@@ -896,7 +909,7 @@ setlocal enableextensions enabledelayedexpansion
     echo   Showdown will download Phantom Sight.
     echo   Mute (Omega) is supported by Myxtc.Jnx's R6SGlobal tool.
     echo [93m--------------------------SELECT--------------------------------[0m
-    Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not supported by Omega)" "   M.U.T.E Protocol (Supported by Omega)" "   Sugar Fright / Telly" "   Back"
+    Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not supported by Omega)" "   M.U.T.E Protocol (Supported by Omega)" "   Sugar Fright / Telly (Before Chanka Update)" "   Sugar Fright / Telly (After Chanka Update[R6Global])" "   Back"
     
     if %ERRORLEVEL%==1 (
     goto Chimera
@@ -938,7 +951,10 @@ setlocal enableextensions enabledelayedexpansion
       )
     goto GoingTo
     )
-    if %ERRORLEVEL% == 11 (
+    if %ERRORLEVEL%==11 (
+    goto Sugar_Fright
+    ) 
+    if %ERRORLEVEL% == 12 (
     set Position=InstallMenu
     goto BackTo
     )
@@ -1670,10 +1686,10 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege UninstallMenu
     MODE 50,38
     echo [93m-----------------------NOTES----------------------[0m
-    echo                        Uninstall Menu
-    echo         Please select the correct download folder.
+    echo                  Uninstall Menu
+    echo      Please select the correct download folder.
     echo [93m----------------------SELECT----------------------[0m
-    Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"      "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright" "   Y5S4_Neon_Dawn"   "   Back"
+    Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"      "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright" "   Sugar_Fright" "   Y5S4_Neon_Dawn"   "   Back"
 
     if %ERRORLEVEL%==1 (
     set DeleteDir="R6Downloads\Y1S0_Vanilla"
@@ -1796,10 +1812,14 @@ setlocal enableextensions enabledelayedexpansion
     goto SelectToCheck
     )
     if %ERRORLEVEL%==31 (
-    set DeleteDir="R6Downloads\Y5S4_Neon_Dawn"
+    set DeleteDir="R6Downloads\Sugar_Fright"
     goto SelectToCheck
     )
     if %ERRORLEVEL%==32 (
+    set DeleteDir="R6Downloads\Y5S4_Neon_Dawn"
+    goto SelectToCheck
+    )
+    if %ERRORLEVEL%==33 (
     set Position=GameMenu
     goto BackTo
     )
@@ -1838,7 +1858,7 @@ setlocal enableextensions enabledelayedexpansion
     echo                   Game Launcher
     echo    Please select the correct download folder.
     echo [93m----------------------SELECT----------------------[0m
-    Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"     "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright"   "   Y5S4_Neon_Dawn"   "   Back"
+    Resources\cmdmenusel f8f0 "   Y1S0_Vanilla"    "   Y1S1_Black_Ice"    "   Y1S2_Dust_Line"    "   Y1S3_Skull_Rain"    "   Y1S3_SkullRain"    "   Y1S4_Red_Crow"    "   Y2S1_Velvet_Shell"    "   Y2S2_Health"     "   Y2S3_Blood_Orchid"    "   Y2S3_BloodOrchid"    "   Y2S4_White_Noise"    "   Y2S4_WhiteNoise"    "   Y3S1_Chimera"    "   Y3S2_Para_Bellum"    "   Y3S3_Grim_Sky"    "   Y3S3_MadHouse"    "   Y3S4_Wind_Bastion"    "   Y4S1_Burnt_Horizon"    "   Y4S1_RainbowIsMagic"    "   Y4S2_Phantom_Sight"    "   Y4S3_Ember_Rise"    "   Y4S3_DoktorsCurse"    "   Y4S4_Shifting_Tides"    "   Y5S1_Void_Edge"    "   Y5S1_GangDestruction"    "   Y5S2_Steel_Wave"    "   Y5S2_MUTE"    "   Y5S2_SteelWave"    "   Y5S3_Shadow_Legacy"    "   Y5S3_Sugar_Fright" "   Sugar_Fright"   "   Y5S4_Neon_Dawn"   "   Back"
 
     if %ERRORLEVEL%==1 (
     set StartDir=R6Downloads\Y1S0_Vanilla
@@ -1961,10 +1981,14 @@ setlocal enableextensions enabledelayedexpansion
     goto SelectToCheck
     )
     if %ERRORLEVEL%==31 (
-    set StartDir=R6Downloads\Y5S4_Neon_Dawn
+    set StartDir=R6Downloads\Sugar_Fright
     goto SelectToCheck
     )
     if %ERRORLEVEL%==32 (
+    set StartDir=R6Downloads\Y5S4_Neon_Dawn
+    goto SelectToCheck
+    )
+    if %ERRORLEVEL%==33 (
     set Position=GameMenu
     goto BackTo
     )
@@ -1988,10 +2012,18 @@ setlocal enableextensions enabledelayedexpansion
       set LOGINFO=RainbowSixGame.exe Founded
       set LogNumber=1
       goto logtolog
-      ) else (
-      goto StartGame
       )
-      goto nothaveBE
+      goto nothaveR6G
+
+    :nothaveR6G
+    if exist "%StartDir%\RainbowSix.exe" (
+      set startexe=%StartDir%\RainbowSix.exe
+      set Position=GameStarter
+      set LOGINFO=RainbowSix.exe Founded
+      set LogNumber=1
+      goto logtolog
+      )
+      goto StartGame
   ::BE Disable/ RSG Skip END
 
   ::StartChoose START
