@@ -35,6 +35,9 @@ COPY
 12 May 2020 = 
 29 July 2020 = 
 10 August 2020 = 
+//Shey
+25 September 2017 (Blood Orhid) = (SKU Change) 6708129824495912434
+30 April 2020 (VoidEdge) = (SKU) 4736360397583523381 | (Cont) 6296533808765702678
 
 END
 
