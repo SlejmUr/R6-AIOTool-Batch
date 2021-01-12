@@ -19,10 +19,11 @@ setlocal enableextensions enabledelayedexpansion
 
 ::STARTUP
   Title STARTUP
+  echo Welcoome to AIO Tool^^!
   echo Loading...
   echo Please be patient ^^!
   set homepath=%cd%
-  set AllInOneVersion=DEV
+  set AllInOneVersion=PRE_1.3
   set discord=discord.gg/EvrGzAV
   set DepotSDK=377237
   set SKUname=WW Content
@@ -2859,7 +2860,7 @@ setlocal enableextensions enabledelayedexpansion
     echo It's Brasilian Lang on %ExtraName%
     pause
     cls
-    set Downloaded=Brasilian Lang on %ExtraName%
+    set Downloaded="Brasilian Lang on %ExtraName%"
     goto DownloadCheck
     )
     if %ERRORLEVEL%==6 (
