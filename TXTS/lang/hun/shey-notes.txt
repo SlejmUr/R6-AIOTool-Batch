@@ -1,0 +1,3 @@
+ Shey jegyzet:
+ - Vanilla ugyanaz mint a Release/Version-ben
+ - X
