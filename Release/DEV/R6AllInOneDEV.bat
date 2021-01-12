@@ -82,7 +82,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     echo                              Downloading Settings.ini...
     echo ------------------------------------------------------------------------------
-    curl -L  "https://github.com/SlejmUr/R6-AIOTool-Batch/raw/master/Requirements/Settings.ini" --output Settings.ini
+    curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/Requirements/Settings.ini" --output Settings.ini
     move Settings.ini Resources
     set LOGINFO=Settings.ini Downloaded and moved.
     set LogNumber=1
