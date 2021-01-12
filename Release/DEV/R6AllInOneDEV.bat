@@ -280,6 +280,7 @@ setlocal enableextensions enabledelayedexpansion
     ) else (
       goto DepotDownloader
     )
+    goto DepotCheck
 
   :DepotDownloader
     set Position=DepotCheck
@@ -335,7 +336,6 @@ setlocal enableextensions enabledelayedexpansion
 
 ::cmdmenusel START
   :cmdCheck
-    cls
     if exist "Resources\cmdmenusel.exe" (
       goto ReplacerCheck 
     ) else (
@@ -359,7 +359,6 @@ setlocal enableextensions enabledelayedexpansion
 
 ::replacer START
   :ReplacerCheck
-    cls
     if exist "Resources\replacer.exe" (
       goto ifSteam 
     ) else (
@@ -393,6 +392,7 @@ setlocal enableextensions enabledelayedexpansion
     goto ifSteam
 
   :SetSteam
+    cls
     set Position=PopUpCheck
     MODE 78,10
     echo Please type in your Steam username^^! [Not the profile name.]
