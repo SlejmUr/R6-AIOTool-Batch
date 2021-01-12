@@ -64,6 +64,7 @@ setlocal enableextensions enabledelayedexpansion
     set LogNumber=1
     goto logtolog
     )
+    goto logtolog
 ::Github Connect END
 
 
@@ -75,6 +76,7 @@ setlocal enableextensions enabledelayedexpansion
       mkdir Resources
       goto noSini
     )
+    goto SiniCheck
 
   :noSini
     set Position=SiniCheck
@@ -154,6 +156,8 @@ setlocal enableextensions enabledelayedexpansion
       echo "SteamName" set to 0
       set SteamName=0
       )
+      pause
+::Test
       goto ifdotnet
   :: SET SET END
 ::SET Things END
