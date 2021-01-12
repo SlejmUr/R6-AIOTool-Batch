@@ -19,12 +19,13 @@ setlocal enableextensions enabledelayedexpansion
 
 ::STARTUP
   Title STARTUP
-  echo Welcoome to AIO Tool^^!
+  echo Welcome to AIO Tool^^!
   echo Loading...
   echo Please be patient ^^!
   set homepath=%cd%
   set AllInOneVersion=PRE_1.3
   set discord=discord.gg/EvrGzAV
+  set discordname=R6:S Modding United
   set DepotSDK=377237
   set SKUname=WW Content
   set lang=eng
@@ -81,7 +82,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     echo                              Downloading Settings.ini...
     echo ------------------------------------------------------------------------------
-    curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/Settings.ini" --output Settings.ini
+    curl -L  "https://github.com/SlejmUr/R6-AIOTool-Batch/raw/master/Requirements/Settings.ini" --output Settings.ini
     move Settings.ini Resources
     set LOGINFO=Settings.ini Downloaded and moved.
     set LogNumber=1
@@ -345,7 +346,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     echo                        Downloading cmdmenusel...
     echo ------------------------------------------------------------------------------
-    curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/cmdmenusel.exe" --output cmdmenusel.exe
+    curl -L  "https://github.com/SlejmUr/R6-AIOTool-Batch/raw/master/Requirements/cmdmenusel.exe" --output cmdmenusel.exe
     move cmdmenusel.exe Resources
     set LOGINFO=cmdmenusel Successfully downloaded.
     set LogNumber=1
@@ -369,7 +370,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     echo                        Downloading replacer...
     echo ------------------------------------------------------------------------------
-    curl -L  "https://github.com/SlejmUr/R6-AIOTool/raw/master/Requirements/replacer.exe" --output replacer.exe
+    curl -L  "https://github.com/SlejmUr/R6-AIOTool-Batch/raw/master/Requirements/replacer.exe" --output replacer.exe
     move replacer.exe Resources
     set LOGINFO=Replacer Successfully downloaded.
     set LogNumber=1
@@ -423,7 +424,7 @@ setlocal enableextensions enabledelayedexpansion
   echo  Our Discord Server: [94m%discord%[0m 
   echo  AIO Tool Version: [32m%AllInOneVersion%[0m 
   echo  Steam User: [96m%username%[0m ^| Sku : [36m%SKUname%[0m 
-  echo  FAQ Language: %lang%
+  echo  FAQ Language: %lang% ^| Downloader for: %discordname%
   echo [93m----------------------------SELECT----------------------------[0m
   Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  SKU Switch" "  Lang Switch" "  Update" "  Exit"
 
@@ -512,8 +513,8 @@ setlocal enableextensions enabledelayedexpansion
   :faq
     cls
     Title FAQ
-    MODE 120,36
-	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/lang/"%lang%"/faq.txt"
+    MODE 120,44
+	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/faq.txt"
 	echo.
     pause
     cls
@@ -521,12 +522,14 @@ setlocal enableextensions enabledelayedexpansion
   ::and
   :Notes
     Title Notes
-    MODE 90,14
-	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/lang/"%lang%"/notes.txt"
+    MODE 90,40
+	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/notes.txt"
     echo  Discord: SlejmUr#4007 ^| Server: %discord%
+    echo.
+  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/shey-notes.txt"
+    echo.
     Resources\replacer.exe Resources\Settings.ini POPUP=1 POPUP=0 >nul
     pause
-    cls
     goto MainMenu
 ::FAQ and notes END
 
@@ -568,12 +571,12 @@ setlocal enableextensions enabledelayedexpansion
     set LastSelector=InstallMenu
     cls
     Title Rainbow Six Siege Install Selector
-    MODE 50,12
+    MODE 50,14
     echo [93m-----------------------NOTES----------------------[0m
     echo                   Install Selector
     echo            [31mEverything is now stable^^![0m
     echo [93m----------------------SELECT----------------------[0m
-    Resources\cmdmenusel f8f0 "   Version Downloader" "   Event Downloader" "   Release Downloader" "   Custom Downloader" "   4K Textures Downloader" "   Extra Language Downloader" "   Back"
+    Resources\cmdmenusel f8f0 "   Version Downloader" "   Event Downloader" "   Release Downloader" "   Shey Downloader" "   Custom Downloader" "   4K Textures Downloader" "   Extra Language Downloader" "   Back"
 
     if %ERRORLEVEL% == 1 (
     set Position=VersionMenu
@@ -588,18 +591,22 @@ setlocal enableextensions enabledelayedexpansion
     goto GoingTo
     )
     if %ERRORLEVEL% == 4 (
-    set Position=CustomMenu
+    set Position=SheyMenu
     goto GoingTo
     )
     if %ERRORLEVEL% == 5 (
-    set Position=TextureMenu
+    set Position=CustomMenu
     goto GoingTo
     )
     if %ERRORLEVEL% == 6 (
-    set Position=ExtraMenu
+    set Position=TextureMenu
     goto GoingTo
     )
     if %ERRORLEVEL% == 7 (
+    set Position=ExtraMenu
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 8 (
     set Position=GameMenu
     goto BackTo
     )
@@ -1142,6 +1149,50 @@ setlocal enableextensions enabledelayedexpansion
     )
     goto ReleaseMenu
   ::ReleaseMenu END
+
+  ::SheyMenu START
+  :SheyMenu
+    cls
+    Title Rainbow Six Siege Shey Downloader
+    MODE 50,8
+    echo [93m-----------------------NOTES----------------------[0m
+    echo                   Shey Downloader
+    echo        Only shey searched build^^! Check notes^^!
+    echo [93m----------------------SELECT----------------------[0m
+    Resources\cmdmenusel f8f0 "   Y2S3_BloodOrchid2" "   Y5S1_VoidEdge" "   Back"
+
+    if %ERRORLEVEL%==1 (
+    :NeonDawn
+    set Position=Downloading
+    set DownloadName=Blood Orchid [Shey]
+    set ManifestContent=1613631671988840841
+    set DownloadPath=R6Downloads\Y2S3_BloodOrchid2
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=6708129824495912434
+      ) else (
+        set ManifestSDK=4662662335520989204
+      )
+    goto GoingTo
+    )
+    if %ERRORLEVEL%==2 (
+    :NeonDawn
+    set Position=Downloading
+    set DownloadName=Void Edge [Shey]
+    set ManifestContent=6296533808765702678
+    set DownloadPath=R6Downloads\Y5S1_VoidEdge
+    if %DepotSDK% == 377237 (
+        set ManifestSDK=4736360397583523381
+      ) else (
+        set ManifestSDK=2583838033617047180
+      )
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 3 (
+    set Position=InstallMenu
+    goto BackTo
+    )
+    goto SheyMenu
+  ::SheyMenu END
 
   ::CustomMenu START
   :CustomMenu
@@ -3124,7 +3175,7 @@ setlocal enableextensions enabledelayedexpansion
   cls
   Title CREDIT
   MODE 78,20
-  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/lang/"%lang%"/credit.txt"
+  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/credit.txt"
   echo.
   pause
   cls
@@ -3137,7 +3188,7 @@ setlocal enableextensions enabledelayedexpansion
   cls
   Title Update
   MODE 75,20
-  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool/master/TXTS/lang/"%lang%"/update.txt"
+  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/update.txt"
   echo.
   pause
   goto MainMenu
