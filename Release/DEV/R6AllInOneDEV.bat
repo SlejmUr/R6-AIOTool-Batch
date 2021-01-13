@@ -448,7 +448,7 @@ setlocal enableextensions enabledelayedexpansion
   goto GoingTo
   )
   if %ERRORLEVEL% == 5 (
-  set Position=dxvcredist
+  set Position=dxvcredistdownloader
   goto GoingTo
   )
   if %ERRORLEVEL% == 6 (
@@ -517,8 +517,8 @@ setlocal enableextensions enabledelayedexpansion
     cls
     Title FAQ
     MODE 120,44
-	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/faq.txt"
-	echo.
+  	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/faq.txt"
+  	echo.
     pause
     cls
     goto Notes
@@ -526,10 +526,10 @@ setlocal enableextensions enabledelayedexpansion
   :Notes
     Title Notes
     MODE 90,40
-	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/notes.txt"
+    curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/notes.txt"
     echo  Discord: SlejmUr#4007 ^| Server: %discord%
     echo.
-  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/shey-notes.txt"
+    curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/shey-notes.txt"
     echo.
     Resources\replacer.exe Resources\Settings.ini POPUP=1 POPUP=0 >nul
     pause
@@ -3065,11 +3065,11 @@ setlocal enableextensions enabledelayedexpansion
 ::LANG END
 
 
-::dxvcredist START
-  :dxvcredist
+::dxvcredistdownloader START
+  :dxvcredistdownloader
     cls
     Title DirectX and VC Redist Downloader
-    MODE 41,10
+    MODE 42,12
     echo [93m------------------NOTES------------------[0m
     echo           DirectX and VC Redist Downloader
     echo [93m------------------SELECT-----------------[0m
@@ -3134,8 +3134,8 @@ setlocal enableextensions enabledelayedexpansion
     set Position=MainMenu
     goto BackTo
     )
-    goto dxvcredist
-::dxvcredist END
+    goto dxvcredistdownloader
+::dxvcredistdownloader END
 
 
 ::ZeroFolderRenamer START
