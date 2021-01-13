@@ -1165,7 +1165,7 @@ setlocal enableextensions enabledelayedexpansion
     Resources\cmdmenusel f8f0 "   Y2S3_BloodOrchid2" "   Y5S1_VoidEdge" "   Back"
 
     if %ERRORLEVEL%==1 (
-    :NeonDawn
+    :BloodOrchidShey
     set Position=Downloading
     set DownloadName=Blood Orchid [Shey]
     set ManifestContent=1613631671988840841
@@ -1178,7 +1178,7 @@ setlocal enableextensions enabledelayedexpansion
     goto GoingTo
     )
     if %ERRORLEVEL%==2 (
-    :NeonDawn
+    :VoidEdgeShey
     set Position=Downloading
     set DownloadName=Void Edge [Shey]
     set ManifestContent=6296533808765702678
