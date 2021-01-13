@@ -3068,10 +3068,10 @@ setlocal enableextensions enabledelayedexpansion
 ::dxvcredist START
   :dxvcredist
     cls
-    Title DirectX VC Redist Downloader
+    Title DirectX and VC Redist Downloader
     MODE 41,10
     echo [93m------------------NOTES------------------[0m
-    echo           DirectX + VC Redist Downloader
+    echo           DirectX and VC Redist Downloader
     echo [93m------------------SELECT-----------------[0m
     Resources\cmdmenusel f8f0 "   DirectX" "   VC 2010 Redist" "   VC 2012 Redist" "   VC 2015 Redist"  "   VC 2017 Redist" "   Back"
 
