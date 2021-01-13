@@ -3068,7 +3068,7 @@ setlocal enableextensions enabledelayedexpansion
 ::dxvcredist START
   :dxvcredist
     cls
-    Title DirectX + VC Redist Downloader
+    Title DirectX VC Redist Downloader
     MODE 41,10
     echo [93m------------------NOTES------------------[0m
     echo           DirectX + VC Redist Downloader
@@ -3139,91 +3139,91 @@ setlocal enableextensions enabledelayedexpansion
 
 
 ::ZeroFolderRenamer START
-:ZeroFolderRenamer
-  set Position=MainMenu
-  cls
-  Title Zero Folder Renamer
-  MODE 50,20
-  echo Make sure to now download it twice^^!
-  pause
-  echo Waiting to fully rename the folders.
-  ren "R6Downloads\Y1S1_BlackIce" "Y1S1_Black_Ice" 2>nul
-  ren "R6Downloads\Y1S2_DustLine" "Y1S2_Dust_Line" 2>nul
-  ren "R6Downloads\Y1S4_RedCrow" "Y1S4_Red_Crow" 2>nul
-  ren "R6Downloads\Y2S1_VelvetShell" "Y2S1_Velvet_Shell" 2>nul
-  ren "R6Downloads\Y2S2_Health_FixingAndRepairingTheGame" "Y2S2_Health" 2>nul
-  ren "R6Downloads\Y2S4_WhiteNoise" "Y2S4_White_Noise" 2>nul
-  ren "R6Downloads\Y3S1_Chimera_Outbreak" "Y3S1_Chimera" 2>nul
-  ren "R6Downloads\Y3S2_ParaBellum" "Y3S2_Para_Bellum" 2>nul
-  ren "R6Downloads\Y3S3_GrimSky_MadHouse" "Y3S3_MadHouse" 2>nul
-  ren "R6Downloads\Y3S4_WindBastion" "Y3S4_Wind_Bastion" 2>nul
-  ren "R6Downloads\Y4S1_BurntHorizon_RainbowisMagic" "Y4S1_RainbowIsMagic" 2>nul
-  ren "R6Downloads\Y4S2_PhantomSight_Showdown" "Y4S2_Phantom_Sight" 2>nul
-  ren "R6Downloads\Y4S3_EmberRise_DoktorsCurse" "Y4S3_DoktorsCurse" 2>nul
-  ren "R6Downloads\Y4S4_ShiftingTides_Stadium" "Y4S4_Shifting_Tides" 2>nul
-  ren "R6Downloads\Y5S1_VoidEdge_GangDestruction" "Y5S1_GangDestruction" 2>nul
-  ren "R6Downloads\Y5S2_SteelWave_Morphues" "Y5S2_MUTE" 2>nul
-  ren "R6Downloads\Y5S2_SteelWave_Morphues_V2311" "Y5S2_Steel_Wave" 2>nul
-  echo Renamer end ^^!
-  pause >nul | echo Press any key to go back to MainMenu
-  set LOGINFO=Fully rename the folders.
-  set LogNumber=1
-  goto logtolog
+  :ZeroFolderRenamer
+    set Position=MainMenu
+    cls
+    Title Zero Folder Renamer
+    MODE 50,20
+    echo Make sure to now download it twice^^!
+    pause
+    echo Waiting to fully rename the folders.
+    ren "R6Downloads\Y1S1_BlackIce" "Y1S1_Black_Ice" 2>nul
+    ren "R6Downloads\Y1S2_DustLine" "Y1S2_Dust_Line" 2>nul
+    ren "R6Downloads\Y1S4_RedCrow" "Y1S4_Red_Crow" 2>nul
+    ren "R6Downloads\Y2S1_VelvetShell" "Y2S1_Velvet_Shell" 2>nul
+    ren "R6Downloads\Y2S2_Health_FixingAndRepairingTheGame" "Y2S2_Health" 2>nul
+    ren "R6Downloads\Y2S4_WhiteNoise" "Y2S4_White_Noise" 2>nul
+    ren "R6Downloads\Y3S1_Chimera_Outbreak" "Y3S1_Chimera" 2>nul
+    ren "R6Downloads\Y3S2_ParaBellum" "Y3S2_Para_Bellum" 2>nul
+    ren "R6Downloads\Y3S3_GrimSky_MadHouse" "Y3S3_MadHouse" 2>nul
+    ren "R6Downloads\Y3S4_WindBastion" "Y3S4_Wind_Bastion" 2>nul
+    ren "R6Downloads\Y4S1_BurntHorizon_RainbowisMagic" "Y4S1_RainbowIsMagic" 2>nul
+    ren "R6Downloads\Y4S2_PhantomSight_Showdown" "Y4S2_Phantom_Sight" 2>nul
+    ren "R6Downloads\Y4S3_EmberRise_DoktorsCurse" "Y4S3_DoktorsCurse" 2>nul
+    ren "R6Downloads\Y4S4_ShiftingTides_Stadium" "Y4S4_Shifting_Tides" 2>nul
+    ren "R6Downloads\Y5S1_VoidEdge_GangDestruction" "Y5S1_GangDestruction" 2>nul
+    ren "R6Downloads\Y5S2_SteelWave_Morphues" "Y5S2_MUTE" 2>nul
+    ren "R6Downloads\Y5S2_SteelWave_Morphues_V2311" "Y5S2_Steel_Wave" 2>nul
+    echo Renamer end ^^!
+    pause >nul | echo Press any key to go back to MainMenu
+    set LOGINFO=Fully rename the folders.
+    set LogNumber=1
+    goto logtolog
 ::ZeroFolderRenamer END
 
 
 ::CREDIT START
 ::© 2020 SlejmUr
-:Credit
-  cls
-  Title CREDIT
-  MODE 78,20
-  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/credit.txt"
-  echo.
-  pause
-  cls
-  goto MainMenu
+  :Credit
+    cls
+    Title CREDIT
+    MODE 78,20
+    curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/credit.txt"
+    echo.
+    pause
+    cls
+    goto MainMenu
 ::CREDIT END
 
 
 ::Update START
-:Update
-  cls
-  Title Update
-  MODE 75,20
-  curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/update.txt"
-  echo.
-  pause
-  goto MainMenu
+  :Update
+    cls
+    Title Update
+    MODE 75,20
+    curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/update.txt"
+    echo.
+    pause
+    goto MainMenu
 ::Update END
 
 
 ::BattlEyeChecker START
-:BattlEyeChecker
-  set Position=MainMenu
-  cls
-  color 09
-  MODE 36,8
-  set EXE=RainbowSix_BE.exe
-  FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto FOUND
-  goto NOTFOUND
-  :NOTFOUND
-  echo ------------------------------------
-  echo [-] BattleEye is Not running.
-  echo ------------------------------------
-  pause
-  set LOGINFO=BattleEye is Not running.
-  set LogNumber=1
-  goto logtolog
-  :FOUND
-  echo ------------------------------------
-  echo [+] BattleEye is running.
-  echo ------------------------------------
-  pause
-  set LOGINFO=BattleEye is running
-  set LogNumber=2
-  goto logtolog
-::BattlEyeChecker END
+  :BattlEyeChecker
+    set Position=MainMenu
+    cls
+    color 09
+    MODE 36,8
+    set EXE=RainbowSix_BE.exe
+    FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto FOUND
+    goto NOTFOUND
+    :NOTFOUND
+    echo ------------------------------------
+    echo [-] BattleEye is Not running.
+    echo ------------------------------------
+    pause
+    set LOGINFO=BattleEye is Not running.
+    set LogNumber=1
+    goto logtolog
+    :FOUND
+    echo ------------------------------------
+    echo [+] BattleEye is running.
+    echo ------------------------------------
+    pause
+    set LOGINFO=BattleEye is running
+    set LogNumber=2
+    goto logtolog
+  ::BattlEyeChecker END
 
 ::LOG THINGS START
   :logstart
@@ -3363,6 +3363,6 @@ setlocal enableextensions enabledelayedexpansion
 ::LOG THINGS END
 
 ::Exiting
-:exiting
-  echo. >>log.log
-  exit
+  :exiting
+    echo. >>log.log
+    exit
