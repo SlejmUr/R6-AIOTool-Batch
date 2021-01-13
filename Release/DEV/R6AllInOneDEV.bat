@@ -48,7 +48,6 @@ setlocal enableextensions enabledelayedexpansion
 
 ::Github Connect START
   :github
-    set Position=SiniCheck
     ping github.com>nul
     if errorlevel 1 (
     set Position=MainMenu
@@ -59,12 +58,13 @@ setlocal enableextensions enabledelayedexpansion
     goto logtolog
     ) 
     if errorlevel 0 (
+    set Position=SiniCheck
     echo Connection to Github successful.^^!
     set LOGINFO=Connection to Github successful.
     set LogNumber=1
     goto logtolog
     )
-    goto logtolog
+    goto github
 ::Github Connect END
 
 
@@ -84,7 +84,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     echo                              Downloading Settings.ini...
     echo ------------------------------------------------------------------------------
-    curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/Requirements/Settings.ini" --output Settings.ini
+    curl -L  "https://github.com/SlejmUr/R6-AIOTool-Batch/raw/master/Requirements/Settings.ini" --output Settings.ini
     move Settings.ini Resources
     set LOGINFO=Settings.ini Downloaded and moved.
     set LogNumber=1
@@ -156,8 +156,6 @@ setlocal enableextensions enabledelayedexpansion
       echo "SteamName" set to 0
       set SteamName=0
       )
-      pause
-::Test
       goto ifdotnet
   :: SET SET END
 ::SET Things END
@@ -392,8 +390,8 @@ setlocal enableextensions enabledelayedexpansion
     goto ifSteam
 
   :SetSteam
-    cls
     set Position=PopUpCheck
+    cls
     MODE 78,10
     echo Please type in your Steam username^^! [Not the profile name.]
     set /p username="Enter Steam Username:"
@@ -412,6 +410,7 @@ setlocal enableextensions enabledelayedexpansion
     if %errorlevel%==1 (
     goto MainMenu
     )
+    goto PopUpCheck
 ::FAQ popup END
 
 ::MainMenu START
