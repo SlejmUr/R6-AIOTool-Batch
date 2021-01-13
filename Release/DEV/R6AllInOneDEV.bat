@@ -538,33 +538,33 @@ setlocal enableextensions enabledelayedexpansion
 
 
 ::GameMenu START
-:GameMenu
-  cls
-  Title R6:S GameMenu
-  MODE 34,10
-  echo [93m---------------NOTES--------------[0m
-  echo     Rainbow Six Siege Game Menu
-  echo       Install/Uninstall/Start
-  echo [93m--------------SELECT--------------[0m 
-  Resources\cmdmenusel f8f0 "    Install Rainbow Six Siege" "   Uninstall Rainbow Six Siege" "   Starting Rainbow Six Siege" "              Back"
+  :GameMenu
+    cls
+    Title R6:S GameMenu
+    MODE 34,10
+    echo [93m---------------NOTES--------------[0m
+    echo     Rainbow Six Siege Game Menu
+    echo       Install/Uninstall/Start
+    echo [93m--------------SELECT--------------[0m 
+    Resources\cmdmenusel f8f0 "    Install Rainbow Six Siege" "   Uninstall Rainbow Six Siege" "   Starting Rainbow Six Siege" "              Back"
 
-  if %ERRORLEVEL% == 1 (
-  set Position=InstallMenu
-  goto GoingTo
-  )
-  if %ERRORLEVEL% == 2 (
-  set Position=UninstallMenu
-  goto GoingTo
-  )
-  if %ERRORLEVEL% == 3 (
-  set Position=StartGame
-  goto GoingTo
-  )
-  if %ERRORLEVEL% == 4 (
-  set Position=MainMenu
-  goto BackTo
-  )
-  goto GameMenu
+    if %ERRORLEVEL% == 1 (
+    set Position=InstallMenu
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 2 (
+    set Position=UninstallMenu
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 3 (
+    set Position=StartGame
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 4 (
+    set Position=MainMenu
+    goto BackTo
+    )
+    goto GameMenu
 ::GameMenu END
 
 
