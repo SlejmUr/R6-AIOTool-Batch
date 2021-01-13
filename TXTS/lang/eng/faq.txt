@@ -29,9 +29,10 @@ When it asks to overwrite a few files click yes. If your anti-virus blocks these
 What is CODEX, DepotDownloader,R6Manifest,etc?
 CODEX/Plaza : Applied to bypass DRMs on old Siege versions.
 DepotDownloader : Created by SteamRE, you can download any manifest once you have the game license.
-R6-AIOTool : AllInOne Tool, many function. Based on R6 Manifest. [This tool] Created by SlejmUr.
+R6-AIOTool-Batch : AllInOne Tool, many function. Based on R6 Manifest. Made in Batch. [This tool] Created by SlejmUr.
+R6-AIOTool-C# : AllInOne Tool, many function. Based on R6-AIOTool-Batch. Made in C#. Created by SlejmUr.
 R6 Manifest : Downloads old versions of R6 utilizing DepotDownloader. Created by Zer0Bytes.
 R6 Downloader : Downloader of old R6:S version for Operation Throwback. Created by Shey.
-Liberator :  Applied to play Old Events. Created by Cheato.
-R6Global : Applied to play event in specific season, built-in doow Like Liberator. Created by Mystc.
-
+Liberator :  Applied to play Old Events. (Y1S0-Y4S4) Created by Cheato.
+R6Global : Applied to play event in specific season, built-in downloader. Created by Mystc.
+Night-Tool (UnknownRelease) : Applied to play Old Events. (Y5S1-?). Created by Real.
