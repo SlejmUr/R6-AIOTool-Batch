@@ -3066,75 +3066,75 @@ setlocal enableextensions enabledelayedexpansion
 
 
 ::dxvcredist START
-:dxvcredist
-  cls
-  Title DirectX + VC Redist Downloader
-  MODE 41,10
-  echo [93m------------------NOTES------------------[0m
-  echo           DirectX + VC Redist Downloader
-  echo [93m------------------SELECT-----------------[0m
-  Resources\cmdmenusel f8f0 "   DirectX" "   VC 2010 Redist" "   VC 2012 Redist" "   VC 2015 Redist"  "   VC 2017 Redist" "   Back"
+  :dxvcredist
+    cls
+    Title DirectX + VC Redist Downloader
+    MODE 41,10
+    echo [93m------------------NOTES------------------[0m
+    echo           DirectX + VC Redist Downloader
+    echo [93m------------------SELECT-----------------[0m
+    Resources\cmdmenusel f8f0 "   DirectX" "   VC 2010 Redist" "   VC 2012 Redist" "   VC 2015 Redist"  "   VC 2017 Redist" "   Back"
 
-  if %ERRORLEVEL% == 1 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228990 -manifest 1829726630299308803 -username %username% -remember-password -dir "R6Downloads\DirectX" -validate -max-servers 15 -max-downloads 10
-  echo.
-  echo Download complete^^!
-  echo It's DirectX^^!
-  pause
-  cls
-  set Downloaded="DirectX"
-  goto DownloadCheck
-  )
-  if %ERRORLEVEL% == 2 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228983 -manifest 8124929965194586177 -username %username% -remember-password -dir "R6Downloads\VC_2010_Redist" -validate -max-servers 15 -max-downloads 10
-  echo.
-  echo Download complete^^!
-  echo It's VC 2010 Redist^^!
-  pause
-  cls
-  set Downloaded="VC 2010 Redist"
-  goto DownloadCheck
-  )
-  if %ERRORLEVEL% == 3 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228984 -manifest 2547553897526095397 -username %username% -remember-password -dir "R6Downloads\VC_2012_Redist" -validate -max-servers 15 -max-downloads 10
-  echo.
-  echo Download complete^^!
-  echo It's VC 2012 Redist^^!
-  pause
-  cls
-  set Downloaded="VC 2012 Redist"
-  goto DownloadCheck
-  )
-  if %ERRORLEVEL% == 4 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228986 -manifest 8782296191957114623 -username %username% -remember-password -dir "R6Downloads\VC_2015_Redist" -validate -max-servers 15 -max-downloads 10
-  echo.
-  echo Download complete^^!
-  echo It's VC 2015 Redist^^!
-  pause
-  cls
-  set Downloaded="VC 2015 Redist"
-  goto DownloadCheck
-  )
-  if %ERRORLEVEL% == 5 (
-  MODE 100,40
-  dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228987 -manifest 4302102680580581867 -username %username% -remember-password -dir "R6Downloads\VC_2017_Redist" -validate -max-servers 15 -max-downloads 10
-  echo.
-  echo Download complete^^!
-  echo It's VC 2017 Redist^^!
-  pause
-  cls
-  set Downloaded="VC 2017 Redist"
-  goto DownloadCheck
-  )
-  if %ERRORLEVEL% == 6 (
-  set Position=MainMenu
-  goto BackTo
-  )
-  goto dxvcredist
+    if %ERRORLEVEL% == 1 (
+    MODE 100,40
+    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228990 -manifest 1829726630299308803 -username %username% -remember-password -dir "R6Downloads\DirectX" -validate -max-servers 15 -max-downloads 10
+    echo.
+    echo Download complete^^!
+    echo It's DirectX^^!
+    pause
+    cls
+    set Downloaded="DirectX"
+    goto DownloadCheck
+    )
+    if %ERRORLEVEL% == 2 (
+    MODE 100,40
+    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228983 -manifest 8124929965194586177 -username %username% -remember-password -dir "R6Downloads\VC_2010_Redist" -validate -max-servers 15 -max-downloads 10
+    echo.
+    echo Download complete^^!
+    echo It's VC 2010 Redist^^!
+    pause
+    cls
+    set Downloaded="VC 2010 Redist"
+    goto DownloadCheck
+    )
+    if %ERRORLEVEL% == 3 (
+    MODE 100,40
+    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228984 -manifest 2547553897526095397 -username %username% -remember-password -dir "R6Downloads\VC_2012_Redist" -validate -max-servers 15 -max-downloads 10
+    echo.
+    echo Download complete^^!
+    echo It's VC 2012 Redist^^!
+    pause
+    cls
+    set Downloaded="VC 2012 Redist"
+    goto DownloadCheck
+    )
+    if %ERRORLEVEL% == 4 (
+    MODE 100,40
+    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228986 -manifest 8782296191957114623 -username %username% -remember-password -dir "R6Downloads\VC_2015_Redist" -validate -max-servers 15 -max-downloads 10
+    echo.
+    echo Download complete^^!
+    echo It's VC 2015 Redist^^!
+    pause
+    cls
+    set Downloaded="VC 2015 Redist"
+    goto DownloadCheck
+    )
+    if %ERRORLEVEL% == 5 (
+    MODE 100,40
+    dotnet Resources\DepotDownloader\DepotDownloader.dll -app 359550 -depot 228987 -manifest 4302102680580581867 -username %username% -remember-password -dir "R6Downloads\VC_2017_Redist" -validate -max-servers 15 -max-downloads 10
+    echo.
+    echo Download complete^^!
+    echo It's VC 2017 Redist^^!
+    pause
+    cls
+    set Downloaded="VC 2017 Redist"
+    goto DownloadCheck
+    )
+    if %ERRORLEVEL% == 6 (
+    set Position=MainMenu
+    goto BackTo
+    )
+    goto dxvcredist
 ::dxvcredist END
 
 
