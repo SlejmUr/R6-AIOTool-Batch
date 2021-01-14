@@ -1,4 +1,4 @@
 
 Please Update!
-Added Mystc Sugar Fright manifest!
-Note: No 4K and Extra supported now in this manifest
+If you see 1.3 you good!
+If you use PRE-1.3 get the 1.3 in my github!
