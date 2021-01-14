@@ -493,9 +493,9 @@ setlocal enableextensions enabledelayedexpansion
   )
   if %ERRORLEVEL%==12 (
     if %lang% == eng (
-  		set lang=hun
+      set lang=hun
       ) else (
-  		set lang=eng
+      set lang=eng
       )
   )
   if %ERRORLEVEL%==13 (
@@ -517,8 +517,8 @@ setlocal enableextensions enabledelayedexpansion
     cls
     Title FAQ
     MODE 120,44
-  	curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/faq.txt"
-  	echo.
+    curl -L  "https://raw.githubusercontent.com/SlejmUr/R6-AIOTool-Batch/master/TXTS/lang/"%lang%"/faq.txt"
+    echo.
     pause
     cls
     goto Notes
@@ -576,7 +576,7 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Install Selector
     MODE 50,14
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Install Selector
+    echo                 Install Selector
     echo            [31mEverything is now stable^^![0m
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Version Downloader" "   Event Downloader" "   Release Downloader" "   Shey Downloader" "   Custom Downloader" "   4K Textures Downloader" "   Extra Language Downloader" "   Back"
@@ -622,8 +622,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Version Downloader
     MODE 50,27
     echo [93m-----------------------NOTES----------------------[0m
-    echo                     Version Downloader
-    echo         Manifests from Zer0Bytes' Manifest tool
+    echo                 Version Downloader
+    echo        Manifests from Zer0Bytes' Manifest tool
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Sugar Fright / Telly [R6Global]" "   Back"
 
@@ -978,8 +978,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Release Downloader
     MODE 50,28
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Release Downloader
-    echo        Only new, released version of game build
+    echo                 Release Downloader
+    echo      Only new, released version of game build
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave" "   Shadow Legacy" "   Neon Dawn" "   Back"
 
@@ -1201,11 +1201,11 @@ setlocal enableextensions enabledelayedexpansion
   :CustomMenu
     cls
     Title Rainbow Six Siege Custom Downloader
-    MODE 50,16
+    MODE 50,14
     echo [93m-----------------------NOTES----------------------[0m
-    echo                      Custom Downloader
-    echo            You need to set the values manually. ^^!
-    echo    This can be used to download any game you own.
+    echo                  Custom Downloader
+    echo         You need to set the values manually^^!
+    echo   This can be used to download any game you own.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Set Default things" "   Set App" "   Set Depot" "   Set Manifest" "   Set Path/Dir" "   Start Download" "   Back"
     
@@ -1336,8 +1336,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege 4K Textures Downloader
     MODE 50,10
     echo [93m----------------------NOTES-----------------------[0m
-    echo                  4K Textures Selector
-    echo                Event Textures are added^^! 
+    echo               4K Textures Selector
+    echo             Event Textures are added^^! 
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   4K Version" "   4K Event" "   4K Release" "   Back"
 
@@ -1542,9 +1542,9 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege 4K Event Downloader
     MODE 50,16
     echo [93m----------------------NOTES-----------------------[0m
-    echo           Outbreak will download Chimera.
-    echo       Road To S.I. will download Shifting Tides.
-    echo           Showdown will download Phantom Sight.
+    echo        Outbreak will download Chimera 4K
+    echo    Road To S.I. will download Shifting Tides 4K
+    echo        Showdown will download Phantom Sight 4K
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doktors Curse" "   Road To S.I. 2020" "   The Grand Larceny / Golden Gun" "   M.U.T.E Protocol (Supported by Omega)" "   Sugar Fright / Telly" "   Back"
     
@@ -2086,10 +2086,10 @@ setlocal enableextensions enabledelayedexpansion
     cls
     MODE 50,10
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   DirectX or Vulkan?
-    echo             DirectX is the default renderer.
-    echo       Use DirectX if you don't know what this is.
-    echo          Some tools will only support DirectX.
+    echo                  DirectX or Vulkan?
+    echo            DirectX is the default renderer.
+    echo      Use DirectX if you don't know what this is.
+    echo         Some tools will only support DirectX.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   DirectX" "   Vulkan" "   Back"
 
@@ -2115,7 +2115,7 @@ setlocal enableextensions enabledelayedexpansion
     echo Starting : %startexe%
     start %startexe% /belaunch
     pause
-	set StartDir=
+    set StartDir=
     set Position=GameMenu
     set LOGINFO=%startexe% Started
     set LogNumber=1
@@ -2131,8 +2131,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Extra Menu
     MODE 50,10
     echo [93m-----------------------NOTES----------------------[0m
-    echo                   Extra Language Menu
-    echo                Extra Languages are added^^!
+    echo                 Extra Language Menu
+    echo              Extra Languages are added^^!
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "    Extra Version" "    Extra Event" "    Extra Release" "    Back"
 
@@ -2166,8 +2166,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Extra Version
     MODE 50,26
     echo [93m-----------------------NOTES----------------------[0m
-    echo                Extra Version Language Menu
-    echo         Manifests from Zer0Bytes' Manifest tool.
+    echo             Extra Version Language Menu
+    echo       Manifests from Zer0Bytes' Manifest tool.
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Back"
 
@@ -2351,9 +2351,9 @@ setlocal enableextensions enabledelayedexpansion
     MODE 50,18
     echo [93m-----------------------NOTES----------------------[0m
     echo              Extra Event Language Menu
-    echo            Outbreak will download Chimera.
-    echo        Road To S.I. will download Shifting Tides.
-    echo            Showdown will download Phantom Sight.
+    echo          Outbreak will download Chimera.
+    echo      Road To S.I. will download Shifting Tides.
+    echo          Showdown will download Phantom Sight.
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
      
@@ -2416,8 +2416,8 @@ setlocal enableextensions enabledelayedexpansion
     Title Rainbow Six Siege Extra Release
     MODE 50,28
     echo [93m-----------------------NOTES----------------------[0m
-    echo                Extra Release Language Menu
-    echo         Only new, released version of game build.
+    echo              Extra Release Language Menu
+    echo       Only new, released version of game build.
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "  Vanilla" "  Black Ice" "  Dust Line" "  Skull Rain" "  Red Crow" "  Velvet Shell" "  Health" "  Blood Orchid" "  White Noise" "  Chimera" "  Para Bellum" "  Grim Sky" "  Wind Bastion" "  Burnt Horizon" "  Phantom Sight" "  Ember Rise" "  Shifting Tides" "  Void Edge" "  Steel Wave" "  Shadow Legacy" "  Neon Dawn"  "  Back"
     
@@ -2838,7 +2838,7 @@ setlocal enableextensions enabledelayedexpansion
     MODE 50,20
     echo [93m-----------------------NOTES----------------------[0m
     echo           %ExtraName% Language Downloader
-    echo       Some Languages may not have a manifest file.
+    echo      Some Languages may not have a manifest file.
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "    French Lang" "    Italian Lang" "    German Lang" "    Spanish - Spain Lang" "    Portuguese - Brazil Lang" "    Polish Lang" "    Dutch Lang" "    Czech Lang" "    Korean Lang" "    Traditional Chinese Lang" "    Simplified Chinese Lang" "    Japanese Lang" "    Russian Lang" "    Back"
 
@@ -3052,7 +3052,7 @@ setlocal enableextensions enabledelayedexpansion
     echo [93m-----------------------NOTES----------------------[0m
     echo          [31mNo Language for this operation[0m
     echo         Sorry, but there are no manifests for 
-    echo             this language/this operation.
+    echo            this language/this operation.
     echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "   Back"
 
@@ -3069,9 +3069,9 @@ setlocal enableextensions enabledelayedexpansion
   :dxvcredistdownloader
     cls
     Title DirectX and VC Redist Downloader
-    MODE 42,12
+    MODE 41,11
     echo [93m------------------NOTES------------------[0m
-    echo    DirectX and VC Redist Downloader
+    echo     DirectX and VC Redist Downloader
     echo [93m------------------SELECT-----------------[0m
     Resources\cmdmenusel f8f0 "   DirectX" "   VC 2010 Redist" "   VC 2012 Redist" "   VC 2015 Redist"  "   VC 2017 Redist" "   Back"
 
