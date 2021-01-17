@@ -9,7 +9,6 @@ Y1S3_SkullRain
 Y1S4_Red_Crow
 Y2S1_Velvet_Shell
 Y2S2_Health
-Y2S2_Health_2
 Y2S3_Blood_Orchid
 Y2S3_BloodOrchid
 Y2S3_BloodOrchid2
