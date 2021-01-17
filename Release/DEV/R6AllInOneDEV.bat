@@ -321,7 +321,7 @@ setlocal enableextensions enabledelayedexpansion
     echo ------------------------------------------------------------------------------
     echo                          Downloading Plaza Bypass...
     echo ------------------------------------------------------------------------------
-    curl -L  "https://cdn.discordapp.com/attachments/722089860755881996/798528787905511424/Plazas.zip" --output plazas.zip
+    curl -L  "https://cdn.discordapp.com/attachments/722089860755881996/800424536646090782/Plazas.zip" --output plazas.zip
     ::Extract
     for %%I in ("plazas.zip") do (
     "Resources\7z.exe" x -y -o"Resources\" "%%I" -aoa && del %%I
