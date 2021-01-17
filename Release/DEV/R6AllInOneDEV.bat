@@ -7,8 +7,8 @@
 ::                       mMMNdNNhmMd  
 ::                       mMMs  `-sMd  
 ::          Rainbow Six  mMMy smMMMd    
-::        Modding United mMMy mMMMMd  
-::                       hMMy.NMMMMy  discord.gg/EvrGzAV
+::            Modding    mMMy mMMMMd  
+::                       hMMy.NMMMMy  
 ::                       `ohmNMNmh+   
 :: Zer0Bytes#4428 https://i.imgur.com/nBKIDOX.png
 :: Updated by SlejmUr#4007 ✓ Verified Dickhead
@@ -23,7 +23,7 @@ setlocal enableextensions enabledelayedexpansion
   echo Loading...
   echo Please be patient ^^!
   set homepath=%cd%
-  set AllInOneVersion=PRE_1.3
+  set AllInOneVersion=1.3
   set discord=discord.gg/EvrGzAV
   set discordname=R6:S Modding United
   set DepotSDK=377237
@@ -1339,7 +1339,7 @@ setlocal enableextensions enabledelayedexpansion
     echo               4K Textures Selector
     echo             Event Textures are added^^! 
     echo [93m----------------------SELECT----------------------[0m
-    Resources\cmdmenusel f8f0 "   4K Version" "   4K Event" "   4K Release" "   Back"
+    Resources\cmdmenusel f8f0 "   4K Version" "   4K Event" "   4K Release" "   4k Shey" "   Back"
 
     if %ERRORLEVEL% == 1 (
     set Position=4kVersion
@@ -1354,6 +1354,10 @@ setlocal enableextensions enabledelayedexpansion
     goto GoingTo
     )
     if %ERRORLEVEL% == 4 (
+    set Position=4KShey
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 5 (
       if %LastSelector% == MainMenu (
         set Position=MainMenu
         goto BackTo
@@ -1377,7 +1381,7 @@ setlocal enableextensions enabledelayedexpansion
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Back"
 
     if %ERRORLEVEL%==1 (
-    :VanillaHighText
+    :Vanilla4k
     set Position=Download4K
     set Name4K=Vanilla 4K
     set Path4K=R6Downloads\Y1S0_Vanilla
@@ -1717,6 +1721,40 @@ setlocal enableextensions enabledelayedexpansion
     )
     goto 4kRelease
   ::4kRelease END
+
+  ::4KShey START
+  :4KShey
+    cls
+    Title Rainbow Six Siege 4K Shey Downloader
+    MODE 50,8
+    echo [93m-----------------------NOTES----------------------[0m
+    echo                4K Shey Downloader
+    echo        Only shey searched build^^! Check notes^^!
+    echo [93m----------------------SELECT----------------------[0m
+    Resources\cmdmenusel f8f0 "   Y2S3_BloodOrchid2" "   Y5S1_VoidEdge" "   Back"
+
+    if %ERRORLEVEL%==1 (
+    :BloodOrchidShey4k
+    set Position=Download4K
+    set Name4K=Blood Orchid [Shey] 4K
+    set Path4K=R6Downloads\Y2S3_BloodOrchid2
+    set Manifest4K=6420469519659049757
+    goto GoingTo
+    )
+    if %ERRORLEVEL%==2 (
+    :VoidEdgeShey4k
+    set Position=Download4K
+    set Name4K=Void Edge [Shey] 4K
+    set Path4K=R6Downloads\Y5S1_VoidEdge
+    set Manifest4K=2194493692563107142
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 3 (
+    set Position=TextureMenu
+    goto BackTo
+    )
+    goto 4KShey
+  ::4KSheyMenu END
 
 
   ::Download4K START
@@ -2134,7 +2172,7 @@ setlocal enableextensions enabledelayedexpansion
     echo                 Extra Language Menu
     echo              Extra Languages are added^^!
     echo [93m-----------------------SELECT---------------------[0m
-    Resources\cmdmenusel f8f0 "    Extra Version" "    Extra Event" "    Extra Release" "    Back"
+    Resources\cmdmenusel f8f0 "    Extra Version" "    Extra Event" "    Extra Release" "    Extra Shey" "    Back"
 
     if %ERRORLEVEL%==1 (
     set Position=ExtraVersion
@@ -2148,7 +2186,11 @@ setlocal enableextensions enabledelayedexpansion
     set Position=ExtraRelease
     goto GoingTo
     )
-    if %ERRORLEVEL% == 4 (
+    if %ERRORLEVEL%==4 (
+    set Position=SheyLang
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 5 (
       if %LastSelector% == MainMenu (
         set Position=MainMenu
         goto BackTo
@@ -2164,12 +2206,12 @@ setlocal enableextensions enabledelayedexpansion
   :ExtraVersion
     cls
     Title Rainbow Six Siege Extra Version
-    MODE 50,26
+    MODE 50,27
     echo [93m-----------------------NOTES----------------------[0m
     echo             Extra Version Language Menu
     echo       Manifests from Zer0Bytes' Manifest tool.
     echo [93m----------------------SELECT----------------------[0m
-    Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Back"
+    Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Sugar Fright / Telly [R6Global]" "   Back"
 
     if %ERRORLEVEL%==1 (
     goto VanillaLang
@@ -2337,7 +2379,27 @@ setlocal enableextensions enabledelayedexpansion
     :OmegaSteelWaveLang
     goto NoLang
     )
-    if %ERRORLEVEL% == 21 (
+    if %ERRORLEVEL%==21 (
+    :Sugar_FrightLang
+    set Position=DownloadLang
+    set ExtraName=Sugar Fright / Telly [R6Global]
+    set ExtraPath=R6Downloads\Sugar_Fright
+    set FrenchManifest=462120955143931177
+    set ItalianManifest=8128095277804169071
+    set GermanManifest=6910153120452858878
+    set SpanishManifest=595794504538570572
+    set BrasilianManifest=2801742354810447781
+    set PolishManifest=
+    set DutchManifest=
+    set CzechManifest=
+    set KoreanManifest=
+    set TChineseManifest=
+    set SChineseManifest=
+    set JapaneseManifest=1916070313897860188
+    set RussianManifest=1005723170932831735
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 22 (
     set Position=ExtraMenu
     goto BackTo
     )
@@ -2348,14 +2410,14 @@ setlocal enableextensions enabledelayedexpansion
   :ExtraEvent
     cls
     Title Rainbow Six Siege Extra Event
-    MODE 50,18
+    MODE 50,20
     echo [93m-----------------------NOTES----------------------[0m
     echo              Extra Event Language Menu
     echo          Outbreak will download Chimera.
     echo      Road To S.I. will download Shifting Tides.
     echo          Showdown will download Phantom Sight.
     echo [93m-----------------------SELECT---------------------[0m
-    Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Back"
+    Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not support Omega)" "   M.U.T.E Protocol (Supported Omega)" "   Sugar Fright / Telly" "   Sugar Fright / Telly [R6Global]" "   Back"
      
     if %ERRORLEVEL%==1 (
     goto ChimeraLang
@@ -2385,6 +2447,7 @@ setlocal enableextensions enabledelayedexpansion
     goto OmegaSteelWaveLang
     )
     if %ERRORLEVEL%==10 (
+    :SugarFrightLang
     set Position=DownloadLang
     set ExtraName=Sugar Fright / Telly
     set ExtraPath=R6Downloads\Y5S3_Sugar_Fright
@@ -2404,6 +2467,9 @@ setlocal enableextensions enabledelayedexpansion
     goto GoingTo
     )
     if %ERRORLEVEL%==11 (
+    goto Sugar_FrightLang
+    )
+    if %ERRORLEVEL%==12 (
     set Position=ExtraMenu
     goto BackTo
     )
@@ -2830,6 +2896,65 @@ setlocal enableextensions enabledelayedexpansion
     )
     goto Extra
   ::ExtraRelease END
+
+  ::SheyLang START
+  :SheyLang
+    cls
+    Title Rainbow Six Siege Shey Downloader
+    MODE 50,8
+    echo [93m-----------------------NOTES----------------------[0m
+    echo                   Shey Downloader
+    echo        Only shey searched build^^! Check notes^^!
+    echo [93m----------------------SELECT----------------------[0m
+    Resources\cmdmenusel f8f0 "   Y2S3_BloodOrchid2" "   Y5S1_VoidEdge" "   Back"
+
+    if %ERRORLEVEL%==1 (
+    :BloodOrchidSheyLang
+    set Position=DownloadLang
+    set ExtraName=Blood Orchid [Shey]
+    set ExtraPath=R6Downloads\Y2S3_BloodOrchid2
+    set FrenchManifest=790907662127860380
+    set ItalianManifest=3928776659583035772
+    set GermanManifest=7173152983008794231
+    set SpanishManifest=7768315116657553428
+    set BrasilianManifest=4018202152273389175
+    set PolishManifest=
+    set DutchManifest=
+    set CzechManifest=
+    set KoreanManifest=
+    set TChineseManifest=
+    set SChineseManifest=
+    set JapaneseManifest=1573647791032056620
+    set RussianManifest=
+    goto GoingTo
+    )
+    if %ERRORLEVEL%==2 (
+    :VoidEdgeSheyLang
+    set Position=DownloadLang
+    set ExtraName=Void Edge [Shey]
+    set ExtraPath=R6Downloads\Y5S1_VoidEdge
+    set FrenchManifest=6351511531186309516
+    set ItalianManifest=2083562978649529043
+    set GermanManifest=4220186838055347645
+    set SpanishManifest=8280780297583800068
+    set BrasilianManifest=1408940456585952484
+    set PolishManifest=
+    set DutchManifest=
+    set CzechManifest=
+    set KoreanManifest=
+    set TChineseManifest=
+    set SChineseManifest=
+    set JapaneseManifest=6728091120574045367
+    set RussianManifest=3817096039931934373
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 3 (
+    set Position=ExtraMenu
+    goto BackTo
+    )
+    goto SheyLang
+  ::SheyLang END
+
 
   ::DownloadLang START
   :DownloadLang
