@@ -419,7 +419,7 @@ setlocal enableextensions enabledelayedexpansion
   set Position=MainMenu
   cls
   Title R6S AllInOne Tool
-  MODE 62,24
+  MODE 62,25
   echo [93m----------------------------NOTES-----------------------------[0m
   echo  Rainbow Six Siege AllInOne Tool
   echo  [31mYou MUST have a copy of Siege on Steam to use the downloader^^![0m
@@ -429,7 +429,7 @@ setlocal enableextensions enabledelayedexpansion
   echo  Steam User: [96m%username%[0m ^| Sku : [36m%SKUname%[0m 
   echo  FAQ Language: %lang% ^| Downloader for: %discordname%
   echo [93m----------------------------SELECT----------------------------[0m
-  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  SKU Switch" "  Lang Switch" "  Update" "  Exit"
+  Resources\cmdmenusel f830 "  FAQ and Notes" "  Game Menu" "  Extra Language" "  4K Textures" "  DirectX and VC Redist Downloader" "  Credits" "  BattlEye Checker" "  Change Steam Username" "  Old Logs Delete" "  Zer0 folder Renamer" "  Crack replace" "  SKU Switch" "  Lang Switch" "  Update" "  Exit"
 
   if %ERRORLEVEL% == 1 (
   set Position=faq
@@ -483,6 +483,10 @@ setlocal enableextensions enabledelayedexpansion
   goto GoingTo
   )
   if %ERRORLEVEL% == 11 (
+  set Position=CrackMenu
+  goto GoingTo
+  )
+  if %ERRORLEVEL% == 12 (
     if %DepotSDK% == 377237 (
       set DepotSDK=377238
       set SKUname=RUS Content
@@ -491,18 +495,18 @@ setlocal enableextensions enabledelayedexpansion
       set SKUname=WW Content
       )
   )
-  if %ERRORLEVEL%==12 (
+  if %ERRORLEVEL%==13 (
     if %lang% == eng (
       set lang=hun
       ) else (
       set lang=eng
       )
   )
-  if %ERRORLEVEL%==13 (
+  if %ERRORLEVEL%==14 (
   set Position=Update
   goto GoingTo
   ) 
-  if %ERRORLEVEL% == 14 (
+  if %ERRORLEVEL% == 15 (
   set Position=exiting
   set LOGTYPE=1
   set LOGINFO=Exited
@@ -3295,6 +3299,198 @@ setlocal enableextensions enabledelayedexpansion
     set LogNumber=1
     goto logtolog
 ::ZeroFolderRenamer END
+
+
+::CRACK THING START
+  :CrackMenu
+    cls
+    Title Crack Menu
+    MODE 50,20
+    echo hi
+    echo.
+    Resources\cmdmenusel f8f0 "   Name Change" "   GameName Change" "   Exit"
+
+    if %ERRORLEVEL% == 1 (
+    set Position=SetName
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 2 (
+    set Position=SetGame
+    goto GoingTo
+    )
+    if %ERRORLEVEL% == 3 (
+    set Position=MainMenu
+    goto BackTo
+    )
+    goto CrackMenu
+
+  ::SETGAME
+  :SetGame
+    cls
+    Title Crack Menu GameSet 
+    MODE 50,10
+    set InputFile=Resources\Plazas\PLAZA_BO\CODEX_Default.ini
+    set OutputFile=Resources\Plazas\PLAZA_BO\CODEX.ini
+    set InputFile2=Resources\Plazas\PLAZA_NEW\CODEX_Default.ini
+    set OutputFile2=Resources\Plazas\PLAZA_NEW\CODEX.ini
+    set InputFile3=Resources\Plazas\LumaPlay\LumaPlayFiles\LumaPlay_Default.ini
+    set OutputFile3=Resources\Plazas\LumaPlay\LumaPlayFiles\LumaPlay.ini
+    set "_strFind=GameName=CHANGEGAMENAME"
+    set /p _strInsert="Enter the GameName: "
+    goto ReplacesAll
+
+
+  ::SETNAME
+  :SetName
+    cls
+    Title Crack Menu NameSet 
+    MODE 50,10
+    set InputFile=Resources\Plazas\PLAZA_BO\CODEX_Default.ini
+    set OutputFile=Resources\Plazas\PLAZA_BO\CODEX.ini
+    set InputFile2=Resources\Plazas\PLAZA_NEW\CODEX_Default.ini
+    set OutputFile2=Resources\Plazas\PLAZA_NEW\CODEX.ini
+    set InputFile3=Resources\Plazas\LumaPlay\LumaPlayFiles\LumaPlay_Default.ini
+    set OutputFile3=Resources\Plazas\LumaPlay\LumaPlayFiles\LumaPlay.ini
+    set "_strFind=UserName=CHANGEUSERNAME"
+    set /p _strInsert="Enter your UserName: "
+    goto ReplacesAll
+
+
+  ::REPLACERS
+  :Replaces
+    >"%OutputFile%" (
+      for /f "usebackq delims=" %%A in ("%InputFile%") do (
+        if "%%A" equ "%_strFind%" (echo UserName=%_strInsert%) else (echo %%A)
+      )
+    )
+    goto FullDownloadCheck
+
+  :ReplacesAll
+    >"%OutputFile%" (
+      for /f "usebackq delims=" %%A in ("%InputFile%") do (
+        if "%%A" equ "%_strFind%" (echo UserName=%_strInsert%) else (echo %%A)
+      )
+    )
+    >"%OutputFile2%" (
+      for /f "usebackq delims=" %%A in ("%InputFile2%") do (
+        if "%%A" equ "%_strFind%" (echo UserName=%_strInsert%) else (echo %%A)
+      )
+    )
+    >"%OutputFile3%" (
+      for /f "usebackq delims=" %%A in ("%InputFile3%") do (
+        if "%%A" equ "%_strFind%" (echo UserName=%_strInsert%) else (echo %%A)
+      )
+    )
+    goto FullDownloadCheck
+
+
+  ::FULLCHECK
+  :FullDownloadCheck
+    ::Plaza_BO
+    if exist "R6Downloads\Y1S0_Vanilla" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y1S0_Vanilla >nul
+    )
+    if exist "R6Downloads\Y1S1_Black_Ice" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y1S1_Black_Ice >nul
+    ) 
+    if exist "R6Downloads\Y1S2_Dust_Line" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y1S2_Dust_Line >nul
+    ) 
+    if exist "R6Downloads\Y1S3_Skull_Rain" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y1S3_Skull_Rain >nul
+    )
+    if exist "R6Downloads\Y1S3_SkullRain" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y1S3_SkullRain >nul
+    )
+    if exist "R6Downloads\Y1S4_Red_Crow" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y1S4_Red_Crow >nul
+    )
+    if exist "R6Downloads\Y2S1_Velvet_Shell" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y2S1_Velvet_Shell >nul
+    )
+    if exist "R6Downloads\Y2S2_Health" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y2S2_Health >nul
+    )  
+    if exist "R6Downloads\Y2S3_Blood_Orchid" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y2S3_Blood_Orchid >nul
+    )
+    if exist "R6Downloads\Y2S3_BloodOrchid" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y2S3_BloodOrchid >nul
+    )
+    if exist "R6Downloads\Y2S3_BloodOrchid2" (
+      Robocopy Resources\Plazas\PLAZA_BO R6Downloads\Y2S3_BloodOrchid2 >nul
+    )
+    ::Plaza_NEW
+    if exist "R6Downloads\Y2S4_White_Noise" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y2S4_White_Noise >nul
+    ) 
+    if exist "R6Downloads\Y2S4_WhiteNoise" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y2S4_WhiteNoise >nul
+    )
+    if exist "R6Downloads\Y3S1_Chimera" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y3S1_Chimera >nul
+    )
+    if exist "R6Downloads\Y3S2_Para_Bellum" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y3S2_Para_Bellum >nul
+    )
+    if exist "R6Downloads\Y3S3_Grim_Sky" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y3S3_Grim_Sky >nul
+    )
+    if exist "R6Downloads\Y3S3_MadHouse" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y3S3_MadHouse >nul
+    )
+    if exist "R6Downloads\Y3S4_Wind_Bastion" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y3S4_Wind_Bastion >nul
+    )
+    if exist "R6Downloads\Y4S1_Burnt_Horizon" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y4S1_Burnt_Horizon >nul
+    )
+    if exist "R6Downloads\Y4S1_RainbowIsMagic" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y4S1_RainbowIsMagic >nul
+    )
+    if exist "R6Downloads\Y4S2_Phantom_Sight" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y4S2_Phantom_Sight >nul
+    )
+    if exist "R6Downloads\Y4S3_Ember_Rise" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y4S3_Ember_Rise >nul
+    )
+    if exist "R6Downloads\Y4S3_DoktorsCurse" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y4S3_DoktorsCurse >nul
+    ) 
+    if exist "R6Downloads\Y4S4_Shifting_Tides" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y4S4_Shifting_Tides >nul
+    )
+    if exist "R6Downloads\Y5S1_Void_Edge" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y5S1_Void_Edge >nul
+    )
+    if exist "R6Downloads\Y5S1_GangDestruction" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y5S1_GangDestruction >nul
+    )
+    if exist "R6Downloads\Y5S1_VoidEdge" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y5S1_VoidEdge >nul
+    )
+    if exist "R6Downloads\Y5S2_Steel_Wave" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y5S2_Steel_Wave >nul
+    )
+    if exist "R6Downloads\Y5S2_MUTE" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y5S2_MUTE >nul
+    )
+    if exist "R6Downloads\Y5S2_SteelWave" (
+      Robocopy Resources\Plazas\PLAZA_NEW R6Downloads\Y5S2_SteelWave >nul
+    )
+    ::Lumaplay
+    if exist "R6Downloads\Y5S3_Shadow_Legacy" (
+      Robocopy Resources\Plazas\Lumaplay R6Downloads\Y5S3_Shadow_Legacy >nul
+    )
+    if exist "R6Downloads\Y5S3_Sugar_Fright" (
+      Robocopy Resources\Plazas\Lumaplay R6Downloads\Y5S3_Sugar_Fright >nul
+    )
+    if exist "R6Downloads\Sugar_Fright" (
+      Robocopy Resources\Plazas\Lumaplay R6Downloads\Sugar_Fright >nul
+    )
+    echo %TIME% ^| INFO ^| All Crack Replaced>>log.log
+    goto CrackMenu
+::CRACK THING END
 
 
 ::CREDIT START
