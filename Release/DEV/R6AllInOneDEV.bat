@@ -23,7 +23,7 @@ setlocal enableextensions enabledelayedexpansion
   echo Loading...
   echo Please be patient ^^!
   set homepath=%cd%
-  set AllInOneVersion=1.3
+  set AllInOneVersion=1.3.2
   set discord=discord.gg/EvrGzAV
   set discordname=R6:S Modding United
   set DepotSDK=377237
@@ -3306,8 +3306,11 @@ setlocal enableextensions enabledelayedexpansion
     cls
     Title Crack Menu
     MODE 50,20
-    echo hi
-    echo.
+    echo [93m-----------------------NOTES----------------------[0m
+    echo       It change all files when you downloaded^^!
+    echo    Sorry, but you only can replace all GameName
+    echo              Do it on manually :^)
+    echo [93m-----------------------SELECT---------------------[0m
     Resources\cmdmenusel f8f0 "   Name Change" "   GameName Change" "   Exit"
 
     if %ERRORLEVEL% == 1 (
@@ -3354,16 +3357,6 @@ setlocal enableextensions enabledelayedexpansion
     set "_strFind=UserName=CHANGEUSERNAME"
     set /p _strInsert="Enter your UserName: "
     goto ReplacesAll
-
-
-  ::REPLACERS
-  :Replaces
-    >"%OutputFile%" (
-      for /f "usebackq delims=" %%A in ("%InputFile%") do (
-        if "%%A" equ "%_strFind%" (echo UserName=%_strInsert%) else (echo %%A)
-      )
-    )
-    goto FullDownloadCheck
 
   :ReplacesAll
     >"%OutputFile%" (
