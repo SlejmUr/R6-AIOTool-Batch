@@ -924,7 +924,7 @@ setlocal enableextensions enabledelayedexpansion
     echo   Showdown will download Phantom Sight.
     echo   Mute [Omega] is supported by Myxtc.Jnx's R6SGlobal tool.
     echo [93m--------------------------SELECT--------------------------------[0m
-    Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not supported by Omega)" "   M.U.T.E Protocol (Supported by Omega)" "   Sugar Fright / Telly (Before Chanka Update)" "   Sugar Fright / Telly (After Chanka Update[R6Global])" "   Back"
+    Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol | Not supported by Omega" "   M.U.T.E Protocol | Omega/R6Global" "   Sugar Fright / Telly | Before Chanka Update" "   Sugar Fright / Telly | After Chanka Update [R6Global]" "   Back"
 
     if %ERRORLEVEL%==1 (
     goto Chimera
