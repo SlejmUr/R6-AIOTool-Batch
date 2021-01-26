@@ -922,10 +922,10 @@ setlocal enableextensions enabledelayedexpansion
     echo   Outbreak will download Operation Chimera.
     echo   Road To S.I. will download Shifting Tides.
     echo   Showdown will download Phantom Sight.
-    echo   Mute (Omega) is supported by Myxtc.Jnx's R6SGlobal tool.
+    echo   Mute [Omega] is supported by Myxtc.Jnx's R6SGlobal tool.
     echo [93m--------------------------SELECT--------------------------------[0m
     Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol (Not supported by Omega)" "   M.U.T.E Protocol (Supported by Omega)" "   Sugar Fright / Telly (Before Chanka Update)" "   Sugar Fright / Telly (After Chanka Update[R6Global])" "   Back"
-    
+
     if %ERRORLEVEL%==1 (
     goto Chimera
     )
@@ -960,16 +960,16 @@ setlocal enableextensions enabledelayedexpansion
     set ManifestContent=5436378897406471956
     set DownloadPath=R6Downloads\Y5S3_Sugar_Fright
     if %DepotSDK% == 377237 (
-        set ManifestSDK=3265954110064157115
+      set ManifestSDK=3265954110064157115
       ) else (
-        set ManifestSDK=693505476132312360
+      set ManifestSDK=693505476132312360
       )
     goto GoingTo
     )
     if %ERRORLEVEL%==11 (
     goto Sugar_Fright
     ) 
-    if %ERRORLEVEL% == 12 (
+    if %ERRORLEVEL%==12 (
     set Position=InstallMenu
     goto BackTo
     )
