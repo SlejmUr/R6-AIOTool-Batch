@@ -894,7 +894,7 @@ setlocal enableextensions enabledelayedexpansion
     goto GoingTo
     )
     if %ERRORLEVEL%==21 (
-    :Sugar_Fright
+    :Sugar_Fright_Mystc
     set Position=Downloading
     set DownloadName=Sugar Fright / Telly [R6Global]
     set ManifestContent=3089981610366186823
@@ -955,19 +955,19 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==10 (
     :SugarFright
-    set Position=Downloading
-    set DownloadName=Sugar Fright / Telly
-    set ManifestContent=5436378897406471956
-    set DownloadPath=R6Downloads\Y5S3_Sugar_Fright
-    if %DepotSDK% == 377237 (
-      set ManifestSDK=3265954110064157115
-      ) else (
-      set ManifestSDK=693505476132312360
-      )
-    goto GoingTo
+      set Position=Downloading
+      set DownloadName=Sugar Fright / Telly
+      set ManifestContent=5436378897406471956
+      set DownloadPath=R6Downloads\Y5S3_Sugar_Fright
+      if %DepotSDK% == 377237 (
+        set ManifestSDK=3265954110064157115
+        ) else (
+        set ManifestSDK=693505476132312360
+        )
+      goto GoingTo
     )
     if %ERRORLEVEL%==11 (
-    goto Sugar_Fright
+    goto Sugar_Fright_Mystc
     ) 
     if %ERRORLEVEL%==12 (
     set Position=InstallMenu
