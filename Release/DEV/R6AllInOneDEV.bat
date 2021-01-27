@@ -23,7 +23,7 @@ setlocal enableextensions enabledelayedexpansion
   echo Loading...
   echo Please be patient ^^!
   set homepath=%cd%
-  set AllInOneVersion=1.3.2
+  set AllInOneVersion=1.3.2.1
   set discord=discord.gg/EvrGzAV
   set discordname=R6:S Modding United
   set DepotSDK=377237
