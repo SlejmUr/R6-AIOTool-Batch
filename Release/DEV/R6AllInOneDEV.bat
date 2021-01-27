@@ -590,7 +590,6 @@ setlocal enableextensions enabledelayedexpansion
     goto GoingTo
     )
     if %ERRORLEVEL% == 2 (
-    echo rrr>>log.log
     set Position=EventMenu
     goto GoingTo
     )
@@ -916,7 +915,6 @@ setlocal enableextensions enabledelayedexpansion
 
   ::EventMenu START
   :EventMenu
-    echo asd>>log.log
     cls
     Title Rainbow Six Siege Event Downloader
     MODE 64,20
