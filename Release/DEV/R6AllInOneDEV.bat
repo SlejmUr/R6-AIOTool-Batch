@@ -915,7 +915,7 @@ setlocal enableextensions enabledelayedexpansion
 
   ::EventMenu START
   :EventMenu
-      echo asd>log.log
+    echo asd>>log.log
     cls
     Title Rainbow Six Siege Event Downloader
     MODE 64,20
@@ -923,7 +923,7 @@ setlocal enableextensions enabledelayedexpansion
     echo   Outbreak will download Operation Chimera.
     echo   Road To S.I. will download Shifting Tides.
     echo   Showdown will download Phantom Sight.
-    echo   Mute [Omega] is supported by Myxtc.Jnx's R6SGlobal tool.
+    echo   Mute [Omega] is supported by Myxtc.Jnx^'s R6SGlobal tool.
     echo [93m--------------------------SELECT--------------------------------[0m
     Resources\cmdmenusel f8f0 "   Outbreak" "   Mad House" "   Rainbow is Magic" "   Showdown" "   Doctors Curse" "   Road To S.I. 2020" "   Gang Destruction / Golden Gun" "   M.U.T.E Protocol | Not supported by Omega" "   M.U.T.E Protocol | Omega/R6Global" "   Sugar Fright / Telly | Before Chanka Update" "   Sugar Fright / Telly | After Chanka Update [R6Global]" "   Back"
 
