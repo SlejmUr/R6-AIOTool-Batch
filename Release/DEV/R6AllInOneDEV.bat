@@ -3552,6 +3552,7 @@ setlocal enableextensions enabledelayedexpansion
     echo.>>log.log
     goto logstart
     )
+    goto LogCheck
 
   :SizeCheck
   set maxlogsize=102400
@@ -3568,6 +3569,7 @@ setlocal enableextensions enabledelayedexpansion
     set "LOGINFO=Log file bigger than %maxlogsize% Byte, Zipping..."
     goto logtolog
     )
+  goto SizeCheck
 
   :LogZipping
     if exist "Resources\7z.exe" (
@@ -3580,6 +3582,7 @@ setlocal enableextensions enabledelayedexpansion
       mkdir Resources
       goto Emer7zip
     )
+    goto LogZipping
 
   :logtolog
     if %LogNumber%==1 (
@@ -3615,6 +3618,7 @@ setlocal enableextensions enabledelayedexpansion
     ) else (
     goto StartDirCheck
     )
+    goto SelectToCheck
 
 
   :StartDirCheck
