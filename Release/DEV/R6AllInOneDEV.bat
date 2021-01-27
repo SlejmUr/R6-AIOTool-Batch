@@ -48,7 +48,7 @@ setlocal enableextensions enabledelayedexpansion
 
 ::Github Connect START
   :github
-    ping github.com>nul
+    ping github.com >nul
     if errorlevel 1 (
     set Position=MainMenu
     echo Connection to GitHub failed, continue at your own risk.^^!
