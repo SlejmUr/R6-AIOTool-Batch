@@ -915,6 +915,7 @@ setlocal enableextensions enabledelayedexpansion
 
   ::EventMenu START
   :EventMenu
+      echo asd>log.log
     cls
     Title Rainbow Six Siege Event Downloader
     MODE 64,20
