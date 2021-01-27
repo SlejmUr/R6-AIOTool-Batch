@@ -590,6 +590,7 @@ setlocal enableextensions enabledelayedexpansion
     goto GoingTo
     )
     if %ERRORLEVEL% == 2 (
+    echo rrr>>log.log
     set Position=EventMenu
     goto GoingTo
     )
@@ -627,7 +628,7 @@ setlocal enableextensions enabledelayedexpansion
     MODE 50,27
     echo [93m-----------------------NOTES----------------------[0m
     echo                 Version Downloader
-    echo        Manifests from Zer0Bytes' Manifest tool
+    echo        Manifests from Zer0Bytes^' Manifest tool
     echo [93m----------------------SELECT----------------------[0m
     Resources\cmdmenusel f8f0 "   Vanilla" "   Black Ice" "   Dust Line" "   Skull Rain" "   Red Crow" "   Velvet Shell" "   Health" "   Blood Orchid" "   White Noise" "   Chimera" "   Para Bellum" "   Grim Sky" "   Wind Bastion" "   Burnt Horizon" "   Phantom Sight" "   Ember Rise" "   Shifting Tides" "   Void Edge" "   Steel Wave [Mute]" "   Steel Wave [Omega/Mute]" "   Sugar Fright / Telly [R6Global]" "   Back"
 
@@ -956,16 +957,16 @@ setlocal enableextensions enabledelayedexpansion
     )
     if %ERRORLEVEL%==10 (
     :SugarFright
-      set Position=Downloading
-      set DownloadName=Sugar Fright / Telly
-      set ManifestContent=5436378897406471956
-      set DownloadPath=R6Downloads\Y5S3_Sugar_Fright
-      if %DepotSDK% == 377237 (
-        set ManifestSDK=3265954110064157115
-        ) else (
-        set ManifestSDK=693505476132312360
-        )
-      goto GoingTo
+    set Position=Downloading
+    set DownloadName=Sugar Fright / Telly
+    set ManifestContent=5436378897406471956
+    set DownloadPath=R6Downloads\Y5S3_Sugar_Fright
+    if %DepotSDK% == 377237 (
+      set ManifestSDK=3265954110064157115
+      ) else (
+      set ManifestSDK=693505476132312360
+      )
+    goto GoingTo
     )
     if %ERRORLEVEL%==11 (
     goto Sugar_Fright_Mystc
